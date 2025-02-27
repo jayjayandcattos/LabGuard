@@ -1,47 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hi?</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href="tailwind.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="frame">
-   
-        <div class="digital-clock-container absolute left-8 top-8 p-4 bg-white rounded-lg shadow-md">
-            <div id="digital-clock" class="digital-clock font-digital text-4xl text-gray-800"></div>
-        </div>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="time.js"></script>
+  <link href="tailwind.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
   
-        <div class="topnav">
-            <div class="container">
-                <div class="nav-cont flex items-center justify-center gap-8">
-                    <p class="nav-item">CLASSROOM</p>
-                    <p class="nav-item">FACULTY</p>
-                    <p class="nav-item">ADMIN</p>
-                    <p class="nav-item">SCHEDULE</p>
-                </div>
-            </div>
-        </div>
+</head>
+<body>
+ <div class="default-container">
+    <div class="text-wrapper">
+      <div class="time-text" id="time">--:-- --</div>
+      <div class="date-text" id="date">Loading...</div>
     </div>
+  </div>
 
-    <script>
-
-        function updateClock() {
-            const now = new Date();
-            const options = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-            const timeString = now.toLocaleTimeString('en-PH', options);
-            document.getElementById('digital-clock').textContent = timeString;
-        }   
-
-        setInterval(updateClock, 1000);
-        updateClock(); 
-    </script>
 </body>
-
 </html>
