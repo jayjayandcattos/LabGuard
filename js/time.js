@@ -1,6 +1,6 @@
 function updateTime() {
     const now = new Date();
-    
+
 
     let hours = now.getHours();
     let minutes = now.getMinutes();
