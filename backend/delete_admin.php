@@ -1,23 +1,32 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "attendanceDB";
+require_once "db.php"; // Ensure this connects properly
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!isset($_GET['id'])) {
+    die("Error: Admin ID missing.");
 }
 
-if (isset($_GET['id'])) {
-    $id = $conn->real_escape_string($_GET['id']);
-    $query = "DELETE FROM tbl_users WHERE user_id = '$id' AND role_id = 1";
+$admin_id = $_GET['id'];
 
-    if ($conn->query($query) === TRUE) {
-        echo "<script>alert('Admin Deleted!'); window.location='admin_monitoring.php';</script>";
-    } else {
-        echo "Error: " . $conn->error;
+try {
+    // Fetch admin data to verify existence
+    $query = "SELECT * FROM admin_tbl WHERE admin_id = :id";
+    $stmt = $conn->prepare($query);
+    $stmt->execute(["id" => $admin_id]);
+    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$admin) {
+        die("Error: Admin not found.");
     }
+
+    // Delete the admin
+    $query = "DELETE FROM admin_tbl WHERE admin_id = :id";
+    $stmt = $conn->prepare($query);
+    $stmt->execute(["id" => $admin_id]);
+
+    header("Location: admin.php");
+    exit();
+} catch (PDOException $e) {
+    die("Error: " . $e->getMessage());
 }
-?>
+?> 
