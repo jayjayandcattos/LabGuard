@@ -1,10 +1,10 @@
-<?php 
-require_once "backend/db.php"; 
+<?php
+require_once "backend/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
-    $role = $_POST['role']; 
+    $role = $_POST['role'];
 
     if (!empty($email) && !empty($password) && !empty($role)) {
 
@@ -28,19 +28,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if ($table !== "") {
-  
+
             $stmt = $conn->prepare("SELECT $id_field AS user_id, firstname, lastname, password FROM $table WHERE email = ?");
-            $stmt->execute([$email]); 
+            $stmt->execute([$email]);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($row) {
                 if (password_verify($password, $row['password'])) {
-        
+
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['name'] = $row['firstname'] . " " . $row['lastname'];
                     $_SESSION['role'] = $role;
 
-     
+
                     if ($role == "admin") {
                         header("Location: admin_dashboard.php");
                     } elseif ($role == "faculty") {
@@ -61,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <body>
     <!-- Navbar -->
     <div class="navbar">
@@ -73,13 +74,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </svg>
                 </div>
             </div>
-            <img src="assets/logo.png" alt="Logo" class="logo">
+            <img src="assets/IDTap.svg" alt="Logo" class="logo">
             <h1 class="brand-name">LABGUARD</h1>
         </div>
         <div class="rectangle">
             <div class="nav-options">
-                <div class="nav-option">HOME</div>
-                <div class="nav-option">ABOUT</div>
+                <a href="index.php">
+                    <div class="nav-option">HOME</div>
+                </a>
+                <a href="sections/about.php">
+    <div class="nav-option">ABOUT</div>
+  </a>
                 <div class="nav-option" onclick="openModal()">LOGIN</div>
             </div>
         </div>
@@ -92,52 +97,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <!-- Login Modal -->
-    <div class="modal" id="loginModal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="container">
-            <div class="image-section">
-                <img src="assets/Card.png" alt="Card Image">
-            </div>
-            <div class="form-section">
-                <h2>USER LOGIN</h2>
-                <form action="backend/login.php" method="POST">
-                    <div class="form-group">
-                        <label for="email">EMAIL:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">PASSWORD:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="role">SELECT ROLE:</label>
-                        <select id="role" name="role" required>
-                            <option value="">Select</option>
-                            <option value="admin">Admin</option>
-                            <option value="faculty">Faculty</option>
-                            <option value="professor">Professor</option>
-                        </select>
-                    </div>
-                    <button type="submit">LOGIN</button>
-                </form>
+    <div class="loginmodal" id="loginModal">
+        <div class="modal-overlay"></div>
+        <div class="loginmodal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="container">
+                <div class="image-section">
+                    <img src="assets/Card.png" alt="Card Image" class="primary-image" id="primaryImage">
+                    <img src="assets/Card2.png" alt="Card Image Hover" class="hover-image" id="hoverImage">
+                </div>
+                <div class="form-section">
+                    <h2>USER LOGIN</h2>
+                    <form action="backend/login.php" method="POST">
+                        <div class="form-group">
+                            <label for="email">EMAIL:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">PASSWORD:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">SELECT ROLE:</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select</option>
+                                <option value="admin">Admin</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="professor">Professor</option>
+                            </select>
+                        </div>
+                        <button class="type="submit" id="hoverButton">LOGIN</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
 
     <script src="js/login.js"></script>
-    <script>
-       function openModal() {
-  const modal = document.getElementById('loginModal');
-  modal.classList.add('active'); 
-}
+    <script src="js/cardhover.js"></script>
 
-function closeModal() {
-  const modal = document.getElementById('loginModal');
-  modal.classList.remove('active'); 
-}
+    <script>
+        function openModal() {
+            const modal = document.getElementById('loginModal');
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('loginModal');
+            modal.classList.remove('active');
+        }
     </script>
 </body>
+
 </html>
