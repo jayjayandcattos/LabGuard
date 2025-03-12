@@ -25,16 +25,48 @@
     <h2>WELCOME TO LABGUARD</h2>
     <div class="white-line"></div>
     <div id="description">
-        STUDENTS CAN ONLY LOG THEIR ATTENDANCE WHEN YOUR PROFESSOR IS PRESENT.
+      STUDENTS CAN ONLY LOG THEIR ATTENDANCE WHEN YOUR PROFESSOR IS PRESENT.
     </div>
     <div class="white-line"></div>
-</div>
-<div class="scan-container">
-  <img src="assets/IDtap.svg" alt="Scan ID" class="scan-image">
-  <h2>PLEASE SCAN YOUR ID.</h2>
-</div>
-
-
+  </div>
+  <div class="wrapper">
+    <div class="scan-container">
+      <img src="assets/IDtap.svg" alt="Scan ID" class="scan-image">
+      <h2>PLEASE SCAN YOUR ID.</h2>
+    </div>
+    <div class="right-rectangle">
+      <h2>RECENT TAPS</h2>
+      <div class="recent-taps-content">
+        <div class="section">
+          <div class="table">
+            <div class="table-header">
+              <span>PHOTO</span>
+              <span>NAME</span>
+              <span>TIME IN</span>
+              <span>STATUS</span>
+            </div>
+            <div class="table-row">
+              <span>PLACEHOLDER</span>
+              <span>PLACEHOLDER</span>
+              <span>PLACEHOLDER</span>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="table">
+            <div class="table-header">
+              <span>PHOTO</span>
+              <span>NAME</span>
+              <span>TIME IN</span>
+              <span>STATUS</span>
+            </div>
+            <div class="table-row">
+              <span>PLACEHOLDER</span>
+              <span>PLACEHOLDER</span>
+              <span>PLACEHOLDER</span>
+            </div>
+          </div>
+        </div>
 
 </body>
 

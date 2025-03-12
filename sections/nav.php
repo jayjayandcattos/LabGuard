@@ -79,9 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="rectangle">
             <div class="nav-options">
-                <a href="index.php">
-                    <div class="nav-option">HOME</div>
-                </a>
+                <div class="nav-option" onclick="window.location.reload();">HOME</div>
                 <a href="sections/about.php">
                     <div class="nav-option" id="aboutBtn" onclick="openAboutModal()">ABOUT</div>
                 </a>
@@ -134,43 +132,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- About Modal -->
     <div class="aboutmodal" id="aboutModal">
-    <div class="modal-overlay"></div>
-    <div class="aboutmodal-content">
-        <span class="close" onclick="closeAboutModal()">&times;</span>
-        <div class="container">
-            <!-- Top Section -->
-            <div class="top-section">
-                <h2>LABGUARD</h2>
-                <div class="white-line"></div>
-                <p class="short-description">A secure and efficient platform for managing laboratory resources.</p>
-            </div>
-            <!-- Split Section -->
-            <div class="split-section">
-                <!-- Left Section -->
-                <div class="left-section">
-                    <div class="image-container">
-                        <img src="assets/About1.svg" alt="Card Image" class="primary-image">
-                        <img src="assets/About2.svg" alt="Card Image Hover" class="hover-image">
-                    </div>
+        <div class="modal-overlay"></div>
+        <div class="aboutmodal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <div class="container">
+                <!-- Top Section -->
+                <div class="top-section">
+                    <h2>LABGUARD</h2>
+                    <div class="white-line"></div>
+                    <p class="short-description">A secure and efficient platform for managing laboratory resources.</p>
                 </div>
-                <!-- Right Section -->
-                <div class="right-section">
-                    <h2 class="smaller-h2">Features</h2>
-                    <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <!-- Split Section -->
+                <div class="split-section">
+                    <!-- Left Section -->
+                    <div class="left-section">
+                        <div class="image-container">
+                            <img src="assets/About1.svg" alt="Card Image" class="primary-image">
+                            <img src="assets/About2.svg" alt="Card Image Hover" class="hover-image">
+                        </div>
+                    </div>
+                    <!-- Right Section -->s
+                    <div class="right-section">
+                        <h2 class="smaller-h2">FEATURES</h2>
+                        <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-                    <h2 class="smaller-h2">Instructions</h2>
-                    <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h2 class="smaller-h2">INSTRUCTIONS</h2>
+                        <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-                    <h2 class="smaller-h2">FAQs</h2>
-                    <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h2 class="smaller-h2">FAQs</h2>
+                        <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-                    <h2 class="smaller-h2">Developers</h2>
-                    <p class="lorem-ipsum">jeAr & saM - backend HEILAAAA - ui jayzeEe, yza, h3alEr - frontend</p>
+                        <h2 class="smaller-h2">DEVELOPERS</h2>
+                        <p class="lorem-ipsum">jeAr & saM - backend HEILAAAA - ui jayzeEe, yza, h3alEr - frontend</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <script src="js/about.js"></script>
