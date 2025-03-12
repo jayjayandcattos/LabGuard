@@ -788,3 +788,147 @@ button:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin-top: 50px;
 }
+
+/* About Modal Styles */
+.aboutmodal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.409);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.aboutmodal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.aboutmodal-content {
+  background-color: #ffffff00;
+  border-radius: 10px;
+  width: 1042px;
+  height: 770px;
+  display: flex;
+  overflow: hidden;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.aboutmodal.active .aboutmodal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.aboutmodal .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto; 
+  scrollbar-width: none; 
+}
+
+.aboutmodal .container::-webkit-scrollbar {
+  display: none; 
+}
+
+.aboutmodal .top-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.aboutmodal .top-section h2 {
+  font-family: 'Bruno Ace', sans-serif;
+  font-size: 48px;
+  color: #ffffff;
+  letter-spacing: 4px;
+  text-shadow: 
+      0 0 5px #fff, 
+      0 0 10px #fff, 
+      0 0 20px #fbfcfb, 
+      0 0 40px #aac6ea, 
+      0 0 80px #ffffff00;
+  animation: glow 1.5s ease-in-out infinite alternate;
+  margin: 30px;
+}
+
+.aboutmodal .white-line {
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  margin: 5px auto;
+}
+
+.aboutmodal .short-description {
+  font-family: 'Monomaniac One', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.aboutmodal .split-section {
+  display: flex;
+  gap: 20px;
+}
+
+.aboutmodal .left-section {
+  flex: 1;
+}
+
+.aboutmodal .image-container {
+  position: relative;
+  width: 70%; 
+  height: 90%;
+  margin: 0 auto; 
+}
+
+.aboutmodal .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transition: opacity 0.3s ease;
+}
+
+.aboutmodal .image-container .hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.aboutmodal .image-container:hover .primary-image {
+  opacity: 0;
+}
+
+.aboutmodal .image-container:hover .hover-image {
+  opacity: 1;
+}
+
+.aboutmodal .right-section {
+  flex: 1;
+}
+
+.aboutmodal .right-section h2.smaller-h2 {
+  font-family: 'Bruno Ace', sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.aboutmodal .right-section .lorem-ipsum {
+  font-family: 'Monomaniac One', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}

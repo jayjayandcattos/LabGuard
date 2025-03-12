@@ -19,7 +19,6 @@
 
 <body>
 
-
   <?php include 'sections/nav.php'; ?>
 
   <div class="content-container">

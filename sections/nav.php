@@ -83,9 +83,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="nav-option">HOME</div>
                 </a>
                 <a href="sections/about.php">
-    <div class="nav-option">ABOUT</div>
-  </a>
-                <div class="nav-option" onclick="openModal()">LOGIN</div>
+                    <div class="nav-option" id="aboutBtn" onclick="openAboutModal()">ABOUT</div>
+                </a>
+                <div class="nav-option" id="loginBtn">LOGIN</div>
             </div>
         </div>
         <div class="time-container">
@@ -100,7 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="loginmodal" id="loginModal">
         <div class="modal-overlay"></div>
         <div class="loginmodal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
             <div class="container">
                 <div class="image-section">
                     <img src="assets/Card.png" alt="Card Image" class="primary-image" id="primaryImage">
@@ -126,28 +125,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <option value="professor">Professor</option>
                             </select>
                         </div>
-                        <button class="type="submit" id="hoverButton">LOGIN</button>
+                        <button class="type=" submit" id="hoverButton">LOGIN</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- About Modal -->
+    <div class="aboutmodal" id="aboutModal">
+    <div class="modal-overlay"></div>
+    <div class="aboutmodal-content">
+        <span class="close" onclick="closeAboutModal()">&times;</span>
+        <div class="container">
+            <!-- Top Section -->
+            <div class="top-section">
+                <h2>LABGUARD</h2>
+                <div class="white-line"></div>
+                <p class="short-description">A secure and efficient platform for managing laboratory resources.</p>
+            </div>
+            <!-- Split Section -->
+            <div class="split-section">
+                <!-- Left Section -->
+                <div class="left-section">
+                    <div class="image-container">
+                        <img src="assets/About1.svg" alt="Card Image" class="primary-image">
+                        <img src="assets/About2.svg" alt="Card Image Hover" class="hover-image">
+                    </div>
+                </div>
+                <!-- Right Section -->
+                <div class="right-section">
+                    <h2 class="smaller-h2">Features</h2>
+                    <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
+                    <h2 class="smaller-h2">Instructions</h2>
+                    <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <h2 class="smaller-h2">FAQs</h2>
+                    <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <h2 class="smaller-h2">Developers</h2>
+                    <p class="lorem-ipsum">jeAr & saM - backend HEILAAAA - ui jayzeEe, yza, h3alEr - frontend</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="js/about.js"></script>
     <script src="js/login.js"></script>
     <script src="js/cardhover.js"></script>
 
-    <script>
-        function openModal() {
-            const modal = document.getElementById('loginModal');
-            modal.classList.add('active');
-        }
 
-        function closeModal() {
-            const modal = document.getElementById('loginModal');
-            modal.classList.remove('active');
-        }
-    </script>
 </body>
 
 </html>
