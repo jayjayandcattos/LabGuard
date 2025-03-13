@@ -745,6 +745,7 @@ button:hover {
   animation: spin 1s linear infinite;
   opacity: 1;
   transition: border-color 0.8s ease-in-out, border-top-color 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .scan-container:hover::before {

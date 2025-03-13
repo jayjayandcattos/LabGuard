@@ -77,16 +77,24 @@ $sections_stmt = $conn->prepare($sections_query);
 $sections_stmt->execute(['prof_user_id' => $prof_user_id]);
 $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Fetch subjects for the filter dropdown
-$subjects_query = "
-    SELECT DISTINCT sub.subject_id, sub.subject_name
-    FROM subject_tbl sub
-    JOIN schedule_tbl sch ON sub.subject_id = sch.subject_id
-    WHERE sch.prof_user_id = :prof_user_id
-    ORDER BY sub.subject_name";
-$subjects_stmt = $conn->prepare($subjects_query);
-$subjects_stmt->execute(['prof_user_id' => $prof_user_id]);
-$subjects = $subjects_stmt->fetchAll(PDO::FETCH_ASSOC);
+// Fetch Professor's Last Name
+$prof_query = "SELECT lastname FROM prof_tbl WHERE prof_user_id = :prof_user_id";
+$prof_stmt = $conn->prepare($prof_query);
+
+if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
+    $professor = $prof_stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($professor) {
+        $prof_lastname = $professor['lastname'];
+    } else {
+        error_log("No professor found with prof_user_id: " . $prof_user_id);
+        $prof_lastname = "Unknown";
+    }
+} else {
+    error_log("Query execution failed: " . implode(" | ", $prof_stmt->errorInfo()));
+    $prof_lastname = "Error";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -95,15 +103,23 @@ $subjects = $subjects_stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Students</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/prof.css">
 </head>
 <body>
+    <div class="professor-header">
+        <h1>PROFESSOR PROFILE</h1>
+        <p>WELCOME PROFESSOR <?= htmlspecialchars($prof_lastname); ?>!</p>
+    </div>
+
     <div class="d-flex">
         <!-- Sidebar -->
-        <nav class="bg-dark text-white p-3 vh-100" style="width: 250px;">
-            <h4>Professor Panel</h4>
-            <ul class="nav flex-column">
+        <nav class=" text-white p-3 " >
+         
+            <ul class=" nav flex-column">
                 <li class="nav-item"><a href="prof_dashboard.php" class="nav-link text-white">Classrooms</a></li>
                 <li class="nav-item"><a href="prof_students.php" class="nav-link text-white active">Students Profile</a></li>
                 <li class="nav-item"><a href="prof_schedule.php" class="nav-link text-white">My Schedule</a></li>
@@ -114,7 +130,7 @@ $subjects = $subjects_stmt->fetchAll(PDO::FETCH_ASSOC);
         </nav>
 
         <!-- Main Content -->
-        <div class="container-fluid p-4">
+        <div id="main" class="container-fluid p-5">
             <h2>My Students</h2>
             
             <!-- Section and Subject Filters -->
@@ -122,9 +138,10 @@ $subjects = $subjects_stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-md-6">
                     <!-- Empty div to maintain spacing -->
                 </div>
+                <div class="dropdowns">
                 <div class="col-md-6">
-                    <form action="" method="GET" class="d-flex justify-content-end">
-                        <select name="section" class="form-select w-25 me-2" onchange="this.form.submit()">
+                    <form action="" method="GET" class="d-flex ">
+                        <select name="section" class="  me-2 " onchange="this.form.submit()">
                             <option value="all" <?= $section_filter === 'all' ? 'selected' : '' ?>>All Sections</option>
                             <?php foreach ($sections as $section): ?>
                                 <option value="<?= $section['section_id'] ?>" 
@@ -133,7 +150,7 @@ $subjects = $subjects_stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <select name="subject" class="form-select w-50 me-2" onchange="this.form.submit()">
+                        <select name="subject" class="  me-2"  onchange="this.form.submit()">
                             <option value="all" <?= $subject_filter === 'all' ? 'selected' : '' ?>>All Subjects</option>
                             <?php foreach ($subjects as $subject): ?>
                                 <option value="<?= $subject['subject_id'] ?>" 
@@ -144,36 +161,42 @@ $subjects = $subjects_stmt->fetchAll(PDO::FETCH_ASSOC);
                         </select>
                     </form>
                 </div>
+                </div>
             </div>
 
-            <div class="card p-3">
-                <table class="table table-hover">
+            <div class="card ">
+                <div class="table-container">
+                <table class="table ">
                     <thead>
                         <tr>
+                            <th>Photo</th>
                             <th>Student ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Section</th>
-                            <th>Photo</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($students as $student): ?>
                             <tr>
-                                <td><?= htmlspecialchars($student['student_id']); ?></td>
-                                <td><?= htmlspecialchars($student['lastname'] . ', ' . $student['firstname'] . ' ' . $student['mi']); ?></td>
-                                <td><?= htmlspecialchars($student['email']); ?></td>
-                                <td><?= htmlspecialchars($student['section_name']); ?></td>
                                 <td>
-                                    <img src="uploads/<?= htmlspecialchars($student['photo']); ?>" 
+                                <img src="uploads/<?= htmlspecialchars($student['photo']); ?>" 
                                          width="50" height="50" 
                                          alt="Student Photo"
                                          class="rounded-circle">
                                 </td>
+                                <td><?= htmlspecialchars($student['student_id']); ?></td>
+                                <td><?= htmlspecialchars($student['lastname'] . ', ' . $student['firstname'] . ' ' . $student['mi']); ?></td>
+                                <td><?= htmlspecialchars($student['email']); ?></td>
+                                <td><?= htmlspecialchars($student['section_name']); ?></td>
+                                
+                                    
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

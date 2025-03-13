@@ -45,6 +45,7 @@ $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,6 +53,7 @@ $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
@@ -69,7 +71,7 @@ $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- Main Content -->
         <div class="container-fluid p-4">
             <h2>Students Profile</h2>
-            
+
             <!-- Sort Options -->
             <div class="row mb-3">
                 <div class="col-md-6">
@@ -81,8 +83,8 @@ $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
                         <select name="section" class="form-select w-50 me-2" onchange="this.form.submit()">
                             <option value="all" <?= $section_filter === 'all' ? 'selected' : '' ?>>All Sections</option>
                             <?php foreach ($sections as $section): ?>
-                                <option value="<?= $section['section_id'] ?>" 
-                                        <?= $section_filter == $section['section_id'] ? 'selected' : '' ?>>
+                                <option value="<?= $section['section_id'] ?>"
+                                    <?= $section_filter == $section['section_id'] ? 'selected' : '' ?>>
                                     <?= htmlspecialchars($section['section_name']) ?>
                                 </option>
                             <?php endforeach; ?>
@@ -110,10 +112,10 @@ $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= htmlspecialchars($student['email']); ?></td>
                                 <td><?= htmlspecialchars($student['section_name']); ?></td>
                                 <td>
-                                    <img src="uploads/<?= htmlspecialchars($student['photo']); ?>" 
-                                         width="50" height="50" 
-                                         alt="Student Photo"
-                                         class="rounded-circle">
+                                    <img src="uploads/<?= htmlspecialchars($student['photo']); ?>"
+                                        width="50" height="50"
+                                        alt="Student Photo"
+                                        class="rounded-circle">
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -121,6 +123,7 @@ $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
                 </table>
             </div>
         </div>
-    </div>
+
 </body>
-</html> 
+
+</html>

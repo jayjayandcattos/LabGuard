@@ -80,9 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="rectangle">
             <div class="nav-options">
                 <div class="nav-option" onclick="window.location.reload();">HOME</div>
-                <a href="sections/about.php">
                     <div class="nav-option" id="aboutBtn" onclick="openAboutModal()">ABOUT</div>
-                </a>
                 <div class="nav-option" id="loginBtn">LOGIN</div>
             </div>
         </div>

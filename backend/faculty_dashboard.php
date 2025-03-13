@@ -28,7 +28,22 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "faculty") {
     <title>Faculty Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/faculty_dash.css">
 </head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentLocation = window.location.href;
+        let menuItems = document.querySelectorAll(".nav-item .nav-link");
+
+        menuItems.forEach(item => {
+            if (item.href === currentLocation) {
+                item.classList.add("active");
+            }
+        }); i
+    });
+</script>
+
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
@@ -46,29 +61,19 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "faculty") {
         <!-- Main Content -->
         <div class="container-fluid p-4">
             <h2>Classroom Overview</h2>
-
-            <!-- Room List Table -->
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Room Number</th>
-                        <th>Room Name</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($rooms as $room): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($room['room_number']); ?></td>
-                            <td><?= htmlspecialchars($room['room_name']); ?></td>
-                            <td class="<?= $room['status'] == 'Vacant' ? 'text-success' : 'text-danger'; ?>">
-                                <?= htmlspecialchars($room['status']); ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+            <div class="room-grid">
+    <?php foreach ($rooms as $room): ?>
+        <div class="room-card">
+            <div class="envelope">
+                <div class="room-header">
+                    <span class="room-status-text"><?= $room['status']; ?></span>
+                    <span class="room-status-indicator <?= $room['status'] == 'Vacant' ? 'vacant' : 'occupied'; ?>"></span>
+                </div>
+                <div class="room-number">
+                    Room <?= htmlspecialchars($room['room_number']); ?>
+                </div>
+            </div>
         </div>
-    </div>
-</body>
-</html>
+    <?php endforeach; ?>
+</div>
+

@@ -2,13 +2,12 @@
 session_start();
 require_once "db.php";
 
-// Ensure user is logged in and has the correct role
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "professor") {
     header("Location: login.php");
     exit();
 }
 
-// Fetch professor's schedules
+
 $prof_user_id = $_SESSION["user_id"];
 $query = "SELECT s.*, 
           CONCAT(p.lastname, ', ', p.firstname) AS professor_name,
@@ -33,6 +32,24 @@ $stmt->execute([
     "prof_user_id" => $prof_user_id
 ]);
 $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+$prof_query = "SELECT lastname FROM prof_tbl WHERE prof_user_id = :prof_user_id";
+$prof_stmt = $conn->prepare($prof_query);
+
+if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
+    $professor = $prof_stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($professor) {
+        $prof_lastname = $professor['lastname'];
+    } else {
+        error_log("No professor found with prof_user_id: " . $prof_user_id);
+        $prof_lastname = "Unknown";
+    }
+} else {
+    error_log("Query execution failed: " . implode(" | ", $prof_stmt->errorInfo()));
+    $prof_lastname = "Error";
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,56 +58,78 @@ $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/prof.css">
 </head>
 <body>
-    <div class="d-flex">
+    <div class="professor-header">
+        <h1 style="margin-top: -25%;">PROFESSOR PROFILE</h1>
+        <p>WELCOME PROFESSOR <?= htmlspecialchars($prof_lastname); ?>!</p>
+    </div>
+    <div class="d-flex" >
         <!-- Sidebar -->
-        <nav class="bg-dark text-white p-3 vh-100" style="width: 250px;">
-            <h4>Professor Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="prof_dashboard.php" class="nav-link text-white">Classrooms</a></li>
-                <li class="nav-item"><a href="prof_students.php" class="nav-link text-white">Students Profile</a></li>
-                <li class="nav-item"><a href="prof_schedule.php" class="nav-link text-white active">My Schedule</a></li>
-                <li class="nav-item"><a href="prof_attendance.php" class="nav-link text-white">Attendance</a></li>
-                <li class="nav-item"><a href="prof_profile.php" class="nav-link text-white">My Profile</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
+        <nav class="text-white p-3" style="position: fixed; margin-top: 5px; left: 0; right: 0%; width: 250px; height: 100vh; padding: 20px;">
+    <ul class="nav flex-column" style="padding: 0; margin: 0; padding: 5px 10px;  margin: 5px auto; width: auto; min-width: 200px; font-size: 20px;text-transform: uppercase;">
+        <li class="nav-item" style="margin-bottom: 10px;">
+            <a href="prof_dashboard.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 9px; text-align: center;">Classrooms</a>
+        </li>
+        <li class="nav-item" style="margin-bottom: 10px;">
+            <a href="prof_students.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 9px; text-align: center; ">Students Profile</a>
+        </li>
+        <li class="nav-item" style="margin-bottom: 10px;">
+            <a href="prof_schedule.php" class="nav-link text-white active" style="display: block; padding: 3px; border-radius: 8px; text-align: center; ">My Schedule</a>
+        </li>
+        <li class="nav-item" style="margin-bottom: 10px;">
+            <a href="prof_attendance.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 8px; text-align: center;">Attendance</a>
+        </li>
+        <li class="nav-item" style="margin-bottom: 10px;">
+            <a href="prof_profile.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 8px; text-align: center; transition: 0.3s;">My Profile</a>
+        </li>
+        <li class="nav-item">
+            <a href="logout.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 8px; text-align: center;">Logout</a>
+        </li>
+    </ul>
+</nav>
+
 
         <!-- Main Content -->
-        <div class="container-fluid p-4">
+        <div id="main" class="container-fluid p-3" style="margin-right: 10%;">
             <h2>My Teaching Schedule</h2>
-            <div class="card p-3">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Subject</th>
-                            <th>Section</th>
-                            <th>Room</th>
-                            <th>Schedule Time</th>
-                            <th>Time In</th>
-                            <th>Time Out</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($schedules as $schedule): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($schedule['schedule_day']); ?></td>
-                                <td><?= htmlspecialchars($schedule['subject_name']); ?></td>
-                                <td><?= htmlspecialchars($schedule['section_name']); ?></td>
-                                <td><?= htmlspecialchars($schedule['room_name']); ?></td>
-                                <td><?= htmlspecialchars($schedule['formatted_time']); ?></td>
-                                <td><?= htmlspecialchars($schedule['formatted_time_in']); ?></td>
-                                <td><?= htmlspecialchars($schedule['formatted_time_out']); ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <!-- Empty div to maintain spacing -->
+                </div>    
+
+                <div class="col-mid-2">
+    <table id="tabs" class=" table-bordered">
+        <div id="theads" class="table table-header-container">
+            <div id="table-header">Monday</div>
+            <div id="table-header">Tuesday</div>
+            <div id="table-header">Wednesday</div>
+            <div id="table-header">Friday</div>
+            <div id="table-header">Thursday</div>
+            <div id="table-header">Saturday</div>
+        </div>
+        <div id="for-the-boxes">
+            <?php foreach ($schedules as $schedule): ?>
+                <div id="contents-of-boxes">
+                    <div><?= htmlspecialchars($schedule['room_name']); ?></div>
+                    <div><?= htmlspecialchars($schedule['formatted_time']); ?></div>
+                    <div><?= htmlspecialchars($schedule['formatted_time_in']); ?></div>
+                    <div><?= htmlspecialchars($schedule['formatted_time_out']); ?></div>
+                    <div><?= htmlspecialchars($schedule['subject_name']); ?></div>
+                    <div><?= htmlspecialchars($schedule['section_name']); ?></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </table>
+</div>
+
             </div>
         </div>
-    </div>
+    
 </body>
 </html> 

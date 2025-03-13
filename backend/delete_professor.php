@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "db.php"; // Ensure this connects properly
+require_once "db.php"; 
 
 if (!isset($_GET['id'])) {
     die("Error: Professor ID missing.");
@@ -9,7 +9,7 @@ if (!isset($_GET['id'])) {
 $employee_id = $_GET['id'];
 
 try {
-    // Fetch professor data to verify existence
+    
     $query = "SELECT * FROM prof_tbl WHERE employee_id = :id";
     $stmt = $conn->prepare($query);
     $stmt->execute(["id" => $employee_id]);
@@ -19,10 +19,10 @@ try {
         die("Error: Professor not found.");
     }
 
-    // Delete the professor
+    
     $query = "DELETE FROM prof_tbl WHERE employee_id = :id";
     $stmt = $conn->prepare($query);
-    $stmt->execute(["id" => $employee_id]); // FIXED: Using $employee_id
+    $stmt->execute(["id" => $employee_id]); 
 
     header("Location: professors.php");
     exit();
