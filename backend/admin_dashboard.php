@@ -1,13 +1,11 @@
 <?php
 session_start();
-require_once "db.php"; // Ensure this file properly connects to the database
+require_once "db.php"; 
 
-// Ensure the database connection is working
 if (!$conn) {
     die("Database connection failed!");
 }
 
-// Handle room addition
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_room"])) {
     $room_number = $_POST["room_number"];
     $room_name = $_POST["room_name"];
@@ -21,8 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_room"])) {
     exit();
 }
 
-
-// Fetch room data
 $query = "SELECT * FROM room_tbl";
 $stmt = $conn->prepare($query);
 $stmt->execute();
@@ -56,8 +52,7 @@ $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
             </ul>
         </nav>
-
-        <!-- Main Content -->
+        
         <div class="container-fluid p-4">
             <h2>Classroom Management</h2>
 
