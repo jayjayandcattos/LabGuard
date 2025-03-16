@@ -8214,3 +8214,240 @@ Stack trace:
 [15-Mar-2025 23:13:50 Asia/Manila] Received RFID tag: 0005686670
 [15-Mar-2025 23:13:50 Asia/Manila] Student query result: 
 [15-Mar-2025 23:13:50 Asia/Manila] Professor query result: 
+[16-Mar-2025 00:29:06 Asia/Manila] Database connection successful
+[16-Mar-2025 00:29:06 Asia/Manila] Updated status column
+[16-Mar-2025 00:29:06 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 00:29:06 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 00:29:06 Asia/Manila] Student query result: 
+[16-Mar-2025 00:29:06 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 00:29:06 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 00:29:06 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 00:29:06 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 00:29:06
+[16-Mar-2025 10:59:54 Asia/Manila] Database connection successful
+[16-Mar-2025 10:59:54 Asia/Manila] Updated status column
+[16-Mar-2025 10:59:54 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 10:59:54 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:54 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:54 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:54 Asia/Manila] Database connection successful
+[16-Mar-2025 10:59:54 Asia/Manila] Updated status column
+[16-Mar-2025 10:59:54 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 10:59:54 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:54 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:54 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:56 Asia/Manila] Database connection successful
+[16-Mar-2025 10:59:56 Asia/Manila] Updated status column
+[16-Mar-2025 10:59:56 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 10:59:56 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:56 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:56 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:57 Asia/Manila] Database connection successful
+[16-Mar-2025 10:59:57 Asia/Manila] Updated status column
+[16-Mar-2025 10:59:57 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 10:59:58 Asia/Manila] Database connection successful
+[16-Mar-2025 10:59:58 Asia/Manila] Updated status column
+[16-Mar-2025 10:59:58 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 10:59:58 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:58 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:58 Asia/Manila] Professor query result: 
+[16-Mar-2025 11:00:02 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:02 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:02 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:02 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 11:00:02 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:02 Asia/Manila] Professor query result: 
+[16-Mar-2025 11:00:05 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:05 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:05 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:05 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:05 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:05 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:05 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:05 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:05 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:05
+[16-Mar-2025 11:00:19 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:19 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:19 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:19 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:19 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:19 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:19 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:19 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:19 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:19
+[16-Mar-2025 11:00:20 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:20 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:20 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:20 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:20 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:20 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:20 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:20 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:20 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:20
+[16-Mar-2025 11:00:21 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:21 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:21 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:21 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:21 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:21 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:21 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:21 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:21 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:21
+[16-Mar-2025 11:00:22 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:22 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:22 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:22 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:22 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:22 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:22 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:22 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:22 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:22
+[16-Mar-2025 11:00:22 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:22 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:22 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:22 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:22 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:22 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:22 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:22 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:22 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:22
+[16-Mar-2025 11:00:23 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:23 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:23 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:23 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:23 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:23 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:23 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:23 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:23 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:23
+[16-Mar-2025 11:00:23 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:23 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:23 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:23 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:23 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:23 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:23 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:23 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:23 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:23
+[16-Mar-2025 11:00:24 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:24 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:24 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:24 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:24 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:24 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:24 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:24 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:24 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:24
+[16-Mar-2025 11:00:24 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:24 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:24 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:24 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:24 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:24 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:24 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:24 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:24 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:24
+[16-Mar-2025 11:00:25 Asia/Manila] Database connection successful
+[16-Mar-2025 11:00:25 Asia/Manila] Updated status column
+[16-Mar-2025 11:00:25 Asia/Manila] Modified student_id to allow NULL
+[16-Mar-2025 11:00:25 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:25 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:25 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:25 Asia/Manila] Existing tap check result: 
+[16-Mar-2025 11:00:25 Asia/Manila] Next action determined: check_in
+[16-Mar-2025 11:00:25 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:25

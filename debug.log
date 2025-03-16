@@ -2720,3 +2720,827 @@
     [role] => professor
 )
 
+[16-Mar-2025 00:30:03 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 00:30:03 Asia/Manila] Student query result: 
+[16-Mar-2025 00:30:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 00:30:27 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 00:30:27 Asia/Manila] Student query result: 
+[16-Mar-2025 00:30:27 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 00:31:21 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 00:31:21 Asia/Manila] Student query result: 
+[16-Mar-2025 00:31:21 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:58:41 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:58:41 Asia/Manila] Student query result: 
+[16-Mar-2025 10:58:41 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:58:49 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:58:49 Asia/Manila] Student query result: 
+[16-Mar-2025 10:58:49 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:58:50 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:58:50 Asia/Manila] Student query result: 
+[16-Mar-2025 10:58:50 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:58:51 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:58:51 Asia/Manila] Student query result: 
+[16-Mar-2025 10:58:51 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:03 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:03 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:03 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:04 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:04 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:04 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:06 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:06 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:06 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:08 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:08 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:08 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:10 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:10 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:10 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:14 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:14 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:14 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:15 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:15 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:15 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:16 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:16 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:16 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:18 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:18 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:18 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:21 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:21 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:21 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:27 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:27 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:27 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:29 Asia/Manila] Received RFID tag: 0005686670
+[16-Mar-2025 10:59:29 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:29 Asia/Manila] Professor query result: 
+[16-Mar-2025 10:59:37 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:37 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:37 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:59:39 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:39 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:39 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:59:39 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:39 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:39 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:59:40 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:40 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:40 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:59:41 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:41 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:41 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:59:42 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:42 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:42 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:59:45 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:45 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:45 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 10:59:45 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 10:59:45 Asia/Manila] Student query result: 
+[16-Mar-2025 10:59:45 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:07 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:07 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:07 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:09 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:09 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:09 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:10 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:10 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:10 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:15 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:15 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:15 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:00:16 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:00:16 Asia/Manila] Student query result: 
+[16-Mar-2025 11:00:16 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:02:02 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:02:02 Asia/Manila] Student query result: 
+[16-Mar-2025 11:02:02 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:02:12 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:02:12 Asia/Manila] Student query result: 
+[16-Mar-2025 11:02:12 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:03:04 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:03:04 Asia/Manila] Student query result: 
+[16-Mar-2025 11:03:05 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:06:28 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:06:28 Asia/Manila] Student query result: 
+[16-Mar-2025 11:06:28 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:06:32 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:06:32 Asia/Manila] Student query result: 
+[16-Mar-2025 11:06:32 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:06:45 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:06:45 Asia/Manila] Student query result: 
+[16-Mar-2025 11:06:45 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:07:19 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:07:19 Asia/Manila] Student query result: 
+[16-Mar-2025 11:07:19 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:08:31 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:08:31 Asia/Manila] Student query result: 
+[16-Mar-2025 11:08:31 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:08:56 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:08:56 Asia/Manila] Student query result: 
+[16-Mar-2025 11:08:56 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:09:05 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:09:05 Asia/Manila] Student query result: 
+[16-Mar-2025 11:09:05 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:09:10 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:09:10 Asia/Manila] Student query result: 
+[16-Mar-2025 11:09:10 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:09:16 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:09:16 Asia/Manila] Student query result: 
+[16-Mar-2025 11:09:16 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:09:18 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:09:18 Asia/Manila] Student query result: 
+[16-Mar-2025 11:09:18 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:09:20 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:09:20 Asia/Manila] Student query result: 
+[16-Mar-2025 11:09:20 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:09:41 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:09:41 Asia/Manila] Student query result: 
+[16-Mar-2025 11:09:41 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:09:54 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:09:54 Asia/Manila] Student query result: 
+[16-Mar-2025 11:09:54 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:11:01 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:11:01 Asia/Manila] Student query result: 
+[16-Mar-2025 11:11:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:11:24 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:11:24 Asia/Manila] Student query result: 
+[16-Mar-2025 11:11:24 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:12:08 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:12:08 Asia/Manila] Student query result: 
+[16-Mar-2025 11:12:08 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:12:13 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:12:13 Asia/Manila] Student query result: 
+[16-Mar-2025 11:12:13 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:12:35 Asia/Manila] Received RFID tag: 004806268
+[16-Mar-2025 11:12:35 Asia/Manila] Student query result: 
+[16-Mar-2025 11:12:35 Asia/Manila] Professor query result: 
+[16-Mar-2025 11:12:45 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:12:45 Asia/Manila] Student query result: 
+[16-Mar-2025 11:12:45 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:12:49 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:12:49 Asia/Manila] Student query result: 
+[16-Mar-2025 11:12:49 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:12:54 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:12:54 Asia/Manila] Student query result: 
+[16-Mar-2025 11:12:54 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:14:58 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:14:58 Asia/Manila] Student query result: 
+[16-Mar-2025 11:14:58 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:15:06 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:15:06 Asia/Manila] Student query result: 
+[16-Mar-2025 11:15:06 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:16:09 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:16:09 Asia/Manila] Student query result: 
+[16-Mar-2025 11:16:09 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:17:19 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:17:19 Asia/Manila] Student query result: 
+[16-Mar-2025 11:17:19 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:18:17 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:18:17 Asia/Manila] Student query result: 
+[16-Mar-2025 11:18:17 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:18:25 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:18:25 Asia/Manila] Student query result: 
+[16-Mar-2025 11:18:25 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:18:33 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:18:33 Asia/Manila] Student query result: 
+[16-Mar-2025 11:18:33 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:19:09 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:19:09 Asia/Manila] Student query result: 
+[16-Mar-2025 11:19:09 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:19:31 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:19:32 Asia/Manila] Student query result: 
+[16-Mar-2025 11:19:32 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:19:50 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:19:50 Asia/Manila] Student query result: 
+[16-Mar-2025 11:19:50 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 11:21:39 Asia/Manila] Received RFID tag: 
+[16-Mar-2025 11:21:39 Asia/Manila] Student query result: 
+[16-Mar-2025 11:21:39 Asia/Manila] Professor query result: 
+[16-Mar-2025 11:22:53 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 11:22:53 Asia/Manila] Student query result: 
+[16-Mar-2025 11:22:53 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:09:36 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:09:36 Asia/Manila] Student query result: 
+[16-Mar-2025 18:09:36 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:11:03 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:11:03 Asia/Manila] Student query result: 
+[16-Mar-2025 18:11:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:11:13 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:11:13 Asia/Manila] Student query result: 
+[16-Mar-2025 18:11:13 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:11:59 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:11:59 Asia/Manila] Student query result: 
+[16-Mar-2025 18:11:59 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:12:19 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:12:19 Asia/Manila] Student query result: 
+[16-Mar-2025 18:12:19 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:12:25 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:12:25 Asia/Manila] Student query result: 
+[16-Mar-2025 18:12:25 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:13:44 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:13:44 Asia/Manila] Student query result: 
+[16-Mar-2025 18:13:44 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:15:01 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:15:01 Asia/Manila] Student query result: 
+[16-Mar-2025 18:15:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:15:04 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:15:04 Asia/Manila] Student query result: 
+[16-Mar-2025 18:15:04 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:15:17 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:15:17 Asia/Manila] Student query result: 
+[16-Mar-2025 18:15:17 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:19:21 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:19:21 Asia/Manila] Student query result: 
+[16-Mar-2025 18:19:21 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:19:24 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:19:24 Asia/Manila] Student query result: 
+[16-Mar-2025 18:19:24 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:19:37 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:19:37 Asia/Manila] Student query result: 
+[16-Mar-2025 18:19:37 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:19:47 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:19:47 Asia/Manila] Student query result: 
+[16-Mar-2025 18:19:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:20:08 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:20:08 Asia/Manila] Student query result: 
+[16-Mar-2025 18:20:08 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:20:11 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:20:11 Asia/Manila] Student query result: 
+[16-Mar-2025 18:20:11 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:21:39 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:21:39 Asia/Manila] Student query result: 
+[16-Mar-2025 18:21:39 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:21:47 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:21:47 Asia/Manila] Student query result: 
+[16-Mar-2025 18:21:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:21:51 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:21:51 Asia/Manila] Student query result: 
+[16-Mar-2025 18:21:51 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[16-Mar-2025 18:38:28 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:38:28 Asia/Manila] Student query result: 
+[16-Mar-2025 18:38:28 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+

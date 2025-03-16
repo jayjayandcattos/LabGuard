@@ -728,11 +728,12 @@ button:hover {
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin-top: 5.5rem;
+  position: relative;
 }
 
 .right-rectangle {
   width: 960px;
-  height: 400px;
+  height: 460px;
   background-color: rgba(195, 196, 227, 0.5); 
   border-radius: 20px; 
   padding: 20px; 
@@ -744,8 +745,9 @@ button:hover {
   font-family: 'Bruno Ace', sans-serif;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px; 
+  margin-bottom: 10px; 
   margin-left: 1rem;
+  margin-top: 5px;
 }
 
 
@@ -768,6 +770,13 @@ button:hover {
   gap: 5px; 
 }
 
+.table h1 {
+  font-family: 'Monomaniac One', sans-serif;
+  margin-top: -20px;
+  color: white;
+ 
+}
+
 .table-header, .table-row {
   display: flex;
   justify-content: space-between;
@@ -785,8 +794,6 @@ button:hover {
 .table-header {
   font-weight: bold; /
 }
-
-/* ----------- PLACEHOLDER ------------- */
 
 /* About Modal Styles */
 .aboutmodal {

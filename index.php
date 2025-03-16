@@ -285,6 +285,7 @@ if (isset($_POST['rfid_tag'])) {
       <div class="recent-taps-content">
         <div class="section">
           <div class="table">
+            <h1>PROFESSOR</h1>
             <div class="table-header">
               <span>PHOTO</span>
               <span>NAME</span>
@@ -298,6 +299,7 @@ if (isset($_POST['rfid_tag'])) {
         </div>
         <div class="section">
           <div class="table">
+          <h1>STUDENTS</h1>
             <div class="table-header">
             <span>PHOTO</span>
               <span>NAME</span>

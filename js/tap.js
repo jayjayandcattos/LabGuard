@@ -93,7 +93,7 @@ style.textContent = `
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 2.5rem; 
+    margin-top: 2.5rem;
 }
 
 .scan-container::before {
@@ -122,7 +122,23 @@ style.textContent = `
 .scan-container.confirmed::before {
     border-color: rgb(0, 255, 0);
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-    animation: pulse 1s ease-out;
+    animation: none; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scan-container.confirmed::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 40px; 
+    height: 80px; 
+    border: solid rgb(26, 136, 26);
+    border-width: 0 10px 10px 0; 
+    transform: translate(-50%, -50%) rotate(45deg); 
+    animation: checkmarkConfirmation 0.5s ease-in-out forwards;
+    opacity: 0; 
 }
 
 @keyframes spin {
@@ -134,21 +150,21 @@ style.textContent = `
     }
 }
 
-@keyframes pulse {
+@keyframes checkmarkConfirmation {
     0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8) rotate(45deg);
     }
     50% {
-        transform: translate(-50%, -53%) scale(1.1);
-        opacity: 0.8;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1) rotate(45deg);
     }
     100% {
-        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(45deg);
     }
 }
-
+    
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -196,6 +212,17 @@ function triggerScanAnimation(success = true) {
     const scanContainer = document.querySelector('.scan-container');
     if (!scanContainer) return;
     
+    
+    const scanHeading = scanContainer.querySelector('h2');
+    const originalText = scanHeading ? scanHeading.textContent : "PLEASE SCAN YOUR ID.";
+    
+    if (scanHeading) {
+        
+        scanHeading.style.minWidth = scanHeading.offsetWidth + 'px';
+        scanHeading.style.textAlign = 'center';
+        scanHeading.textContent = "SCANNING...";
+    }
+    
     scanContainer.classList.add('scanning');
     
     setTimeout(() => {
@@ -204,11 +231,27 @@ function triggerScanAnimation(success = true) {
             scanContainer.classList.add('confirmed');
             setTimeout(() => {
                 scanContainer.classList.remove('confirmed');
+                
+                if (scanHeading) {
+                    scanHeading.textContent = originalText;
+                    
+                    setTimeout(() => {
+                        scanHeading.style.minWidth = '';
+                    }, 100);
+                }
             }, 1000);
+        } else {
+            
+            if (scanHeading) {
+                scanHeading.textContent = originalText;
+                
+                setTimeout(() => {
+                    scanHeading.style.minWidth = '';
+                }, 100);
+            }
         }
     }, 1500);
 }
-
 
 function createTableRow(user, checkInTime, checkOutTime, status) {
     const newRow = document.createElement('div');
