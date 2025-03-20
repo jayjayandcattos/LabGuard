@@ -59,39 +59,44 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="../css/colorum.css">
+    <style>
+        .nav-link.active {
+            background-color: #152569 !important; /* Bootstrap success color */
+        }
+    </style>
 
+</head>
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
-        <nav class="bg-dark text-white p-3 vh-100" style="width: 250px;">
-            <h4>Faculty Panel</h4>
+        <nav class="btn-panel" style="width: 250px;">
+           
             <ul class="nav flex-column">
+                <li class="nav-item"><a href="faculty_overview.php" class="nav-link text-white">Overview</a></li>
                 <li class="nav-item"><a href="faculty_dashboard.php" class="nav-link text-white">Classrooms</a></li>
                 <li class="nav-item"><a href="view_students.php" class="nav-link text-white">Students Profile</a></li>
                 <li class="nav-item"><a href="view_professors.php" class="nav-link text-white">Professors Profile</a></li>
-                <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white">Schedule Management</a></li>
+                <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white active">Schedule Management</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
             </ul>
         </nav>
 
         <!-- Main Content -->
         <div class="container-fluid p-4">
-            <h2>Schedule Management</h2>
+            
 
             <!-- Add Schedule Form -->
             <div class="card p-3 mb-4">
-                <h4>Add New Schedule</h4>
+                
                 <form method="POST" action="faculty_schedule.php">
                     <div class="row">
-                        <div class="col-md-3 mb-2">
+                        <div class="infopanel">
                             <label>Professor</label>
                             <select name="prof_user_id" class="form-control" required>
                                 <?php foreach ($professors as $professor): ?>
@@ -165,6 +170,9 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
                         <th>Day</th>
                     </tr>
                 </thead>
+
+                    
+
                 <tbody>
                     <?php foreach ($schedules as $schedule): ?>
                         <tr>
@@ -183,5 +191,4 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </body>
-
-</html>
+</html> 

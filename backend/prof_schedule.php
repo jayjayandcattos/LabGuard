@@ -2,12 +2,13 @@
 session_start();
 require_once "db.php";
 
+// Ensure user is logged in and has the correct role
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "professor") {
     header("Location: login.php");
     exit();
 }
 
-
+// Fetch professor's schedules
 $prof_user_id = $_SESSION["user_id"];
 $query = "SELECT s.*, 
           CONCAT(p.lastname, ', ', p.firstname) AS professor_name,
@@ -33,7 +34,7 @@ $stmt->execute([
 ]);
 $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
+// Fetch Professor's Last Name
 $prof_query = "SELECT lastname FROM prof_tbl WHERE prof_user_id = :prof_user_id";
 $prof_stmt = $conn->prepare($prof_query);
 
@@ -66,37 +67,15 @@ if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
 </head>
 <body>
     <div class="professor-header">
-        <h1 style="margin-top: -25%;">PROFESSOR PROFILE</h1>
+        <h1>PROFESSOR PROFILE</h1>
         <p>WELCOME PROFESSOR <?= htmlspecialchars($prof_lastname); ?>!</p>
     </div>
-    <div class="d-flex" >
-        <!-- Sidebar -->
-        <nav class="text-white p-3" style="position: fixed; margin-top: 5px; left: 0; right: 0%; width: 250px; height: 100vh; padding: 20px;">
-    <ul class="nav flex-column" style="padding: 0; margin: 0; padding: 5px 10px;  margin: 5px auto; width: auto; min-width: 200px; font-size: 20px;text-transform: uppercase;">
-        <li class="nav-item" style="margin-bottom: 10px;">
-            <a href="prof_dashboard.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 9px; text-align: center;">Classrooms</a>
-        </li>
-        <li class="nav-item" style="margin-bottom: 10px;">
-            <a href="prof_students.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 9px; text-align: center; ">Students Profile</a>
-        </li>
-        <li class="nav-item" style="margin-bottom: 10px;">
-            <a href="prof_schedule.php" class="nav-link text-white active" style="display: block; padding: 3px; border-radius: 8px; text-align: center; ">My Schedule</a>
-        </li>
-        <li class="nav-item" style="margin-bottom: 10px;">
-            <a href="prof_attendance.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 8px; text-align: center;">Attendance</a>
-        </li>
-        <li class="nav-item" style="margin-bottom: 10px;">
-            <a href="prof_profile.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 8px; text-align: center; transition: 0.3s;">My Profile</a>
-        </li>
-        <li class="nav-item">
-            <a href="logout.php" class="nav-link text-white" style="display: block; padding: 3px; border-radius: 8px; text-align: center;">Logout</a>
-        </li>
-    </ul>
-</nav>
+    <?php include 'prof_nav.php'?>
+
 
 
         <!-- Main Content -->
-        <div id="main" class="container-fluid p-3" style="margin-right: 10%;">
+        <div id="main" class="container-fluid p-3" style="margin-right: 10%; width: 70%;">
             <h2>My Teaching Schedule</h2>
             <div class="row mb-3">
                 <div class="col-md-6">

@@ -11,15 +11,8 @@
                     </svg>
                 </div>
             </div>
-            <img src="assets/IDTap.svg" alt="Logo" class="logo">
+            <img src="../assets/IDTap.svg" alt="Logo" class="logo">
             <h1 class="brand-name">LABGUARD</h1>
-        </div>
-        <div class="rectangle">
-            <div class="nav-options">
-                <div class="nav-option" onclick="window.location.reload();">HOME</div>
-                    <div class="nav-option" id="aboutBtn" onclick="openAboutModal()">ABOUT</div>
-                <div class="nav-option" id="loginBtn">LOGIN</div>
-            </div>
         </div>
         <div class="time-container">
             <div class="text-wrapper">

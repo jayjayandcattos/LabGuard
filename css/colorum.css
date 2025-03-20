@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Apply font to the entire page */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: green; /* Dark Gray */
+    color: white; /* Ensure text is readable */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #1a2a6c, #3f4b7f, #7287e5, #7991fc, #3f4b7f, #1a2a6c);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite; /* Apply the background animation */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Limit text width globally */
+p, h1, h2, h3, h4, h5, h6, label, span, a, button {
+    max-width: 200px; /* Prevents text from being too wide */
+    overflow: hidden; /* Ensures text does not spill out */
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    white-space: nowrap; /* Keeps text on one line */
+    font-weight: 300; /* Makes text thinner */
+}
+
+/* Ensure form elements stay in one line */
+.form-row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 15px; /* Increase spacing between fields */
+    align-items: center; /* Aligns elements vertically */
+    justify-content: center; /* Centers elements */
+}
+
+/* Apply the text width limit to form inputs */
+.form-control {
+    max-width: 200px; /* Prevents input fields from being too wide */
+    min-width: 150px; /* Prevents shrinking too much */
+    flex: 0 1 auto; /* Prevents inputs from compressing too much */
+    overflow: hidden; /* Ensures text does not spill out */
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    white-space: nowrap; /* Keeps text on one line */
+    font-weight: 300; /* Makes text thinner */
+    text-align: center; /* Centers text inside the input */
+    padding: 5px 10px; /* Adds a bit of padding for spacing */
+}
+
+.btn-panel {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make the sidebar take full height */
+    padding: 20px 20px; /* Adds space on the left and right without shrinking the border */
+}
+
+.btn-panel .nav {
+    flex-grow: 1; /* Pushes the Logout button to the bottom */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between buttons */
+}
+
+.btn-panel .nav-item:last-child {
+    margin-top: auto; /* Moves the last item (Logout) to the bottom */
+    margin-bottom: auto;
+}
+
+/* Default nav-link styles */
+.nav-link {
+    background-color: transparent;
+    border: 2px solid white; /* White border */
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: auto;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+}
+
+
+
+/* Style for the table header */
+.table-bordered thead {
+    background-color: #CCCCFF; /* Light blue background */
+}
+
+.table-bordered thead th {
+    background-color: #CCCCFF; /* Light blue background for each header cell */
+    color: black; /* Ensure text is readable */
+    font-weight: bold; /* Make the text stand out */
+    text-align: center; /* Center text */
+    padding: 10px; /* Add some padding for better spacing */
+}
+
+
+/* Center text inside table headers and table cells */
+.table th,
+.table td {
+    padding: 10px 15px; /* Increase padding for better readability */
+    text-align: center;
+    vertical-align: middle; /* Ensures text is centered vertically */
+}
+
+/* Ensure spacing between dropdowns, inputs, and labels */
+.infopanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 160px; /* Prevents elements from collapsing */
+}
+
+.table-bordered {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 5px; /* Adjust the radius as needed */
+    overflow: hidden;
+}
+
+.table-bordered thead tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+}
+
+.table-bordered thead tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+}
+
+.table-bordered tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+.table-bordered tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+
+.card.p-3 table thead {
+    background-color: #152569 !important; /* Dark Blue */
+}
+
+.card.p-3 table thead th {
+    background-color: #152569 !important; /* Dark Blue */
+    color: white !important; /* White text */
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+}
+
+
+

@@ -115,20 +115,8 @@ if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
         <p>WELCOME PROFESSOR <?= htmlspecialchars($prof_lastname); ?>!</p>
     </div>
 
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class=" text-white p-3 " >
-         
-            <ul class=" nav flex-column">
-                <li class="nav-item"><a href="prof_dashboard.php" class="nav-link text-white">Classrooms</a></li>
-                <li class="nav-item"><a href="prof_students.php" class="nav-link text-white active">Students Profile</a></li>
-                <li class="nav-item"><a href="prof_schedule.php" class="nav-link text-white">My Schedule</a></li>
-                <li class="nav-item"><a href="prof_attendance.php" class="nav-link text-white">Attendance</a></li>
-                <li class="nav-item"><a href="prof_profile.php" class="nav-link text-white">My Profile</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
-
+    <?php include 'prof_nav.php'?>
+    
         <!-- Main Content -->
         <div id="main" class="container-fluid p-5">
             <h2>My Students</h2>

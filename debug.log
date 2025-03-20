@@ -3544,3 +3544,14 @@
     [role] => professor
 )
 
+[16-Mar-2025 18:44:00 Asia/Manila] Received RFID tag: 0004806268
+[16-Mar-2025 18:44:00 Asia/Manila] Student query result: 
+[16-Mar-2025 18:44:00 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
