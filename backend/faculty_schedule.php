@@ -8,6 +8,14 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "faculty") {
     exit();
 }
 
+
+$query = "SELECT lastname FROM faculty_tbl WHERE employee_id = :user_id";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
+$stmt->execute();
+$faculty = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
 // Handle schedule addition
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_schedule"])) {
     $prof_user_id = $_POST["prof_user_id"];
@@ -63,132 +71,108 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Management</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/colorum.css">
-    <style>
-        .nav-link.active {
-            background-color: #152569 !important; /* Bootstrap success color */
-        }
-    </style>
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <script src="../js/facultySched.js" defer></script>
 
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class="btn-panel" style="width: 250px;">
-           
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="faculty_overview.php" class="nav-link text-white">Overview</a></li>
-                <li class="nav-item"><a href="faculty_dashboard.php" class="nav-link text-white">Classrooms</a></li>
-                <li class="nav-item"><a href="view_students.php" class="nav-link text-white">Students Profile</a></li>
-                <li class="nav-item"><a href="view_professors.php" class="nav-link text-white">Professors Profile</a></li>
-                <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white active">Schedule Management</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
 
-        <!-- Main Content -->
-        <div class="container-fluid p-4">
-            
+<?php include '../sections/nav3.php'; ?>
+<?php include '../sections/fac_nav.php'; ?>
 
-            <!-- Add Schedule Form -->
-            <div class="card p-3 mb-4">
-                
-                <form method="POST" action="faculty_schedule.php">
-                    <div class="row">
-                        <div class="infopanel">
-                            <label>Professor</label>
-                            <select name="prof_user_id" class="form-control" required>
-                                <?php foreach ($professors as $professor): ?>
-                                    <option value="<?= $professor['prof_user_id'] ?>"><?= htmlspecialchars($professor['name']) ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <label>Subject</label>
-                            <select name="subject_id" class="form-control" required>
-                                <?php foreach ($subjects as $subject): ?>
-                                    <option value="<?= $subject['subject_id'] ?>"><?= htmlspecialchars($subject['subject_name']) ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <label>Section</label>
-                            <select name="section_id" class="form-control" required>
-                                <?php foreach ($sections as $section): ?>
-                                    <option value="<?= $section['section_id'] ?>"><?= htmlspecialchars($section['section_name']) ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <label>Room</label>
-                            <select name="room_id" class="form-control" required>
-                                <?php foreach ($rooms as $room): ?>
-                                    <option value="<?= $room['room_id'] ?>"><?= htmlspecialchars($room['room_name']) ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <label>Schedule Time</label>
-                            <input type="time" name="schedule_time" class="form-control" required>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <label>Time In</label>
-                            <input type="time" name="time_in" class="form-control" required>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <label>Time Out</label>
-                            <input type="time" name="time_out" class="form-control" required>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <label>Day</label>
-                            <select name="schedule_day" class="form-control" required>
-                                <option value="Monday">Monday</option>
-                                <option value="Tuesday">Tuesday</option>
-                                <option value="Wednesday">Wednesday</option>
-                                <option value="Thursday">Thursday</option>
-                                <option value="Friday">Friday</option>
-                                <option value="Saturday">Saturday</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" name="add_schedule" class="btn btn-primary">Add Schedule</button>
-                </form>
+<div id="main-container">
+<h2>SCHEDULE OVERVIEW</h2>
+    <button id="toggle-form-btn" class="toggle-btn">+</button>
+
+    <div id="schedule-form" class="schedule-form hidden">
+        <form method="POST" action="faculty_schedule.php">
+            <div class="form-grid">
+                <div class="form-group1">
+                    <label>Professor</label>
+                    <select name="prof_user_id" required>
+                        <?php foreach ($professors as $professor): ?>
+                            <option value="<?= $professor['prof_user_id'] ?>"><?= htmlspecialchars($professor['name']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group1">
+                    <label>Subject</label>
+                    <select name="subject_id" required>
+                        <?php foreach ($subjects as $subject): ?>
+                            <option value="<?= $subject['subject_id'] ?>"><?= htmlspecialchars($subject['subject_name']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group1">
+                    <label>Section</label>
+                    <select name="section_id" required>
+                        <?php foreach ($sections as $section): ?>
+                            <option value="<?= $section['section_id'] ?>"><?= htmlspecialchars($section['section_name']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group1">
+                    <label>Room</label>
+                    <select name="room_id" required>
+                        <?php foreach ($rooms as $room): ?>
+                            <option value="<?= $room['room_id'] ?>"><?= htmlspecialchars($room['room_name']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group1">
+                    <label>Time In</label>
+                    <input type="time" name="time_in" required>
+                </div>
+                <div class="form-group1">
+                    <label>Time Out</label>
+                    <input type="time" name="time_out" required>
+                </div>
+                <div class="form-group1">
+                    <label>Day</label>
+                    <select name="schedule_day" required>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                    </select>
+                </div>
             </div>
+            <button type="submit" name="add_schedule">Add Schedule</button>
+        </form>
+    </div>   
 
-            <!-- Schedule List -->
-            <table class="table table-bordered">
-                <thead>
+    <!-- Schedule List -->
+    <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Professor</th>
+                    <th>Subject</th>
+                    <th>Section</th>
+                    <th>Room</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>Day</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($schedules as $schedule): ?>
                     <tr>
-                        <th>Professor</th>
-                        <th>Subject</th>
-                        <th>Section</th>
-                        <th>Room</th>
-                        <th>Schedule Time</th>
-                        <th>Time In</th>
-                        <th>Time Out</th>
-                        <th>Day</th>
+                        <td><?= htmlspecialchars($schedule['professor_name']); ?></td>
+                        <td><?= htmlspecialchars($schedule['subject_name']); ?></td>
+                        <td><?= htmlspecialchars($schedule['section_name']); ?></td>
+                        <td><?= htmlspecialchars($schedule['room_name']); ?></td>
+                        <td><?= htmlspecialchars($schedule['time_in']); ?></td>
+                        <td><?= htmlspecialchars($schedule['time_out']); ?></td>
+                        <td><?= htmlspecialchars($schedule['schedule_day']); ?></td>
                     </tr>
-                </thead>
-
-                    
-
-                <tbody>
-                    <?php foreach ($schedules as $schedule): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($schedule['professor_name']); ?></td>
-                            <td><?= htmlspecialchars($schedule['subject_name']); ?></td>
-                            <td><?= htmlspecialchars($schedule['section_name']); ?></td>
-                            <td><?= htmlspecialchars($schedule['room_name']); ?></td>
-                            <td><?= htmlspecialchars($schedule['schedule_time']); ?></td>
-                            <td><?= htmlspecialchars($schedule['time_in']); ?></td>
-                            <td><?= htmlspecialchars($schedule['time_out']); ?></td>
-                            <td><?= htmlspecialchars($schedule['schedule_day']); ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
+</div>
+
 </body>
-</html> 
+</html>

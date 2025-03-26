@@ -8,6 +8,13 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "faculty") {
     exit();
 }
 
+$query = "SELECT lastname FROM faculty_tbl WHERE employee_id = :user_id";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
+$stmt->execute();
+$faculty = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
 // Fetch professors data
 $query = "SELECT *, CONCAT(lastname, ', ', firstname, ' ', mi) AS fullname FROM prof_tbl";
 $stmt = $conn->prepare($query);
@@ -21,34 +28,17 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Professors</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/colorum.css">
-    <style>
-        .nav-link.active {
-            background-color: #152569 !important; /* Bootstrap success color */
-        }
-    </style>
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
 
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class="btn-panel" style="width: 250px;">
-            <h4>Faculty Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="faculty_overview.php" class="nav-link text-white">Overview</a></li>
-                <li class="nav-item"><a href="faculty_dashboard.php" class="nav-link text-white">Classrooms</a></li>
-                <li class="nav-item"><a href="view_students.php" class="nav-link text-white">Students Profile</a></li>
-                <li class="nav-item"><a href="view_professors.php" class="nav-link text-white active">Professors Profile</a></li>
-                <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white">Schedule Management</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="container-fluid p-4">
-            <h2>Professors Profile</h2>
-            <table class="table table-bordered">
+    <?php include '../sections/nav3.php'; ?>
+    <?php include '../sections/fac_nav.php'; ?>
+    <div id="main-container">
+            <h2>PROFESSOR PROFILES</h2>
+        <br>
+            <table class="custom-table">
                 <thead>
                     <tr>
                         <th>Employee ID</th>

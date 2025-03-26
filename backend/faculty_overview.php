@@ -8,6 +8,12 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "faculty") {
     exit();
 }
 
+$query = "SELECT lastname FROM faculty_tbl WHERE employee_id = :user_id";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
+$stmt->execute();
+$faculty = $stmt->fetch(PDO::FETCH_ASSOC);
+
 // Define days array
 $days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
 
@@ -33,14 +39,14 @@ $schedule_by_day = [];
 foreach ($schedules as $schedule) {
     $day = strtoupper($schedule['schedule_day']);
     $room = $schedule['room_name'];
-    
+
     if (!isset($schedule_by_day[$day])) {
         $schedule_by_day[$day] = [];
     }
     if (!isset($schedule_by_day[$day][$room])) {
         $schedule_by_day[$day][$room] = [];
     }
-    
+
     // Format the schedule data
     $schedule_by_day[$day][$room][] = [
         'time_range' => date('h:i A', strtotime($schedule['time_in'])) . ' - ' . date('h:i A', strtotime($schedule['time_out'])),
@@ -59,128 +65,35 @@ $current_day = date('l');
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Overview</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/colorum.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .nav-link.active {
-            background-color: #152569 !important;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
 
-        .schedule-header {
-            background: #5C6BC0;
-            color: white;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .schedule-header h2 {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .print-icon {
-            font-size: 1.5rem;
-            color: white;
-            cursor: pointer;
-        }
-        .days-header {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 0;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .day-column {
-            background: #3F51B5;
-            color: white;
-            padding: 0.75rem;
-            text-align: center;
-            border-right: 1px solid white;
-        }
-
-        .day-column:last-child {
-            border-right: none;
-        }
-
-        .schedule-grid {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .day-schedules {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 16%; /* Ensures equal width for all day columns */
-        }
-
-        .schedule-card {
-            background: #E8EAF6;
-            border-radius: 10px;
-            width: 100%;
-            min-height: 200px;
-            box-sizing: border-box;
-            padding: 1rem;
-            margin-bottom: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .schedule-card h5 {
-            color: #3F51B5;
-            margin-bottom: 0.5rem;
-        }
-        .schedule-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #333;
-        }
-        .time-info {
-            color: #666;
-            font-size: 0.85rem;
-        }
-    </style>
 </head>
+
 <body>
-    <div class="d-flex">
-        <nav class="btn-panel" style="width: 250px;">
-            <h4>Faculty Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="faculty_overview.php" class="nav-link text-white active">Overview</a></li>
-                <li class="nav-item"><a href="faculty_dashboard.php" class="nav-link text-white">Classrooms</a></li>
-                <li class="nav-item"><a href="view_students.php" class="nav-link text-white">Students Profile</a></li>
-                <li class="nav-item"><a href="view_professors.php" class="nav-link text-white">Professors Profile</a></li>
-                <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white">Schedule Management</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
+    <?php include '../sections/nav3.php'; ?>
+    <?php include '../sections/fac_nav.php'; ?>
+    <div id="main-container">
+        <div class="BLOCK">
+            <h2>SCHEDULE OVERVIEW</h2>
+            <i class="fas fa-print print-icon" title="Print Schedule"></i>
+        </div>
 
-        <div class="container-fluid p-4">
-            <div class="schedule-header">
-                <h2>SCHEDULE OVERVIEW</h2>
-                <i class="fas fa-print print-icon"></i>
-            </div>
+        <div class="days-header">
+            <?php foreach ($days as $day): ?>
+                <div class="day-column"><?= strtoupper($day) ?></div>
+            <?php endforeach; ?>
+        </div>
 
-            <div class="days-header">
-                <?php foreach ($days as $day): ?>
-                    <div class="day-column"> <?= $day ?> </div>
-                <?php endforeach; ?>
-            </div>
-
+        <div class="schedule-grid-container">
             <div class="schedule-grid">
                 <?php foreach ($days as $day): ?>
                     <div class="day-schedules">
@@ -189,19 +102,21 @@ $current_day = date('l');
                                 <?php foreach ($room_schedules as $schedule): ?>
                                     <div class="schedule-card">
                                         <h5><?= htmlspecialchars($room_number) ?></h5>
-                                        <p class="time-info"> <?= htmlspecialchars($schedule['time_range']) ?> </p>
-                                        <p class="time-info">TIME IN: <?= htmlspecialchars($schedule['time_in']) ?></p>
-                                        <p><?= htmlspecialchars($schedule['professor']) ?></p>
-                                        <p><?= htmlspecialchars($schedule['subject']) ?></p>
-                                        <p><?= htmlspecialchars($schedule['section']) ?></p>
+                                        <p class="time-info"><?= htmlspecialchars($schedule['time_range']) ?></p>
+                                        <p><strong>Professor:</strong> <?= htmlspecialchars($schedule['professor']) ?></p>
+                                        <p><strong>Subject:</strong> <?= htmlspecialchars($schedule['subject']) ?></p>
+                                        <p><strong>Section:</strong> <?= htmlspecialchars($schedule['section']) ?></p>
                                     </div>
                                 <?php endforeach; ?>
                             <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="empty-schedule">No classes scheduled</div>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             </div>
         </div>
     </div>
+    </div>
+
 </body>
-</html>

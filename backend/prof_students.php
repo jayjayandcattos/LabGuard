@@ -83,7 +83,7 @@ $prof_stmt = $conn->prepare($prof_query);
 
 if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
     $professor = $prof_stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if ($professor) {
         $prof_lastname = $professor['lastname'];
     } else {
@@ -99,94 +99,93 @@ if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Students</title>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/prof.css">
 </head>
-<body>
-    <div class="professor-header">
-        <h1>PROFESSOR PROFILE</h1>
-        <p>WELCOME PROFESSOR <?= htmlspecialchars($prof_lastname); ?>!</p>
-    </div>
 
-    <?php include 'prof_nav.php'?>
-    
-        <!-- Main Content -->
-        <div id="main" class="container-fluid p-5">
-            <h2>My Students</h2>
-            
-            <!-- Section and Subject Filters -->
-            <div class="row mb-3">
+<body>
+    <?php include '../sections/nav2.php' ?>
+    <?php include '../sections/prof_nav.php'; ?>
+
+    <!-- Main Content -->
+    <div id="main-container">
+        <h2>MY STUDENTS</h2>
+
+        <!-- Section and Subject Filters -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <!-- Empty div to maintain spacing -->
+            </div>
+            <div class="dropdowns">
                 <div class="col-md-6">
-                    <!-- Empty div to maintain spacing -->
-                </div>
-                <div class="dropdowns">
-                <div class="col-md-6">
-                    <form action="" method="GET" class="d-flex ">
+                    <form action="" method="GET" class="d-flex">
                         <select name="section" class="  me-2 " onchange="this.form.submit()">
                             <option value="all" <?= $section_filter === 'all' ? 'selected' : '' ?>>All Sections</option>
                             <?php foreach ($sections as $section): ?>
-                                <option value="<?= $section['section_id'] ?>" 
-                                        <?= $section_filter == $section['section_id'] ? 'selected' : '' ?>>
+                                <option value="<?= $section['section_id'] ?>"
+                                    <?= $section_filter == $section['section_id'] ? 'selected' : '' ?>>
                                     <?= htmlspecialchars($section['section_name']) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <select name="subject" class="  me-2"  onchange="this.form.submit()">
+                        <select name="subject" class="  me-2" onchange="this.form.submit()">
                             <option value="all" <?= $subject_filter === 'all' ? 'selected' : '' ?>>All Subjects</option>
                             <?php foreach ($subjects as $subject): ?>
-                                <option value="<?= $subject['subject_id'] ?>" 
-                                        <?= $subject_filter == $subject['subject_id'] ? 'selected' : '' ?>>
+                                <option value="<?= $subject['subject_id'] ?>"
+                                    <?= $subject_filter == $subject['subject_id'] ? 'selected' : '' ?>>
                                     <?= htmlspecialchars($subject['subject_name']) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
                     </form>
                 </div>
-                </div>
-            </div>
-
-            <div class="card ">
-                <div class="table-container">
-                <table class="table ">
-                    <thead>
-                        <tr>
-                            <th>Photo</th>
-                            <th>Student ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Section</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($students as $student): ?>
-                            <tr>
-                                <td>
-                                <img src="uploads/<?= htmlspecialchars($student['photo']); ?>" 
-                                         width="50" height="50" 
-                                         alt="Student Photo"
-                                         class="rounded-circle">
-                                </td>
-                                <td><?= htmlspecialchars($student['student_id']); ?></td>
-                                <td><?= htmlspecialchars($student['lastname'] . ', ' . $student['firstname'] . ' ' . $student['mi']); ?></td>
-                                <td><?= htmlspecialchars($student['email']); ?></td>
-                                <td><?= htmlspecialchars($student['section_name']); ?></td>
-                                
-                                    
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-                </div>
             </div>
         </div>
+
+        <div class="table-container">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Section</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($students as $student): ?>
+                        <tr>
+                            <td>
+                                <img src="uploads/<?= htmlspecialchars($student['photo']); ?>"
+                                    width="50" height="50"
+                                    alt="Student Photo"
+                                    class="rounded-circle">
+                            </td>
+                            <td><?= htmlspecialchars($student['student_id']); ?></td>
+                            <td><?= htmlspecialchars($student['lastname'] . ', ' . $student['firstname'] . ' ' . $student['mi']); ?></td>
+                            <td><?= htmlspecialchars($student['email']); ?></td>
+                            <td><?= htmlspecialchars($student['section_name']); ?></td>
+
+
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
     </div>
 </body>
-</html> 
+
+</html>

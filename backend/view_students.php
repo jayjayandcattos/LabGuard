@@ -8,6 +8,12 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "faculty") {
     exit();
 }
 
+$query = "SELECT lastname FROM faculty_tbl WHERE employee_id = :user_id";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
+$stmt->execute();
+$faculty = $stmt->fetch(PDO::FETCH_ASSOC);
+
 // Get selected section filter
 $section_filter = isset($_GET['section']) ? $_GET['section'] : 'all';
 
@@ -45,90 +51,64 @@ $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Students</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/colorum.css">
-    <style>
-        .nav-link.active {
-            background-color: #152569 !important; /* Bootstrap success color */
-        }
-    </style>
-
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+   
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class="btn-panel" style="width: 250px;">
-            <h4>Faculty Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="faculty_overview.php" class="nav-link text-white">Overview</a></li>
-                <li class="nav-item"><a href="faculty_dashboard.php" class="nav-link text-white">Classrooms</a></li>
-                <li class="nav-item"><a href="view_students.php" class="nav-link text-white active">Students Profile</a></li>
-                <li class="nav-item"><a href="view_professors.php" class="nav-link text-white">Professors Profile</a></li>
-                <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white">Schedule Management</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="container-fluid p-4">
-            <h2>Students Profile</h2>
-            
-            <!-- Sort Options -->
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <!-- Empty div to maintain spacing -->
-                </div>
-                <div class="col-md-6">
-                    <!-- Section Filter -->
-                    <form action="" method="GET" class="d-flex justify-content-end">
-                        <select name="section" class="form-select w-50 me-2" onchange="this.form.submit()">
-                            <option value="all" <?= $section_filter === 'all' ? 'selected' : '' ?>>All Sections</option>
-                            <?php foreach ($sections as $section): ?>
-                                <option value="<?= $section['section_id'] ?>" 
-                                        <?= $section_filter == $section['section_id'] ? 'selected' : '' ?>>
-                                    <?= htmlspecialchars($section['section_name']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </form>
-                </div>
-            </div>
-
-            <div class="card p-3">
-                <table class="table table-hover">
-                    
-                    <thead>
-                        <tr>
-                            <th>Student ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Section</th>
-                            <th>Photo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($students as $student): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($student['student_id']); ?></td>
-                                <td><?= htmlspecialchars($student['lastname'] . ', ' . $student['firstname'] . ' ' . $student['mi']); ?></td>
-                                <td><?= htmlspecialchars($student['email']); ?></td>
-                                <td><?= htmlspecialchars($student['section_name']); ?></td>
-                                <td>
-                                    <img src="uploads/<?= htmlspecialchars($student['photo']); ?>" 
-                                         width="50" height="50" 
-                                         alt="Student Photo"
-                                         class="rounded-circle">
-                                </td>
-                            </tr>
+    <?php include '../sections/nav3.php'; ?>
+    <?php include '../sections/fac_nav.php'; ?>
+    <div id="main-container">
+        <div class="block">
+            <h2>STUDENT PROFILES</h2>
+            <div class="filter-section">
+                <form action="" method="GET">
+                    <select name="section" onchange="this.form.submit()">
+                        <option value="all" <?= $section_filter === 'all' ? 'selected' : '' ?>>All Sections</option>
+                        <?php foreach ($sections as $section): ?>
+                            <option value="<?= $section['section_id'] ?>"
+                                <?= $section_filter == $section['section_id'] ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($section['section_name']) ?>
+                            </option>
                         <?php endforeach; ?>
-                    </tbody>
-                </table>
+                    </select>
+                </form>
             </div>
         </div>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Section</th>
+                    <th>Photo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($students as $student): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($student['student_id']); ?></td>
+                        <td><?= htmlspecialchars($student['lastname'] . ', ' . $student['firstname'] . ' ' . $student['mi']); ?></td>
+                        <td><?= htmlspecialchars($student['email']); ?></td>
+                        <td><?= htmlspecialchars($student['section_name']); ?></td>
+                        <td>
+                            <img src="uploads/<?= htmlspecialchars($student['photo']); ?>"
+                                width="50" height="50"
+                                alt="Student Photo"
+                                class="student-photo">
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
 </body>
-</html> 

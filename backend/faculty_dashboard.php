@@ -7,6 +7,17 @@ if (!$conn) {
     die("Database connection failed!");
 }
 
+$query = "SELECT lastname FROM faculty_tbl WHERE employee_id = :user_id";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
+$stmt->execute();
+$faculty = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$query = "SELECT * FROM room_tbl";
+$stmt = $conn->prepare($query);
+$stmt->execute();
+$rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 // Fetch room data
 $query = "SELECT room_id, room_number, room_name, 
           CASE 
@@ -57,7 +68,7 @@ $schedule_stmt = $conn->prepare($schedule_query);
 $schedule_stmt->execute();
 $schedules = $schedule_stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Organize schedules by day and room
+
 $schedule_by_day = [];
 $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 foreach ($days as $day) {
@@ -78,73 +89,58 @@ foreach ($days as $day) {
     }
 }
 
-// Get current time for the clock display
+
 date_default_timezone_set('Asia/Manila');
 $current_time = date('h:i A');
 $current_day = date('l');
 
-// The data is now organized in $schedule_by_day array
-// You can access it like: $schedule_by_day['Monday'][603] to get all schedules for Monday in room 603
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/colorum.css">
-    <style>
-        .nav-link.active {
-            background-color: #152569 !important; 
-        }
-    </style>
-
+    <link rel="stylesheet" href="../css/prof.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
 </head>
-<body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class="btn-panel" style="width: 250px;">
-            <h4>Faculty Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="faculty_overview.php" class="nav-link text-white">Overview</a></li>
-                <li class="nav-item"><a href="faculty_dashboard.php" class="nav-link text-white active">Classrooms</a></li>
-                <li class="nav-item"><a href="view_students.php" class="nav-link text-white">Students Profile</a></li>
-                <li class="nav-item"><a href="view_professors.php" class="nav-link text-white">Professors Profile</a></li>
-                <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white">Schedule Management</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
 
-        <!-- Main Content -->
-        <div class="container-fluid p-4">
-    <h2>Classroom Overview</h2>
-    <div class="row">
-        <?php foreach ($rooms as $room): ?>
-            <div class="col-md-4 mb-3">
-                <div class="card p-3" style="border-left: 8px solid <?= $room['status'] == 'Vacant' ? '#28a745' : '#dc3545'; ?>;">
-                    <h5 class="card-title">Room <?= htmlspecialchars($room['room_number']); ?></h5>
-                    <p class="card-text"><strong>Name:</strong> <?= htmlspecialchars($room['room_name']); ?></p>
-                    <p class="card-text">
-                        <strong>Status:</strong>
-                        <span class="badge" style="background-color: <?= $room['status'] == 'Vacant' ? '#28a745' : '#dc3545'; ?>;">
-                            <?= htmlspecialchars($room['status']); ?>
-                        </span>
-                    </p>
+<body>
+
+    <body>
+        <?php include '../sections/nav3.php'; ?>
+        <?php include '../sections/fac_nav.php'; ?>
+        <div id="main-container">
+            <div class="BLOCK">
+                <h2>CLASSROOMS OVERVIEW</h2>
+                <div class="room-grid">
+                    <?php foreach ($rooms as $room): ?>
+                        <div class="room-card">
+                            <span class="room-status-indicator <?= $room['status'] == 'Vacant' ? 'vacant' : 'occupied'; ?>"></span>
+                            <div class="folder">
+                                <div class="room-header">
+                                    <span class="room-status-text"><?= $room['status']; ?></span>
+                                </div>
+                                <div class="room-number">
+                                    Room <?= htmlspecialchars($room['room_number']); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
-        <?php endforeach; ?>
-    </div>
-</div>
 
 
-    <!-- You can keep your existing HTML structure and add this for debugging: -->
-    <pre>
-    <?php 
-    // Uncomment this line to debug the schedule data structure
-    // print_r($schedule_by_day); 
+
+            <pre>
+    <?php
     ?>
     </pre>
-</body>
+    </body>
+
 </html>

@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($role == "admin") {
                         header("Location: admin_dashboard.php");
                     } elseif ($role == "faculty") {
-                        header("Location: faculty_dashboard.php");
+                        header("Location: faculty_overview.php");
                     } elseif ($role == "professor") {
                         header("Location: prof_dashboard.php");
                     }
