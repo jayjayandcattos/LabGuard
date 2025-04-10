@@ -740,6 +740,26 @@ table #tabs {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
   backdrop-filter: blur(10px);
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+
+#main-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+#main-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 102, 255, 0.7);
+  border-radius: 10px;
+}
+
+#main-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 102, 255, 0.9);
+}
+
+#main-container::-webkit-scrollbar-track {
+  background: rgba(0, 51, 153, 0.2);
+  border-radius: 10px;
 }
 
 #main-container h2 {

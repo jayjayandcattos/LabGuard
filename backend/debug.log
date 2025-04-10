@@ -8451,3 +8451,2301 @@ Stack trace:
 [16-Mar-2025 11:00:25 Asia/Manila] Existing tap check result: 
 [16-Mar-2025 11:00:25 Asia/Manila] Next action determined: check_in
 [16-Mar-2025 11:00:25 Asia/Manila] No schedule found for professor ID: 8 on Sunday at 2025-03-16 11:00:25
+[27-Mar-2025 14:12:18 Asia/Manila] Database connection successful
+[27-Mar-2025 14:12:18 Asia/Manila] Updated status column
+[27-Mar-2025 14:12:18 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:13:03 Asia/Manila] Database connection successful
+[27-Mar-2025 14:13:03 Asia/Manila] Updated status column
+[27-Mar-2025 14:13:03 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:13:03 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:13:03 Asia/Manila] Student query result: 
+[27-Mar-2025 14:13:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:13:03 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:13:03 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:13:03 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:13:03
+[27-Mar-2025 14:13:04 Asia/Manila] Database connection successful
+[27-Mar-2025 14:13:04 Asia/Manila] Updated status column
+[27-Mar-2025 14:13:04 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:13:04 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:13:04 Asia/Manila] Student query result: 
+[27-Mar-2025 14:13:04 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:13:04 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:13:04 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:13:04 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:13:04
+[27-Mar-2025 14:13:10 Asia/Manila] Database connection successful
+[27-Mar-2025 14:13:10 Asia/Manila] Updated status column
+[27-Mar-2025 14:13:10 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:13:10 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:13:10 Asia/Manila] Student query result: 
+[27-Mar-2025 14:13:10 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:13:10 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:13:10 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:13:10 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:13:10
+[27-Mar-2025 14:13:17 Asia/Manila] Database connection successful
+[27-Mar-2025 14:13:17 Asia/Manila] Updated status column
+[27-Mar-2025 14:13:17 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:13:17 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:13:17 Asia/Manila] Student query result: 
+[27-Mar-2025 14:13:17 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:13:17 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:13:17 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:13:17 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:13:17
+[27-Mar-2025 14:30:11 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:11 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:11 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:11 Asia/Manila] Received RFID tag: 0005686670
+[27-Mar-2025 14:30:11 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:11 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:13 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:13 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:13 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:13 Asia/Manila] Received RFID tag: 0005686670
+[27-Mar-2025 14:30:13 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:13 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:20 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:20 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:20 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:20 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 14:30:20 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:20 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:26 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:26 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:26 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:26 Asia/Manila] Received RFID tag: 004794867
+[27-Mar-2025 14:30:26 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:26 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:28 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:28 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:28 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:28 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:30:28 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:28 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:29 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:29 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:29 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:29 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:30:29 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:29 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:30 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:30 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:30 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:32 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:32 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:32 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:32 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:30:32 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:32 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:34 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:34 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:34 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:34 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 14:30:34 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:34 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:40 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:40 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:40 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:40 Asia/Manila] Received RFID tag: 0005686670
+[27-Mar-2025 14:30:40 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:40 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:30:56 Asia/Manila] Database connection successful
+[27-Mar-2025 14:30:56 Asia/Manila] Updated status column
+[27-Mar-2025 14:30:56 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:30:56 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 14:30:56 Asia/Manila] Student query result: 
+[27-Mar-2025 14:30:56 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:31:00 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:00 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:00 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:00 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:00 Asia/Manila] Student query result: 
+[27-Mar-2025 14:31:00 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:31:01 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:01 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:01 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:01 Asia/Manila] Student query result: 
+[27-Mar-2025 14:31:01 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:31:26 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:26 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:26 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:26 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:26 Asia/Manila] Student query result: 
+[27-Mar-2025 14:31:26 Asia/Manila] Professor query result: 
+[27-Mar-2025 14:31:39 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:39 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:39 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:39 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:39 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:31:40 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:40 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:40 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:40 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:40 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:31:43 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:43 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:43 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:43 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:31:43 Asia/Manila] Student query result: 
+[27-Mar-2025 14:31:43 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:31:43 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:31:43 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:31:43 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:31:43
+[27-Mar-2025 14:31:44 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:44 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:44 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:44 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:44 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:31:47 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:47 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:47 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:47 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:47 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:31:56 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:56 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:56 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:56 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:31:56 Asia/Manila] Student query result: 
+[27-Mar-2025 14:31:56 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:31:56 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:31:56 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:31:56 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:31:56
+[27-Mar-2025 14:31:59 Asia/Manila] Database connection successful
+[27-Mar-2025 14:31:59 Asia/Manila] Updated status column
+[27-Mar-2025 14:31:59 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:31:59 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:31:59 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 14:32:01 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:01 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:01 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:32:01 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 14:32:43 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:43 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:43 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:43 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:32:43 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 14:32:45 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:45 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:45 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:45 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:32:45 Asia/Manila] Student query result: 
+[27-Mar-2025 14:32:45 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:32:45 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:32:45 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:32:45 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:32:45
+[27-Mar-2025 14:32:46 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:46 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:46 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:46 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:32:46 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 14:32:47 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:47 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:47 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:47 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:47 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:47 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:49 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:49 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:49 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:49 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:32:49 Asia/Manila] Student query result: 
+[27-Mar-2025 14:32:49 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:32:49 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:32:49 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:32:49 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:32:49
+[27-Mar-2025 14:32:50 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:50 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:50 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:50 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:32:50 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 14:32:51 Asia/Manila] Database connection successful
+[27-Mar-2025 14:32:51 Asia/Manila] Updated status column
+[27-Mar-2025 14:32:51 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:32:51 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:32:51 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 14:33:03 Asia/Manila] Database connection successful
+[27-Mar-2025 14:33:03 Asia/Manila] Updated status column
+[27-Mar-2025 14:33:03 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:33:03 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:33:03 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:35:44 Asia/Manila] Database connection successful
+[27-Mar-2025 14:35:44 Asia/Manila] Updated status column
+[27-Mar-2025 14:35:44 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:35:44 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:35:44 Asia/Manila] Student query result: 
+[27-Mar-2025 14:35:44 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:35:44 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:35:44 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:35:44 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:35:44
+[27-Mar-2025 14:35:52 Asia/Manila] Database connection successful
+[27-Mar-2025 14:35:52 Asia/Manila] Updated status column
+[27-Mar-2025 14:35:52 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:35:52 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:35:52 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:35:57 Asia/Manila] Database connection successful
+[27-Mar-2025 14:35:57 Asia/Manila] Updated status column
+[27-Mar-2025 14:35:57 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:35:57 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:35:57 Asia/Manila] Student query result: 
+[27-Mar-2025 14:35:57 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:35:57 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:35:57 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:35:57 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:35:57
+[27-Mar-2025 14:35:59 Asia/Manila] Database connection successful
+[27-Mar-2025 14:35:59 Asia/Manila] Updated status column
+[27-Mar-2025 14:35:59 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:35:59 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:35:59 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:40:42 Asia/Manila] Database connection successful
+[27-Mar-2025 14:40:42 Asia/Manila] Updated status column
+[27-Mar-2025 14:40:42 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:40:42 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:40:42 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:42:34 Asia/Manila] Database connection successful
+[27-Mar-2025 14:42:35 Asia/Manila] Updated status column
+[27-Mar-2025 14:42:35 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:42:35 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:42:35 Asia/Manila] Student query result: 
+[27-Mar-2025 14:42:35 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:42:35 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:42:35 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:42:35 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:42:35
+[27-Mar-2025 07:43:06 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 07:43:08 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 07:44:29 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 07:44:29 Europe/Berlin] Schedule POST data: Array
+(
+    [prof_user_id] => 4
+    [subject_id] => 6
+    [section_id] => 1
+    [room_id] => 3
+    [schedule_time] => 14:45
+    [time_in] => 14:45
+    [time_out] => 15:00
+    [schedule_day] => Thursday
+)
+
+[27-Mar-2025 07:44:29 Europe/Berlin] Inserting schedule with values: prof_user_id: 4, subject_id: 6, section_id: 1, room_id: 3, schedule_time: 14:45, time_in: 14:45, time_out: 15:00, schedule_day: Thursday
+[27-Mar-2025 07:44:29 Europe/Berlin] Schedule inserted successfully
+[27-Mar-2025 07:44:29 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 07:44:57 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 07:45:13 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 14:48:18 Asia/Manila] Database connection successful
+[27-Mar-2025 14:48:18 Asia/Manila] Updated status column
+[27-Mar-2025 14:48:18 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:48:18 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:18 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:18 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:18 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:48:18 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:48:18 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:48:18
+[27-Mar-2025 14:48:23 Asia/Manila] Database connection successful
+[27-Mar-2025 14:48:23 Asia/Manila] Updated status column
+[27-Mar-2025 14:48:23 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:48:23 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:23 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:23 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:23 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:48:23 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:48:23 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:48:23
+[27-Mar-2025 14:48:24 Asia/Manila] Database connection successful
+[27-Mar-2025 14:48:24 Asia/Manila] Updated status column
+[27-Mar-2025 14:48:24 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:48:24 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:24 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:24 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:24 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:48:24 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:48:24 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:48:24
+[27-Mar-2025 14:48:25 Asia/Manila] Database connection successful
+[27-Mar-2025 14:48:25 Asia/Manila] Updated status column
+[27-Mar-2025 14:48:25 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:48:27 Asia/Manila] Database connection successful
+[27-Mar-2025 14:48:27 Asia/Manila] Updated status column
+[27-Mar-2025 14:48:27 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:48:27 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:27 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:27 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:27 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:48:27 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:48:27 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:48:27
+[27-Mar-2025 14:48:31 Asia/Manila] Database connection successful
+[27-Mar-2025 14:48:31 Asia/Manila] Updated status column
+[27-Mar-2025 14:48:31 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:48:31 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:31 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:31 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:31 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:48:31 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:48:31 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:48:31
+[27-Mar-2025 14:48:33 Asia/Manila] Database connection successful
+[27-Mar-2025 14:48:33 Asia/Manila] Updated status column
+[27-Mar-2025 14:48:33 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 14:48:33 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:33 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:33 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:33 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 14:48:33 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 14:48:33 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 14:48:33
+[27-Mar-2025 15:06:13 Asia/Manila] Database connection successful
+[27-Mar-2025 15:06:13 Asia/Manila] Updated status column
+[27-Mar-2025 15:06:13 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:06:13 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:06:13 Asia/Manila] Student query result: 
+[27-Mar-2025 15:06:13 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:06:13 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:06:16 Asia/Manila] Database connection successful
+[27-Mar-2025 15:06:16 Asia/Manila] Updated status column
+[27-Mar-2025 15:06:16 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:06:16 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:06:16 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:06:16 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:07:26 Asia/Manila] Database connection successful
+[27-Mar-2025 15:07:26 Asia/Manila] Updated status column
+[27-Mar-2025 15:07:26 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:07:26 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:07:26 Asia/Manila] Student query result: 
+[27-Mar-2025 15:07:26 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:07:26 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:07:28 Asia/Manila] Database connection successful
+[27-Mar-2025 15:07:28 Asia/Manila] Updated status column
+[27-Mar-2025 15:07:28 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:07:28 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:07:28 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:07:28 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:19:34 Asia/Manila] Database connection successful
+[27-Mar-2025 15:19:34 Asia/Manila] Updated status column
+[27-Mar-2025 15:19:34 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:19:34 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:19:34 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:19:34 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:19:35 Asia/Manila] Database connection successful
+[27-Mar-2025 15:19:35 Asia/Manila] Updated status column
+[27-Mar-2025 15:19:35 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:19:35 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:19:35 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:19:35 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:19:37 Asia/Manila] Database connection successful
+[27-Mar-2025 15:19:37 Asia/Manila] Updated status column
+[27-Mar-2025 15:19:37 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:19:37 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:19:37 Asia/Manila] Student query result: 
+[27-Mar-2025 15:19:37 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:19:37 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:20:00 Asia/Manila] Database connection successful
+[27-Mar-2025 15:20:00 Asia/Manila] Updated status column
+[27-Mar-2025 15:20:00 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:20:00 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:20:00 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:20:00 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:20:07 Asia/Manila] Database connection successful
+[27-Mar-2025 15:20:07 Asia/Manila] Updated status column
+[27-Mar-2025 15:20:07 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:20:07 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:20:07 Asia/Manila] Student query result: 
+[27-Mar-2025 15:20:07 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:20:07 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:26:50 Asia/Manila] Database connection successful
+[27-Mar-2025 15:26:50 Asia/Manila] Updated status column
+[27-Mar-2025 15:26:50 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:26:50 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:26:50 Asia/Manila] Student query result: 
+[27-Mar-2025 15:26:50 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:26:50 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:26:53 Asia/Manila] Database connection successful
+[27-Mar-2025 15:26:53 Asia/Manila] Updated status column
+[27-Mar-2025 15:26:53 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:26:53 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:26:53 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:26:53 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:26:56 Asia/Manila] Database connection successful
+[27-Mar-2025 15:26:56 Asia/Manila] Updated status column
+[27-Mar-2025 15:26:56 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:26:57 Asia/Manila] Database connection successful
+[27-Mar-2025 15:26:57 Asia/Manila] Updated status column
+[27-Mar-2025 15:26:57 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:26:57 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:26:57 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:26:57 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:26:59 Asia/Manila] Database connection successful
+[27-Mar-2025 15:26:59 Asia/Manila] Updated status column
+[27-Mar-2025 15:27:00 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:27:00 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:27:00 Asia/Manila] Student query result: 
+[27-Mar-2025 15:27:00 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:27:00 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:29:21 Asia/Manila] Database connection successful
+[27-Mar-2025 15:29:21 Asia/Manila] Updated status column
+[27-Mar-2025 15:29:21 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:29:21 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:29:21 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:29:21 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(100): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:29:25 Asia/Manila] Database connection successful
+[27-Mar-2025 15:29:25 Asia/Manila] Updated status column
+[27-Mar-2025 15:29:25 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:29:25 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:29:25 Asia/Manila] Student query result: 
+[27-Mar-2025 15:29:25 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:29:25 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:29:34 Asia/Manila] Database connection successful
+[27-Mar-2025 15:29:34 Asia/Manila] Updated status column
+[27-Mar-2025 15:29:34 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:29:34 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:29:34 Asia/Manila] Student query result: 
+[27-Mar-2025 15:29:34 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:29:34 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:31:20 Asia/Manila] Database connection successful
+[27-Mar-2025 15:31:20 Asia/Manila] Updated status column
+[27-Mar-2025 15:31:20 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:31:20 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:31:20 Asia/Manila] Student query result: 
+[27-Mar-2025 15:31:20 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:31:20 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:31:27 Asia/Manila] Database connection successful
+[27-Mar-2025 15:31:27 Asia/Manila] Updated status column
+[27-Mar-2025 15:31:27 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:31:27 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:31:27 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:31:29 Asia/Manila] Database connection successful
+[27-Mar-2025 15:31:29 Asia/Manila] Updated status column
+[27-Mar-2025 15:31:29 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:31:29 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:31:29 Asia/Manila] Student query result: 
+[27-Mar-2025 15:31:29 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:31:29 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:32:18 Asia/Manila] Database connection successful
+[27-Mar-2025 15:32:18 Asia/Manila] Updated status column
+[27-Mar-2025 15:32:18 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:32:20 Asia/Manila] Database connection successful
+[27-Mar-2025 15:32:20 Asia/Manila] Updated status column
+[27-Mar-2025 15:32:20 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:32:20 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:32:20 Asia/Manila] Student query result: 
+[27-Mar-2025 15:32:20 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:32:20 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:34:03 Asia/Manila] Database connection successful
+[27-Mar-2025 15:34:03 Asia/Manila] Updated status column
+[27-Mar-2025 15:34:03 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:34:05 Asia/Manila] Database connection successful
+[27-Mar-2025 15:34:05 Asia/Manila] Updated status column
+[27-Mar-2025 15:34:05 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:34:05 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:34:05 Asia/Manila] Student query result: 
+[27-Mar-2025 15:34:05 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:34:05 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(119): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 15:34:44 Asia/Manila] Database connection successful
+[27-Mar-2025 15:34:44 Asia/Manila] Updated status column
+[27-Mar-2025 15:34:44 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:34:44 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:34:44 Asia/Manila] Student query result: 
+[27-Mar-2025 15:34:44 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:34:44 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 15:34:44 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 15:34:44 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 15:34:44
+[27-Mar-2025 15:41:48 Asia/Manila] Database connection successful
+[27-Mar-2025 15:41:48 Asia/Manila] Updated status column
+[27-Mar-2025 15:41:48 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:41:48 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:41:48 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:41:55 Asia/Manila] Database connection successful
+[27-Mar-2025 15:41:55 Asia/Manila] Updated status column
+[27-Mar-2025 15:41:55 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:41:55 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:41:55 Asia/Manila] Student query result: 
+[27-Mar-2025 15:41:55 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:41:55 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 15:41:55 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 15:41:55 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 15:41:55
+[27-Mar-2025 15:41:57 Asia/Manila] Database connection successful
+[27-Mar-2025 15:41:57 Asia/Manila] Updated status column
+[27-Mar-2025 15:41:57 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:41:57 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:41:57 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:41:58 Asia/Manila] Database connection successful
+[27-Mar-2025 15:41:58 Asia/Manila] Updated status column
+[27-Mar-2025 15:41:58 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:41:58 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:41:58 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 08:42:40 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 08:43:14 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 08:43:14 Europe/Berlin] Schedule POST data: Array
+(
+    [prof_user_id] => 3
+    [subject_id] => 6
+    [section_id] => 4
+    [room_id] => 3
+    [schedule_time] => 15:50
+    [time_in] => 15:50
+    [time_out] => 16:50
+    [schedule_day] => Thursday
+)
+
+[27-Mar-2025 08:43:14 Europe/Berlin] Inserting schedule with values: prof_user_id: 3, subject_id: 6, section_id: 4, room_id: 3, schedule_time: 15:50, time_in: 15:50, time_out: 16:50, schedule_day: Thursday
+[27-Mar-2025 08:43:14 Europe/Berlin] Schedule inserted successfully
+[27-Mar-2025 08:43:14 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 08:43:44 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 15:47:55 Asia/Manila] Database connection successful
+[27-Mar-2025 15:47:55 Asia/Manila] Updated status column
+[27-Mar-2025 15:47:55 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:47:55 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:47:55 Asia/Manila] Student query result: 
+[27-Mar-2025 15:47:55 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:47:55 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 15:47:55 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 15:47:55 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 15:47:55
+[27-Mar-2025 15:47:58 Asia/Manila] Database connection successful
+[27-Mar-2025 15:47:58 Asia/Manila] Updated status column
+[27-Mar-2025 15:47:58 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:47:58 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:47:58 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:48:01 Asia/Manila] Database connection successful
+[27-Mar-2025 15:48:01 Asia/Manila] Updated status column
+[27-Mar-2025 15:48:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:48:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:48:01 Asia/Manila] Student query result: 
+[27-Mar-2025 15:48:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:48:01 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 15:48:01 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 15:48:01 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 15:48:01
+[27-Mar-2025 15:48:03 Asia/Manila] Database connection successful
+[27-Mar-2025 15:48:03 Asia/Manila] Updated status column
+[27-Mar-2025 15:48:03 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:48:03 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:48:03 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:51:23 Asia/Manila] Database connection successful
+[27-Mar-2025 15:51:23 Asia/Manila] Updated status column
+[27-Mar-2025 15:51:23 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 15:51:23 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:51:23 Asia/Manila] Student query result: 
+[27-Mar-2025 15:51:23 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:51:23 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 15:51:23 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 15:51:23 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 15:51:23
+[27-Mar-2025 16:10:13 Asia/Manila] Database connection successful
+[27-Mar-2025 16:10:13 Asia/Manila] Updated status column
+[27-Mar-2025 16:10:13 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:10:13 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:10:13 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:10:15 Asia/Manila] Database connection successful
+[27-Mar-2025 16:10:15 Asia/Manila] Updated status column
+[27-Mar-2025 16:10:15 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:10:15 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:10:15 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:10:20 Asia/Manila] Database connection successful
+[27-Mar-2025 16:10:20 Asia/Manila] Updated status column
+[27-Mar-2025 16:10:20 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:10:20 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:10:20 Asia/Manila] Student query result: 
+[27-Mar-2025 16:10:20 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:10:20 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:10:20 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:10:20 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 16:10:20
+[27-Mar-2025 16:10:22 Asia/Manila] Database connection successful
+[27-Mar-2025 16:10:22 Asia/Manila] Updated status column
+[27-Mar-2025 16:10:22 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:10:22 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:10:22 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:25:14 Asia/Manila] Database connection successful
+[27-Mar-2025 16:25:14 Asia/Manila] Updated status column
+[27-Mar-2025 16:25:14 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:25:14 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:25:14 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:25:15 Asia/Manila] Database connection successful
+[27-Mar-2025 16:25:15 Asia/Manila] Updated status column
+[27-Mar-2025 16:25:15 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:25:15 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:25:15 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:25:21 Asia/Manila] Database connection successful
+[27-Mar-2025 16:25:21 Asia/Manila] Updated status column
+[27-Mar-2025 16:25:21 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:25:21 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:25:21 Asia/Manila] Student query result: 
+[27-Mar-2025 16:25:21 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:25:21 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:25:21 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:25:21 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 16:25:21
+[27-Mar-2025 09:27:02 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:27:49 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:27:49 Europe/Berlin] Schedule POST data: Array
+(
+    [prof_user_id] => 3
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 1
+    [schedule_time] => 16:30
+    [time_in] => 16:30
+    [time_out] => 17:30
+    [schedule_day] => Thursday
+)
+
+[27-Mar-2025 09:27:49 Europe/Berlin] Inserting schedule with values: prof_user_id: 3, subject_id: 5, section_id: 4, room_id: 1, schedule_time: 16:30, time_in: 16:30, time_out: 17:30, schedule_day: Thursday
+[27-Mar-2025 09:27:49 Europe/Berlin] Schedule inserted successfully
+[27-Mar-2025 09:27:49 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 16:28:01 Asia/Manila] Database connection successful
+[27-Mar-2025 16:28:01 Asia/Manila] Updated status column
+[27-Mar-2025 16:28:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:30:01 Asia/Manila] Database connection successful
+[27-Mar-2025 16:30:01 Asia/Manila] Updated status column
+[27-Mar-2025 16:30:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:30:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:30:01 Asia/Manila] Student query result: 
+[27-Mar-2025 16:30:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:30:01 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:30:01 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:30:01 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 16:30:01
+[27-Mar-2025 09:30:45 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:31:03 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:32:04 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:32:04 Europe/Berlin] Schedule POST data: Array
+(
+    [prof_user_id] => 8
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 2
+    [schedule_time] => 16:35
+    [time_in] => 16:35
+    [time_out] => 17:35
+    [schedule_day] => Thursday
+)
+
+[27-Mar-2025 09:32:04 Europe/Berlin] Inserting schedule with values: prof_user_id: 8, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 16:35, time_in: 16:35, time_out: 17:35, schedule_day: Thursday
+[27-Mar-2025 09:32:04 Europe/Berlin] Schedule inserted successfully
+[27-Mar-2025 09:32:04 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 16:35:01 Asia/Manila] Database connection successful
+[27-Mar-2025 16:35:01 Asia/Manila] Updated status column
+[27-Mar-2025 16:35:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:35:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:35:01 Asia/Manila] Student query result: 
+[27-Mar-2025 16:35:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:35:01 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:35:01 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:35:01 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(247): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 16:35:09 Asia/Manila] Database connection successful
+[27-Mar-2025 16:35:09 Asia/Manila] Updated status column
+[27-Mar-2025 16:35:09 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:35:09 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:35:09 Asia/Manila] Student query result: 
+[27-Mar-2025 16:35:09 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:35:09 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:35:09 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:35:09 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(247): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 16:35:11 Asia/Manila] Database connection successful
+[27-Mar-2025 16:35:11 Asia/Manila] Updated status column
+[27-Mar-2025 16:35:11 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:35:13 Asia/Manila] Database connection successful
+[27-Mar-2025 16:35:13 Asia/Manila] Updated status column
+[27-Mar-2025 16:35:13 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:35:13 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:35:13 Asia/Manila] Student query result: 
+[27-Mar-2025 16:35:13 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:35:13 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:35:13 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:35:13 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(247): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 16:36:27 Asia/Manila] Database connection successful
+[27-Mar-2025 16:36:27 Asia/Manila] Updated status column
+[27-Mar-2025 16:36:27 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:36:27 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:36:27 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:36:31 Asia/Manila] Database connection successful
+[27-Mar-2025 16:36:31 Asia/Manila] Updated status column
+[27-Mar-2025 16:36:31 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:36:31 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:36:31 Asia/Manila] Student query result: 
+[27-Mar-2025 16:36:31 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:36:31 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:36:31 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:36:31 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(247): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 09:37:57 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:38:06 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:40:09 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 16:41:46 Asia/Manila] Database connection successful
+[27-Mar-2025 16:41:46 Asia/Manila] Updated status column
+[27-Mar-2025 16:41:46 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:41:46 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:41:46 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:41:48 Asia/Manila] Database connection successful
+[27-Mar-2025 16:41:48 Asia/Manila] Updated status column
+[27-Mar-2025 16:41:48 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:41:48 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:41:48 Asia/Manila] Student query result: 
+[27-Mar-2025 16:41:48 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:41:48 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:41:48 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:41:48 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 16:41:48
+[27-Mar-2025 16:41:51 Asia/Manila] Database connection successful
+[27-Mar-2025 16:41:51 Asia/Manila] Updated status column
+[27-Mar-2025 16:41:51 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:41:51 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:41:51 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 09:44:36 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:45:06 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 09:45:06 Europe/Berlin] Schedule POST data: Array
+(
+    [prof_user_id] => 8
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 2
+    [schedule_time] => 16:46
+    [time_in] => 16:46
+    [time_out] => 16:52
+    [schedule_day] => Thursday
+)
+
+[27-Mar-2025 09:45:06 Europe/Berlin] Inserting schedule with values: prof_user_id: 8, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 16:46, time_in: 16:46, time_out: 16:52, schedule_day: Thursday
+[27-Mar-2025 09:45:06 Europe/Berlin] Schedule inserted successfully
+[27-Mar-2025 09:45:06 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 16:45:11 Asia/Manila] Database connection successful
+[27-Mar-2025 16:45:11 Asia/Manila] Updated status column
+[27-Mar-2025 16:45:11 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:45:11 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:45:11 Asia/Manila] Student query result: 
+[27-Mar-2025 16:45:11 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:45:11 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:45:11 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:45:11 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 16:45:11
+[27-Mar-2025 16:45:16 Asia/Manila] Database connection successful
+[27-Mar-2025 16:45:16 Asia/Manila] Updated status column
+[27-Mar-2025 16:45:16 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:46:01 Asia/Manila] Database connection successful
+[27-Mar-2025 16:46:01 Asia/Manila] Updated status column
+[27-Mar-2025 16:46:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:46:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:46:01 Asia/Manila] Student query result: 
+[27-Mar-2025 16:46:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:46:01 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:46:01 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:46:01 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(247): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 16:46:41 Asia/Manila] Database connection successful
+[27-Mar-2025 16:46:41 Asia/Manila] Updated status column
+[27-Mar-2025 16:46:41 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:46:41 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:46:41 Asia/Manila] Student query result: 
+[27-Mar-2025 16:46:41 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:46:41 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:46:41 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:46:41 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(247): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 16:46:46 Asia/Manila] Database connection successful
+[27-Mar-2025 16:46:46 Asia/Manila] Updated status column
+[27-Mar-2025 16:46:46 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:46:46 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:46:46 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:46:48 Asia/Manila] Database connection successful
+[27-Mar-2025 16:46:48 Asia/Manila] Updated status column
+[27-Mar-2025 16:46:48 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 16:46:48 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:46:48 Asia/Manila] Student query result: 
+[27-Mar-2025 16:46:48 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:46:48 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 16:46:48 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 16:46:48 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(247): PDOStatement->execute(Array)
+#1 {main}
+[27-Mar-2025 09:58:23 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 17:03:20 Asia/Manila] Database connection successful
+[27-Mar-2025 17:03:20 Asia/Manila] Updated status column
+[27-Mar-2025 17:03:20 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:03:24 Asia/Manila] Database connection successful
+[27-Mar-2025 17:03:24 Asia/Manila] Updated status column
+[27-Mar-2025 17:03:24 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:03:24 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:03:24 Asia/Manila] Student query result: 
+[27-Mar-2025 17:03:24 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:03:24 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 17:03:24 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 17:03:24 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 17:03:24
+[27-Mar-2025 17:03:25 Asia/Manila] Database connection successful
+[27-Mar-2025 17:03:25 Asia/Manila] Updated status column
+[27-Mar-2025 17:03:25 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:03:25 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:03:25 Asia/Manila] Student query result: 
+[27-Mar-2025 17:03:25 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:03:25 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 17:03:25 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 17:03:25 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 17:03:25
+[27-Mar-2025 17:03:26 Asia/Manila] Database connection successful
+[27-Mar-2025 17:03:26 Asia/Manila] Updated status column
+[27-Mar-2025 17:03:26 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:03:26 Asia/Manila] Database connection successful
+[27-Mar-2025 17:03:26 Asia/Manila] Updated status column
+[27-Mar-2025 17:03:26 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:07 Asia/Manila] Database connection successful
+[27-Mar-2025 17:04:07 Asia/Manila] Updated status column
+[27-Mar-2025 17:04:07 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:07 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:04:07 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:04:09 Asia/Manila] Database connection successful
+[27-Mar-2025 17:04:09 Asia/Manila] Updated status column
+[27-Mar-2025 17:04:09 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:09 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:04:09 Asia/Manila] Student query result: 
+[27-Mar-2025 17:04:09 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:04:09 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 17:04:09 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 17:04:09 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 17:04:09
+[27-Mar-2025 17:04:11 Asia/Manila] Database connection successful
+[27-Mar-2025 17:04:11 Asia/Manila] Updated status column
+[27-Mar-2025 17:04:11 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:11 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:04:11 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:04:12 Asia/Manila] Database connection successful
+[27-Mar-2025 17:04:12 Asia/Manila] Updated status column
+[27-Mar-2025 17:04:12 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:12 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:04:12 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:04:13 Asia/Manila] Database connection successful
+[27-Mar-2025 17:04:13 Asia/Manila] Updated status column
+[27-Mar-2025 17:04:13 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:13 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:04:13 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:04:20 Asia/Manila] Database connection successful
+[27-Mar-2025 17:04:20 Asia/Manila] Updated status column
+[27-Mar-2025 17:04:20 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:20 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 17:04:20 Asia/Manila] Student query result: 
+[27-Mar-2025 17:04:20 Asia/Manila] Professor query result: 
+[27-Mar-2025 17:04:22 Asia/Manila] Database connection successful
+[27-Mar-2025 17:04:22 Asia/Manila] Updated status column
+[27-Mar-2025 17:04:22 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:04:22 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 17:04:22 Asia/Manila] Student query result: 
+[27-Mar-2025 17:04:22 Asia/Manila] Professor query result: 
+[27-Mar-2025 17:05:12 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:12 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:12 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:12 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 17:05:12 Asia/Manila] Student query result: Array
+(
+    [id] => 8
+    [lastname] => Detalla
+    [firstname] => Krish
+    [photo] => 358038281_662271262426045_4841641984669283118_n.jpg
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 17:05:17 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:17 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:17 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:17 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:05:17 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:05:18 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:18 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:18 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:18 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:05:18 Asia/Manila] Student query result: 
+[27-Mar-2025 17:05:18 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:05:18 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 17:05:18 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 17:05:18 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 17:05:18
+[27-Mar-2025 17:05:20 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:20 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:20 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:20 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:05:20 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:05:22 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:22 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:22 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:22 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 17:05:22 Asia/Manila] Student query result: Array
+(
+    [id] => 8
+    [lastname] => Detalla
+    [firstname] => Krish
+    [photo] => 358038281_662271262426045_4841641984669283118_n.jpg
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 17:05:52 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:52 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:52 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:52 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 17:05:52 Asia/Manila] Student query result: Array
+(
+    [id] => 8
+    [lastname] => Detalla
+    [firstname] => Krish
+    [photo] => 358038281_662271262426045_4841641984669283118_n.jpg
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 17:05:56 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:56 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:56 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:57 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:57 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:57 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:57 Asia/Manila] Received RFID tag: 0004790004742408
+[27-Mar-2025 17:05:57 Asia/Manila] Student query result: 
+[27-Mar-2025 17:05:57 Asia/Manila] Professor query result: 
+[27-Mar-2025 17:05:59 Asia/Manila] Database connection successful
+[27-Mar-2025 17:05:59 Asia/Manila] Updated status column
+[27-Mar-2025 17:05:59 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:05:59 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:05:59 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:06:00 Asia/Manila] Database connection successful
+[27-Mar-2025 17:06:00 Asia/Manila] Updated status column
+[27-Mar-2025 17:06:00 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:06:00 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:06:00 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:06:01 Asia/Manila] Database connection successful
+[27-Mar-2025 17:06:01 Asia/Manila] Updated status column
+[27-Mar-2025 17:06:01 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:06:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:06:01 Asia/Manila] Student query result: 
+[27-Mar-2025 17:06:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:06:01 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 17:06:01 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 17:06:01 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 17:06:01
+[27-Mar-2025 17:06:04 Asia/Manila] Database connection successful
+[27-Mar-2025 17:06:04 Asia/Manila] Updated status column
+[27-Mar-2025 17:06:04 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:06:04 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:06:04 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:06:43 Asia/Manila] Database connection successful
+[27-Mar-2025 17:06:43 Asia/Manila] Updated status column
+[27-Mar-2025 17:06:43 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:06:43 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:06:43 Asia/Manila] Student query result: 
+[27-Mar-2025 17:06:43 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:06:43 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 17:06:43 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 17:06:43 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 17:06:43
+[27-Mar-2025 17:06:47 Asia/Manila] Database connection successful
+[27-Mar-2025 17:06:47 Asia/Manila] Updated status column
+[27-Mar-2025 17:06:47 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:06:47 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:06:47 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:06:48 Asia/Manila] Database connection successful
+[27-Mar-2025 17:06:48 Asia/Manila] Updated status column
+[27-Mar-2025 17:06:48 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:06:48 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:06:48 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:06:49 Asia/Manila] Database connection successful
+[27-Mar-2025 17:06:49 Asia/Manila] Updated status column
+[27-Mar-2025 17:06:49 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:06:49 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:06:49 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 10:08:08 Europe/Berlin] Added Sunday back to schedule_day options
+[27-Mar-2025 17:08:21 Asia/Manila] Database connection successful
+[27-Mar-2025 17:08:21 Asia/Manila] Updated status column
+[27-Mar-2025 17:08:21 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:08:21 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 17:08:21 Asia/Manila] Student query result: Array
+(
+    [id] => 8
+    [lastname] => Detalla
+    [firstname] => Krish
+    [photo] => 358038281_662271262426045_4841641984669283118_n.jpg
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 17:08:23 Asia/Manila] Database connection successful
+[27-Mar-2025 17:08:23 Asia/Manila] Updated status column
+[27-Mar-2025 17:08:23 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:08:23 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:08:23 Asia/Manila] Student query result: 
+[27-Mar-2025 17:08:23 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:08:23 Asia/Manila] Existing tap check result: 
+[27-Mar-2025 17:08:23 Asia/Manila] Next action determined: check_in
+[27-Mar-2025 17:08:23 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 2025-03-27 17:08:23
+[27-Mar-2025 17:08:25 Asia/Manila] Database connection successful
+[27-Mar-2025 17:08:25 Asia/Manila] Updated status column
+[27-Mar-2025 17:08:25 Asia/Manila] Modified student_id to allow NULL
+[27-Mar-2025 17:08:25 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:08:25 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 12:18:24 Europe/Berlin] Added Sunday back to schedule_day options
+[01-Apr-2025 15:38:42 Asia/Manila] Database connection successful
+[01-Apr-2025 15:38:42 Asia/Manila] Updated status column
+[01-Apr-2025 15:38:42 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:38:47 Asia/Manila] Database connection successful
+[01-Apr-2025 15:38:47 Asia/Manila] Updated status column
+[01-Apr-2025 15:38:47 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:38:47 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:38:47 Asia/Manila] Student query result: 
+[01-Apr-2025 15:38:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Ibarra
+    [photo] => Nitro_Wallpaper_01_3840x2400.jpg
+    [role] => professor
+)
+
+[01-Apr-2025 15:38:47 Asia/Manila] Existing tap check result: 
+[01-Apr-2025 15:38:47 Asia/Manila] Next action determined: check_in
+[01-Apr-2025 15:38:47 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[01-Apr-2025 15:38:50 Asia/Manila] Database connection successful
+[01-Apr-2025 15:38:50 Asia/Manila] Updated status column
+[01-Apr-2025 15:38:50 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:38:50 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:38:50 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:38:52 Asia/Manila] Database connection successful
+[01-Apr-2025 15:38:52 Asia/Manila] Updated status column
+[01-Apr-2025 15:38:52 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:38:52 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:38:52 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:38:59 Asia/Manila] Database connection successful
+[01-Apr-2025 15:38:59 Asia/Manila] Updated status column
+[01-Apr-2025 15:38:59 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:38:59 Asia/Manila] Received RFID tag: 0004806268
+[01-Apr-2025 15:38:59 Asia/Manila] Student query result: 
+[01-Apr-2025 15:38:59 Asia/Manila] Professor query result: 
+[01-Apr-2025 15:39:00 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:00 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:00 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:00 Asia/Manila] Received RFID tag: 0004806268
+[01-Apr-2025 15:39:00 Asia/Manila] Student query result: 
+[01-Apr-2025 15:39:00 Asia/Manila] Professor query result: 
+[01-Apr-2025 15:39:02 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:02 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:02 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:02 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:39:02 Asia/Manila] Student query result: 
+[01-Apr-2025 15:39:02 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Ibarra
+    [photo] => Nitro_Wallpaper_01_3840x2400.jpg
+    [role] => professor
+)
+
+[01-Apr-2025 15:39:02 Asia/Manila] Existing tap check result: 
+[01-Apr-2025 15:39:02 Asia/Manila] Next action determined: check_in
+[01-Apr-2025 15:39:02 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[01-Apr-2025 15:39:26 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:26 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:26 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:28 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:28 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:28 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:28 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:39:28 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:39:35 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:35 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:35 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:35 Asia/Manila] Received RFID tag: 0004806268
+[01-Apr-2025 15:39:35 Asia/Manila] Student query result: 
+[01-Apr-2025 15:39:35 Asia/Manila] Professor query result: 
+[01-Apr-2025 15:39:38 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:38 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:38 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:38 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:39:38 Asia/Manila] Student query result: 
+[01-Apr-2025 15:39:38 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Ibarra
+    [photo] => Nitro_Wallpaper_01_3840x2400.jpg
+    [role] => professor
+)
+
+[01-Apr-2025 15:39:38 Asia/Manila] Existing tap check result: 
+[01-Apr-2025 15:39:38 Asia/Manila] Next action determined: check_in
+[01-Apr-2025 15:39:38 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[01-Apr-2025 15:39:40 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:40 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:40 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:40 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:39:40 Asia/Manila] Student query result: 
+[01-Apr-2025 15:39:40 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Ibarra
+    [photo] => Nitro_Wallpaper_01_3840x2400.jpg
+    [role] => professor
+)
+
+[01-Apr-2025 15:39:40 Asia/Manila] Existing tap check result: 
+[01-Apr-2025 15:39:40 Asia/Manila] Next action determined: check_in
+[01-Apr-2025 15:39:40 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[01-Apr-2025 15:39:41 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:41 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:41 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:41 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:39:41 Asia/Manila] Student query result: 
+[01-Apr-2025 15:39:41 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Ibarra
+    [photo] => Nitro_Wallpaper_01_3840x2400.jpg
+    [role] => professor
+)
+
+[01-Apr-2025 15:39:41 Asia/Manila] Existing tap check result: 
+[01-Apr-2025 15:39:41 Asia/Manila] Next action determined: check_in
+[01-Apr-2025 15:39:41 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[01-Apr-2025 15:39:41 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:41 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:41 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:41 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:39:41 Asia/Manila] Student query result: 
+[01-Apr-2025 15:39:41 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Ibarra
+    [photo] => Nitro_Wallpaper_01_3840x2400.jpg
+    [role] => professor
+)
+
+[01-Apr-2025 15:39:41 Asia/Manila] Existing tap check result: 
+[01-Apr-2025 15:39:41 Asia/Manila] Next action determined: check_in
+[01-Apr-2025 15:39:41 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[01-Apr-2025 15:39:53 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:53 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:53 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:54 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:54 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:54 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:39:54 Asia/Manila] Database connection successful
+[01-Apr-2025 15:39:54 Asia/Manila] Updated status column
+[01-Apr-2025 15:39:54 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:25 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:25 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:25 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:25 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:25 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:26 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:26 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:26 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:26 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:26 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:26 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:26 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:26 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:26 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:26 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:27 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:27 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:27 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:27 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:27 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:28 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:28 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:28 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:28 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:28 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:28 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:28 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:28 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:28 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:28 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:29 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:29 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:29 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:29 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:29 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:29 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:29 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:29 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:29 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:29 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:49 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:49 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:49 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:49 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:49 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:49 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:50 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:50 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:50 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:41:50 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[01-Apr-2025 15:41:57 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:58 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:58 Asia/Manila] Modified student_id to allow NULL
+[01-Apr-2025 15:41:58 Asia/Manila] Database connection successful
+[01-Apr-2025 15:41:58 Asia/Manila] Updated status column
+[01-Apr-2025 15:41:58 Asia/Manila] Modified student_id to allow NULL
+[04-Apr-2025 19:57:55 Asia/Manila] PHP Warning:  Undefined variable $admin_lastname in C:\xampp\htdocs\LabGuard\sections\nav4.php on line 19
+[04-Apr-2025 19:57:56 Asia/Manila] PHP Warning:  Undefined variable $admin_lastname in C:\xampp\htdocs\LabGuard\sections\nav4.php on line 19
+[04-Apr-2025 19:57:56 Asia/Manila] PHP Warning:  Undefined variable $admin_lastname in C:\xampp\htdocs\LabGuard\sections\nav4.php on line 19
+[04-Apr-2025 19:58:03 Asia/Manila] PHP Warning:  Undefined variable $admin_lastname in C:\xampp\htdocs\LabGuard\sections\nav4.php on line 19
+[04-Apr-2025 19:58:03 Asia/Manila] PHP Warning:  Undefined variable $admin_lastname in C:\xampp\htdocs\LabGuard\sections\nav4.php on line 19
+[04-Apr-2025 19:58:03 Asia/Manila] PHP Warning:  Undefined variable $admin_lastname in C:\xampp\htdocs\LabGuard\sections\nav4.php on line 19
+[04-Apr-2025 19:58:04 Asia/Manila] PHP Warning:  Undefined variable $admin_lastname in C:\xampp\htdocs\LabGuard\sections\nav4.php on line 19
+[04-Apr-2025 20:11:03 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 4
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 2
+    [schedule_time] => 12:32
+    [schedule_day] => Tuesday
+)
+
+[04-Apr-2025 20:11:03 Asia/Manila] Inserting schedule with values: prof_user_id: 4, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 12:32, schedule_day: Tuesday
+[04-Apr-2025 20:11:03 Asia/Manila] Schedule inserted successfully
+[04-Apr-2025 20:11:18 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 9
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 2
+    [schedule_time] => 12:35
+    [schedule_day] => Monday
+)
+
+[04-Apr-2025 20:11:18 Asia/Manila] Inserting schedule with values: prof_user_id: 9, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 12:35, schedule_day: Monday
+[04-Apr-2025 20:11:18 Asia/Manila] Schedule inserted successfully

@@ -3812,3 +3812,1490 @@
     [role] => professor
 )
 
+[27-Mar-2025 14:11:43 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:11:43 Asia/Manila] Student query result: 
+[27-Mar-2025 14:11:43 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:12:36 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:12:36 Asia/Manila] Student query result: 
+[27-Mar-2025 14:12:36 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:12:47 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:12:47 Asia/Manila] Student query result: 
+[27-Mar-2025 14:12:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:12:56 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:12:56 Asia/Manila] Student query result: 
+[27-Mar-2025 14:12:56 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:13:14 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:13:14 Asia/Manila] Student query result: 
+[27-Mar-2025 14:13:14 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:27:43 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:27:43 Asia/Manila] Student query result: 
+[27-Mar-2025 14:27:43 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:27:47 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:27:47 Asia/Manila] Student query result: 
+[27-Mar-2025 14:27:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:27:51 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:27:51 Asia/Manila] Student query result: 
+[27-Mar-2025 14:27:51 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:27:57 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:27:57 Asia/Manila] Student query result: 
+[27-Mar-2025 14:27:57 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:40:48 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:40:48 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:40:51 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:40:51 Asia/Manila] Student query result: 
+[27-Mar-2025 14:40:51 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:40:56 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:40:56 Asia/Manila] Student query result: 
+[27-Mar-2025 14:40:56 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:40:58 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:40:58 Asia/Manila] Student query result: 
+[27-Mar-2025 14:40:58 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:41:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:41:01 Asia/Manila] Student query result: 
+[27-Mar-2025 14:41:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:41:06 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:41:06 Asia/Manila] Student query result: 
+[27-Mar-2025 14:41:06 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:41:11 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:41:11 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:41:12 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 14:41:12 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 14:45:16 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:45:16 Asia/Manila] Student query result: 
+[27-Mar-2025 14:45:16 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:45:51 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:45:51 Asia/Manila] Student query result: 
+[27-Mar-2025 14:45:51 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:45:53 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:45:53 Asia/Manila] Student query result: 
+[27-Mar-2025 14:45:53 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:45:54 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:45:54 Asia/Manila] Student query result: 
+[27-Mar-2025 14:45:54 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:45:55 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:45:55 Asia/Manila] Student query result: 
+[27-Mar-2025 14:45:55 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:45:56 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:45:56 Asia/Manila] Student query result: 
+[27-Mar-2025 14:45:56 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:45:56 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:45:56 Asia/Manila] Student query result: 
+[27-Mar-2025 14:45:56 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:46:04 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:46:04 Asia/Manila] Student query result: 
+[27-Mar-2025 14:46:04 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:44 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:44 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:44 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:46 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:46 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:46 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:47 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:47 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:47 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:47 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:48 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:48 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:48 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:48:49 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:48:49 Asia/Manila] Student query result: 
+[27-Mar-2025 14:48:49 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 14:50:53 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 14:50:53 Asia/Manila] Student query result: 
+[27-Mar-2025 14:50:53 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:02:08 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:02:08 Asia/Manila] Student query result: 
+[27-Mar-2025 15:02:08 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:05:10 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:05:10 Asia/Manila] Student query result: 
+[27-Mar-2025 15:05:10 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:05:10 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:05:38 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:05:38 Asia/Manila] Student query result: 
+[27-Mar-2025 15:05:38 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:05:38 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:05:42 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:05:42 Asia/Manila] Student query result: 
+[27-Mar-2025 15:05:42 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:05:42 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:05:45 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:05:45 Asia/Manila] Student query result: 
+[27-Mar-2025 15:05:45 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:05:45 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:05:46 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:05:46 Asia/Manila] Student query result: 
+[27-Mar-2025 15:05:46 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:05:46 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:05:51 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:05:51 Asia/Manila] Student query result: 
+[27-Mar-2025 15:05:51 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:05:51 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:05:57 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:05:57 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:05:57 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+[27-Mar-2025 15:06:01 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:06:01 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:06:01 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.timestamp' in 'where clause'
+[27-Mar-2025 15:06:03 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:06:03 Asia/Manila] Student query result: 
+[27-Mar-2025 15:06:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:06:03 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:06:04 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:06:04 Asia/Manila] Student query result: 
+[27-Mar-2025 15:06:04 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:06:04 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:06:06 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:06:06 Asia/Manila] Student query result: 
+[27-Mar-2025 15:06:06 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:06:06 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 15:24:54 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:24:54 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:24:55 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:24:55 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:24:58 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:24:58 Asia/Manila] Student query result: 
+[27-Mar-2025 15:24:58 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:25:00 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:25:00 Asia/Manila] Student query result: 
+[27-Mar-2025 15:25:00 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:25:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:25:01 Asia/Manila] Student query result: 
+[27-Mar-2025 15:25:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:25:07 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:25:07 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:25:08 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:25:08 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:25:09 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:25:09 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:25:10 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:25:10 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:25:11 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:25:11 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:26:28 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:26:28 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:26:32 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:26:32 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:26:36 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:26:36 Asia/Manila] Student query result: 
+[27-Mar-2025 15:26:36 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:26:36 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:26:36 Asia/Manila] Student query result: 
+[27-Mar-2025 15:26:36 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:27:49 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:27:49 Asia/Manila] Student query result: 
+[27-Mar-2025 15:27:49 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:28:10 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:28:10 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:28:13 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:28:13 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:28:19 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:28:19 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:28:23 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:28:23 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:29:17 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:29:17 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:29:28 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:29:28 Asia/Manila] Student query result: 
+[27-Mar-2025 15:29:28 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:34:50 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:34:50 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:34:54 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:34:54 Asia/Manila] Student query result: 
+[27-Mar-2025 15:34:54 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:34:57 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:34:57 Asia/Manila] Student query result: 
+[27-Mar-2025 15:34:57 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:34:59 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:34:59 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:35:54 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:35:54 Asia/Manila] Student query result: 
+[27-Mar-2025 15:35:54 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:42:01 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:42:01 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:47:29 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:47:29 Asia/Manila] Student query result: 
+[27-Mar-2025 15:47:29 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:47:31 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:47:31 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:47:40 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:47:40 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:47:43 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:47:43 Asia/Manila] Student query result: 
+[27-Mar-2025 15:47:43 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:51:28 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:51:28 Asia/Manila] Student query result: 
+[27-Mar-2025 15:51:28 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:51:32 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:51:32 Asia/Manila] Student query result: 
+[27-Mar-2025 15:51:32 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:51:36 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:51:36 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:51:38 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:51:38 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:51:43 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:51:43 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:53:25 Asia/Manila] Received RFID tag: x`0004806268
+[27-Mar-2025 15:53:25 Asia/Manila] Student query result: 
+[27-Mar-2025 15:53:25 Asia/Manila] Professor query result: 
+[27-Mar-2025 15:53:30 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:53:30 Asia/Manila] Student query result: 
+[27-Mar-2025 15:53:30 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:53:35 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:53:35 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:53:37 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:53:37 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:53:42 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:53:42 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:53:46 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:53:46 Asia/Manila] Student query result: 
+[27-Mar-2025 15:53:46 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:53:49 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:53:49 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:54:22 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:54:22 Asia/Manila] Student query result: 
+[27-Mar-2025 15:54:22 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:56:46 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 15:56:46 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 15:56:49 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:56:49 Asia/Manila] Student query result: 
+[27-Mar-2025 15:56:49 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:56:50 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:56:50 Asia/Manila] Student query result: 
+[27-Mar-2025 15:56:50 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 15:57:06 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 15:57:06 Asia/Manila] Student query result: 
+[27-Mar-2025 15:57:06 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:08:03 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:08:03 Asia/Manila] Student query result: 
+[27-Mar-2025 16:08:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:08:05 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:08:05 Asia/Manila] Student query result: 
+[27-Mar-2025 16:08:05 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:09:58 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:09:58 Asia/Manila] Student query result: 
+[27-Mar-2025 16:09:58 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:10:27 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:10:27 Asia/Manila] Student query result: 
+[27-Mar-2025 16:10:27 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:10:29 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:10:29 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:15:56 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:15:56 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:15:56 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:15:57 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:15:57 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:15:57 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:16:01 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:16:01 Asia/Manila] Student query result: 
+[27-Mar-2025 16:16:01 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:16:02 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:16:02 Asia/Manila] Student query result: 
+[27-Mar-2025 16:16:02 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:16:41 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:16:41 Asia/Manila] Student query result: 
+[27-Mar-2025 16:16:41 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:36:54 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:36:54 Asia/Manila] Student query result: 
+[27-Mar-2025 16:36:54 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:36:54 Asia/Manila] Error processing RFID: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[27-Mar-2025 16:36:56 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:36:56 Asia/Manila] Student query result: 
+[27-Mar-2025 16:36:56 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:36:56 Asia/Manila] Error processing RFID: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[27-Mar-2025 16:37:03 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:37:03 Asia/Manila] Student query result: 
+[27-Mar-2025 16:37:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:37:03 Asia/Manila] Error processing RFID: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[27-Mar-2025 16:37:03 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:37:03 Asia/Manila] Student query result: 
+[27-Mar-2025 16:37:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:37:03 Asia/Manila] Error processing RFID: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[27-Mar-2025 16:37:07 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:37:07 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:37:07 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:37:07 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:37:07 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:37:07 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:38:11 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:38:11 Asia/Manila] Student query result: 
+[27-Mar-2025 16:38:11 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:39:05 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:39:05 Asia/Manila] Student query result: 
+[27-Mar-2025 16:39:05 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:39:08 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:39:08 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 16:39:08 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:39:09 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:39:09 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 16:39:09 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:39:10 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:39:10 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 16:39:10 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:39:15 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:39:15 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 16:39:15 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:39:18 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:39:18 Asia/Manila] Student query result: 
+[27-Mar-2025 16:39:18 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:40:23 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:40:23 Asia/Manila] Student query result: 
+[27-Mar-2025 16:40:23 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:40:26 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:40:26 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:40:26 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:41:10 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 16:41:10 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 16:41:10 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 16:44:03 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:44:03 Asia/Manila] Student query result: 
+[27-Mar-2025 16:44:03 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:47:58 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:47:58 Asia/Manila] Student query result: 
+[27-Mar-2025 16:47:58 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:47:58 Asia/Manila] Error processing RFID: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[27-Mar-2025 16:48:02 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 16:48:02 Asia/Manila] Student query result: 
+[27-Mar-2025 16:48:02 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 16:48:02 Asia/Manila] Error processing RFID: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[27-Mar-2025 17:03:12 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:03:12 Asia/Manila] Student query result: 
+[27-Mar-2025 17:03:12 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:03:15 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:03:15 Asia/Manila] Student query result: 
+[27-Mar-2025 17:03:15 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:06:15 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 17:06:15 Asia/Manila] Student query result: Array
+(
+    [id] => 10
+    [lastname] => De Vera
+    [firstname] => Vaughn
+    [photo] => 0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png
+    [role] => student
+    [section_id] => 4
+)
+
+[27-Mar-2025 17:06:15 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 17:06:19 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 17:06:19 Asia/Manila] Student query result: Array
+(
+    [id] => 8
+    [lastname] => Detalla
+    [firstname] => Krish
+    [photo] => 358038281_662271262426045_4841641984669283118_n.jpg
+    [role] => student
+    [section_id] => 1
+)
+
+[27-Mar-2025 17:06:19 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'timestamp' in 'where clause'
+[27-Mar-2025 17:06:22 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:06:22 Asia/Manila] Student query result: 
+[27-Mar-2025 17:06:22 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:06:26 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:06:26 Asia/Manila] Student query result: 
+[27-Mar-2025 17:06:26 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:06:27 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:06:27 Asia/Manila] Student query result: 
+[27-Mar-2025 17:06:27 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 17:06:33 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 17:06:33 Asia/Manila] Student query result: 
+[27-Mar-2025 17:06:33 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Barral
+    [firstname] => Fedinand Jr
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 19:10:52 Asia/Manila] Received RFID tag: x0004742408
+[27-Mar-2025 19:10:52 Asia/Manila] Student query result: 
+[27-Mar-2025 19:10:52 Asia/Manila] Professor query result: 
+[27-Mar-2025 19:10:56 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 19:10:56 Asia/Manila] Student query result: 
+[27-Mar-2025 19:10:56 Asia/Manila] Professor query result: 
+[27-Mar-2025 19:11:00 Asia/Manila] Received RFID tag: 0004794867
+[27-Mar-2025 19:11:00 Asia/Manila] Student query result: 
+[27-Mar-2025 19:11:00 Asia/Manila] Professor query result: 
+[27-Mar-2025 19:11:02 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 19:11:02 Asia/Manila] Student query result: 
+[27-Mar-2025 19:11:02 Asia/Manila] Professor query result: 
+[27-Mar-2025 19:11:03 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 19:11:03 Asia/Manila] Student query result: 
+[27-Mar-2025 19:11:03 Asia/Manila] Professor query result: 
+[27-Mar-2025 19:11:04 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 19:11:04 Asia/Manila] Student query result: 
+[27-Mar-2025 19:11:04 Asia/Manila] Professor query result: 
+[27-Mar-2025 19:12:36 Asia/Manila] Received RFID tag: 0004806268
+[27-Mar-2025 19:12:36 Asia/Manila] Student query result: 
+[27-Mar-2025 19:12:36 Asia/Manila] Professor query result: Array
+(
+    [id] => 8
+    [lastname] => Bautista
+    [firstname] => Jerome
+    [photo] => PFP2.jpeg
+    [role] => professor
+)
+
+[27-Mar-2025 19:12:36 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time_in' in 'where clause'
+[27-Mar-2025 19:13:55 Asia/Manila] Received RFID tag: 0004742408
+[27-Mar-2025 19:13:55 Asia/Manila] Student query result: 
+[27-Mar-2025 19:13:55 Asia/Manila] Professor query result: 
+[01-Apr-2025 15:24:57 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:25:01 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:25:06 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:27:43 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:32:30 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:33:00 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:34:04 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:36:08 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:36:22 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 15:36:29 Asia/Manila] Received RFID tag: 0004794867
+[01-Apr-2025 15:36:36 Asia/Manila] Received RFID tag: 0004806268
+[01-Apr-2025 15:36:45 Asia/Manila] Received RFID tag: 0005686670
+[01-Apr-2025 15:59:44 Asia/Manila] Received RFID tag: 0004742408
+[01-Apr-2025 16:03:00 Asia/Manila] Received RFID tag: 0004742408

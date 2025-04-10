@@ -40,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['name'] = $row['firstname'] . " " . $row['lastname'];
                     $_SESSION['role'] = $role;
-
      
                     if ($role == "admin") {
                         header("Location: admin_dashboard.php");

@@ -7,7 +7,17 @@ $query = "SELECT * FROM faculty_tbl ORDER BY lastname, firstname";
 $stmt = $conn->prepare($query);
 $stmt->execute();
 $faculty = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (isset($_SESSION['name'])) {
+    $name_parts = explode(' ', $_SESSION['name']);
+    $admin_firstname = $name_parts[0];
+    $admin_lastname = isset($name_parts[1]) ? $name_parts[1] : 'Unknown';
+} else {
+    $admin_lastname = 'Unknown'; 
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,25 +26,18 @@ $faculty = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/classroomManagement.js" defer></script>
 </head>
 <body>
-    <div class="d-flex">
-        <nav class="bg-dark text-white p-3" style="width: 250px; height: 100vh;">
-            <h4>Admin Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="admin_dashboard.php" class="nav-link text-white">Classroom</a></li>
-                <li class="nav-item"><a href="schedule.php" class="nav-link text-white">Schedule</a></li>
-                <li class="nav-item"><a href="professors.php" class="nav-link text-white">Professors</a></li>
-                <li class="nav-item"><a href="faculty.php" class="nav-link text-white">Faculty</a></li>
-                <li class="nav-item"><a href="students.php" class="nav-link text-white">Students</a></li>
-                <li class="nav-item"><a href="student_subs.php" class="nav-link text-white">Student Subjects</a></li>
-                <li class="nav-item"><a href="student_secs.php" class="nav-link text-white">Student Sections</a></li>
-                <li class="nav-item"><a href="admin.php" class="nav-link text-white">Admin</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
-
-        <div class="container mt-4">
+<?php include '../sections/nav4.php' ?>
+<?php include '../sections/admin_nav.php' ?>
+        
+<div id="main-container">
             <h2>Faculty Management</h2>
             <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addFacultyModal">Add Faculty</button>
 

@@ -7,6 +7,14 @@ if (!$conn) {
     die("Database connection failed!");
 }
 
+if (isset($_SESSION['name'])) {
+    $name_parts = explode(' ', $_SESSION['name']);
+    $admin_firstname = $name_parts[0];
+    $admin_lastname = isset($name_parts[1]) ? $name_parts[1] : 'Unknown';
+} else {
+    $admin_lastname = 'Unknown'; 
+}
+
 // Handle professor addition
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_professor"])) {
     $employee_id = $_POST["employee_id"];
@@ -49,6 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_professor"])) {
 
     header("Location: professors.php");
     exit();
+
+    
 }
 
 // Fetch professors data
@@ -65,27 +75,18 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Professors Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/classroomManagement.js" defer></script>
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class="bg-dark text-white p-3 vh-100" style="width: 250px;">
-            <h4>Admin Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="admin_dashboard.php" class="nav-link text-white">Classroom</a></li>
-                <li class="nav-item"><a href="schedule.php" class="nav-link text-white">Schedule</a></li>
-                <li class="nav-item"><a href="professors.php" class="nav-link text-white">Professors</a></li>
-                <li class="nav-item"><a href="faculty.php" class="nav-link text-white">Faculty</a></li>
-                <li class="nav-item"><a href="students.php" class="nav-link text-white">Students</a></li>
-                <li class="nav-item"><a href="student_subs.php" class="nav-link text-white">Student Subjects</a></li>
-                <li class="nav-item"><a href="student_secs.php" class="nav-link text-white">Student Sections</a></li>
-                <li class="nav-item"><a href="admin.php" class="nav-link text-white">Admin</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="container-fluid p-4">
+<?php include '../sections/nav4.php' ?>
+<?php include '../sections/admin_nav.php' ?>
+        
+<div id="main-container">
             <h2 class="mb-4">Professors Management</h2>
             <div class="card p-3 mb-4">
                 <h4>Add New Professor</h4>

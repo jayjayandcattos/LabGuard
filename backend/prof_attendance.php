@@ -39,8 +39,8 @@ $attendance_query = "SELECT
                         st.student_id,
                         st.lastname,
                         st.firstname,
-                        MIN(CASE WHEN a.status = 'check_in' THEN TIME(a.timestamp) END) as time_in,
-                        MAX(CASE WHEN a.status = 'check_out' THEN TIME(a.timestamp) END) as time_out,
+                        MIN(CASE WHEN a.status = 'check_in' THEN TIME(a.time_in) END) as time_in,
+                        MAX(CASE WHEN a.status = 'check_out' THEN TIME(a.time_out) END) as time_out,
                         CASE 
                             WHEN COUNT(CASE WHEN a.status = 'check_in' THEN 1 END) > 0 THEN 'Present'
                             ELSE 'Absent'
@@ -48,14 +48,14 @@ $attendance_query = "SELECT
                         EXISTS (
                             SELECT 1 FROM attendance_tbl a2 
                             WHERE a2.student_id = st.student_user_id 
-                            AND DATE(a2.timestamp) = ? 
+                            AND DATE(a2.time_out) = ? 
                             AND a2.status = 'check_out'
                         ) as has_checked_out,
                         sub.subject_name,
                         sch.schedule_day
                     FROM student_tbl st
                     LEFT JOIN attendance_tbl a ON st.student_user_id = a.student_id 
-                        AND DATE(a.timestamp) = ?
+                        AND DATE(a.time_in) = ?
                     LEFT JOIN schedule_tbl sch ON st.section_id = sch.section_id
                         AND sch.schedule_day = DAYNAME(?)
                     LEFT JOIN subject_tbl sub ON sch.subject_id = sub.subject_id
