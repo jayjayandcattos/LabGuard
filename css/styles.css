@@ -1068,13 +1068,16 @@ button:hover {
   align-items: center;
   gap: 20px;
   font-family: 'Bruno Ace', sans-serif;
+  cursor: pointer;
 }
 
 .footer-content p {
-  margin: 0;
+  font-size: 10px;
+  margin: 0 2px;
   color: #ffffff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fbfcfb, 0 0 40px #aac6ea, 0 0 80px #ffffff00;
+
 }
+
 
 .footer-content a {
   color: #000768;

@@ -28,6 +28,7 @@ if (isset($_SESSION['name'])) {
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/classroomManagement.js" defer></script>
 </head>
 <body>
@@ -70,15 +71,15 @@ if (isset($_SESSION['name'])) {
             <form action="add_section.php" method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addSectionLabel">Add New Section</h5>
+                        <h5 class="modal-title" id="addSectionLabel" style="color: black;">Add New Section</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="color: black;">
 
-                        <label>Section Name:</label>
+                        <label style="color: black;">Section Name:</label>
                         <input type="text" name="section_name" class="form-control" required>
 
-                        <label>Section Level:</label>
+                        <label style="color: black;">Section Level:</label>
                         <input type="text" name="section_level" class="form-control" required>
                     </div>
                     <div class="modal-footer">

@@ -35,6 +35,7 @@ if (isset($_SESSION['name'])) {
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/classroomManagement.js" defer></script>
 </head>
 <body>
@@ -79,26 +80,26 @@ if (isset($_SESSION['name'])) {
             <form action="add_subject.php" method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addSubjectLabel">Add New Subject</h5>
+                        <h5 class="modal-title" id="addSubjectLabel" style="color: black;">Add New Subject</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <label>Course Code:</label>
+                        <label style="color: black;">Course Code:</label>
                         <input type="text" name="subject_code" class="form-control" required>
 
-                        <label>Subject Name:</label>
+                        <label style="color: black;">Subject Name:</label>
                         <input type="text" name="subject_name" class="form-control" required>
 
-                        <label>Assign Professor:</label>
-                        <select name="prof_user_id" class="form-control">
-                            <option value="">-- Select a Professor --</option>
+                        <label style="color: black;">Assign Professor:</label>
+                        <select name="prof_user_id" class="form-control" style="margin-left: 50px;">
+                            <option value="" style="color: black;">-- Select a Professor --</option>
                             <?php
                             $profQuery = "SELECT prof_user_id, firstname, lastname FROM prof_tbl";
                             $profStmt = $conn->prepare($profQuery);
                             $profStmt->execute();
                             while ($prof = $profStmt->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<option value='{$prof['prof_user_id']}'>{$prof['firstname']} {$prof['lastname']}</option>";
-                            }
+                                echo "<option value='{$prof['prof_user_id']}' style='color: black;'>{$prof['firstname']} {$prof['lastname']}</option>";
+                            }   
                             ?>
                         </select>
                     </div>

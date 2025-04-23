@@ -49,6 +49,7 @@ $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/classroomManagement.js" defer></script>
 </head>
 <body>

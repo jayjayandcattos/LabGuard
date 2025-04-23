@@ -145,6 +145,7 @@ if (isset($_SESSION['name'])) {
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         #scheduleFormContainer {
             display: none;

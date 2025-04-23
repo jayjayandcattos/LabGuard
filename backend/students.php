@@ -58,6 +58,7 @@ if (isset($_SESSION['name'])) {
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/classroomManagement.js" defer></script>
 </head>
 <body>
@@ -148,30 +149,30 @@ if (isset($_SESSION['name'])) {
             <form action="add_student.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addStudentLabel">Add New Student</h5>
+                        <h5 class="modal-title text-black" id="addStudentLabel">Add New Student</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <label>Student ID:</label>
+                    <div class="modal-body text-black">
+                        <label class="text-black">Student ID:</label>
                         <input type="text" name="student_id" class="form-control" required>
 
-                        <label>Last Name:</label>
+                        <label class="text-black">Last Name:</label>
                         <input type="text" name="lastname" class="form-control" required>
 
-                        <label>First Name:</label>
+                        <label class="text-black">First Name:</label>
                         <input type="text" name="firstname" class="form-control" required>
 
-                        <label>Middle Initial:</label>
+                        <label class="text-black">Middle Initial:</label>
                         <input type="text" name="mi" class="form-control">
 
-                        <label>Email:</label>
+                        <label class="text-black">Email:</label>
                         <input type="email" name="email" class="form-control" required>
 
-                        <label>RFID Tag:</label>
+                        <label class="text-black">RFID Tag:</label>
                         <input type="text" name="rfid_tag" class="form-control" required>
 
-                        <label>Section:</label>
-                        <select name="section_id" class="form-control" required>
+                        <label class="text-black">Section:</label>
+                        <select name="section_id" class="form-control" required style="margin-left: 50px;">
                             <?php
                             $secQuery = "SELECT * FROM section_tbl";
                             $secStmt = $conn->prepare($secQuery);
@@ -182,7 +183,7 @@ if (isset($_SESSION['name'])) {
                             ?>
                         </select>
 
-                        <label>Photo:</label>
+                        <label class="text-black">Photo:</label>
                         <input type="file" name="photo" class="form-control" required>
                     </div>
                     <div class="modal-footer">
@@ -191,6 +192,8 @@ if (isset($_SESSION['name'])) {
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
         </div>
     </div>
 </body>

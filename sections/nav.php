@@ -270,20 +270,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <footer class="footer">
-        <div class="footer-content">
-            <p>© 2025 LABGUARD. All rights reserved.</p>
-            <a href="#" id="termsLink" onclick="openTermsModal()">Terms & Conditions</a>
+    <div class="footer-content">
+        <p>© 2025 LABGUARD. All rights reserved.</p>
+        <div class="overflow-hidden w-full md:w-auto">
+            <p onclick="openTermsModal()">
+                The Terms of Service of the LABGUARD™ establishes a legally binding agreement between parties involved in the usage of the LABGUARD™ Attendance Monitoring System whether personally (“you”) or done behalf of a party’s knowledge including LABGUARD™ (“Company”, “we”, “us”, and “our”) whether through web-application, or physical usage of the system. You agree that by using, operating, and/or utilizing the LABGUARD™ you adhere to the written Terms of Service, you have read, understood, and agree upon the usage of our system. If you do not agree with the terms written within the Terms of Service you are effectively prohibited and are obligated to cease the use or your participation with the system by contacting proper authorities within your academic institution.
+                        </p>
         </div>
-    </footer>
-
-    <script>
-        function scrollToTermsButtons() {
-            document.getElementById('terms-buttons-section').scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
+    </div>
+</footer>   
 
     <script src="js/about.js"></script>
     <script src="js/login.js"></script>

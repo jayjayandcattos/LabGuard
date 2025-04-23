@@ -31,6 +31,7 @@ if (isset($_SESSION['name'])) {
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/classroomManagement.js" defer></script>
 </head>
 <body>
@@ -76,25 +77,25 @@ if (isset($_SESSION['name'])) {
             <form action="add_faculty.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addFacultyLabel">Add Faculty Member</h5>
+                        <h5 class="modal-title" id="addFacultyLabel" style="color: black;">Add Faculty Member</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <label>Employee ID:</label>
+                        <label style="color: black;">Employee ID:</label>
                         <input type="text" name="employee_id" class="form-control" required>
-                        <label>Last Name:</label>
+                        <label style="color: black;">Last Name:</label>
                         <input type="text" name="lastname" class="form-control" required>
-                        <label>First Name:</label>
+                        <label style="color: black;">First Name:</label>
                         <input type="text" name="firstname" class="form-control" required>
-                        <label>Middle Initial:</label>
+                        <label style="color: black;">Middle Initial:</label>
                         <input type="text" name="mi" class="form-control">
-                        <label>Email:</label>
+                        <label style="color: black;">Email:</label>
                         <input type="email" name="email" class="form-control" required>
-                        <label>Password:</label>
+                        <label style="color: black;">Password:</label>
                         <input type="password" name="password" class="form-control" required>
-                        <label>RFID Tag:</label>
+                        <label style="color: black;">RFID Tag:</label>
                         <input type="text" name="rfid_tag" class="form-control" required>
-                        <label>Photo:</label>
+                        <label style="color: black;">Photo:</label>
                         <input type="file" name="photo" class="form-control" required>
                     </div>
                     <div class="modal-footer">
