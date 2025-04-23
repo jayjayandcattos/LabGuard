@@ -23,12 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_schedule"])) {
     $section_id = $_POST["section_id"];
     $room_id = $_POST["room_id"];
     $schedule_time = $_POST["schedule_time"];
-    $time_in = $_POST["time_in"];
-    $time_out = $_POST["time_out"];
     $schedule_day = $_POST["schedule_day"];
 
-    $query = "INSERT INTO schedule_tbl (prof_user_id, subject_id, section_id, room_id, schedule_time, time_in, time_out, schedule_day) 
-              VALUES (:prof_user_id, :subject_id, :section_id, :room_id, :schedule_time, :time_in, :time_out, :schedule_day)";
+    $query = "INSERT INTO schedule_tbl (prof_user_id, subject_id, section_id, room_id, schedule_time, schedule_day) 
+              VALUES (:prof_user_id, :subject_id, :section_id, :room_id, :schedule_time, :schedule_day)";
     $stmt = $conn->prepare($query);
     $stmt->execute([
         "prof_user_id" => $prof_user_id,
@@ -36,8 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_schedule"])) {
         "section_id" => $section_id,
         "room_id" => $room_id,
         "schedule_time" => $schedule_time,
-        "time_in" => $time_in,
-        "time_out" => $time_out,
         "schedule_day" => $schedule_day
     ]);
 
@@ -56,12 +52,15 @@ $query = "SELECT s.*,
           CONCAT(p.lastname, ', ', p.firstname) AS professor_name,
           sub.subject_name,
           sec.section_name,
-          r.room_name
+          r.room_name,
+          TIME_FORMAT(s.schedule_time, '%h:%i %p') as formatted_time,
+          TIME_FORMAT(DATE_ADD(s.schedule_time, INTERVAL 3 HOUR), '%h:%i %p') as end_time
           FROM schedule_tbl s
           JOIN prof_tbl p ON s.prof_user_id = p.prof_user_id
           JOIN subject_tbl sub ON s.subject_id = sub.subject_id
           JOIN section_tbl sec ON s.section_id = sec.section_id
-          JOIN room_tbl r ON s.room_id = r.room_id";
+          JOIN room_tbl r ON s.room_id = r.room_id
+          ORDER BY s.schedule_day, s.schedule_time";
 $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -121,12 +120,8 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
                     </select>
                 </div>
                 <div class="form-group1">
-                    <label>Time In</label>
-                    <input type="time" name="time_in" required>
-                </div>
-                <div class="form-group1">
-                    <label>Time Out</label>
-                    <input type="time" name="time_out" required>
+                    <label>Schedule Time</label>
+                    <input type="time" name="schedule_time" required>
                 </div>
                 <div class="form-group1">
                     <label>Day</label>
@@ -152,8 +147,8 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
                     <th>Subject</th>
                     <th>Section</th>
                     <th>Room</th>
-                    <th>Time In</th>
-                    <th>Time Out</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
                     <th>Day</th>
                 </tr>
             </thead>
@@ -164,8 +159,8 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= htmlspecialchars($schedule['subject_name']); ?></td>
                         <td><?= htmlspecialchars($schedule['section_name']); ?></td>
                         <td><?= htmlspecialchars($schedule['room_name']); ?></td>
-                        <td><?= htmlspecialchars($schedule['time_in']); ?></td>
-                        <td><?= htmlspecialchars($schedule['time_out']); ?></td>
+                        <td><?= htmlspecialchars($schedule['formatted_time']); ?></td>
+                        <td><?= htmlspecialchars($schedule['end_time']); ?></td>
                         <td><?= htmlspecialchars($schedule['schedule_day']); ?></td>
                     </tr>
                 <?php endforeach; ?>

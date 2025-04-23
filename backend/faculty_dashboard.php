@@ -25,7 +25,7 @@ $query = "SELECT room_id, room_number, room_name,
                   SELECT 1 FROM schedule_tbl sch 
                   WHERE sch.room_id = room_tbl.room_id 
                   AND sch.schedule_day = DAYNAME(CURDATE())
-                  AND CURRENT_TIME BETWEEN sch.schedule_time AND sch.time_out
+                  AND CURRENT_TIME BETWEEN sch.schedule_time AND DATE_ADD(sch.schedule_time, INTERVAL 3 HOUR)
               ) THEN 'Occupied'
               ELSE 'Vacant'
           END as status
@@ -49,8 +49,21 @@ $schedule_query = "SELECT
     r.room_number,
     r.room_name,
     TIME_FORMAT(sch.schedule_time, '%h:%i %p') as start_time,
-    TIME_FORMAT(sch.time_out, '%h:%i %p') as end_time,
-    TIME_FORMAT(sch.time_in, '%h:%i %p') as actual_time_in,
+    TIME_FORMAT(DATE_ADD(sch.schedule_time, INTERVAL 3 HOUR), '%h:%i %p') as estimated_end_time,
+    (SELECT TIME_FORMAT(time_in, '%h:%i %p') 
+     FROM attendance_tbl 
+     WHERE schedule_id = sch.schedule_id 
+     AND status = 'check_in' 
+     AND DATE(time_in) = CURDATE()
+     ORDER BY time_in DESC 
+     LIMIT 1) as actual_time_in,
+    (SELECT TIME_FORMAT(time_out, '%h:%i %p') 
+     FROM attendance_tbl 
+     WHERE schedule_id = sch.schedule_id 
+     AND status = 'check_out' 
+     AND DATE(time_out) = CURDATE()
+     ORDER BY time_out DESC 
+     LIMIT 1) as actual_time_out,
     CONCAT(p.lastname, ', ', p.firstname) as professor_name,
     sub.subject_code as subject_code,
     sec.section_name as section_name
@@ -78,12 +91,17 @@ foreach ($days as $day) {
             if (!isset($schedule_by_day[$day][$schedule['room_number']])) {
                 $schedule_by_day[$day][$schedule['room_number']] = [];
             }
+            // Use actual end time if available, otherwise use estimated
+            $end_time = $schedule['actual_time_out'] ?: $schedule['estimated_end_time'];
+            
             $schedule_by_day[$day][$schedule['room_number']][] = [
-                'time_range' => $schedule['start_time'] . ' - ' . $schedule['end_time'],
+                'time_range' => $schedule['start_time'] . ' - ' . $end_time,
                 'time_in' => $schedule['actual_time_in'] ?: 'Not yet',
+                'time_out' => $schedule['actual_time_out'] ?: 'Not yet',
                 'professor' => $schedule['professor_name'],
                 'subject' => $schedule['subject_code'],
-                'section' => $schedule['section_name']
+                'section' => $schedule['section_name'],
+                'has_checked_out' => !empty($schedule['actual_time_out'])
             ];
         }
     }

@@ -17,12 +17,20 @@ $faculty = $stmt->fetch(PDO::FETCH_ASSOC);
 // Define days array
 $days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
 
-// Fetch all schedules with related information
+// Fetch all schedules with related information and actual check-out times
 $query = "SELECT s.*, 
           r.room_name,
           CONCAT(p.lastname, ', ', p.firstname) AS professor_name,
           sub.subject_name, sub.subject_code,
-          sec.section_name
+          sec.section_name,
+          (SELECT DATE_FORMAT(time_out, '%h:%i %p') 
+           FROM attendance_tbl 
+           WHERE prof_id = p.prof_user_id 
+           AND schedule_id = s.schedule_id 
+           AND status = 'check_out'
+           AND DATE(time_out) = CURDATE()
+           ORDER BY time_out DESC 
+           LIMIT 1) AS actual_end_time
           FROM schedule_tbl s
           JOIN room_tbl r ON s.room_id = r.room_id
           JOIN prof_tbl p ON s.prof_user_id = p.prof_user_id
@@ -47,13 +55,24 @@ foreach ($schedules as $schedule) {
         $schedule_by_day[$day][$room] = [];
     }
 
+    // Calculate end time (use actual check-out time if available, otherwise add 3 hours)
+    $start_time = strtotime($schedule['schedule_time']);
+    
+    if (!empty($schedule['actual_end_time'])) {
+        $end_time_display = $schedule['actual_end_time'];
+    } else {
+        $end_time = strtotime('+3 hours', $start_time);
+        $end_time_display = date('h:i A', $end_time);
+    }
+    
     // Format the schedule data
     $schedule_by_day[$day][$room][] = [
-        'time_range' => date('h:i A', strtotime($schedule['time_in'])) . ' - ' . date('h:i A', strtotime($schedule['time_out'])),
-        'time_in' => date('h:i A', strtotime($schedule['time_in'])),
+        'time_range' => date('h:i A', $start_time) . ' - ' . $end_time_display,
+        'time_in' => date('h:i A', $start_time),
         'professor' => $schedule['professor_name'],
         'subject' => $schedule['subject_code'],
-        'section' => $schedule['section_name']
+        'section' => $schedule['section_name'],
+        'has_checked_out' => !empty($schedule['actual_end_time'])
     ];
 }
 
@@ -75,7 +94,16 @@ $current_day = date('l');
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
-
+    <style>
+        .time-info.actual-checkout {
+            color: #22c55e; /* Green color to indicate actual check-out time */
+            font-weight: bold;
+        }
+        .time-info.estimated {
+            color: #888; /* Gray color to indicate estimated time */
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body>
@@ -102,7 +130,14 @@ $current_day = date('l');
                                 <?php foreach ($room_schedules as $schedule): ?>
                                     <div class="schedule-card">
                                         <h5><?= htmlspecialchars($room_number) ?></h5>
-                                        <p class="time-info"><?= htmlspecialchars($schedule['time_range']) ?></p>
+                                        <p class="time-info <?= $schedule['has_checked_out'] ? 'actual-checkout' : 'estimated' ?>">
+                                            <?= htmlspecialchars($schedule['time_range']) ?>
+                                            <?php if ($schedule['has_checked_out']): ?>
+                                                <small>(Actual)</small>
+                                            <?php else: ?>
+                                                <small>(Estimated)</small>
+                                            <?php endif; ?>
+                                        </p>
                                         <p><strong>Professor:</strong> <?= htmlspecialchars($schedule['professor']) ?></p>
                                         <p><strong>Subject:</strong> <?= htmlspecialchars($schedule['subject']) ?></p>
                                         <p><strong>Section:</strong> <?= htmlspecialchars($schedule['section']) ?></p>

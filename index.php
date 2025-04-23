@@ -263,6 +263,11 @@ if (!empty($_POST['rfid_tag'])) {
     </div>
   </div>
 
+
+
+
+<script src="js/cardhover.js"></script>
+
 </body>
 
 </html>
