@@ -88,8 +88,8 @@ if (isset($_SESSION['name'])) {
             <div class="row mb-3">
                 <div class="col-md-6">
                     <!-- Add Student Button -->
-                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addStudentModal">
-                        Add Student
+                    <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#addStudentModal">
+                        Add Student 
                     </button>
                 </div>
                 <div class="col-md-6">
@@ -108,8 +108,8 @@ if (isset($_SESSION['name'])) {
                 </div>
             </div>
 
-            <table class="table table-hover">
-                <thead>
+            <table class="table table-hover table-bordered" style="width: 99%;">
+                <thead> 
                     <tr>
                         <th>Student ID</th>
                         <th>Name</th>
@@ -120,7 +120,7 @@ if (isset($_SESSION['name'])) {
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-responsive" style="width: 100.8%; height: 500px; overflow-y: auto;">
                     <?php foreach ($students as $student): ?>
                         <tr>
                             <td><?= htmlspecialchars($student['student_id']) ?></td>
@@ -129,7 +129,7 @@ if (isset($_SESSION['name'])) {
                             <td><?= htmlspecialchars($student['rfid_tag']) ?></td>
                             <td><?= htmlspecialchars($student['section_name']) ?></td>
                             <td><img src="uploads/<?= $student['photo'] ?>" width="50" height="50" class="rounded-circle"></td>
-                            <td>
+                            <td>        
                                 <a href="edit_student.php?id=<?= $student['student_user_id'] ?>" 
                                    class="btn btn-warning btn-sm">Edit</a>
                                 <a href="delete_student.php?id=<?= $student['student_user_id'] ?>" 

@@ -5448,3 +5448,45 @@
 [24-Apr-2025 13:20:28 Asia/Manila] Received RFID tag: 0004742408
 [24-Apr-2025 13:20:37 Asia/Manila] Received RFID tag: 0004742408
 [24-Apr-2025 13:20:37 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:26:29 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:26:37 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:26:55 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:27:53 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:27:54 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:27:55 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:27:56 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 13:29:04 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 14:25:23 Asia/Manila] Received RFID tag: 10004742408
+[24-Apr-2025 14:25:29 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 14:25:33 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 14:25:37 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 14:25:38 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 14:25:43 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 14:25:43 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard\sections\nav.php on line 5
+[24-Apr-2025 14:25:43 Asia/Manila] PHP Warning:  Undefined array key "password" in C:\xampp\htdocs\LabGuard\sections\nav.php on line 6
+[24-Apr-2025 14:25:43 Asia/Manila] PHP Warning:  Undefined array key "role" in C:\xampp\htdocs\LabGuard\sections\nav.php on line 7
+[24-Apr-2025 14:25:57 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 14:25:57 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard\sections\nav.php on line 5
+[24-Apr-2025 14:25:57 Asia/Manila] PHP Warning:  Undefined array key "password" in C:\xampp\htdocs\LabGuard\sections\nav.php on line 6
+[24-Apr-2025 14:25:57 Asia/Manila] PHP Warning:  Undefined array key "role" in C:\xampp\htdocs\LabGuard\sections\nav.php on line 7
+[24-Apr-2025 14:26:01 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 14:26:02 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 14:26:03 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:17:13 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 23:17:18 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:17:22 Asia/Manila] Received RFID tag: 0005686670
+[24-Apr-2025 23:17:23 Asia/Manila] Received RFID tag: 0005686670
+[24-Apr-2025 23:17:25 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 23:22:47 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:22:57 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 23:23:09 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:23:10 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 23:23:13 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:29:09 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 23:29:12 Asia/Manila] Received RFID tag: 0004806268
+[24-Apr-2025 23:29:14 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:29:18 Asia/Manila] Received RFID tag: 0005686670
+[24-Apr-2025 23:29:37 Asia/Manila] Received RFID tag: 0005686670
+[24-Apr-2025 23:29:39 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:42:40 Asia/Manila] Received RFID tag: 0004742408
+[24-Apr-2025 23:42:42 Asia/Manila] Received RFID tag: 0004742408

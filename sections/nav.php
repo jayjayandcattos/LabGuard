@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="top-section">
                     <h2>LABGUARD</h2>
                     <div class="white-line"></div>
-                    <p class="short-description">A secure and efficient platform for managing laboratory resources.</p>
+                    <p class="short-description" style="text-align: center;">A secure and efficient platform for managing laboratory resources.</p>
                 </div>
                 <!-- Split Section -->
                 <div class="split-section">
@@ -274,7 +274,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>© 2025 LABGUARD. All rights reserved.</p>
         <div class="overflow-hidden w-full md:w-auto">
             <p onclick="openTermsModal()">
-                The Terms of Service of the LABGUARD™ establishes a legally binding agreement between parties involved in the usage of the LABGUARD™ Attendance Monitoring System whether personally (“you”) or done behalf of a party’s knowledge including LABGUARD™ (“Company”, “we”, “us”, and “our”) whether through web-application, or physical usage of the system. You agree that by using, operating, and/or utilizing the LABGUARD™ you adhere to the written Terms of Service, you have read, understood, and agree upon the usage of our system. If you do not agree with the terms written within the Terms of Service you are effectively prohibited and are obligated to cease the use or your participation with the system by contacting proper authorities within your academic institution.
+            Using this platform means you agree to all Terms and our Privacy Policy. Click here to learn more.
                         </p>
         </div>
     </div>

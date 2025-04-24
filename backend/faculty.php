@@ -40,7 +40,7 @@ if (isset($_SESSION['name'])) {
         
 <div id="main-container">
             <h2>Faculty Management</h2>
-            <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addFacultyModal">Add Faculty</button>
+            <button class="btn btn-success mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#addFacultyModal">Add Faculty</button>
 
             <table class="table table-bordered">
                 <thead>

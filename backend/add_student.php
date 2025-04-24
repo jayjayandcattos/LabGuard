@@ -46,11 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $check_stmt->execute([$student_id]);
         
         if ($check_stmt->fetchColumn() > 0) {
-            $_SESSION['error'] = "Student ID already exists!";
-            header("Location: students.php");
+            echo "<script>alert('Student ID already exists!'); window.location.href = 'students.php';</script>";
             exit();
         }
-
         // Insert new student
         $query = "INSERT INTO student_tbl (student_id, lastname, firstname, mi, email, section_id, photo) 
                   VALUES (:student_id, :lastname, :firstname, :mi, :email, :section_id, :photo)";

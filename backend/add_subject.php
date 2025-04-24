@@ -7,6 +7,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $subject_name = $_POST["subject_name"];
         $prof_user_id = $_POST["prof_user_id"];
 
+        // Check for duplicate subject code
+        $checkQuery = "SELECT COUNT(*) FROM subject_tbl WHERE subject_code = ?";
+        $checkStmt = $conn->prepare($checkQuery);
+        $checkStmt->execute([$subject_code]);
+
+        if ($checkStmt->fetchColumn() > 0) {
+            echo "<script>alert('Subject code already exists!'); window.location.href = 'student_subs.php';</script>";
+            exit();
+        }
+
+        // Insert if no duplicate
         $query = "INSERT INTO subject_tbl (subject_code, subject_name, prof_user_id) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($query);
         $stmt->execute([$subject_code, $subject_name, $prof_user_id]);
@@ -14,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: student_subs.php");
         exit();
     } else {
-        echo "Missing required fields.";
+        echo "<script>alert('Missing required fields.'); window.location.href = 'student_subs.php';</script>";
+        exit();
     }
 }
 ?>

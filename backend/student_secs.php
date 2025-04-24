@@ -39,7 +39,7 @@ if (isset($_SESSION['name'])) {
             <h2>Section Management</h2>
             
             <!-- Add Section Button -->
-            <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addSectionModal">Add Section</button>
+            <button class="btn btn-success mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#addSectionModal">Add Section</button>
 
             <table class="table table-bordered">
                 <thead>
