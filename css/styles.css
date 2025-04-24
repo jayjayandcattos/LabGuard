@@ -1089,3 +1089,11 @@ button:hover {
 .footer-content a:hover {
   text-decoration: underline;
 }
+
+.table-body {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
