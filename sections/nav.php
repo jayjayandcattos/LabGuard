@@ -149,6 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <img src="assets/About2.svg" alt="Card Image Hover" class="hover-image">
                         </div>
                     </div>
+                    <!-- TEST -->
                     <!-- Right Section -->
                     <div class="right-section">
                         <h2 class="smaller-h2">FEATURES</h2>
