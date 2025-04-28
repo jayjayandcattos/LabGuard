@@ -10785,3 +10785,15 @@ Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOSta
 
 [24-Apr-2025 23:28:22 Asia/Manila] Inserting schedule with values: prof_user_id: 9, subject_id: 5, section_id: 1, room_id: 1, schedule_time: 23:30, schedule_day: Saturday
 [24-Apr-2025 23:28:22 Asia/Manila] Schedule inserted successfully
+[26-Apr-2025 10:06:54 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 18
+    [subject_id] => 7
+    [section_id] => 1
+    [room_id] => 8
+    [schedule_time] => 10:08
+    [schedule_day] => Saturday
+)
+
+[26-Apr-2025 10:06:54 Asia/Manila] Inserting schedule with values: prof_user_id: 18, subject_id: 7, section_id: 1, room_id: 8, schedule_time: 10:08, schedule_day: Saturday
+[26-Apr-2025 10:06:54 Asia/Manila] Schedule inserted successfully
