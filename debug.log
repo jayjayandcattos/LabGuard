@@ -5522,3 +5522,186 @@
 [26-Apr-2025 13:27:23 Asia/Manila] Received RFID tag: 0004742408
 [26-Apr-2025 13:28:03 Asia/Manila] Received RFID tag: 0004742408
 [26-Apr-2025 13:28:05 Asia/Manila] Received RFID tag: /0004742408
+[06-May-2025 17:43:01 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:43:05 Asia/Manila] Received RFID tag: 0004796559
+[06-May-2025 17:43:08 Asia/Manila] Received RFID tag: 0004739598
+[06-May-2025 17:44:47 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:44:50 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:46:07 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:46:07 Asia/Manila] Error processing RFID: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-status) 
+                          VALUES ('9', '5', '15', '0005056696', '20...' at line 2
+[06-May-2025 17:50:12 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:50:17 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:53:08 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:53:09 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:53:39 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:53:41 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:04:07 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:04:08 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:08:22 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:08:23 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:12:36 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:12:37 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:12:50 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:12:51 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:20:52 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:20:53 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:37:37 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:37:41 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:37:45 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:45:57 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:45:58 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:46:00 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:46:13 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:46:18 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:01:54 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:01:56 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:02:01 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:02:02 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:02:09 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:02:10 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:04:08 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:04:10 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:05:20 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:05:22 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:05:24 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:05:26 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:05:28 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:05:28 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 5
+[06-May-2025 19:05:28 Asia/Manila] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 5
+[06-May-2025 19:05:28 Asia/Manila] PHP Warning:  Undefined array key "password" in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 6
+[06-May-2025 19:05:28 Asia/Manila] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 6
+[06-May-2025 19:05:28 Asia/Manila] PHP Warning:  Undefined array key "role" in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 7
+[06-May-2025 19:05:30 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:05:30 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 5
+[06-May-2025 19:05:30 Asia/Manila] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 5
+[06-May-2025 19:05:30 Asia/Manila] PHP Warning:  Undefined array key "password" in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 6
+[06-May-2025 19:05:30 Asia/Manila] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 6
+[06-May-2025 19:05:30 Asia/Manila] PHP Warning:  Undefined array key "role" in C:\xampp\htdocs\LabGuard-main\sections\nav.php on line 7
+[06-May-2025 19:05:34 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:05:36 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:05:37 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:09:37 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:09:42 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:09:45 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:16:31 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:16:38 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:16:41 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:17:19 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:17:21 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:17:34 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:33:50 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:33:53 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:34:02 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:34:02 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:34:02 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:34:02 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:34:06 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:34:08 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:34:08 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:34:08 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:34:08 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:34:13 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:34:41 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:34:41 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:34:41 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:34:41 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:34:45 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:34:53 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:35:14 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:35:16 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:35:16 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:35:16 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:35:16 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:35:51 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:35:59 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:35:59 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:35:59 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:35:59 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:36:03 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:52:48 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:52:50 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:52:52 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:52:52 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:52:52 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:52:52 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:53:08 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:53:11 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:53:27 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:53:27 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:53:27 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:53:27 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:53:28 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:53:45 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:53:45 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:53:45 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:53:45 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:53:48 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:53:52 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:54:11 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:54:11 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:54:11 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:54:11 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:54:12 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:54:13 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:54:13 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 177
+[06-May-2025 19:54:13 Asia/Manila] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\LabGuard-main\index.php on line 186
+[06-May-2025 19:54:13 Asia/Manila] Would send absent student email to professor  with 4 absent students
+[06-May-2025 19:54:15 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:54:16 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:54:52 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:54:53 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:55:00 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:55:01 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:57:31 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:57:35 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 19:57:37 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 19:57:38 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:03:47 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:03:47 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:04:45 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:04:47 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:04:51 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:08:37 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:08:40 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:08:42 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:11:54 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:11:56 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:11:57 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:16:33 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:16:34 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:16:35 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:16:41 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:16:45 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:23:32 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:23:36 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:23:40 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:23:40 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sch.schedule_end_time' in 'field list'
+[06-May-2025 20:23:43 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:28:01 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:28:01 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sch.schedule_end_time' in 'field list'
+[06-May-2025 20:28:05 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:28:06 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:28:11 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:28:13 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:28:13 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sch.schedule_end_time' in 'field list'
+[06-May-2025 20:28:21 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:32:22 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:32:22 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sch.schedule_end_time' in 'field list'
+[06-May-2025 20:32:25 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:32:29 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:32:31 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:32:31 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sch.schedule_end_time' in 'field list'
+[06-May-2025 20:57:24 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:57:26 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:57:29 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:57:29 Asia/Manila] PHP Warning:  Undefined variable $prof_schedule in C:\xampp\htdocs\LabGuard-main\index.php on line 127
+[06-May-2025 20:57:29 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\LabGuard-main\index.php on line 127
+[06-May-2025 20:58:00 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:58:02 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 20:58:03 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:58:21 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 20:58:32 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 21:05:01 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 21:05:04 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 21:05:05 Asia/Manila] Received RFID tag: 0005056696

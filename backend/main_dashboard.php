@@ -94,7 +94,7 @@ if (isset($_POST['rfid_tag'])) {
                                         WHERE prof_id = a.prof_id 
                                         AND schedule_id = a.schedule_id
                                         AND status = 'check_out' 
-                                        AND time_out > a.time_out
+                                        
                                     )";
                 $prof_stmt = $conn->prepare($active_prof_query);
                 $prof_stmt->execute([$user['section_id']]);
@@ -137,14 +137,14 @@ if (isset($_POST['rfid_tag'])) {
                     $student_section = $section_stmt->fetch(PDO::FETCH_ASSOC);
 
                     // Get current schedule with more detailed information
-                    $schedule_query = "SELECT s.schedule_id, s.subject_id, s.schedule_time, s.time_out,
+                    $schedule_query = "SELECT s.schedule_id, s.subject_id, s.schedule_time,
                                             s.section_id, sec.section_name,
                                             sub.subject_code, sub.subject_name
                                      FROM schedule_tbl s
                                      JOIN subject_tbl sub ON s.subject_id = sub.subject_id
                                      JOIN section_tbl sec ON s.section_id = sec.section_id
                                      WHERE s.schedule_day = ? 
-                                     AND TIME(?) BETWEEN s.schedule_time AND s.time_out";
+                                     AND TIME(?) BETWEEN s.schedule_time";
                     $schedule_stmt = $conn->prepare($schedule_query);
                     $current_day = date('l');
                     $schedule_stmt->execute([$current_day, $current_time]);
@@ -164,8 +164,8 @@ if (isset($_POST['rfid_tag'])) {
                         if ($schedule) {
                             // Insert new attendance record (check-in)
                             $insert = "INSERT INTO attendance_tbl 
-                                      (student_id, prof_id, subject_id, schedule_id, rfid_tag, time_in, status, time_out) 
-                                      VALUES (?, NULL, ?, ?, ?, ?, 'check_in', ?)";
+                                      (student_id, prof_id, subject_id, schedule_id, rfid_tag, time_in, status) 
+                                      VALUES (?, NULL, ?, ?, ?, ?, 'check_in')";
                             $stmt = $conn->prepare($insert);
                             $stmt->execute([
                                 $user['id'],
@@ -204,8 +204,8 @@ if (isset($_POST['rfid_tag'])) {
 
                     // Allow check-out regardless of schedule
                     $insert = "INSERT INTO attendance_tbl 
-                             (student_id, prof_id, subject_id, schedule_id, rfid_tag, time_in, status, check_out) 
-                             VALUES (?, NULL, ?, ?, ?, ?, 'check_out', ?)";
+                             (student_id, prof_id, subject_id, schedule_id, rfid_tag, status) 
+                             VALUES (?, NULL, ?, ?, ?, 'check_out')";
                     $stmt = $conn->prepare($insert);
                     $stmt->execute([
                         $user['id'],
@@ -227,7 +227,7 @@ if (isset($_POST['rfid_tag'])) {
                                      JOIN subject_tbl sub ON s.subject_id = sub.subject_id
                                      WHERE s.prof_user_id = ? 
                                      AND s.schedule_day = ? 
-                                     AND TIME(?) BETWEEN s.schedule_time AND s.time_out";
+                                     AND TIME(?) BETWEEN s.schedule_time";
                     $schedule_stmt = $conn->prepare($schedule_query);
                     $current_day = date('l');
                     $schedule_stmt->execute([$user['id'], $current_day, $current_time]);
@@ -236,8 +236,8 @@ if (isset($_POST['rfid_tag'])) {
                     if ($schedule) {
                         // Insert new record for professor (check-in)
                         $insert = "INSERT INTO attendance_tbl 
-                                  (student_id, prof_id, subject_id, schedule_id, rfid_tag, time_in, status, time_out) 
-                                  VALUES (NULL, ?, ?, ?, ?, ?, 'check_in', ?)";
+                                  (student_id, prof_id, subject_id, schedule_id, rfid_tag, status) 
+                                  VALUES (NULL, ?, ?, ?, ?, 'check_in')";
                         $stmt = $conn->prepare($insert);
                         $stmt->execute([
                             $user['id'],
@@ -272,8 +272,8 @@ if (isset($_POST['rfid_tag'])) {
 
                             // First check out the professor
                             $insert = "INSERT INTO attendance_tbl 
-                                     (student_id, prof_id, subject_id, schedule_id, rfid_tag, time_in, status, time_out) 
-                                     VALUES (NULL, ?, ?, ?, ?, ?, 'check_out', ?)";
+                                     (student_id, prof_id, subject_id, schedule_id, rfid_tag, status) 
+                                     VALUES (NULL, ?, ?, ?, ?, 'check_out)";
                             $stmt = $conn->prepare($insert);
                             $stmt->execute([
                                 $user['id'],
@@ -298,8 +298,7 @@ if (isset($_POST['rfid_tag'])) {
                                 // Check if student was already checked out
                                 $check_existing = "SELECT * FROM attendance_tbl 
                                                  WHERE student_id = ? 
-                                                 AND schedule_id = ? 
-                                                 AND DATE(time_out) = CURDATE()
+                                                 AND schedule_id = ?
                                                  AND status = 'check_out'";
                                 $check_stmt = $conn->prepare($check_existing);
                                 $check_stmt->execute([$student['student_user_id'], $schedule['schedule_id']]);
@@ -307,8 +306,8 @@ if (isset($_POST['rfid_tag'])) {
 
                                 if (!$already_checked_out) {
                                     $insert = "INSERT INTO attendance_tbl 
-                                             (student_id, prof_id, subject_id, schedule_id, rfid_tag, time_in, status, time_out) 
-                                             VALUES (?, NULL, ?, ?, ?, ?, 'check_out', ?)";
+                                             (student_id, prof_id, subject_id, schedule_id, rfid_tag, status) 
+                                             VALUES (?, NULL, ?, ?, ?, 'check_out')";
                                     $stmt = $conn->prepare($insert);
                                     $stmt->execute([
                                         $student['student_user_id'],

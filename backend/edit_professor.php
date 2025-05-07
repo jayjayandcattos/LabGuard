@@ -95,6 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <select name="role_id" class="form-control" required>
                     <option value="1" <?= $professor['role_id'] == 1 ? 'selected' : '' ?>>Faculty</option>
                     <option value="2" <?= $professor['role_id'] == 2 ? 'selected' : '' ?>>Admin</option>
+                    <option value="3" <?= $professor['role_id'] == 3 ? 'selected' : '' ?>>Professor</option>
                 </select>
             </div>
             <div class="mb-2">

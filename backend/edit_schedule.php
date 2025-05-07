@@ -36,8 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $section_id = $_POST['section_id'];
     $room_id = $_POST['room_id'];
     $schedule_time = $_POST['schedule_time'];
-    $time_in = $_POST['time_in'];
-    $time_out = $_POST['time_out'];
     $schedule_day = $_POST['schedule_day'];
     
     $updateQuery = "
@@ -47,8 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             section_id = :section_id,
             room_id = :room_id,
             schedule_time = :schedule_time,
-            time_in = :time_in,
-            time_out = :time_out,
             schedule_day = :schedule_day
         WHERE schedule_id = :schedule_id
     ";
@@ -59,8 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ':section_id' => $section_id,
         ':room_id' => $room_id,
         ':schedule_time' => $schedule_time,
-        ':time_in' => $time_in,
-        ':time_out' => $time_out,
         ':schedule_day' => $schedule_day,
         ':schedule_id' => $schedule_id
     ]);
@@ -121,11 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>Schedule Time:</label>
             <input type="time" name="schedule_time" class="form-control" value="<?= $schedule['schedule_time'] ?>" required>
 
-            <label>Time In:</label>
-            <input type="time" name="time_in" class="form-control" value="<?= $schedule['time_in'] ?>" required>
-
-            <label>Time Out:</label>
-            <input type="time" name="time_out" class="form-control" value="<?= $schedule['time_out'] ?>" required>
 
             <label>Schedule Day:</label>
             <select name="schedule_day" class="form-control" required>

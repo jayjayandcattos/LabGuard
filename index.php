@@ -74,8 +74,8 @@ if (!empty($_POST['rfid_tag'])) {
       if ($next_action === 'check_in') {
         // ✅ Professor Check-In
         $insert = "INSERT INTO attendance_tbl 
-                          (prof_id, subject_id, schedule_id, rfid_tag, time_in, status) 
-                          VALUES (?, ?, ?, ?, ?, 'check_in')";
+                          (prof_id, subject_id, schedule_id, rfid_tag, time_in, status, a_status) 
+                          VALUES (?, ?, ?, ?, ?, 'check_in', 'Present')";
         $stmt = $conn->prepare($insert);
         $stmt->execute([
           $user['id'],
@@ -90,57 +90,97 @@ if (!empty($_POST['rfid_tag'])) {
           'message' => 'Professor check-in recorded',
           'user' => $user,
           'status' => 'check_in',
-          'time' => $formatted_time
+          'time' => $formatted_time,
+          'a_status' => 'Present'
         ]);
       } else {
         // ✅ Professor Check-Out & Auto Check Out Students
         $update_prof = "UPDATE attendance_tbl 
-                                SET time_out = ?, status = 'check_out' 
+                                SET time_out = ?, status = 'check_out', a_status = 'Ended' 
                                 WHERE prof_id = ? AND DATE(time_in) = CURDATE() AND status = 'check_in'";
         $stmt = $conn->prepare($update_prof);
         $stmt->execute([$current_time, $user['id']]);
 
-        $update_students = "UPDATE attendance_tbl 
-                                    SET time_out = ?, status = 'check_out' 
-                                    WHERE student_id IS NOT NULL AND DATE(time_in) = CURDATE() AND status = 'check_in'";
-        $stmt = $conn->prepare($update_students);
-        $stmt->execute([$current_time]);
+        // Get schedule ID from professor's check-in
+        $prof_schedule_query = "SELECT schedule_id FROM attendance_tbl 
+                                WHERE prof_id = ? AND DATE(time_in) = CURDATE() 
+                                ORDER BY time_in DESC LIMIT 1";
+        $prof_schedule_stmt = $conn->prepare($prof_schedule_query);
+        $prof_schedule_stmt->execute([$user['id']]);
+        $prof_schedule = $prof_schedule_stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Update all student records for this schedule
+        if ($prof_schedule) {
+            $update_students = "UPDATE attendance_tbl 
+                                SET time_out = ?, status = 'check_out', a_status = 'Ended'
+                                WHERE student_id IS NOT NULL 
+                                AND schedule_id = ? 
+                                AND DATE(time_in) = CURDATE() 
+                                AND status = 'check_in'";
+            $stmt = $conn->prepare($update_students);
+            $stmt->execute([$current_time, $prof_schedule['schedule_id']]);
+        }
+
+        // Fetch all affected students to return to frontend
+        $student_query = "SELECT s.lastname, s.firstname, s.photo, a.time_in 
+                         FROM attendance_tbl a 
+                         JOIN student_tbl s ON a.student_id = s.student_user_id
+                         WHERE a.schedule_id = ? 
+                         AND DATE(a.time_in) = CURDATE()";
+        $student_stmt = $conn->prepare($student_query);
+        $student_stmt->execute([$prof_schedule['schedule_id']]);
+        $students = $student_stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $checked_out_students = [];
+        foreach ($students as $student) {
+            $checked_out_students[] = [
+                'user' => [
+                    'lastname' => $student['lastname'],
+                    'firstname' => $student['firstname'],
+                    'photo' => $student['photo']
+                ],
+                'check_in_time' => date('h:i:s A', strtotime($student['time_in'])),
+            ];
+        }
 
         echo json_encode([
           'success' => true,
           'message' => 'Professor checked out. All students have been checked out automatically.',
           'user' => $user,
           'status' => 'check_out',
-          'time' => $formatted_time
+          'time' => $formatted_time,
+          'a_status' => 'Ended',
+          'checked_out_students' => $checked_out_students
         ]);
       }
       exit();
     }
-    if ($user['role'] === 'student' && $next_action === 'check_in') {
-      // ✅ Ensure a Professor Has Checked In (Optional: Can be removed if unnecessary)
-      $active_prof_query = "SELECT 1 FROM attendance_tbl 
+    if ($user['role'] === 'student') {
+      // ✅ Ensure a Professor Has Checked In (Only for check-in)
+      if ($next_action === 'check_in') {
+        $active_prof_query = "SELECT 1 FROM attendance_tbl 
                                   WHERE DATE(time_in) = CURDATE() 
                                   AND prof_id IS NOT NULL 
                                   AND status = 'check_in' 
+                                  AND a_status = 'Present'
                                   LIMIT 1";
-      $prof_stmt = $conn->prepare($active_prof_query);
-      $prof_stmt->execute();
-      $active_prof = $prof_stmt->fetchColumn();
+        $prof_stmt = $conn->prepare($active_prof_query);
+        $prof_stmt->execute();
+        $active_prof = $prof_stmt->fetchColumn();
 
-      if (!$active_prof) {
-        echo json_encode([
-          'success' => false,
-          'message' => 'Please wait for your professor to check in first.',
-          'time' => $formatted_time
-        ]);
-        exit();
-      }
+        if (!$active_prof) {
+          echo json_encode([
+            'success' => false,
+            'message' => 'Please wait for your professor to check in first.',
+            'time' => $formatted_time
+          ]);
+          exit();
+        }
 
-      if ($next_action === 'check_in') {
         // ✅ Student Check-In
         $insert = "INSERT INTO attendance_tbl 
-                          (student_id, subject_id, schedule_id, rfid_tag, time_in, status) 
-                          VALUES (?, ?, ?, ?, ?, 'check_in')";
+                          (student_id, subject_id, schedule_id, rfid_tag, time_in, status, a_status) 
+                          VALUES (?, ?, ?, ?, ?, 'check_in', 'Present')";
         $stmt = $conn->prepare($insert);
         $stmt->execute([
           $user['id'],
@@ -155,12 +195,13 @@ if (!empty($_POST['rfid_tag'])) {
           'message' => 'Student check-in recorded successfully!',
           'user' => $user,
           'status' => 'check_in',
-          'time' => $formatted_time
+          'time' => $formatted_time,
+          'a_status' => 'Present'
         ]);
       } else {
         // ✅ Student Check-Out
         $update = "UPDATE attendance_tbl 
-                           SET time_out = ?, status = 'check_out' 
+                           SET time_out = ?, status = 'check_out', a_status = 'Ended'
                            WHERE student_id = ? AND DATE(time_in) = CURDATE() AND status = 'check_in'";
         $stmt = $conn->prepare($update);
         $stmt->execute([$current_time, $user['id']]);
@@ -170,7 +211,8 @@ if (!empty($_POST['rfid_tag'])) {
           'message' => 'Student check-out recorded successfully!',
           'user' => $user,
           'status' => 'check_out',
-          'time' => $formatted_time
+          'time' => $formatted_time,
+          'a_status' => 'Ended'
         ]);
       }
       exit();
@@ -185,10 +227,6 @@ if (!empty($_POST['rfid_tag'])) {
   }
 }
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -208,7 +246,6 @@ if (!empty($_POST['rfid_tag'])) {
   <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/IDtap.svg" type="image/x-icon">
 </head>
-
 
 <body>
 
@@ -245,31 +282,28 @@ if (!empty($_POST['rfid_tag'])) {
               </div>
             </div>
           </div>
-          </div>
-          <div class="section">
-            <div class="table">
-              <h1>STUDENTS</h1>
-              <div class="table-header">
-                <span>PHOTO</span>
-                <span>NAME</span>
-                <span>CHECK IN</span>
-                <span>CHECK OUT</span>
-                <span>STATUS</span>
-              </div>
-              <div class="table-body">
+        </div>
+        <div class="section">
+          <div class="table">
+            <h1>STUDENTS</h1>
+            <div class="table-header">
+              <span>PHOTO</span>
+              <span>NAME</span>
+              <span>CHECK IN</span>
+              <span>CHECK OUT</span>
+              <span>STATUS</span>
+            </div>
+            <div class="table-body">
               <div class="table-row">
-              </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-
-
-
-    <script src="js/cardhover.js"></script>
+  <script src="js/cardhover.js"></script>
 
 </body>
 

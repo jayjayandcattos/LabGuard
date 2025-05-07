@@ -10797,3 +10797,328 @@ Stack trace: #0 C:\xampp\htdocs\LabGuard\backend\main_dashboard.php(233): PDOSta
 
 [26-Apr-2025 10:06:54 Asia/Manila] Inserting schedule with values: prof_user_id: 18, subject_id: 7, section_id: 1, room_id: 8, schedule_time: 10:08, schedule_day: Saturday
 [26-Apr-2025 10:06:54 Asia/Manila] Schedule inserted successfully
+[06-May-2025 17:46:04 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 9
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 1
+    [schedule_time] => 17:46
+    [schedule_day] => Tuesday
+)
+
+[06-May-2025 17:46:04 Asia/Manila] Inserting schedule with values: prof_user_id: 9, subject_id: 5, section_id: 1, room_id: 1, schedule_time: 17:46, schedule_day: Tuesday
+[06-May-2025 17:46:04 Asia/Manila] Schedule inserted successfully
+[06-May-2025 17:46:39 Asia/Manila] Database connection successful
+[06-May-2025 17:46:39 Asia/Manila] Updated status column
+[06-May-2025 17:46:39 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 17:46:41 Asia/Manila] Database connection successful
+[06-May-2025 17:46:41 Asia/Manila] Updated status column
+[06-May-2025 17:46:41 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 17:46:41 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 17:46:41 Asia/Manila] Student query result: 
+[06-May-2025 17:46:41 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 17:46:41 Asia/Manila] Existing tap check result: 
+[06-May-2025 17:46:41 Asia/Manila] Next action determined: check_in
+[06-May-2025 17:46:41 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 18:21:34 Asia/Manila] Database connection successful
+[06-May-2025 18:21:34 Asia/Manila] Updated status column
+[06-May-2025 18:21:34 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:21:43 Asia/Manila] Database connection successful
+[06-May-2025 18:21:43 Asia/Manila] Updated status column
+[06-May-2025 18:21:43 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:21:43 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:21:43 Asia/Manila] Student query result: 
+[06-May-2025 18:21:43 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 18:21:43 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 505
+    [student_id] => 
+    [prof_id] => 9
+    [subject_id] => 5
+    [schedule_id] => 15
+    [rfid_tag] => 0005056696
+    [time_in] => 2025-05-06 18:20:52
+    [status] => check_out
+    [time_out] => 2025-05-06 18:20:53
+    [a_status] => Ended
+    [timestamp] => 2025-05-06 18:20:52
+)
+
+[06-May-2025 18:21:43 Asia/Manila] Next action determined: check_in
+[06-May-2025 18:21:43 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 18:23:45 Asia/Manila] Database connection successful
+[06-May-2025 18:23:45 Asia/Manila] Updated status column
+[06-May-2025 18:23:45 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:23:46 Asia/Manila] Database connection successful
+[06-May-2025 18:23:46 Asia/Manila] Updated status column
+[06-May-2025 18:23:46 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:23:46 Asia/Manila] Received RFID tag: 0004824175
+[06-May-2025 18:23:46 Asia/Manila] Student query result: 
+[06-May-2025 18:23:46 Asia/Manila] Professor query result: 
+[06-May-2025 18:23:54 Asia/Manila] Database connection successful
+[06-May-2025 18:23:54 Asia/Manila] Updated status column
+[06-May-2025 18:23:54 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:23:54 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:23:54 Asia/Manila] Student query result: 
+[06-May-2025 18:23:54 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 18:23:54 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 505
+    [student_id] => 
+    [prof_id] => 9
+    [subject_id] => 5
+    [schedule_id] => 15
+    [rfid_tag] => 0005056696
+    [time_in] => 2025-05-06 18:20:52
+    [status] => check_out
+    [time_out] => 2025-05-06 18:20:53
+    [a_status] => Ended
+    [timestamp] => 2025-05-06 18:20:52
+)
+
+[06-May-2025 18:23:54 Asia/Manila] Next action determined: check_in
+[06-May-2025 18:23:54 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 18:24:22 Asia/Manila] Database connection successful
+[06-May-2025 18:24:22 Asia/Manila] Updated status column
+[06-May-2025 18:24:22 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:22 Asia/Manila] Received RFID tag: 20005056696
+[06-May-2025 18:24:22 Asia/Manila] Student query result: 
+[06-May-2025 18:24:22 Asia/Manila] Professor query result: 
+[06-May-2025 18:24:25 Asia/Manila] Database connection successful
+[06-May-2025 18:24:25 Asia/Manila] Updated status column
+[06-May-2025 18:24:25 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:25 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:24:25 Asia/Manila] Student query result: 
+[06-May-2025 18:24:25 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 18:24:25 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 505
+    [student_id] => 
+    [prof_id] => 9
+    [subject_id] => 5
+    [schedule_id] => 15
+    [rfid_tag] => 0005056696
+    [time_in] => 2025-05-06 18:20:52
+    [status] => check_out
+    [time_out] => 2025-05-06 18:20:53
+    [a_status] => Ended
+    [timestamp] => 2025-05-06 18:20:52
+)
+
+[06-May-2025 18:24:25 Asia/Manila] Next action determined: check_in
+[06-May-2025 18:24:25 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 18:24:43 Asia/Manila] Database connection successful
+[06-May-2025 18:24:43 Asia/Manila] Updated status column
+[06-May-2025 18:24:43 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:43 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:24:43 Asia/Manila] Student query result: 
+[06-May-2025 18:24:43 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 18:24:43 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 505
+    [student_id] => 
+    [prof_id] => 9
+    [subject_id] => 5
+    [schedule_id] => 15
+    [rfid_tag] => 0005056696
+    [time_in] => 2025-05-06 18:20:52
+    [status] => check_out
+    [time_out] => 2025-05-06 18:20:53
+    [a_status] => Ended
+    [timestamp] => 2025-05-06 18:20:52
+)
+
+[06-May-2025 18:24:43 Asia/Manila] Next action determined: check_in
+[06-May-2025 18:24:43 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 18:24:45 Asia/Manila] Database connection successful
+[06-May-2025 18:24:45 Asia/Manila] Updated status column
+[06-May-2025 18:24:45 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:46 Asia/Manila] Database connection successful
+[06-May-2025 18:24:46 Asia/Manila] Updated status column
+[06-May-2025 18:24:46 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:46 Asia/Manila] Database connection successful
+[06-May-2025 18:24:46 Asia/Manila] Updated status column
+[06-May-2025 18:24:46 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:46 Asia/Manila] Database connection successful
+[06-May-2025 18:24:46 Asia/Manila] Updated status column
+[06-May-2025 18:24:46 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:47 Asia/Manila] Database connection successful
+[06-May-2025 18:24:47 Asia/Manila] Updated status column
+[06-May-2025 18:24:47 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:24:47 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:24:47 Asia/Manila] Student query result: 
+[06-May-2025 18:24:47 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 18:24:47 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 505
+    [student_id] => 
+    [prof_id] => 9
+    [subject_id] => 5
+    [schedule_id] => 15
+    [rfid_tag] => 0005056696
+    [time_in] => 2025-05-06 18:20:52
+    [status] => check_out
+    [time_out] => 2025-05-06 18:20:53
+    [a_status] => Ended
+    [timestamp] => 2025-05-06 18:20:52
+)
+
+[06-May-2025 18:24:47 Asia/Manila] Next action determined: check_in
+[06-May-2025 18:24:47 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 18:30:23 Asia/Manila] Database connection successful
+[06-May-2025 18:30:23 Asia/Manila] Updated status column
+[06-May-2025 18:30:23 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:30:28 Asia/Manila] Database connection successful
+[06-May-2025 18:30:28 Asia/Manila] Updated status column
+[06-May-2025 18:30:28 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:30:28 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:30:28 Asia/Manila] Student query result: 
+[06-May-2025 18:30:28 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 18:30:28 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 505
+    [student_id] => 
+    [prof_id] => 9
+    [subject_id] => 5
+    [schedule_id] => 15
+    [rfid_tag] => 0005056696
+    [time_in] => 2025-05-06 18:20:52
+    [status] => check_out
+    [time_out] => 2025-05-06 18:20:53
+    [a_status] => Ended
+    [timestamp] => 2025-05-06 18:20:52
+)
+
+[06-May-2025 18:30:28 Asia/Manila] Next action determined: check_in
+[06-May-2025 18:30:28 Asia/Manila] Error processing RFID: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.time_out' in 'field list'
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 18:36:16 Asia/Manila] Database connection successful
+[06-May-2025 18:36:16 Asia/Manila] Updated status column
+[06-May-2025 18:36:16 Asia/Manila] Modified student_id to allow NULL
+[06-May-2025 18:36:16 Asia/Manila] Received RFID tag: 0005056696
+[06-May-2025 18:36:16 Asia/Manila] Student query result: 
+[06-May-2025 18:36:16 Asia/Manila] Professor query result: Array
+(
+    [id] => 9
+    [lastname] => Golfo
+    [firstname] => Yzabella
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => professor
+)
+
+[06-May-2025 18:36:16 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 505
+    [student_id] => 
+    [prof_id] => 9
+    [subject_id] => 5
+    [schedule_id] => 15
+    [rfid_tag] => 0005056696
+    [time_in] => 2025-05-06 18:20:52
+    [status] => check_out
+    [time_out] => 2025-05-06 18:20:53
+    [a_status] => Ended
+    [timestamp] => 2025-05-06 18:20:52
+)
+
+[06-May-2025 18:36:16 Asia/Manila] Next action determined: check_in
+[06-May-2025 18:36:16 Asia/Manila] Error processing RFID: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 7
+Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): PDOStatement->execute(Array)
+#1 {main}
+[06-May-2025 19:33:38 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 9
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 19:33
+    [schedule_day] => Tuesday
+)
+
+[06-May-2025 19:33:38 Asia/Manila] Inserting schedule with values: prof_user_id: 9, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 19:33, schedule_day: Tuesday
+[06-May-2025 19:33:38 Asia/Manila] Schedule inserted successfully
+[06-May-2025 20:15:54 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 7
+    [section_id] => 1
+    [room_id] => 4
+    [schedule_time] => 18:15
+    [schedule_day] => Tuesday
+)
+
+[06-May-2025 20:15:54 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 7, section_id: 1, room_id: 4, schedule_time: 18:15, schedule_day: Tuesday
+[06-May-2025 20:15:54 Asia/Manila] Schedule inserted successfully
+[06-May-2025 21:06:16 Asia/Manila] Database connection successful
+[06-May-2025 21:06:16 Asia/Manila] Updated status column
+[06-May-2025 21:06:16 Asia/Manila] Modified student_id to allow NULL

@@ -7,9 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject_id = $_POST["subject_id"];
     $section_id = $_POST["section_id"];
     $room_id = $_POST["room_id"];
-    $schedule_time = $_POST["schedule_time"];
-    $time_in = $_POST["time_in"];
-    $time_out = $_POST["time_out"];
+    $schedule_time = $_POST["schedule_time"];   
     $schedule_day = $_POST["schedule_day"];
 
     // Check for schedule conflicts
@@ -18,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       AND schedule_day = :schedule_day
                       AND (
                           (schedule_time BETWEEN :start_time AND :end_time)
-                          OR (:schedule_time BETWEEN schedule_time AND time_out)
                       )";
     
     $stmt = $conn->prepare($conflict_query);
@@ -42,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO schedule_tbl (prof_user_id, subject_id, section_id, room_id, 
               schedule_time, time_in, time_out, schedule_day) 
               VALUES (:prof_user_id, :subject_id, :section_id, :room_id, 
-              :schedule_time, :time_in, :time_out, :schedule_day)";
+              :schedule_time, :schedule_day)";
     
     try {
         $stmt = $conn->prepare($query);
@@ -52,8 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "section_id" => $section_id,
             "room_id" => $room_id,
             "schedule_time" => $schedule_time,
-            "time_in" => $time_in,
-            "time_out" => $time_out,
             "schedule_day" => $schedule_day
         ]);
 

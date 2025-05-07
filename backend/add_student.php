@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mi = trim($_POST["mi"] ?? '');
     $email = trim($_POST["email"] ?? '');
     $section_id = trim($_POST["section_id"] ?? '');
+    $rfid_tag = trim($_POST["rfid_tag"] ?? ''); // Make sure to include RFID tag
 
     // Validate required fields
     if (empty($student_id) || empty($lastname) || empty($firstname) || empty($email) || empty($section_id)) {
@@ -49,17 +50,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('Student ID already exists!'); window.location.href = 'students.php';</script>";
             exit();
         }
-        // Insert new student
-        $query = "INSERT INTO student_tbl (student_id, lastname, firstname, mi, email, section_id, photo) 
-                  VALUES (:student_id, :lastname, :firstname, :mi, :email, :section_id, :photo)";
+        // Insert new student with role_id = 4 (Student)
+        $query = "INSERT INTO student_tbl (student_id, role_id, lastname, firstname, mi, email, rfid_tag, section_id, photo) 
+                  VALUES (:student_id, :role_id, :lastname, :firstname, :mi, :email, :rfid_tag, :section_id, :photo)";
         
         $stmt = $conn->prepare($query);
         $result = $stmt->execute([
             "student_id" => $student_id,
+            "role_id" => 4, // 4 is for Student role
             "lastname" => $lastname,
             "firstname" => $firstname,
             "mi" => $mi,
             "email" => $email,
+            "rfid_tag" => $rfid_tag,
             "section_id" => $section_id,
             "photo" => $photo
         ]);
