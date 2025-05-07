@@ -47,6 +47,24 @@ $stmt = $conn->prepare($query);
 $stmt->execute();
 $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$query = "SELECT room_id, room_number, room_name, 
+          CASE 
+              WHEN EXISTS (
+                  SELECT 1 FROM schedule_tbl sch 
+                  WHERE sch.room_id = room_tbl.room_id 
+                  AND sch.schedule_day = DAYNAME(CURDATE())
+                  AND CURRENT_TIME BETWEEN sch.schedule_time AND DATE_ADD(sch.schedule_time, INTERVAL 3 HOUR)
+              ) THEN 'Occupied'
+              ELSE 'Vacant'
+          END as status
+          FROM room_tbl
+          ORDER BY room_number";
+
+$stmt = $conn->prepare($query);
+$stmt->execute();
+$rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>

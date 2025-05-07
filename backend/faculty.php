@@ -40,6 +40,24 @@ if (isset($_SESSION['name'])) {
         
 <div id="main-container">
             <h2>Faculty Management</h2>
+            
+            <!-- Display Messages -->
+            <?php if (isset($_SESSION['success'])): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?= $_SESSION['success']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php unset($_SESSION['success']); ?>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?= $_SESSION['error']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php unset($_SESSION['error']); ?>
+            <?php endif; ?>
+            
             <button class="btn btn-success mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#addFacultyModal">Add Faculty</button>
 
             <table class="table table-bordered">

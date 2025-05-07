@@ -12,9 +12,11 @@ date_default_timezone_set('Asia/Manila');
 
 // Add this near the top of the file with your other database modifications
 try {
+    // Modify schedule_tbl to add end_time column if it doesn't exist
+    $conn->exec("ALTER TABLE schedule_tbl ADD COLUMN IF NOT EXISTS schedule_end_time TIME NOT NULL AFTER schedule_time");
     $conn->exec("ALTER TABLE schedule_tbl MODIFY COLUMN schedule_day ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') NOT NULL");
 } catch (Exception $e) {
-    error_log("Error updating schedule_day enum: " . $e->getMessage());
+    error_log("Error updating schedule table: " . $e->getMessage());
 }
 
 // Handle schedule addition
@@ -28,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $section_id = $_POST["section_id"];
         $room_id = $_POST["room_id"];
         $schedule_time = $_POST["schedule_time"];
+        $schedule_end_time = $_POST["schedule_end_time"];
         $schedule_day = $_POST["schedule_day"];
 
         // Log the values being inserted
@@ -37,11 +40,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "section_id: $section_id, " .
             "room_id: $room_id, " .
             "schedule_time: $schedule_time, " .
+            "schedule_end_time: $schedule_end_time, " .
             "schedule_day: $schedule_day");
 
+        // Check for time conflicts
+        $conflict_query = "SELECT COUNT(*) FROM schedule_tbl 
+                         WHERE room_id = ? 
+                         AND schedule_day = ?
+                         AND (
+                             (schedule_time <= ? AND schedule_end_time > ?) OR
+                             (schedule_time < ? AND schedule_end_time >= ?) OR
+                             (schedule_time >= ? AND schedule_time < ?)
+                         )";
+        
+        $conflict_stmt = $conn->prepare($conflict_query);
+        $conflict_stmt->execute([
+            $room_id,
+            $schedule_day,
+            $schedule_end_time,
+            $schedule_time,
+            $schedule_end_time,
+            $schedule_time,
+            $schedule_time,
+            $schedule_end_time
+        ]);
+        
+        if ($conflict_stmt->fetchColumn() > 0) {
+            error_log("Schedule conflict detected! The room is already booked during this time period.");
+            $_SESSION['error_message'] = "Schedule conflict detected! The room is already booked during this time period.";
+            header("Location: schedule.php");
+            exit();
+        }
+
+        // If no conflicts, insert the new schedule
         $query = "INSERT INTO schedule_tbl (prof_user_id, subject_id, section_id, room_id, 
-                                          schedule_time, schedule_day) 
-                 VALUES (?, ?, ?, ?, ?, ?)";
+                                          schedule_time, schedule_end_time, schedule_day) 
+                 VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($query);
         $result = $stmt->execute([
             $prof_user_id,
@@ -49,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $section_id,
             $room_id,
             $schedule_time,
+            $schedule_end_time,
             $schedule_day
         ]);
 
@@ -84,7 +119,7 @@ if (isset($_SESSION['error_message'])) {
 // Fetch all schedules with professor, subject, section, and room details
 $query = "
     SELECT s.schedule_id, p.firstname, p.lastname, subj.subject_name, sec.section_name, 
-           r.room_name, s.schedule_time, s.schedule_day
+           r.room_name, s.schedule_time, s.schedule_end_time, s.schedule_day
     FROM schedule_tbl s
     JOIN prof_tbl p ON s.prof_user_id = p.prof_user_id
     JOIN subject_tbl subj ON s.subject_id = subj.subject_id
@@ -159,6 +194,16 @@ if (isset($_SESSION['name'])) {
         #scheduleFormContainer.show {
             display: block;
         }
+
+        .time-range {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .time-range span {
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -173,7 +218,7 @@ if (isset($_SESSION['name'])) {
     
     <div id="scheduleFormContainer">
         <h5>Add New Schedule</h5>
-        <form action="schedule.php" method="POST">
+        <form action="schedule.php" method="POST" onsubmit="return validateSchedule()">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label>Professor:</label>
@@ -219,12 +264,15 @@ if (isset($_SESSION['name'])) {
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label>Schedule Time:</label>
-                    <input type="time" name="schedule_time" class="form-control" required>
+                    <div class="time-range">
+                        <input type="time" name="schedule_time" class="form-control" required>
+                        <span>to</span>
+                        <input type="time" name="schedule_end_time" class="form-control" required>
+                    </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label>Schedule Day:</label>
                     <select name="schedule_day" class="form-control" required>
-                        <option value="Sunday">Sunday</option>
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>
                         <option value="Wednesday">Wednesday</option>
@@ -261,7 +309,8 @@ if (isset($_SESSION['name'])) {
                     <td><?= htmlspecialchars($schedule['subject_name']) ?></td>
                     <td><?= htmlspecialchars($schedule['section_name']) ?></td>
                     <td><?= htmlspecialchars($schedule['room_name']) ?></td>
-                    <td><?= date("h:i A", strtotime($schedule['schedule_time'])) ?></td>
+                    <td><?= date("h:i A", strtotime($schedule['schedule_time'])) . ' - ' . 
+                           date("h:i A", strtotime($schedule['schedule_end_time'])) ?></td>
                     <td><?= htmlspecialchars($schedule['schedule_day']) ?></td>
                     <td>
                         <a href="edit_schedule.php?id=<?= $schedule['schedule_id'] ?>" class="btn btn-warning btn-sm">Edit</a>
@@ -293,6 +342,18 @@ if (isset($_SESSION['name'])) {
             toggleFormBtn.textContent = 'Add Schedule';
         });
     });
+
+    function validateSchedule() {
+        const startTime = document.querySelector('input[name="schedule_time"]').value;
+        const endTime = document.querySelector('input[name="schedule_end_time"]').value;
+
+        if (startTime >= endTime) {
+            alert('End time must be later than start time');
+            return false;
+        }
+
+        return true;
+    }
 </script>
 
 </body>

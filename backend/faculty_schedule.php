@@ -81,7 +81,7 @@ $schedules = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
 <?php include '../sections/fac_nav.php'; ?>
 
 <div id="main-container">
-<h2>SCHEDULE OVERVIEW</h2>
+<h2>SCHEDULE MANAGEMENT</h2>
     <button id="toggle-form-btn" class="toggle-btn">+</button>
 
     <div id="schedule-form" class="schedule-form hidden">

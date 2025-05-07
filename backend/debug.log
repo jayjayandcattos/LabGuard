@@ -11122,3 +11122,156 @@ Stack trace: #0 C:\xampp\htdocs\LabGuard-main\backend\main_dashboard.php(233): P
 [06-May-2025 21:06:16 Asia/Manila] Database connection successful
 [06-May-2025 21:06:16 Asia/Manila] Updated status column
 [06-May-2025 21:06:16 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 00:01:43 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 12
+    [subject_id] => 8
+    [section_id] => 1
+    [room_id] => 3
+    [schedule_time] => 00:01
+    [schedule_day] => Wednesday
+)
+
+[07-May-2025 00:01:43 Asia/Manila] Inserting schedule with values: prof_user_id: 12, subject_id: 8, section_id: 1, room_id: 3, schedule_time: 00:01, schedule_day: Wednesday
+[07-May-2025 00:01:43 Asia/Manila] Schedule inserted successfully
+[07-May-2025 00:07:38 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 9
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 1
+    [schedule_time] => 00:07
+    [schedule_day] => Wednesday
+)
+
+[07-May-2025 00:07:38 Asia/Manila] Inserting schedule with values: prof_user_id: 9, subject_id: 5, section_id: 1, room_id: 1, schedule_time: 00:07, schedule_day: Wednesday
+[07-May-2025 00:07:38 Asia/Manila] Schedule inserted successfully
+[07-May-2025 13:30:23 Asia/Manila] Database connection successful
+[07-May-2025 13:30:23 Asia/Manila] Updated status column
+[07-May-2025 13:30:23 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 13:32:08 Asia/Manila] Database connection successful
+[07-May-2025 13:32:08 Asia/Manila] Updated status column
+[07-May-2025 13:32:08 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 13:32:08 Asia/Manila] Received RFID tag: 0004824175
+[07-May-2025 13:32:08 Asia/Manila] Student query result: Array
+(
+    [id] => 21
+    [lastname] => Jumuad
+    [firstname] => Sam
+    [photo] => 364147777_2556534734502108_424220739274862162_n.jpg
+    [role] => student
+    [section_id] => 1
+)
+
+[07-May-2025 13:32:08 Asia/Manila] Existing tap check result: 
+[07-May-2025 13:32:08 Asia/Manila] Next action determined: check_in
+[07-May-2025 13:32:08 Asia/Manila] Error processing RFID: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 8
+Stack trace: #0 C:\xampp\htdocs\LabGuard1\backend\main_dashboard.php(150): PDOStatement->execute(Array)
+#1 {main}
+[07-May-2025 13:36:27 Asia/Manila] Database connection successful
+[07-May-2025 13:36:27 Asia/Manila] Updated status column
+[07-May-2025 13:36:27 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 13:36:28 Asia/Manila] Database connection successful
+[07-May-2025 13:36:28 Asia/Manila] Updated status column
+[07-May-2025 13:36:28 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 13:36:28 Asia/Manila] Received RFID tag: 0004796559
+[07-May-2025 13:36:28 Asia/Manila] Student query result: 
+[07-May-2025 13:36:28 Asia/Manila] Professor query result: Array
+(
+    [id] => 12
+    [lastname] => dfdfd
+    [firstname] => dfdf
+    [photo] => 410587651_408008551551370_2003064156466002817_n.jpg
+    [role] => professor
+)
+
+[07-May-2025 13:36:28 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 570
+    [student_id] => 
+    [prof_id] => 12
+    [subject_id] => 5
+    [schedule_id] => 18
+    [rfid_tag] => 0004796559
+    [time_in] => 2025-05-07 13:36:20
+    [status] => check_in
+    [time_out] => 
+    [a_status] => Present
+    [timestamp] => 2025-05-07 13:36:20
+)
+
+[07-May-2025 13:36:28 Asia/Manila] Next action determined: check_out
+[07-May-2025 13:36:28 Asia/Manila] Transaction started for professor check-out
+[07-May-2025 13:36:28 Asia/Manila] Transaction rolled back due to error
+[07-May-2025 13:36:28 Asia/Manila] Error during mass check-out: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[07-May-2025 13:36:28 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard1\backend\main_dashboard.php(278): PDOStatement->execute(Array)
+#1 {main}
+[07-May-2025 13:36:29 Asia/Manila] Database connection successful
+[07-May-2025 13:36:29 Asia/Manila] Updated status column
+[07-May-2025 13:36:29 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 14:16:02 Asia/Manila] Database connection successful
+[07-May-2025 14:16:03 Asia/Manila] Updated status column
+[07-May-2025 14:16:03 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 14:16:05 Asia/Manila] Database connection successful
+[07-May-2025 14:16:05 Asia/Manila] Updated status column
+[07-May-2025 14:16:05 Asia/Manila] Modified student_id to allow NULL
+[07-May-2025 14:16:05 Asia/Manila] Received RFID tag: 0004796559
+[07-May-2025 14:16:05 Asia/Manila] Student query result: 
+[07-May-2025 14:16:05 Asia/Manila] Professor query result: Array
+(
+    [id] => 12
+    [lastname] => dfdfd
+    [firstname] => dfdf
+    [photo] => 410587651_408008551551370_2003064156466002817_n.jpg
+    [role] => professor
+)
+
+[07-May-2025 14:16:05 Asia/Manila] Existing tap check result: Array
+(
+    [attendance_id] => 584
+    [student_id] => 
+    [prof_id] => 12
+    [subject_id] => 5
+    [schedule_id] => 18
+    [rfid_tag] => 0004796559
+    [time_in] => 2025-05-07 14:13:27
+    [status] => check_in
+    [time_out] => 
+    [a_status] => Present
+    [timestamp] => 2025-05-07 14:13:27
+)
+
+[07-May-2025 14:16:05 Asia/Manila] Next action determined: check_out
+[07-May-2025 14:16:05 Asia/Manila] Transaction started for professor check-out
+[07-May-2025 14:16:05 Asia/Manila] Transaction rolled back due to error
+[07-May-2025 14:16:05 Asia/Manila] Error during mass check-out: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[07-May-2025 14:16:05 Asia/Manila] Error processing RFID: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+Stack trace: #0 C:\xampp\htdocs\LabGuard1\backend\main_dashboard.php(278): PDOStatement->execute(Array)
+#1 {main}
+[07-May-2025 15:35:29 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 15:35
+    [schedule_end_time] => 17:35
+    [schedule_day] => Wednesday
+)
+
+[07-May-2025 15:35:29 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 15:35, schedule_end_time: 17:35, schedule_day: Wednesday
+[07-May-2025 15:35:29 Asia/Manila] Schedule inserted successfully
+[07-May-2025 15:36:01 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 8
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 2
+    [schedule_time] => 15:35
+    [schedule_end_time] => 16:35
+    [schedule_day] => Wednesday
+)
+
+[07-May-2025 15:36:01 Asia/Manila] Inserting schedule with values: prof_user_id: 8, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 15:35, schedule_end_time: 16:35, schedule_day: Wednesday
+[07-May-2025 15:36:01 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.

@@ -42,11 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                     if ($role == "admin") {
-                        header("Location: admin_dashboard.php");
+                        header("Location: backend/admin_dashboard.php");
                     } elseif ($role == "faculty") {
-                        header("Location: faculty_overview.php");
+                        header("Location: backend/faculty_overview.php");
                     } elseif ($role == "professor") {
-                        header("Location: prof_dashboard.php");
+                        header("Location: backend/prof_dashboard.php");
                     }
                     exit();
                 } else {
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-section">
                     <h2>USER LOGIN</h2>
-                    <form action="backend/login.php" method="POST">
+                    <form action="index.php" method="POST">
                         <div class="form-group">
                             <label for="email">EMAIL:</label>
                             <input type="email" id="email" name="email" required>

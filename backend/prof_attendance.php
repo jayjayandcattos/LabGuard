@@ -39,10 +39,12 @@ $attendance_query = "SELECT
                         st.student_id,
                         st.lastname,
                         st.firstname,
-                        MIN(CASE WHEN a.status = 'check_in' THEN TIME(a.time_in) END) as time_in,
+                        MIN(CASE WHEN a.status = 'check_in' OR a.status = 'check_out' THEN TIME(a.time_in) END) as time_in,
                         MAX(CASE WHEN a.status = 'check_out' THEN TIME(a.time_out) END) as time_out,
                         CASE 
-                            WHEN COUNT(CASE WHEN a.status = 'check_in' THEN 1 END) > 0 THEN 'Present'
+                            -- Prioritize existing a_status if available
+                            WHEN MAX(a.a_status) IN ('Present') THEN 'Present'
+                            WHEN COUNT(CASE WHEN (a.status = 'check_in' OR a.status = 'check_out') THEN 1 END) > 0 THEN 'Present'
                             ELSE 'Absent'
                         END as attendance_status,
                         EXISTS (
@@ -82,11 +84,96 @@ $attendance_query = "SELECT
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/prof.css">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <style>
+        .email-request-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .email-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .email-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            width: 400px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .email-modal-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .email-modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .email-modal-content button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-email {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        .close-modal {
+            background-color: #6c757d;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
     <?php include '../sections/nav2.php'; ?>
     <?php include '../sections/prof_nav.php'; ?>
+
+    <!-- Email Request Button -->
+    <button class="email-request-btn" onclick="openEmailModal()">Request for Attendance Summary</button>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="email-modal">
+        <div class="email-modal-content">
+            <h2>Enter Your Email</h2>
+            <form id="emailForm" onsubmit="sendAttendanceSummary(event)">
+                <input type="email" id="emailInput" placeholder="Enter your email address" required>
+                <input type="hidden" id="currentSection" name="section">
+                <input type="hidden" id="currentDate" name="date">
+                <button type="submit" class="submit-email">Send</button>
+                <button type="button" class="close-modal" onclick="closeEmailModal()">Cancel</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <div id="main-container">
@@ -161,6 +248,82 @@ $attendance_query = "SELECT
     </div>
 <?php endif; ?>
 </div>
+
+<script>
+    function formatDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    function openEmailModal() {
+        // Get the date from the date input or use current date if not set
+        const dateInput = document.getElementById('date');
+        const currentDate = dateInput && dateInput.value ? dateInput.value : formatDate(new Date());
+        
+        // Set current values to hidden fields
+        document.getElementById('currentSection').value = document.getElementById('section').value;
+        document.getElementById('currentDate').value = currentDate;
+        
+        console.log('Opening modal with date:', currentDate);
+        document.getElementById('emailModal').style.display = 'block';
+    }
+
+    function closeEmailModal() {
+        document.getElementById('emailModal').style.display = 'none';
+    }
+
+    function sendAttendanceSummary(event) {
+        event.preventDefault();
+        
+        // Get values from form
+        const email = document.getElementById('emailInput').value;
+        const section = document.getElementById('currentSection').value;
+        const date = document.getElementById('currentDate').value;
+        
+        // Debug logs
+        console.log('Sending data:', {
+            email: email,
+            section: section,
+            date: date
+        });
+
+        fetch('../backend/send_attendance_summary.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                section: section,
+                date: date
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response:', data);
+            if (data.success) {
+                alert('Attendance summary has been sent to your email!');
+            } else {
+                alert('Error sending attendance summary: ' + data.message);
+            }
+            closeEmailModal();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error sending attendance summary: ' + error.message);
+            closeEmailModal();
+        });
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('emailModal')) {
+            closeEmailModal();
+        }
+    }
+</script>
 </body>
 
 

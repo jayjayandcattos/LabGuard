@@ -60,6 +60,7 @@ if (isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/classroomManagement.js" defer></script>
+    <script src="../js/studentValidation.js" defer></script>
 </head>
 <body>
 <?php include '../sections/nav4.php' ?>

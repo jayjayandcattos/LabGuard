@@ -9,6 +9,16 @@ ini_set('display_errors', 1);
 ini_set('log_errors', 1);
 ini_set('error_log', 'debug.log');
 
+// Update both status and a_status enums
+$alterTableSQL = "ALTER TABLE attendance_tbl 
+                 MODIFY COLUMN status enum('check_in','check_out','ended','no_schedule') NOT NULL DEFAULT 'ended',
+                 MODIFY COLUMN a_status enum('Present','Absent','Late','Ended','No Schedule') NOT NULL";
+try {
+    $conn->exec($alterTableSQL);
+} catch (PDOException $e) {
+    error_log("Failed to alter table: " . $e->getMessage());
+}
+
 if (!empty($_POST['rfid_tag'])) {
   try {
     $rfid_tag = trim($_POST['rfid_tag']);
@@ -55,12 +65,121 @@ if (!empty($_POST['rfid_tag'])) {
                            FROM schedule_tbl s
                            WHERE s.schedule_day = ? 
                            AND s.schedule_time <= ?
+                           AND ADDTIME(s.schedule_time, '03:00:00') >= ?
+                           AND s.prof_user_id = ?
                            ORDER BY s.schedule_time DESC LIMIT 1";
     $schedule_stmt = $conn->prepare($schedule_query);
-    $schedule_stmt->execute([$current_day, date('H:i:s')]);
-    $schedule = $schedule_stmt->fetch(PDO::FETCH_ASSOC);
+    $current_time_sql = date('H:i:s');
+    
+    // For professors, check if they have a valid schedule
+    if ($user['role'] === 'professor') {
+      $schedule_stmt->execute([$current_day, $current_time_sql, $current_time_sql, $user['id']]);
+      $schedule = $schedule_stmt->fetch(PDO::FETCH_ASSOC);
+      
+      if (!$schedule) {
+        // No valid schedule for professor
+        error_log("No schedule found for professor ID: " . $user['id'] . " on " . $current_day . " at " . $current_time_sql);
+        
+        // Get a default subject for the professor 
+        $subject_query = "SELECT subject_id FROM subject_tbl WHERE prof_user_id = ? LIMIT 1";
+        $subject_stmt = $conn->prepare($subject_query);
+        $subject_stmt->execute([$user['id']]);
+        $default_subject = $subject_stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$default_subject) {
+          // Get any subject if professor doesn't have one
+          $any_subject_query = "SELECT subject_id FROM subject_tbl LIMIT 1";
+          $any_subject_stmt = $conn->prepare($any_subject_query);
+          $any_subject_stmt->execute();
+          $default_subject = $any_subject_stmt->fetch(PDO::FETCH_ASSOC);
+          
+          if (!$default_subject) {
+            error_log("No subject found in the database for No Schedule record");
+            echo json_encode([
+              'success' => false,
+              'message' => "System error: No subjects found in database",
+              'time' => $formatted_time
+            ]);
+            exit();
+          }
+        }
+        
+        $subject_id = $default_subject['subject_id'];
+        
+        // For schedule_id, we'll use the first available schedule record
+        $schedule_query = "SELECT schedule_id FROM schedule_tbl LIMIT 1";
+        $schedule_stmt = $conn->prepare($schedule_query);
+        $schedule_stmt->execute();
+        $default_schedule = $schedule_stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$default_schedule) {
+          error_log("No schedule found in the database for No Schedule record");
+          echo json_encode([
+            'success' => false,
+            'message' => "System error: No schedules found in database",
+            'time' => $formatted_time
+          ]);
+          exit();
+        }
+        
+        $schedule_id = $default_schedule['schedule_id'];
+        error_log("Using subject ID: " . $subject_id . " and schedule ID: " . $schedule_id . " for No Schedule record");
+        
+        $insert = "INSERT INTO attendance_tbl 
+                  (prof_id, rfid_tag, subject_id, schedule_id, time_in, status, a_status) 
+                  VALUES (?, ?, ?, ?, ?, 'no_schedule', 'No Schedule')";
+        $stmt = $conn->prepare($insert);
+        $stmt->execute([
+          $user['id'],
+          $rfid_tag,
+          $subject_id,
+          $schedule_id,
+          $current_time
+        ]);
+        
+        error_log("Inserted 'No Schedule' record for professor. Insert ID: " . $conn->lastInsertId());
+        
+        echo json_encode([
+          'success' => true,
+          'message' => "No valid schedule found for check-in.",
+          'time' => $formatted_time,
+          'user' => $user,
+          'status' => 'no_schedule',
+          'a_status' => 'No Schedule'
+        ]);
+        exit();
+      }
+    } else {
+      // For students, check any active schedule
+      $student_schedule_query = "SELECT s.schedule_id, s.subject_id 
+                             FROM schedule_tbl s
+                             JOIN section_tbl sec ON s.section_id = sec.section_id
+                             WHERE s.schedule_day = ? 
+                             AND s.schedule_time <= ?
+                             AND ADDTIME(s.schedule_time, '03:00:00') >= ?
+                             AND sec.section_id = ?
+                             ORDER BY s.schedule_time DESC LIMIT 1";
+      $student_schedule_stmt = $conn->prepare($student_schedule_query);
+      $student_schedule_stmt->execute([$current_day, $current_time_sql, $current_time_sql, $user['section_id']]);
+      $schedule = $student_schedule_stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$schedule) {
+      // If no section-specific schedule found, try to find any active schedule
+      if (!$schedule) {
+        $any_schedule_query = "SELECT s.schedule_id, s.subject_id 
+                               FROM schedule_tbl s
+                               WHERE s.schedule_day = ? 
+                               AND s.schedule_time <= ?
+                               AND ADDTIME(s.schedule_time, '03:00:00') >= ?
+                               ORDER BY s.schedule_time DESC LIMIT 1";
+        $any_schedule_stmt = $conn->prepare($any_schedule_query);
+        $any_schedule_stmt->execute([$current_day, $current_time_sql, $current_time_sql]);
+        $schedule = $any_schedule_stmt->fetch(PDO::FETCH_ASSOC);
+      }
+    }
+
+    // For students, if no schedule found
+    if (!$schedule && $user['role'] === 'student') {
+      error_log("No schedule found for student ID: " . $user['id'] . " on " . $current_day . " at " . $current_time_sql);
       echo json_encode([
         'success' => false,
         'message' => "No valid schedule found for check-in.",
@@ -111,8 +230,13 @@ if (!empty($_POST['rfid_tag'])) {
         
         // Update all student records for this schedule
         if ($prof_schedule) {
+            // Modify this query to keep Present status for students who checked in
             $update_students = "UPDATE attendance_tbl 
-                                SET time_out = ?, status = 'check_out', a_status = 'Ended'
+                                SET time_out = ?, status = 'check_out',
+                                    a_status = CASE 
+                                        WHEN a_status = 'Present' THEN 'Present'
+                                        ELSE 'Absent'
+                                    END
                                 WHERE student_id IS NOT NULL 
                                 AND schedule_id = ? 
                                 AND DATE(time_in) = CURDATE() 
@@ -158,24 +282,80 @@ if (!empty($_POST['rfid_tag'])) {
     if ($user['role'] === 'student') {
       // ✅ Ensure a Professor Has Checked In (Only for check-in)
       if ($next_action === 'check_in') {
+        error_log("Student check-in attempt for student ID: " . $user['id']);
+        
+        // Check if any professor is checked in today
         $active_prof_query = "SELECT 1 FROM attendance_tbl 
                                   WHERE DATE(time_in) = CURDATE() 
                                   AND prof_id IS NOT NULL 
-                                  AND status = 'check_in' 
-                                  AND a_status = 'Present'
+                                  AND (status = 'check_in' OR status = 'no_schedule')
                                   LIMIT 1";
         $prof_stmt = $conn->prepare($active_prof_query);
         $prof_stmt->execute();
         $active_prof = $prof_stmt->fetchColumn();
 
+        error_log("Active professor found: " . ($active_prof ? "Yes" : "No"));
+
         if (!$active_prof) {
           echo json_encode([
             'success' => false,
             'message' => 'Please wait for your professor to check in first.',
-            'time' => $formatted_time
+            'time' => $formatted_time,
+            'user' => $user
           ]);
           exit();
         }
+
+        // Check if student already has checked in today
+        $check_student_query = "SELECT attendance_id FROM attendance_tbl 
+                              WHERE student_id = ? AND DATE(time_in) = CURDATE() 
+                              AND status = 'check_in'";
+        $check_student_stmt = $conn->prepare($check_student_query);
+        $check_student_stmt->execute([$user['id']]);
+        $already_checked_in = $check_student_stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($already_checked_in) {
+          error_log("Student already checked in today: " . $user['id']);
+          echo json_encode([
+            'success' => false,
+            'message' => 'You have already checked in today.',
+            'time' => $formatted_time,
+            'user' => $user
+          ]);
+          exit();
+        }
+
+        // If we don't have a valid schedule at this point, get one from the professor's record
+        if (!$schedule) {
+          $prof_schedule_query = "SELECT schedule_id, subject_id FROM attendance_tbl 
+                                  WHERE prof_id IS NOT NULL AND DATE(time_in) = CURDATE() 
+                                  AND status = 'check_in'
+                                  ORDER BY time_in DESC LIMIT 1";
+          $prof_schedule_stmt = $conn->prepare($prof_schedule_query);
+          $prof_schedule_stmt->execute();
+          $schedule = $prof_schedule_stmt->fetch(PDO::FETCH_ASSOC);
+          
+          if (!$schedule) {
+            // Use any valid schedule
+            $any_schedule_query = "SELECT schedule_id, subject_id FROM schedule_tbl LIMIT 1";
+            $any_schedule_stmt = $conn->prepare($any_schedule_query);
+            $any_schedule_stmt->execute();
+            $schedule = $any_schedule_stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if (!$schedule) {
+              error_log("No schedule found for student check-in");
+              echo json_encode([
+                'success' => false,
+                'message' => 'No valid schedule found.',
+                'time' => $formatted_time,
+                'user' => $user
+              ]);
+              exit();
+            }
+          }
+        }
+        
+        error_log("Using schedule_id: " . $schedule['schedule_id'] . " and subject_id: " . $schedule['subject_id'] . " for student check-in");
 
         // ✅ Student Check-In
         $insert = "INSERT INTO attendance_tbl 
@@ -189,6 +369,9 @@ if (!empty($_POST['rfid_tag'])) {
           $rfid_tag,
           $current_time
         ]);
+
+        $insert_id = $conn->lastInsertId();
+        error_log("Student check-in recorded with ID: " . $insert_id);
 
         echo json_encode([
           'success' => true,

@@ -22,6 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
     
+    // Validate student ID format (00-0000)
+    if (!preg_match('/^\d{2}-\d{4}$/', $student_id)) {
+        $_SESSION['error'] = "Student ID must be in the format 00-0000.";
+        header("Location: students.php");
+        exit();
+    }
+    
     // Handle photo upload
     $photo = "default.jpg"; // Default photo
     if (isset($_FILES["photo"]) && !empty($_FILES["photo"]["name"])) {
