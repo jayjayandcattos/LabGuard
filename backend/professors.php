@@ -158,7 +158,7 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </form>
             </div>
         </div>
-        <table class="table table-bordered table-responsive">
+        <table class="table table-bordered table-responsive">   
             <thead>
                 <tr>
                     <th>Employee ID</th>
@@ -177,10 +177,12 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= htmlspecialchars($professor['fullname']); ?></td>
                         <td><?= htmlspecialchars($professor['rfid_tag']); ?></td>
                         <td>
-                            <div class="table-responsive">
+                        <div class="table-responsive" style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
+                        <table class="table table-bordered w-100">
                                 <?= htmlspecialchars($professor['email']); ?>
                             </div>
                         </td>
+                </table>
                         <td><img src="uploads/<?= htmlspecialchars($professor['photo']); ?>" width="50" height="50">
                         </td>
                         <td><?= htmlspecialchars($professor['created_at']); ?></td>

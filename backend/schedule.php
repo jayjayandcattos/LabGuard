@@ -191,7 +191,7 @@ if (isset($_SESSION['name'])) {
             height: 0;
             opacity: 0;
             overflow: hidden;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.32s ease-in-out;
         }
 
         #scheduleFormContainer.show {

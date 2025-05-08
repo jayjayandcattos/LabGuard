@@ -60,7 +60,7 @@ if (isset($_SESSION['name'])) {
             
             <button class="btn btn-success mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#addFacultyModal">Add Faculty</button>
 
-            <table class="table table-bordered">
+            <table class="table table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th>Photo</th>
@@ -77,7 +77,12 @@ if (isset($_SESSION['name'])) {
                             <td><img src="uploads/<?= htmlspecialchars($f['photo']) ?>" width="50" height="50"></td>
                             <td><?= htmlspecialchars($f['employee_id']) ?></td>
                             <td><?= htmlspecialchars($f['lastname'] . ', ' . $f['firstname'] . ' ' . $f['mi']) ?></td>
-                            <td><?= htmlspecialchars($f['email']) ?></td>
+                            <td>
+  <div style="overflow-x: auto; white-space: nowrap; scrollbar-width: none; -ms-overflow-style: none;">
+    <?= htmlspecialchars($f['email']) ?>
+  </div>
+</td>
+
                             <td><?= htmlspecialchars($f['rfid_tag']) ?></td>
                             <td>
                                 <a href="edit_faculty.php?id=<?= $f['faculty_user_id'] ?>" class="btn btn-warning btn-sm">Edit</a>

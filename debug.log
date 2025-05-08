@@ -6109,3 +6109,207 @@ Stack trace:
 [08-May-2025 08:08:43 Asia/Manila] Received RFID tag: 0004806268
 [08-May-2025 08:08:43 Asia/Manila] Student check-in attempt for student ID: 8
 [08-May-2025 08:08:43 Asia/Manila] Active professor found: No
+[08-May-2025 08:35:15 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:35:15 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:35:15 Asia/Manila] Active professor found: No
+[08-May-2025 08:35:19 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:35:22 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:35:22 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:35:22 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:35:22 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:35:22 Asia/Manila] Student check-in recorded with ID: 28
+[08-May-2025 08:35:25 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:35:29 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:35:29 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:35:29 Asia/Manila] Active professor found: No
+[08-May-2025 08:46:47 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:46:47 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:46:47 Asia/Manila] Active professor found: No
+[08-May-2025 08:46:51 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:47:38 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:47:40 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:48:04 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:49:10 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:49:10 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:49:10 Asia/Manila] Active professor found: No
+[08-May-2025 08:49:13 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:49:33 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:49:35 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:49:41 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:49:41 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:49:41 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:49:41 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:49:41 Asia/Manila] Student check-in recorded with ID: 33
+[08-May-2025 08:50:03 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:50:08 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:50:28 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:50:30 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:50:30 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:50:30 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:50:30 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:50:30 Asia/Manila] Student check-in recorded with ID: 35
+[08-May-2025 08:50:34 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:50:35 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:50:35 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:50:35 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:50:35 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:50:35 Asia/Manila] Student check-in recorded with ID: 36
+[08-May-2025 08:51:17 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:51:22 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:51:23 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:51:23 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:51:23 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:51:23 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:51:23 Asia/Manila] Student check-in recorded with ID: 38
+[08-May-2025 08:51:28 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:51:31 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:51:31 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:51:31 Asia/Manila] Active professor found: No
+[08-May-2025 08:51:33 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:51:34 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:51:34 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:51:34 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:51:34 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:51:34 Asia/Manila] Student check-in recorded with ID: 40
+[08-May-2025 08:52:06 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:11 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:11 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:11 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:52:11 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:52:11 Asia/Manila] Student check-in recorded with ID: 41
+[08-May-2025 08:52:12 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:13 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:13 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:13 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:52:13 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:52:13 Asia/Manila] Student check-in recorded with ID: 42
+[08-May-2025 08:52:15 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:18 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:52:20 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:52:22 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:22 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:22 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:52:22 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:52:22 Asia/Manila] Student check-in recorded with ID: 44
+[08-May-2025 08:52:23 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:25 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:25 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:25 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:52:25 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:52:25 Asia/Manila] Student check-in recorded with ID: 45
+[08-May-2025 08:52:26 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:28 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:28 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:28 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:52:28 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:52:28 Asia/Manila] Student check-in recorded with ID: 46
+[08-May-2025 08:52:30 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:34 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:34 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:34 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:52:34 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:52:34 Asia/Manila] Student check-in recorded with ID: 47
+[08-May-2025 08:52:35 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:52:39 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:39 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:39 Asia/Manila] Active professor found: No
+[08-May-2025 08:52:41 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:52:44 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:52:44 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:52:44 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:52:44 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:52:44 Asia/Manila] Student check-in recorded with ID: 49
+[08-May-2025 08:52:49 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:53:19 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:53:19 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:53:19 Asia/Manila] Active professor found: No
+[08-May-2025 08:53:23 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:53:27 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:54:02 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:54:03 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:54:46 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:54:49 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:54:49 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:54:49 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:54:49 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:54:49 Asia/Manila] Student check-in recorded with ID: 53
+[08-May-2025 08:54:50 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:54:53 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:54:54 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:55:45 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:55:45 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:55:45 Asia/Manila] Active professor found: No
+[08-May-2025 08:55:48 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:55:58 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:55:59 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:08 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:10 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:16 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:18 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:19 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:23 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:24 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:32 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:56:46 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:57:43 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:57:43 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:57:43 Asia/Manila] Active professor found: No
+[08-May-2025 08:57:45 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:58:57 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:58:57 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:58:57 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:58:57 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:58:57 Asia/Manila] Student check-in recorded with ID: 62
+[08-May-2025 08:59:01 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:00:41 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:00:42 Asia/Manila] Received RFID tag: )004794867
+[08-May-2025 09:00:43 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:01:19 Asia/Manila] Received RFID tag: )004794867
+[08-May-2025 09:01:19 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:01:24 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:01:27 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:01:28 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:01:56 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:01:57 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:02:00 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:02:12 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:02:12 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:02:12 Asia/Manila] Active professor found: Yes
+[08-May-2025 09:02:12 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 09:02:12 Asia/Manila] Student check-in recorded with ID: 68
+[08-May-2025 09:04:00 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:04:03 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:05:25 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:05:40 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:05:43 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:05:43 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:05:43 Asia/Manila] Active professor found: Yes
+[08-May-2025 09:05:43 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 09:05:43 Asia/Manila] Student check-in recorded with ID: 71
+[08-May-2025 09:06:07 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:06:12 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:06:12 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:06:12 Asia/Manila] Active professor found: Yes
+[08-May-2025 09:06:12 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 09:06:12 Asia/Manila] Student check-in recorded with ID: 72
+[08-May-2025 09:06:16 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:06:18 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:06:18 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:06:18 Asia/Manila] Active professor found: No
+[08-May-2025 09:06:21 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:06:24 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:06:30 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:06:30 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:06:30 Asia/Manila] Active professor found: No
+[08-May-2025 09:06:31 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:06:31 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:06:31 Asia/Manila] Active professor found: No
+[08-May-2025 09:06:31 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:06:31 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:06:31 Asia/Manila] Active professor found: No
+[08-May-2025 09:06:34 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 09:06:36 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 09:06:36 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 09:06:36 Asia/Manila] Active professor found: Yes
+[08-May-2025 09:06:36 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 09:06:36 Asia/Manila] Student check-in recorded with ID: 75

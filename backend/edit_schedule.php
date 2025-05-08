@@ -36,8 +36,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $section_id = $_POST['section_id'];
     $room_id = $_POST['room_id'];
     $schedule_time = $_POST['schedule_time'];
+    $schedule_end_time = $_POST['schedule_end_time'];
     $schedule_day = $_POST['schedule_day'];
-
+    
+    // Check for time conflicts (excluding the current schedule being edited)
+    $conflict_query = "SELECT COUNT(*) FROM schedule_tbl 
+                     WHERE room_id = ? 
+                     AND schedule_day = ?
+                     AND schedule_id != ?
+                     AND (
+                         (schedule_time <= ? AND schedule_end_time > ?) OR
+                         (schedule_time < ? AND schedule_end_time >= ?) OR
+                         (schedule_time >= ? AND schedule_time < ?)
+                     )";
+    
+    $conflict_stmt = $conn->prepare($conflict_query);
+    $conflict_stmt->execute([
+        $room_id,
+        $schedule_day,
+        $schedule_id,
+        $schedule_end_time,
+        $schedule_time,
+        $schedule_end_time,
+        $schedule_time,
+        $schedule_time,
+        $schedule_end_time
+    ]);
+    
+    if ($conflict_stmt->fetchColumn() > 0) {
+        $_SESSION['error_message'] = "Schedule conflict detected! The room is already booked during this time period.";
+        header("Location: edit_schedule.php?id=" . $schedule_id);
+        exit();
+    }
+    
     $updateQuery = "
         UPDATE schedule_tbl SET
             prof_user_id = :prof_user_id,
@@ -45,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             section_id = :section_id,
             room_id = :room_id,
             schedule_time = :schedule_time,
+            schedule_end_time = :schedule_end_time,
             schedule_day = :schedule_day
         WHERE schedule_id = :schedule_id
     ";
@@ -55,36 +87,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ':section_id' => $section_id,
         ':room_id' => $room_id,
         ':schedule_time' => $schedule_time,
+        ':schedule_end_time' => $schedule_end_time,
         ':schedule_day' => $schedule_day,
         ':schedule_id' => $schedule_id
     ]);
 
-    header("Location: schedule.php?success=updated");
+    $_SESSION['success_message'] = "Schedule updated successfully!";
+    header("Location: schedule.php");
     exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Schedule</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
-    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .time-range {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .time-range span {
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
     <div class="container mt-5">
-        <div class="styles-kwan">
-            <h2>EDIT SCHEDULE</h2>
-            <form method="POST">
+        <h2>Edit Schedule</h2>
+        
+        <?php if (isset($_SESSION['error_message'])): ?>
+            <div class="alert alert-danger">
+                <?= $_SESSION['error_message'] ?>
+                <?php unset($_SESSION['error_message']); ?>
+            </div>
+        <?php endif; ?>
+        
+        <form method="POST" onsubmit="return validateSchedule()">
+            <div class="mb-3">
                 <label>Professor:</label>
                 <select name="prof_user_id" class="form-control" required>
                     <?php foreach ($professors as $prof): ?>
@@ -93,7 +137,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
 
+            <div class="mb-3">
                 <label>Subject:</label>
                 <select name="subject_id" class="form-control" required>
                     <?php foreach ($subjects as $subject): ?>
@@ -102,7 +148,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
 
+            <div class="mb-3">
                 <label>Section:</label>
                 <select name="section_id" class="form-control" required>
                     <?php foreach ($sections as $section): ?>
@@ -111,7 +159,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
 
+            <div class="mb-3">
                 <label>Room:</label>
                 <select name="room_id" class="form-control" required>
                     <?php foreach ($rooms as $room): ?>
@@ -120,12 +170,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
 
+            <div class="mb-3">
                 <label>Schedule Time:</label>
-                <input type="time" name="schedule_time" class="form-control" value="<?= $schedule['schedule_time'] ?>"
-                    required>
+                <div class="time-range">
+                    <input type="time" name="schedule_time" class="form-control" value="<?= $schedule['schedule_time'] ?>" required>
+                    <span>to</span>
+                    <input type="time" name="schedule_end_time" class="form-control" value="<?= $schedule['schedule_end_time'] ?>" required>
+                </div>
+            </div>
 
-
+            <div class="mb-3">
                 <label>Schedule Day:</label>
                 <select name="schedule_day" class="form-control" required>
                     <?php
@@ -136,15 +192,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <div>
-                    <br>
-                    <button type="submit" class="btn btn-primary mt-3">Update Schedule</button>
-                    <a href="schedule.php" class="btn btn-secondary mt-3"
-                        style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
+            </div>
 
+            <button type="submit" class="btn btn-primary mt-3">Update Schedule</button>
+            <a href="schedule.php" class="btn btn-secondary mt-3">Cancel</a>
+        </form>
+    </div>
+    
+    <script>
+        function validateSchedule() {
+            const startTime = document.querySelector('input[name="schedule_time"]').value;
+            const endTime = document.querySelector('input[name="schedule_end_time"]').value;
+
+            if (startTime >= endTime) {
+                alert('End time must be later than start time');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
 </html>

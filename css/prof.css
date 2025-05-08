@@ -642,22 +642,28 @@ table #tabs {
   overflow-y: scroll;
 }
 
-.alert {
-  background-color: transparent;
-  border: none;
-  transform: translateX(-60px);
-  font-family: "Monomaniac One", sans-serif;
-  font-size: 24px;
-  margin-top: -10px;
-  color: #ff3a30; 
-  text-shadow: 
-    0 0 8px rgba(255, 58, 48, 0.5),
-    0 0 2px #00050b;
-  position: relative;
-  animation: 
-    pulseWarning 1.5s infinite alternate,
-    shake 3s infinite;
-    margin-left: 50px;
+.alert-danger::before {
+  content: "⚠";
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: blink 2s infinite;
+}
+
+.alert-danger {
+  animation: blink 2s infinite;
+  color: #ff3030;
+
+}
+.alert-success {
+  animation: blink 2s infinite;
+  color: #30ff48;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.4; }
 }
 
 @keyframes pulseWarning {
