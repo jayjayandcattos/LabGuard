@@ -34,27 +34,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Section</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <div class="container">
-        <h2>Edit Section</h2>
-        <form action="edit_section.php" method="POST">
-            <input type="hidden" name="section_id" value="<?php echo htmlspecialchars($section['section_id']); ?>">
+        <div class="styles-kwan">
 
-            <label for="section_name">Course Name:</label>
-            <input type="text" name="section_name" id="section_name" value="<?php echo htmlspecialchars($section['section_name']); ?>" required>
+            <h2>Edit Section</h2>
+            <form action="edit_section.php" method="POST">
+                <input type="hidden" class="form-control" name="section_id"
+                    value="<?php echo htmlspecialchars($section['section_id']); ?>">
 
-            <label for="section_level">Section Level:</label>
-            <input type="text" name="section_level" id="section_level" value="<?php echo htmlspecialchars($section['section_level']); ?>" required>
+                <label for="section_name">Course Name:</label>
+                <input type="text" class="form-control" name="section_name" id="section_name"
+                    value="<?php echo htmlspecialchars($section['section_name']); ?>" required>
 
-            <button type="submit">Update section</button>
-            <a href="student_secs.php">Cancel</a>
-        </form>
-    </div>
+                <label for="section_level">Section Level:</label>
+                <input type="text" class="form-control" name="section_level" id="section_level"
+                    value="<?php echo htmlspecialchars($section['section_level']); ?>" required>
+                <br>
+                <button type="submit" class="btn btn-primary">Update section</button>
+                <a href="student_secs.php" style="margin-left: 45%; margin-bottom: 20px;"
+                    class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
 </body>
+
 </html>

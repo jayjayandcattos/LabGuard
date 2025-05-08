@@ -30,13 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $rfid_tag = trim($_POST['rfid_tag']);
     $section_id = trim($_POST['section_id']);
-    
+
     try {
         // Check if RFID tag exists for other students
         $check_query = "SELECT COUNT(*) FROM student_tbl WHERE rfid_tag = ? AND student_user_id != ?";
         $check_stmt = $conn->prepare($check_query);
         $check_stmt->execute([$rfid_tag, $id]);
-        
+
         if ($check_stmt->fetchColumn() > 0) {
             $_SESSION['error'] = "RFID tag already exists!";
             header("Location: edit_student.php?id=" . $id);
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $photo = basename($_FILES["photo"]["name"]);
             $target_file = $target_dir . $photo;
             move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
-            
+
             // Update query with photo
             $query = "UPDATE student_tbl SET 
                      lastname = ?, firstname = ?, mi = ?, 
@@ -81,78 +81,99 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Student</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
 </head>
+
 <body>
     <div class="container mt-4">
-        <h2>Edit Student</h2>
-        
-        <?php if (isset($_SESSION['error'])): ?>
-            <div class="alert alert-danger">
-                <?= $_SESSION['error']; ?>
-                <?php unset($_SESSION['error']); ?>
-            </div>
-        <?php endif; ?>
+        <div class="styles-kwan">
 
-        <form action="edit_student.php?id=<?= $id ?>" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label>Student ID:</label>
-                <input type="text" value="<?= htmlspecialchars($student['student_id']) ?>" class="form-control" readonly>
-            </div>
+            <h2>Edit Student</h2>
 
-            <div class="mb-3">
-                <label>Last Name:</label>
-                <input type="text" name="lastname" value="<?= htmlspecialchars($student['lastname']) ?>" class="form-control" required>
-            </div>
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger">
+                    <?= $_SESSION['error']; ?>
+                    <?php unset($_SESSION['error']); ?>
+                </div>
+            <?php endif; ?>
 
-            <div class="mb-3">
-                <label>First Name:</label>
-                <input type="text" name="firstname" value="<?= htmlspecialchars($student['firstname']) ?>" class="form-control" required>
-            </div>
+            <form action="edit_student.php?id=<?= $id ?>" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label>Student ID:</label>
+                    <input type="text" value="<?= htmlspecialchars($student['student_id']) ?>" class="form-control"
+                        readonly>
+                </div>
 
-            <div class="mb-3">
-                <label>Middle Initial:</label>
-                <input type="text" name="mi" value="<?= htmlspecialchars($student['mi']) ?>" class="form-control">
-            </div>
+                <div class="mb-3">
+                    <label>Last Name:</label>
+                    <input type="text" name="lastname" value="<?= htmlspecialchars($student['lastname']) ?>"
+                        class="form-control" required>
+                </div>
 
-            <div class="mb-3">
-                <label>Email:</label>
-                <input type="email" name="email" value="<?= htmlspecialchars($student['email']) ?>" class="form-control" required>
-            </div>
+                <div class="mb-3">
+                    <label>First Name:</label>
+                    <input type="text" name="firstname" value="<?= htmlspecialchars($student['firstname']) ?>"
+                        class="form-control" required>
+                </div>
 
-            <div class="mb-3">
-                <label>RFID Tag:</label>
-                <input type="text" name="rfid_tag" value="<?= htmlspecialchars($student['rfid_tag']) ?>" class="form-control" required>
-            </div>
+                <div class="mb-3">
+                    <label>Middle Initial:</label>
+                    <input type="text" name="mi" value="<?= htmlspecialchars($student['mi']) ?>" class="form-control">
+                </div>
 
-            <div class="mb-3">
-                <label>Section:</label>
-                <select name="section_id" class="form-control" required>
-                    <?php
-                    $sections = $conn->query("SELECT * FROM section_tbl")->fetchAll();
-                    foreach ($sections as $section) {
-                        $selected = ($section['section_id'] == $student['section_id']) ? "selected" : "";
-                        echo "<option value='" . $section['section_id'] . "' $selected>" . 
-                             htmlspecialchars($section['section_name']) . "</option>";
-                    }
-                    ?>
-                </select>
-            </div>
+                <div class="mb-3">
+                    <label>Email:</label>
+                    <input type="email" name="email" value="<?= htmlspecialchars($student['email']) ?>"
+                        class="form-control" required>
+                </div>
 
-            <div class="mb-3">
-                <label>Current Photo:</label><br>
-                <img src="uploads/<?= htmlspecialchars($student['photo']) ?>" width="100" class="mb-2"><br>
-                <label>Update Photo:</label>
-                <input type="file" name="photo" class="form-control">
-            </div>
+                <div class="mb-3">
+                    <label>RFID Tag:</label>
+                    <input type="text" name="rfid_tag" value="<?= htmlspecialchars($student['rfid_tag']) ?>"
+                        class="form-control" required>
+                </div>
 
-            <button type="submit" class="btn btn-primary">Update Student</button>
-            <a href="students.php" class="btn btn-secondary">Cancel</a>
-        </form>
+                <div class="mb-3">
+                    <label>Section:</label>
+                    <select name="section_id" class="form-control" required>
+                        <?php
+                        $sections = $conn->query("SELECT * FROM section_tbl")->fetchAll();
+                        foreach ($sections as $section) {
+                            $selected = ($section['section_id'] == $student['section_id']) ? "selected" : "";
+                            echo "<option value='" . $section['section_id'] . "' $selected>" .
+                                htmlspecialchars($section['section_name']) . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Current Photo:</label><br>
+                    <img src="uploads/<?= htmlspecialchars($student['photo']) ?>" width="100" class="mb-2"><br>
+                    <label>Update Photo:</label>
+                    <input type="file" name="photo" class="form-control">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Update Student</button>
+                    <a href="students.php" class="btn btn-secondary"
+                        style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
+                </div>
+
+            </form>
+    </div>
     </div>
 </body>
-</html> 
+
+</html>

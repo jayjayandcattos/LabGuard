@@ -2,18 +2,30 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    45deg,
-    #1a2a6c,
-    #3f4b7f,
-    #7287e5,
-    #7991fc,
-    #3f4b7f,
-    #1a2a6c
-  );
+  background: linear-gradient(45deg,
+      #1a2a6c,
+      #3f4b7f,
+      #7287e5,
+      #7991fc,
+      #3f4b7f,
+      #1a2a6c);
   background-size: 300% 300%;
   animation: gradientAnimation 10s ease infinite;
   font-family: "Bruno Ace", sans-serif;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #main-container {
@@ -27,8 +39,8 @@ body {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
   backdrop-filter: blur(10px);
-  overflow-y: auto; 
-  overflow-x: hidden; 
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #main-container::-webkit-scrollbar {
@@ -103,8 +115,10 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 108%; /* Adjust the width percentage as needed */
-  max-width: 1500px; /* Optional: you can also set a max width to prevent it from becoming too wide */
+  width: 108%;
+  /* Adjust the width percentage as needed */
+  max-width: 1500px;
+  /* Optional: you can also set a max width to prevent it from becoming too wide */
   margin-left: -50px;
 }
 
@@ -163,3 +177,40 @@ body {
 .btn-primary:hover {
   background-color: #5c6bc0;
 }
+
+#roomForm {
+  padding: 0 50px;
+  margin-bottom: 20px;
+}
+
+.styles-kwan {
+  position: relative;
+  display: block;
+  padding: 5%;
+  margin: 5% 10%;
+  width: 1400px;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.styles-kwan h2{
+  text-transform: uppercase;
+
+}
+
+/* 
+style="margin-left: 45%; margin-bottom: 20px;"
+        <div class="styles-kwan">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
+ 
+tungtungtungng sahur    */

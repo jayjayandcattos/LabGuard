@@ -92,9 +92,9 @@ $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h2>Classroom Management</h2>
 
 
-        <button class="toggle-btn" onclick="toggleForm()">+</button>
-
+        <button class="toggle-btn" onclick="toggleForm()">ADD CLASSROOM</button>
         <div id="roomForm" class="hidden-form">
+
             <div class="card mb-4">
                 <h4>Add New Room</h4>
                 <form method="POST" action="">

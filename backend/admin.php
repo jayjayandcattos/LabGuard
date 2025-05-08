@@ -100,47 +100,52 @@ $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="main-container">
         <h2 class="mb-4">Admin Management</h2>
-        <div class="card p-3 mb-4">
-            <h4>Add New Admin</h4>
-            <form method="POST" action="" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-md-6 mb-2">
-                        <label>Admin ID</label>
-                        <input type="text" name="admin_id" class="form-control" required>
+        <button class="toggle-btn" onclick="toggleForm()">ADD ADMIN</button>
+
+        <div id="roomForm" class="hidden-form">
+            <div class="card p-3 mb-4">
+                <h4>Add New Admin</h4>
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label>Admin ID</label>
+                            <input type="text" name="admin_id" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Role</label>
+                            <select name="role_id" class="form-control" required style="left: 50px;">
+                                <option value="2">Admin</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>First Name</label>
+                            <input type="text" name="firstname" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Middle Initial</label>
+                            <input type="text" name="mi" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Photo</label>
+                            <input type="file" name="photo" class="form-control">
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Role</label>
-                        <select name="role_id" class="form-control" required>
-                            <option value="2">Admin</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label>Last Name</label>
-                        <input type="text" name="lastname" class="form-control" required>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label>First Name</label>
-                        <input type="text" name="firstname" class="form-control" required>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label>Middle Initial</label>
-                        <input type="text" name="mi" class="form-control">
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Photo</label>
-                        <input type="file" name="photo" class="form-control">
-                    </div>
-                </div>
-                <button type="submit" name="add_admin" class="btn btn-primary">Add Admin</button>
-            </form>
+                    <br>
+                    <button type="submit" name="add_admin" class="btn btn-primary">Add Admin</button>
+                </form>
+            </div>
         </div>
         <table class="table table-bordered">
             <thead>
@@ -162,8 +167,11 @@ $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><img src="uploads/<?= htmlspecialchars($admin['photo']); ?>" width="50" height="50"></td>
                         <td><?= htmlspecialchars($admin['created_at']); ?></td>
                         <td>
-                            <a href="edit_admin.php?id=<?= htmlspecialchars($admin['admin_id']) ?>" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="delete_admin.php?id=<?= htmlspecialchars($admin['admin_id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this admin?');">Delete</a>
+                            <a href="edit_admin.php?id=<?= htmlspecialchars($admin['admin_id']) ?>"
+                                class="btn btn-sm btn-warning">Edit</a>
+                            <a href="delete_admin.php?id=<?= htmlspecialchars($admin['admin_id']) ?>"
+                                class="btn btn-sm btn-danger"
+                                onclick="return confirm('Are you sure you want to delete this admin?');">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

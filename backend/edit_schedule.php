@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $room_id = $_POST['room_id'];
     $schedule_time = $_POST['schedule_time'];
     $schedule_day = $_POST['schedule_day'];
-    
+
     $updateQuery = "
         UPDATE schedule_tbl SET
             prof_user_id = :prof_user_id,
@@ -66,70 +66,85 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Schedule</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <div class="container mt-5">
-        <h2>Edit Schedule</h2>
-        <form method="POST">
-            <label>Professor:</label>
-            <select name="prof_user_id" class="form-control" required>
-                <?php foreach ($professors as $prof): ?>
-                    <option value="<?= $prof['prof_user_id'] ?>" <?= $prof['prof_user_id'] == $schedule['prof_user_id'] ? 'selected' : '' ?>>
-                        <?= $prof['firstname'] . ' ' . $prof['lastname'] ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+        <div class="styles-kwan">
+            <h2>EDIT SCHEDULE</h2>
+            <form method="POST">
+                <label>Professor:</label>
+                <select name="prof_user_id" class="form-control" required>
+                    <?php foreach ($professors as $prof): ?>
+                        <option value="<?= $prof['prof_user_id'] ?>" <?= $prof['prof_user_id'] == $schedule['prof_user_id'] ? 'selected' : '' ?>>
+                            <?= $prof['firstname'] . ' ' . $prof['lastname'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
 
-            <label>Subject:</label>
-            <select name="subject_id" class="form-control" required>
-                <?php foreach ($subjects as $subject): ?>
-                    <option value="<?= $subject['subject_id'] ?>" <?= $subject['subject_id'] == $schedule['subject_id'] ? 'selected' : '' ?>>
-                        <?= $subject['subject_name'] ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+                <label>Subject:</label>
+                <select name="subject_id" class="form-control" required>
+                    <?php foreach ($subjects as $subject): ?>
+                        <option value="<?= $subject['subject_id'] ?>" <?= $subject['subject_id'] == $schedule['subject_id'] ? 'selected' : '' ?>>
+                            <?= $subject['subject_name'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
 
-            <label>Section:</label>
-            <select name="section_id" class="form-control" required>
-                <?php foreach ($sections as $section): ?>
-                    <option value="<?= $section['section_id'] ?>" <?= $section['section_id'] == $schedule['section_id'] ? 'selected' : '' ?>>
-                        <?= $section['section_name'] ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+                <label>Section:</label>
+                <select name="section_id" class="form-control" required>
+                    <?php foreach ($sections as $section): ?>
+                        <option value="<?= $section['section_id'] ?>" <?= $section['section_id'] == $schedule['section_id'] ? 'selected' : '' ?>>
+                            <?= $section['section_name'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
 
-            <label>Room:</label>
-            <select name="room_id" class="form-control" required>
-                <?php foreach ($rooms as $room): ?>
-                    <option value="<?= $room['room_id'] ?>" <?= $room['room_id'] == $schedule['room_id'] ? 'selected' : '' ?>>
-                        <?= $room['room_name'] ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+                <label>Room:</label>
+                <select name="room_id" class="form-control" required>
+                    <?php foreach ($rooms as $room): ?>
+                        <option value="<?= $room['room_id'] ?>" <?= $room['room_id'] == $schedule['room_id'] ? 'selected' : '' ?>>
+                            <?= $room['room_name'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
 
-            <label>Schedule Time:</label>
-            <input type="time" name="schedule_time" class="form-control" value="<?= $schedule['schedule_time'] ?>" required>
+                <label>Schedule Time:</label>
+                <input type="time" name="schedule_time" class="form-control" value="<?= $schedule['schedule_time'] ?>"
+                    required>
 
 
-            <label>Schedule Day:</label>
-            <select name="schedule_day" class="form-control" required>
-                <?php
-                $days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                foreach ($days as $day): ?>
-                    <option value="<?= $day ?>" <?= $day == $schedule['schedule_day'] ? 'selected' : '' ?>>
-                        <?= $day ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-
-            <button type="submit" class="btn btn-primary mt-3">Update Schedule</button>
-            <a href="schedule.php" class="btn btn-secondary mt-3">Cancel</a>
-        </form>
+                <label>Schedule Day:</label>
+                <select name="schedule_day" class="form-control" required>
+                    <?php
+                    $days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                    foreach ($days as $day): ?>
+                        <option value="<?= $day ?>" <?= $day == $schedule['schedule_day'] ? 'selected' : '' ?>>
+                            <?= $day ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <div>
+                    <br>
+                    <button type="submit" class="btn btn-primary mt-3">Update Schedule</button>
+                    <a href="schedule.php" class="btn btn-secondary mt-3"
+                        style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
+
 </html>

@@ -424,6 +424,7 @@ if (!empty($_POST['rfid_tag'])) {
   <script src="js/tap.js" defer></script>
   <link href="css/tailwind.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/error.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">

@@ -41,22 +41,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_professor"])) {
     // Insert into database
     $query = "INSERT INTO prof_tbl (employee_id, role_id, lastname, firstname, mi, rfid_tag, email, password, photo, created_at) 
               VALUES (:employee_id, :role_id, :lastname, :firstname, :mi, :rfid_tag, :email, :password, :photo, :created_at)";
-     // Check for duplicate employee_id, rfid_tag, or email    
-     $duplicateCheck = $conn->prepare("SELECT COUNT(*) FROM prof_tbl WHERE employee_id = :employee_id OR rfid_tag = :rfid_tag OR email = :email");
-     $duplicateCheck->execute([
-         "employee_id" => $employee_id,
-         "rfid_tag" => $rfid_tag,
-         "email" => $email
-     ]);
- 
-     $duplicateCount = $duplicateCheck->fetchColumn();
-     if ($duplicateCount > 0) {
-         echo "<script>alert('Employee ID, RFID Tag, or Email already exists. Please use unique values.'); window.location.href='professors.php';</script>";
-         exit();
-     }
- 
-   
-   $stmt = $conn->prepare($query);
+    // Check for duplicate employee_id, rfid_tag, or email    
+    $duplicateCheck = $conn->prepare("SELECT COUNT(*) FROM prof_tbl WHERE employee_id = :employee_id OR rfid_tag = :rfid_tag OR email = :email");
+    $duplicateCheck->execute([
+        "employee_id" => $employee_id,
+        "rfid_tag" => $rfid_tag,
+        "email" => $email
+    ]);
+
+    $duplicateCount = $duplicateCheck->fetchColumn();
+    if ($duplicateCount > 0) {
+        echo "<script>alert('Employee ID, RFID Tag, or Email already exists. Please use unique values.'); window.location.href='professors.php';</script>";
+        exit();
+    }
+
+
+    $stmt = $conn->prepare($query);
     $stmt->execute([
         "employee_id" => $employee_id,
         "role_id" => $role_id,
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_professor"])) {
         "created_at" => $created_at
     ]);
 
-  
+
 
     header("Location: professors.php");
     exit();
@@ -106,51 +106,57 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="main-container">
         <h2 class="mb-4">Professors Management</h2>
-        <div class="card p-3 mb-4">
-            <h4>Add New Professor</h4>
-            <form method="POST" action="" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-md-6 mb-2">
-                        <label>Employee ID</label>
-                        <input type="text" name="employee_id" class="form-control" required>
+        <button class="toggle-btn" onclick="toggleForm()">ADD PROFESSORS</button>
+
+        <div id="roomForm" class="hidden-form">
+            <div class="card p-3 mb-4">
+                <h4>Add New Professor</h4>
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label>Employee ID</label>
+                            <input type="text" name="employee_id" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Role</label>
+                            <select name="role_id" class="form-control" required style="left: 50px;">
+                                <option value="3">Professor</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>RFID Tag</label>
+                            <input type="text" name="rfid_tag" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>First Name</label>
+                            <input type="text" name="firstname" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Middle Initial</label>
+                            <input type="text" name="mi" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label>Photo</label>
+                            <input type="file" name="photo" class="form-control">
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Role</label>
-                        <select name="role_id" class="form-control" required>
-                            <option value="3">Professor</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label>Last Name</label>
-                        <input type="text" name="lastname" class="form-control" required>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label>First Name</label>
-                        <input type="text" name="firstname" class="form-control" required>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label>Middle Initial</label>
-                        <input type="text" name="mi" class="form-control">
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label>RFID Tag</label>
-                        <input type="text" name="rfid_tag" class="form-control" required>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label>Photo</label>
-                        <input type="file" name="photo" class="form-control">
-                    </div>
-                </div>
-                <button type="submit" name="add_professor" class="btn btn-primary">Add Professor</button>
-            </form>
+                    <br>
+
+                    <button type="submit" name="add_professor" class="btn btn-primary">Add Professor</button>
+                </form>
+            </div>
         </div>
         <table class="table table-bordered table-responsive">
             <thead>
@@ -175,11 +181,15 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?= htmlspecialchars($professor['email']); ?>
                             </div>
                         </td>
-                        <td><img src="uploads/<?= htmlspecialchars($professor['photo']); ?>" width="50" height="50"></td>
+                        <td><img src="uploads/<?= htmlspecialchars($professor['photo']); ?>" width="50" height="50">
+                        </td>
                         <td><?= htmlspecialchars($professor['created_at']); ?></td>
                         <td>
-                            <a href="edit_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="delete_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this professor?');">Delete</a>
+                            <a href="edit_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>"
+                                class="btn btn-sm btn-warning">Edit</a>
+                            <a href="delete_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>"
+                                class="btn btn-sm btn-danger"
+                                onclick="return confirm('Are you sure you want to delete this professor?');">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

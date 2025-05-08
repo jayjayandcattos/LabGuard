@@ -6010,3 +6010,102 @@ Stack trace:
 [07-May-2025 15:56:24 Asia/Manila] Using schedule_id: 19 and subject_id: 5 for student check-in
 [07-May-2025 15:56:24 Asia/Manila] Student check-in recorded with ID: 7
 [07-May-2025 15:56:25 Asia/Manila] Received RFID tag: 0005056696
+[08-May-2025 01:34:29 Asia/Manila] Failed to alter table: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.attendance_tbl' doesn't exist
+[08-May-2025 01:34:29 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.prof_tbl' doesn't exist in C:\xampp\htdocs\LabGuard\sections\nav.php:33
+Stack trace:
+#0 C:\xampp\htdocs\LabGuard\sections\nav.php(33): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\LabGuard\index.php(435): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\LabGuard\sections\nav.php on line 33
+[08-May-2025 01:34:31 Asia/Manila] Failed to alter table: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.attendance_tbl' doesn't exist
+[08-May-2025 01:34:31 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.prof_tbl' doesn't exist in C:\xampp\htdocs\LabGuard\sections\nav.php:33
+Stack trace:
+#0 C:\xampp\htdocs\LabGuard\sections\nav.php(33): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\LabGuard\index.php(435): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\LabGuard\sections\nav.php on line 33
+[08-May-2025 01:34:32 Asia/Manila] Failed to alter table: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.attendance_tbl' doesn't exist
+[08-May-2025 01:34:32 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.prof_tbl' doesn't exist in C:\xampp\htdocs\LabGuard\sections\nav.php:33
+Stack trace:
+#0 C:\xampp\htdocs\LabGuard\sections\nav.php(33): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\LabGuard\index.php(435): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\LabGuard\sections\nav.php on line 33
+[08-May-2025 01:35:04 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:35:04 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 01:35:04
+[08-May-2025 01:35:04 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[08-May-2025 01:35:04 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 8
+[08-May-2025 01:35:07 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:35:07 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 01:35:07
+[08-May-2025 01:35:07 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[08-May-2025 01:35:07 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 9
+[08-May-2025 01:35:09 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:35:09 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 01:35:09
+[08-May-2025 01:35:09 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[08-May-2025 01:35:09 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 10
+[08-May-2025 01:36:05 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:36:10 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:36:15 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:36:16 Asia/Manila] Received RFID tag: 0004794*^&
+[08-May-2025 01:36:18 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:36:22 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 01:36:22 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 01:36:22 Asia/Manila] Active professor found: Yes
+[08-May-2025 01:36:22 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 01:36:22 Asia/Manila] Student check-in recorded with ID: 11
+[08-May-2025 01:36:23 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 01:36:24 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 01:36:24 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 01:36:24 Asia/Manila] Active professor found: Yes
+[08-May-2025 01:36:24 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 01:36:24 Asia/Manila] Student check-in recorded with ID: 12
+[08-May-2025 01:37:25 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:37:43 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:37:46 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 01:46:06 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 01:46:06 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 01:46:06 Asia/Manila] Active professor found: Yes
+[08-May-2025 01:46:06 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 01:46:06 Asia/Manila] Student check-in recorded with ID: 13
+[08-May-2025 01:46:14 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 01:46:20 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:53:30 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:53:30 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:53:30 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:53:30 Asia/Manila] Active professor found: Yes
+[08-May-2025 07:53:30 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[08-May-2025 07:53:30 Asia/Manila] Student check-in recorded with ID: 15
+[08-May-2025 07:53:40 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:56:15 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:56:19 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:56:20 Asia/Manila] Received RFID tag: )))$&94867
+[08-May-2025 07:56:22 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:56:22 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:56:22 Asia/Manila] Active professor found: Yes
+[08-May-2025 07:56:22 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[08-May-2025 07:56:22 Asia/Manila] Student check-in recorded with ID: 16
+[08-May-2025 07:56:24 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:56:30 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:56:30 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:56:30 Asia/Manila] Active professor found: Yes
+[08-May-2025 07:56:30 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[08-May-2025 07:56:30 Asia/Manila] Student check-in recorded with ID: 17
+[08-May-2025 07:56:32 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:57:59 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:58:02 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:08:29 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:08:29 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:08:29 Asia/Manila] Active professor found: No
+[08-May-2025 08:08:33 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:08:36 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:08:36 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:08:36 Asia/Manila] Active professor found: Yes
+[08-May-2025 08:08:36 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 08:08:36 Asia/Manila] Student check-in recorded with ID: 26
+[08-May-2025 08:08:38 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 08:08:40 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:08:40 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:08:40 Asia/Manila] Active professor found: No
+[08-May-2025 08:08:43 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 08:08:43 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 08:08:43 Asia/Manila] Active professor found: No

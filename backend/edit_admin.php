@@ -63,9 +63,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
+ 
 </head>
 <body>
     <div class="container mt-4">
+    <div class="styles-kwan">
+
         <h2>Edit Admin</h2>
         <form method="POST" enctype="multipart/form-data">
             <div class="mb-2">
@@ -95,9 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="file" name="photo" class="form-control">
                 <img src="uploads/<?= htmlspecialchars($admin['photo']) ?>" width="50" height="50" class="mt-2">
             </div>
+            
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="admin.php" class="btn btn-secondary">Cancel</a>
+            <a href="admin.php" class="btn btn-secondary" style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
         </form>
+    </div>
     </div>
 </body>
 </html> 

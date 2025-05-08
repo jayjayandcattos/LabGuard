@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             $photo = basename($_FILES["photo"]["name"]);
             $target_file = $target_dir . $photo;
-            
+
             if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
                 // Update including photo
                 $query = "UPDATE faculty_tbl SET lastname = ?, firstname = ?, mi = ?, email = ?, rfid_tag = ?, photo = ? WHERE faculty_user_id = ?";
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $query = "UPDATE faculty_tbl SET lastname = ?, firstname = ?, mi = ?, email = ?, rfid_tag = ? WHERE faculty_user_id = ?";
                 $stmt = $conn->prepare($query);
                 $stmt->execute([$lastname, $firstname, $mi, $email, $rfid_tag, $id]);
-                
+
                 $_SESSION['error'] = "Failed to upload new photo, other information updated.";
             }
         } else {
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $conn->prepare($query);
             $stmt->execute([$lastname, $firstname, $mi, $email, $rfid_tag, $id]);
         }
-        
+
         $_SESSION['success'] = "Faculty information updated successfully.";
     } catch (PDOException $e) {
         $_SESSION['error'] = "Error updating faculty: " . $e->getMessage();
@@ -69,6 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,13 +82,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
-    <?php include '../sections/nav4.php' ?>
-    <?php include '../sections/admin_nav.php' ?>
-    
-    <div id="main-container">
+
+    <div class="styles-kwan">
         <h2>Edit Faculty</h2>
-        
+
         <?php if (isset($_SESSION['error'])): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <?= $_SESSION['error']; ?>
@@ -95,35 +95,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <?php unset($_SESSION['error']); ?>
         <?php endif; ?>
-        
-        <div class="card">
-            <div class="card-body">
+
+        <div>
+            <div>
                 <form method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label class="form-label">Last Name:</label>
-                        <input type="text" name="lastname" class="form-control" value="<?= htmlspecialchars($faculty['lastname']) ?>" required>
+                        <input type="text" name="lastname" class="form-control"
+                            value="<?= htmlspecialchars($faculty['lastname']) ?>" required>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">First Name:</label>
-                        <input type="text" name="firstname" class="form-control" value="<?= htmlspecialchars($faculty['firstname']) ?>" required>
+                        <input type="text" name="firstname" class="form-control"
+                            value="<?= htmlspecialchars($faculty['firstname']) ?>" required>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Middle Initial:</label>
-                        <input type="text" name="mi" class="form-control" value="<?= htmlspecialchars($faculty['mi']) ?>">
+                        <input type="text" name="mi" class="form-control"
+                            value="<?= htmlspecialchars($faculty['mi']) ?>">
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Email:</label>
-                        <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($faculty['email']) ?>" required>
+                        <input type="email" name="email" class="form-control"
+                            value="<?= htmlspecialchars($faculty['email']) ?>" required>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">RFID Tag:</label>
-                        <input type="text" name="rfid_tag" class="form-control" value="<?= htmlspecialchars($faculty['rfid_tag']) ?>" required>
+                        <input type="text" name="rfid_tag" class="form-control"
+                            value="<?= htmlspecialchars($faculty['rfid_tag']) ?>" required>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Current Photo:</label><br>
                         <?php if (!empty($faculty['photo'])): ?>
@@ -131,23 +136,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php else: ?>
                             <p>No photo available</p>
                         <?php endif; ?>
-                        
+
                         <div class="mt-2">
                             <label class="form-label">Upload New Photo:</label>
                             <input type="file" name="photo" class="form-control">
                             <small class="text-muted">Leave empty to keep current photo</small>
                         </div>
                     </div>
-                    
-                    <div class="d-flex gap-2">
+
+                    <div>
                         <button type="submit" class="btn btn-primary">Update Faculty</button>
-                        <a href="faculty.php" class="btn btn-secondary">Cancel</a>
+                        <a href="faculty.php" class="btn btn-secondary"
+                            style="margin-left: 55%; margin-bottom: 20px;">Cancel</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

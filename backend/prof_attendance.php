@@ -85,19 +85,6 @@ $attendance_query = "SELECT
     <link rel="stylesheet" href="../css/prof.css">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <style>
-        .email-request-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: 'Orbitron', sans-serif;
-        }
-
         .email-modal {
             display: none;
             position: fixed;
@@ -105,51 +92,119 @@ $attendance_query = "SELECT
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .email-modal.show {
+            opacity: 1;
         }
 
         .email-modal-content {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(0.7);
             background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             font-family: 'Orbitron', sans-serif;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+        }
+
+        .email-modal.show .email-modal-content {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
         }
 
         .email-modal-content h2 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #333;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.5rem;
         }
 
         .email-modal-content input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .email-modal-content input:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
         .email-modal-content button {
-            padding: 10px 20px;
-            margin: 0 10px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
 
         .submit-email {
             background-color: #4a90e2;
             color: white;
+            flex: 1;
+        }
+
+        .submit-email:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-2px);
         }
 
         .close-modal {
-            background-color: #6c757d;
+            background-color: #e2e2e2;
+            color: #555;
+            flex: 1;
+        }
+
+        .close-modal:hover {
+            background-color: #d4d4d4;
+            transform: translateY(-2px);
+        }
+
+        /* Request button styling */
+        .email-request-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #4a90e2;
             color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .email-request-btn:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(74, 144, 226, 0.4);
         }
     </style>
 </head>
@@ -158,25 +213,25 @@ $attendance_query = "SELECT
     <?php include '../sections/nav2.php'; ?>
     <?php include '../sections/prof_nav.php'; ?>
 
-    <!-- Email Request Button -->
-    <button class="email-request-btn" onclick="openEmailModal()">Request for Attendance Summary</button>
-
     <!-- Email Modal -->
     <div id="emailModal" class="email-modal">
         <div class="email-modal-content">
-            <h2>Enter Your Email</h2>
+            <h2>Request Attendance Summary</h2>
             <form id="emailForm" onsubmit="sendAttendanceSummary(event)">
                 <input type="email" id="emailInput" placeholder="Enter your email address" required>
                 <input type="hidden" id="currentSection" name="section">
                 <input type="hidden" id="currentDate" name="date">
-                <button type="submit" class="submit-email">Send</button>
-                <button type="button" class="close-modal" onclick="closeEmailModal()">Cancel</button>
+                <div class="modal-buttons">
+                    <button type="button" class="close-modal" onclick="closeEmailModal()">Cancel</button>
+                    <button type="submit" class="submit-email">Send Report</button>
+                </div>
             </form>
         </div>
     </div>
 
     <!-- Main Content -->
     <div id="main-container">
+        <button class="email-request-btn" onclick="openEmailModal()">Request for Attendance Summary</button>
         <h2>ATTENDANCE RECORD</h2>
 
         <div id="dropdowns">
@@ -266,12 +321,27 @@ $attendance_query = "SELECT
         document.getElementById('currentSection').value = document.getElementById('section').value;
         document.getElementById('currentDate').value = currentDate;
         
-        console.log('Opening modal with date:', currentDate);
-        document.getElementById('emailModal').style.display = 'block';
+        // Show modal with animation
+        const emailModal = document.getElementById('emailModal');
+        emailModal.style.display = 'block';
+        
+        // Trigger reflow to enable transition from display none
+        void emailModal.offsetWidth;
+        
+        // Add show class for animation
+        emailModal.classList.add('show');
     }
 
     function closeEmailModal() {
-        document.getElementById('emailModal').style.display = 'none';
+        const emailModal = document.getElementById('emailModal');
+        
+        // Remove show class to trigger fade out
+        emailModal.classList.remove('show');
+        
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            emailModal.style.display = 'none';
+        }, 300); // Match this with CSS transition duration
     }
 
     function sendAttendanceSummary(event) {
@@ -281,13 +351,6 @@ $attendance_query = "SELECT
         const email = document.getElementById('emailInput').value;
         const section = document.getElementById('currentSection').value;
         const date = document.getElementById('currentDate').value;
-        
-        // Debug logs
-        console.log('Sending data:', {
-            email: email,
-            section: section,
-            date: date
-        });
 
         fetch('../backend/send_attendance_summary.php', {
             method: 'POST',
@@ -302,7 +365,6 @@ $attendance_query = "SELECT
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Response:', data);
             if (data.success) {
                 alert('Attendance summary has been sent to your email!');
             } else {
@@ -318,13 +380,10 @@ $attendance_query = "SELECT
     }
 
     // Close modal when clicking outside
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('emailModal')) {
+    window.addEventListener('click', function(event) {
+        const emailModal = document.getElementById('emailModal');
+        if (event.target === emailModal) {
             closeEmailModal();
         }
-    }
+    });
 </script>
-</body>
-
-
-</html>

@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
 <body>
     <!-- Navbar -->
     <div class="navbar">
@@ -153,13 +154,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Right Section -->
                     <div class="right-section">
                         <h2 class="smaller-h2">FEATURES</h2>
-                        <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="lorem-ipsum"> It features tailored modules for Students, Faculty, and Professors, with RFID integration for fast access and tracking. A central authentication layer secures all access, while the modular design separates roles, admin tasks, and reporting.
+                        </p>
 
                         <h2 class="smaller-h2">INSTRUCTIONS</h2>
-                        <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                        <h2 class="smaller-h2">FAQs</h2>
-                        <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="lorem-ipsum">Scan your RFID to check in or out. Make sure a professor is present before scanning.</p>
 
                         <h2 class="smaller-h2">DEVELOPERS</h2>
                         <p class="lorem-ipsum">
@@ -174,6 +173,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="custom-modal-container">
+        <div class="custom-modal-content">
+            <div class="custom-modal-header">
+                <h3 class="custom-modal-title">Login Error</h3>
+            </div>
+            <div class="custom-modal-body">
+                <div class="custom-error-content">
+                    <div class="custom-error-message" id="errorMessage">
+                        <?php echo isset($error) ? $error : ""; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-modal-footer">
+                <button type="button" class="custom-close-modal-btn" onclick="closeErrorModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
 
     <div class="termsmodal" id="termsModal">
         <div class="scrolldown" onclick="scrollToTermsButtons()">
@@ -271,20 +293,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <footer class="footer">
-    <div class="footer-content">
-        <p>© 2025 LABGUARD. All rights reserved.</p>
-        <div class="overflow-hidden w-full md:w-auto">
-            <p onclick="openTermsModal()">
-            Using this platform means you agree to all Terms and our Privacy Policy. Click here to learn more.
-                        </p>
+        <div class="footer-content">
+            <p>© 2025 LABGUARD. All rights reserved.</p>
+            <div class="overflow-hidden w-full md:w-auto">
+                <p onclick="openTermsModal()">
+                    Using this platform means you agree to all Terms and our Privacy Policy. Click here to learn more.
+                </p>
+            </div>
         </div>
-    </div>
-</footer>   
+    </footer>
 
     <script src="js/about.js"></script>
     <script src="js/login.js"></script>
     <script src="js/cardhover.js"></script>
     <script src="js/termsandconditions.js"></script>
+
+
+    <script src="js/about.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/cardhover.js"></script>
+    <script src="js/termsandconditions.js"></script>
+    <script>
+        function openErrorModal(message) {
+            if (message) {
+                document.getElementById('errorMessage').textContent = message;
+            }
+            document.getElementById('errorModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+        }
+
+        function closeErrorModal() {
+            document.getElementById('errorModal').classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeErrorModal();
+            }
+        });
+
+
+        <?php if (isset($error)): ?>
+            document.addEventListener('DOMContentLoaded', function() {
+                openErrorModal("<?php echo addslashes($error); ?>");
+            });
+        <?php endif; ?>
+    </script>
 
 
 </body>
