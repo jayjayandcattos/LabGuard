@@ -13,6 +13,22 @@ if (!$conn) {
     die("Database connection failed!");
 }
 
+// Get the selected date parameter from URL
+$selected_date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
+
+// Validate date format
+if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $selected_date)) {
+    $selected_date = date('Y-m-d'); // Default to today if invalid format
+}
+
+// Get the day name from selected date
+$selected_day = date('l', strtotime($selected_date));
+$formatted_date = date('F d, Y', strtotime($selected_date));
+
+// For navigation between dates
+$prev_date = date('Y-m-d', strtotime($selected_date . ' -1 day'));
+$next_date = date('Y-m-d', strtotime($selected_date . ' +1 day'));
+
 // Check for duplicate room names
 $check_rooms_query = "SELECT room_number, COUNT(*) as count 
                      FROM room_tbl 
@@ -41,29 +57,26 @@ if (!$professor) {
     $prof_lastname = $professor['lastname'];
 }
 
-// Get current time and day
+// Get current time
 date_default_timezone_set('Asia/Manila');
 $current_time = date('H:i:s');
-$current_day = date('l'); // Monday, Tuesday, etc.
 
-// Fetch room data with occupancy status
+// Fetch room data with occupancy status for selected date
 $query = "SELECT r.*, 
           CASE 
               WHEN EXISTS (
-                  SELECT 1 FROM schedule_tbl s 
-                  JOIN attendance_tbl a ON s.schedule_id = a.schedule_id
-                  WHERE s.room_id = r.room_id 
-                  AND s.schedule_day = :current_day
+                  SELECT 1 FROM attendance_tbl a
+                  WHERE a.room_id = r.room_id 
                   AND a.status = 'check_in'
                   AND a.time_out IS NULL
-                  AND DATE(a.time_in) = CURDATE()
+                  AND DATE(a.time_in) = :selected_date
               ) THEN 'Occupied'
               WHEN EXISTS (
                   SELECT 1 FROM schedule_tbl s 
                   WHERE s.room_id = r.room_id 
-                  AND s.schedule_day = :current_day
+                  AND s.schedule_day = :selected_day
                   AND :current_time BETWEEN s.schedule_time AND DATE_ADD(s.schedule_time, INTERVAL 3 HOUR)
-              ) THEN 'Occupied'
+              ) THEN 'Scheduled'
               ELSE 'Vacant'
           END as current_status
           FROM room_tbl r
@@ -71,7 +84,8 @@ $query = "SELECT r.*,
 
 $stmt = $conn->prepare($query);
 $stmt->execute([
-    'current_day' => $current_day,
+    'selected_day' => $selected_day,
+    'selected_date' => $selected_date,
     'current_time' => $current_time
 ]);
 $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -113,11 +127,11 @@ foreach ($essential_rooms as $room_number) {
             break;
         }
     }
-    
+
     if (!$found) {
         error_log("Adding missing essential room: $room_number");
         $dummy_name = "Bautista_$room_number";
-        
+
         // Create a complete room entry with all necessary fields
         $new_room = [
             'room_id' => 1000 + $room_number, // Use a dummy ID
@@ -127,48 +141,51 @@ foreach ($essential_rooms as $room_number) {
             'current_status' => 'Vacant',
             'occupied_by_me' => false
         ];
-        
+
         $rooms[] = $new_room;
         error_log("Added room: " . print_r($new_room, true));
     }
 }
 
 // Sort rooms by room number for consistent display
-usort($rooms, function($a, $b) {
+usort($rooms, function ($a, $b) {
     return $a['room_number'] <=> $b['room_number'];
 });
 
 error_log("Room count after check: " . count($rooms));
 
-// Get the professor's current active classes
-$active_classes_query = "SELECT s.schedule_id, s.room_id, r.room_name, r.room_number
-                       FROM schedule_tbl s
-                       JOIN room_tbl r ON s.room_id = r.room_id
-                       WHERE s.prof_user_id = :prof_user_id
-                       AND s.schedule_day = :current_day
-                       AND :current_time BETWEEN s.schedule_time AND DATE_ADD(s.schedule_time, INTERVAL 3 HOUR)";
+// Get the professor's current active classes for the selected date
+$active_classes_query = "SELECT s.schedule_id, s.room_id, r.room_name, r.room_number,
+                        TIME_FORMAT(s.schedule_time, '%h:%i %p') as start_time,
+                        TIME_FORMAT(DATE_ADD(s.schedule_time, INTERVAL 3 HOUR), '%h:%i %p') as end_time,
+                        sub.subject_code
+                        FROM schedule_tbl s
+                        JOIN room_tbl r ON s.room_id = r.room_id
+                        JOIN subject_tbl sub ON s.subject_id = sub.subject_id
+                        WHERE s.prof_user_id = :prof_user_id
+                        AND s.schedule_day = :selected_day
+                        ORDER BY s.schedule_time";
 
 $active_stmt = $conn->prepare($active_classes_query);
 $active_stmt->execute([
     'prof_user_id' => $prof_user_id,
-    'current_day' => $current_day,
-    'current_time' => $current_time
+    'selected_day' => $selected_day
 ]);
-$active_classes = $active_stmt->fetchAll(PDO::FETCH_ASSOC);
+$schedule_classes = $active_stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Create a list of room IDs where the professor is teaching
 $active_room_ids = [];
-foreach ($active_classes as $class) {
+foreach ($schedule_classes as $class) {
     $active_room_ids[] = $class['room_id'];
 }
 
-// Check if the professor has already checked in today
-$checkin_query = "SELECT a.* 
+// Check if the professor has already checked in on the selected date
+$checkin_query = "SELECT a.*, s.room_id, s.schedule_time
                 FROM attendance_tbl a
                 JOIN schedule_tbl s ON a.schedule_id = s.schedule_id
                 WHERE a.prof_id = :prof_id
-                AND s.schedule_day = :current_day
-                AND DATE(a.time_in) = CURDATE()
+                AND s.schedule_day = :selected_day
+                AND DATE(a.time_in) = :selected_date
                 AND a.status = 'check_in'
                 AND a.time_out IS NULL
                 ORDER BY a.time_in DESC
@@ -177,7 +194,8 @@ $checkin_query = "SELECT a.*
 $checkin_stmt = $conn->prepare($checkin_query);
 $checkin_stmt->execute([
     'prof_id' => $prof_user_id,
-    'current_day' => $current_day
+    'selected_day' => $selected_day,
+    'selected_date' => $selected_date
 ]);
 $active_checkin = $checkin_stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -187,7 +205,7 @@ if ($active_checkin) {
     $checkin_schedule_stmt = $conn->prepare($checkin_schedule_query);
     $checkin_schedule_stmt->execute(['schedule_id' => $active_checkin['schedule_id']]);
     $checkin_room = $checkin_schedule_stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if ($checkin_room) {
         $active_room_ids[] = $checkin_room['room_id'];
     }
@@ -203,51 +221,40 @@ foreach ($rooms as &$room) {
     }
 }
 
+// Organize schedule classes by room for display
+$schedules_by_room = [];
+foreach ($schedule_classes as $class) {
+    $room_number = $class['room_number'];
+    if (!isset($schedules_by_room[$room_number])) {
+        $schedules_by_room[$room_number] = [];
+    }
+    $schedules_by_room[$room_number][] = $class;
+}
+
 // Debug: Get unique room numbers
 $room_numbers = array_unique(array_column($rooms, 'room_number'));
 error_log("Unique room numbers: " . implode(", ", $room_numbers));
 error_log("Total rooms: " . count($rooms));
 
-// Get all schedules for today to debug
-$today_schedules_query = "SELECT s.schedule_id, s.room_id, r.room_number, r.room_name, 
-                         DATE_FORMAT(s.schedule_time, '%h:%i %p') as time,
-                         p.lastname, p.firstname
-                         FROM schedule_tbl s
-                         JOIN room_tbl r ON s.room_id = r.room_id
-                         JOIN prof_tbl p ON s.prof_user_id = p.prof_user_id
-                         WHERE s.schedule_day = :current_day
-                         ORDER BY s.schedule_time";
-$today_schedules_stmt = $conn->prepare($today_schedules_query);
-$today_schedules_stmt->execute(['current_day' => $current_day]);
-$today_schedules = $today_schedules_stmt->fetchAll(PDO::FETCH_ASSOC);
-error_log("Today's schedules: " . print_r($today_schedules, true));
+// Check attendance records for selected date
+$attendance_query = "SELECT a.*, s.room_id, r.room_number, r.room_name, 
+                   TIME_FORMAT(a.time_in, '%h:%i %p') as formatted_time_in,
+                   TIME_FORMAT(a.time_out, '%h:%i %p') as formatted_time_out,
+                   sub.subject_code
+                   FROM attendance_tbl a
+                   JOIN schedule_tbl s ON a.schedule_id = s.schedule_id
+                   JOIN room_tbl r ON s.room_id = r.room_id
+                   JOIN subject_tbl sub ON a.subject_id = sub.subject_id
+                   WHERE a.prof_id = :prof_id
+                   AND DATE(a.time_in) = :selected_date
+                   ORDER BY a.time_in DESC";
 
-// Check if there's a schedule for room 604 (room_id 4) for testing purposes
-$check_room604_query = "SELECT COUNT(*) as count FROM schedule_tbl 
-                       WHERE room_id = 4 AND schedule_day = :current_day";
-$check_room604_stmt = $conn->prepare($check_room604_query);
-$check_room604_stmt->execute(['current_day' => $current_day]);
-$room604_count = $check_room604_stmt->fetch(PDO::FETCH_ASSOC)['count'];
-
-// For testing: If no schedule for room 604 on current day, create a view-only entry that won't be saved to DB
-if ($room604_count == 0) {
-    error_log("No schedule found for room 604 on $current_day, creating virtual entry for testing");
-    
-    // Find room 604 in rooms list
-    $room604_index = null;
-    foreach ($rooms as $index => $room) {
-        if ($room['room_id'] == 4) { // room_id 4 is room 604
-            $room604_index = $index;
-            break;
-        }
-    }
-    
-    // Add virtual entry for testing if room was found
-    if ($room604_index !== null) {
-        error_log("Found room 604, adding virtual occupied status");
-        $rooms[$room604_index]['current_status'] = 'Occupied';
-    }
-}
+$attendance_stmt = $conn->prepare($attendance_query);
+$attendance_stmt->execute([
+    'prof_id' => $prof_user_id,
+    'selected_date' => $selected_date
+]);
+$attendance_records = $attendance_stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -268,9 +275,11 @@ if ($room604_count == 0) {
             color: #4CAF50;
             font-weight: bold;
         }
+
         .room-card {
             position: relative;
         }
+
         .my-indicator {
             position: absolute;
             top: 10px;
@@ -287,6 +296,132 @@ if ($room604_count == 0) {
             font-weight: bold;
             z-index: 10;
         }
+
+        .date-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .date-navigation a {
+            padding: 5px 15px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .date-navigation a:hover {
+            background-color: #555;
+        }
+
+        .current-date {
+            font-weight: bold;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .date-picker {
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .date-picker input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-vacant {
+            background-color: #4CAF50;
+        }
+
+        .status-occupied {
+            background-color: #f44336;
+        }
+
+        .status-scheduled {
+            background-color: #FFC107;
+        }
+
+        .status-my-class {
+            background-color: #2196F3;
+        }
+
+        .legend {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .room-details {
+            margin-top: 8px;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        .schedule-section {
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+
+        .schedule-title {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .schedule-table {
+            width: 100%;
+            color: white;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .schedule-table th {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .attendance-section {
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .today-indicator {
+            color: #4CAF50;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -296,17 +431,50 @@ if ($room604_count == 0) {
 
     <div id="main-container">
         <h2>CLASSROOM OVERVIEW</h2>
-        
-        <!-- Debug output: room count -->
-        <div style="display: none;">
-            <p>Rooms found: <?= count($rooms) ?></p>
-            <p>Room numbers: <?= implode(", ", array_column($rooms, 'room_number')) ?></p>
+        <div style="   display: flex; flex-direction: column; align-items: center;
+                           border: 2px solid aliceblue; border-radius: 30px;
+                           margin: 20px 0;    width: 100%;    padding: 20px;
+                           gap: 20px;    left: -30px;">
+            <!-- Date Navigation -->
+            <div class="date-navigation">
+                <a href="?date=<?= $prev_date ?>">Previous Day</a>
+                <span class="current-date"><?= $formatted_date ?> (<?= $selected_day ?>)</span>
+                <a href="?date=<?= $next_date ?>">Next Day</a>
+            </div>
+
+            <!-- Date Picker Form -->
+            <form class="date-picker" action="" method="GET">
+                <label for="date-select">Select Date: </label>
+                <input type="date" id="date-select" name="date" value="<?= $selected_date ?>"
+                    onchange="this.form.submit()">
+            </form>
+
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="status-indicator status-vacant"></span> Vacant
+                </div>
+                <div class="legend-item">
+                    <span class="status-indicator status-scheduled"></span> Scheduled
+                </div>
+                <div class="legend-item">
+                    <span class="status-indicator status-occupied"></span> Occupied
+                </div>
+                <div class="legend-item">
+                    <span class="status-indicator status-my-class"></span> My Class
+                </div>
+            </div>
         </div>
-        
+
+        <?php if ($selected_date === date('Y-m-d')): ?>
+            <p class="today-indicator text-center">Showing today's schedule</p>
+        <?php endif; ?>
+
+        <!-- Room Grid -->
         <div class="room-grid">
-            <?php 
+            <?php
             // Make sure we display each essential room
-            foreach ($essential_rooms as $room_number): 
+            foreach ($essential_rooms as $room_number):
                 // Find this room in the rooms array
                 $room = null;
                 foreach ($rooms as $r) {
@@ -315,7 +483,7 @@ if ($room604_count == 0) {
                         break;
                     }
                 }
-                
+
                 // If room is not found, create a placeholder
                 if (!$room) {
                     error_log("WARNING: Room $room_number not found in rooms array, creating placeholder");
@@ -328,27 +496,145 @@ if ($room604_count == 0) {
                         'occupied_by_me' => false
                     ];
                 }
-            ?>
+                ?>
                 <div class="room-card">
-                    <span class="room-status-indicator <?= isset($room['current_status']) && $room['current_status'] == 'Vacant' ? 'vacant' : 'occupied'; ?>"></span>
+                    <span class="room-status-indicator 
+                        <?php
+                        if (isset($room['occupied_by_me']) && $room['occupied_by_me']) {
+                            echo 'occupied';
+                        } elseif (isset($room['current_status'])) {
+                            if ($room['current_status'] == 'Vacant')
+                                echo 'vacant';
+                            elseif ($room['current_status'] == 'Scheduled')
+                                echo 'scheduled';
+                            else
+                                echo 'occupied';
+                        } else {
+                            echo 'vacant';
+                        }
+                        ?>">
+                    </span>
                     <?php if (isset($room['occupied_by_me']) && $room['occupied_by_me']): ?>
-                        <div class="my-indicator" title="You are teaching here">Me</div>
+                        <div class="my-indicator" title="Your scheduled room">Me</div>
                     <?php endif; ?>
                     <div class="folder">
                         <div class="room-header">
-                            <span class="room-status-text <?= (isset($room['occupied_by_me']) && $room['occupied_by_me']) ? 'my-class' : ''; ?>">
-                                <?= isset($room['current_status']) ? $room['current_status'] : 'Vacant'; ?>
-                                <?php if (isset($room['occupied_by_me']) && $room['occupied_by_me']): ?> (MY CLASS)<?php endif; ?>
+                            <span
+                                class="room-status-text <?= (isset($room['occupied_by_me']) && $room['occupied_by_me']) ? 'my-class' : ''; ?>">
+                                <?php if (isset($room['occupied_by_me']) && $room['occupied_by_me']): ?>
+                                    MY CLASS
+                                <?php else: ?>
+                                    <?= isset($room['current_status']) ? $room['current_status'] : 'Vacant'; ?>
+                                <?php endif; ?>
                             </span>
                         </div>
                         <div class="room-number">
                             Room <?= isset($room['room_number']) ? htmlspecialchars($room['room_number']) : $room_number; ?>
                         </div>
+                        <?php if (isset($schedules_by_room[$room['room_number']])): ?>
+                            <div class="room-details">
+                                <?php foreach ($schedules_by_room[$room['room_number']] as $index => $schedule): ?>
+                                    <?php if ($index < 2): // Show only first 2 schedules ?>
+                                        <div>
+                                            <?= $schedule['start_time'] ?> - <?= $schedule['end_time'] ?>:
+                                            <?= $schedule['subject_code'] ?>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                                <?php if (count($schedules_by_room[$room['room_number']]) > 2): ?>
+                                    <div>+ <?= count($schedules_by_room[$room['room_number']]) - 2 ?> more...</div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <!-- Your Schedule Section -->
+        <?php if (!empty($schedule_classes)): ?>
+            <div class="schedule-section">
+                <h3 class="schedule-title">Your Schedule for <?= $formatted_date ?></h3>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Room</th>
+                            <th>Subject</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($schedule_classes as $class): ?>
+                            <tr>
+                                <td><?= $class['start_time'] ?> - <?= $class['end_time'] ?></td>
+                                <td>Room <?= $class['room_number'] ?></td>
+                                <td><?= $class['subject_code'] ?></td>
+                                <td>
+                                    <?php
+                                    $attended = false;
+                                    foreach ($attendance_records as $record) {
+                                        if ($record['schedule_id'] == $class['schedule_id']) {
+                                            echo $record['formatted_time_out'] ? 'Completed' : 'In Progress';
+                                            $attended = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!$attended) {
+                                        echo "Not Started";
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php else: ?>
+            <div class="schedule-section">
+                <h3 class="schedule-title">No scheduled classes for <?= $formatted_date ?></h3>
+            </div>
+        <?php endif; ?>
+
+        <!-- Attendance Records Section -->
+        <?php if (!empty($attendance_records)): ?>
+            <div class="attendance-section">
+                <h3 class="schedule-title">Attendance Records for <?= $formatted_date ?></h3>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Room</th>
+                            <th>Subject</th>
+                            <th>Check-In</th>
+                            <th>Check-Out</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($attendance_records as $record): ?>
+                            <tr>
+                                <td>Room <?= $record['room_number'] ?></td>
+                                <td><?= $record['subject_code'] ?></td>
+                                <td><?= $record['formatted_time_in'] ?></td>
+                                <td><?= $record['formatted_time_out'] ? $record['formatted_time_out'] : 'Not yet' ?></td>
+                                <td><?= $record['a_status'] ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php endif; ?>
     </div>
+
+    <script>
+        // If the date is today, highlight it
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date().toISOString().split('T')[0];
+            if ('<?= $selected_date ?>' === today) {
+                document.querySelector('.current-date').classList.add('today-indicator');
+            }
+        });
+    </script>
 </body>
 
 </html>

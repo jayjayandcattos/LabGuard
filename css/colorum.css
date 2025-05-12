@@ -4,30 +4,13 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    45deg,
-    #1a2a6c,
-    #3f4b7f,
-    #7287e5,
-    #7991fc,
-    #3f4b7f,
-    #1a2a6c
+  background: linear-gradient(180deg,
+      #3F4B7F,
+      #7287E5,
+      #9CACF1
   );
   background-size: 300% 300%;
-  animation: gradientAnimation 10s ease infinite;
   font-family: "Bruno Ace", sans-serif;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 #main-container {

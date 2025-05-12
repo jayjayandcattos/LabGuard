@@ -6010,306 +6010,1346 @@ Stack trace:
 [07-May-2025 15:56:24 Asia/Manila] Using schedule_id: 19 and subject_id: 5 for student check-in
 [07-May-2025 15:56:24 Asia/Manila] Student check-in recorded with ID: 7
 [07-May-2025 15:56:25 Asia/Manila] Received RFID tag: 0005056696
-[08-May-2025 01:34:29 Asia/Manila] Failed to alter table: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.attendance_tbl' doesn't exist
-[08-May-2025 01:34:29 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.prof_tbl' doesn't exist in C:\xampp\htdocs\LabGuard\sections\nav.php:33
-Stack trace:
-#0 C:\xampp\htdocs\LabGuard\sections\nav.php(33): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\LabGuard\index.php(435): include('C:\\xampp\\htdocs...')
-#2 {main}
-  thrown in C:\xampp\htdocs\LabGuard\sections\nav.php on line 33
-[08-May-2025 01:34:31 Asia/Manila] Failed to alter table: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.attendance_tbl' doesn't exist
-[08-May-2025 01:34:31 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.prof_tbl' doesn't exist in C:\xampp\htdocs\LabGuard\sections\nav.php:33
-Stack trace:
-#0 C:\xampp\htdocs\LabGuard\sections\nav.php(33): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\LabGuard\index.php(435): include('C:\\xampp\\htdocs...')
-#2 {main}
-  thrown in C:\xampp\htdocs\LabGuard\sections\nav.php on line 33
-[08-May-2025 01:34:32 Asia/Manila] Failed to alter table: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.attendance_tbl' doesn't exist
-[08-May-2025 01:34:32 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'labguard.prof_tbl' doesn't exist in C:\xampp\htdocs\LabGuard\sections\nav.php:33
-Stack trace:
-#0 C:\xampp\htdocs\LabGuard\sections\nav.php(33): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\LabGuard\index.php(435): include('C:\\xampp\\htdocs...')
-#2 {main}
-  thrown in C:\xampp\htdocs\LabGuard\sections\nav.php on line 33
-[08-May-2025 01:35:04 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:35:04 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 01:35:04
-[08-May-2025 01:35:04 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
-[08-May-2025 01:35:04 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 8
-[08-May-2025 01:35:07 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:35:07 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 01:35:07
-[08-May-2025 01:35:07 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
-[08-May-2025 01:35:07 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 9
-[08-May-2025 01:35:09 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:35:09 Asia/Manila] No schedule found for professor ID: 8 on Thursday at 01:35:09
-[08-May-2025 01:35:09 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
-[08-May-2025 01:35:09 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 10
-[08-May-2025 01:36:05 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:36:10 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:36:15 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:36:16 Asia/Manila] Received RFID tag: 0004794*^&
-[08-May-2025 01:36:18 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:36:22 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 01:36:22 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 01:36:22 Asia/Manila] Active professor found: Yes
-[08-May-2025 01:36:22 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 01:36:22 Asia/Manila] Student check-in recorded with ID: 11
-[08-May-2025 01:36:23 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 01:36:24 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 01:36:24 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 01:36:24 Asia/Manila] Active professor found: Yes
-[08-May-2025 01:36:24 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 01:36:24 Asia/Manila] Student check-in recorded with ID: 12
-[08-May-2025 01:37:25 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:37:43 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:37:46 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 01:46:06 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 01:46:06 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 01:46:06 Asia/Manila] Active professor found: Yes
-[08-May-2025 01:46:06 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 01:46:06 Asia/Manila] Student check-in recorded with ID: 13
-[08-May-2025 01:46:14 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 01:46:20 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 07:53:30 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 07:53:30 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 07:53:30 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 07:53:30 Asia/Manila] Active professor found: Yes
-[08-May-2025 07:53:30 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
-[08-May-2025 07:53:30 Asia/Manila] Student check-in recorded with ID: 15
-[08-May-2025 07:53:40 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 07:56:15 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 07:56:19 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 07:56:20 Asia/Manila] Received RFID tag: )))$&94867
-[08-May-2025 07:56:22 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 07:56:22 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 07:56:22 Asia/Manila] Active professor found: Yes
-[08-May-2025 07:56:22 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
-[08-May-2025 07:56:22 Asia/Manila] Student check-in recorded with ID: 16
-[08-May-2025 07:56:24 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 07:56:30 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 07:56:30 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 07:56:30 Asia/Manila] Active professor found: Yes
-[08-May-2025 07:56:30 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
-[08-May-2025 07:56:30 Asia/Manila] Student check-in recorded with ID: 17
-[08-May-2025 07:56:32 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 07:57:59 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 07:58:02 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:08:29 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:08:29 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:08:29 Asia/Manila] Active professor found: No
-[08-May-2025 08:08:33 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:08:36 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:08:36 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:08:36 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:08:36 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:08:36 Asia/Manila] Student check-in recorded with ID: 26
-[08-May-2025 08:08:38 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:08:40 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:08:40 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:08:40 Asia/Manila] Active professor found: No
-[08-May-2025 08:08:43 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:08:43 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:08:43 Asia/Manila] Active professor found: No
-[08-May-2025 08:35:15 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:35:15 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:35:15 Asia/Manila] Active professor found: No
-[08-May-2025 08:35:19 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:35:22 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:35:22 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:35:22 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:35:22 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:35:22 Asia/Manila] Student check-in recorded with ID: 28
-[08-May-2025 08:35:25 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:35:29 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:35:29 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:35:29 Asia/Manila] Active professor found: No
-[08-May-2025 08:46:47 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:46:47 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:46:47 Asia/Manila] Active professor found: No
-[08-May-2025 08:46:51 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:47:38 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:47:40 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:48:04 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:49:10 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:49:10 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:49:10 Asia/Manila] Active professor found: No
-[08-May-2025 08:49:13 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:49:33 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:49:35 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:49:41 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:49:41 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:49:41 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:49:41 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:49:41 Asia/Manila] Student check-in recorded with ID: 33
-[08-May-2025 08:50:03 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:50:08 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:50:28 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:50:30 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:50:30 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:50:30 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:50:30 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:50:30 Asia/Manila] Student check-in recorded with ID: 35
-[08-May-2025 08:50:34 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:50:35 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:50:35 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:50:35 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:50:35 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:50:35 Asia/Manila] Student check-in recorded with ID: 36
-[08-May-2025 08:51:17 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:51:22 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:51:23 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:51:23 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:51:23 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:51:23 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:51:23 Asia/Manila] Student check-in recorded with ID: 38
-[08-May-2025 08:51:28 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:51:31 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:51:31 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:51:31 Asia/Manila] Active professor found: No
-[08-May-2025 08:51:33 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:51:34 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:51:34 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:51:34 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:51:34 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:51:34 Asia/Manila] Student check-in recorded with ID: 40
-[08-May-2025 08:52:06 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:11 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:11 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:11 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:52:11 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:52:11 Asia/Manila] Student check-in recorded with ID: 41
-[08-May-2025 08:52:12 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:13 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:13 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:13 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:52:13 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:52:13 Asia/Manila] Student check-in recorded with ID: 42
-[08-May-2025 08:52:15 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:18 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:52:20 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:52:22 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:22 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:22 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:52:22 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:52:22 Asia/Manila] Student check-in recorded with ID: 44
-[08-May-2025 08:52:23 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:25 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:25 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:25 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:52:25 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:52:25 Asia/Manila] Student check-in recorded with ID: 45
-[08-May-2025 08:52:26 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:28 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:28 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:28 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:52:28 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:52:28 Asia/Manila] Student check-in recorded with ID: 46
-[08-May-2025 08:52:30 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:34 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:34 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:34 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:52:34 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:52:34 Asia/Manila] Student check-in recorded with ID: 47
-[08-May-2025 08:52:35 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:52:39 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:39 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:39 Asia/Manila] Active professor found: No
-[08-May-2025 08:52:41 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:52:44 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:52:44 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:52:44 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:52:44 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:52:44 Asia/Manila] Student check-in recorded with ID: 49
-[08-May-2025 08:52:49 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:53:19 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:53:19 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:53:19 Asia/Manila] Active professor found: No
-[08-May-2025 08:53:23 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:53:27 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:54:02 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:54:03 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:54:46 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:54:49 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:54:49 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:54:49 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:54:49 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:54:49 Asia/Manila] Student check-in recorded with ID: 53
-[08-May-2025 08:54:50 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:54:53 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:54:54 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:55:45 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:55:45 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:55:45 Asia/Manila] Active professor found: No
-[08-May-2025 08:55:48 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:55:58 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:55:59 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:08 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:10 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:16 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:18 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:19 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:23 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:24 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:32 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:56:46 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:57:43 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:57:43 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:57:43 Asia/Manila] Active professor found: No
-[08-May-2025 08:57:45 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 08:58:57 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 08:58:57 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 08:58:57 Asia/Manila] Active professor found: Yes
-[08-May-2025 08:58:57 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 08:58:57 Asia/Manila] Student check-in recorded with ID: 62
-[08-May-2025 08:59:01 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:00:41 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:00:42 Asia/Manila] Received RFID tag: )004794867
-[08-May-2025 09:00:43 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:01:19 Asia/Manila] Received RFID tag: )004794867
-[08-May-2025 09:01:19 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:01:24 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:01:27 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:01:28 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:01:56 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:01:57 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:02:00 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:02:12 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:02:12 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:02:12 Asia/Manila] Active professor found: Yes
-[08-May-2025 09:02:12 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 09:02:12 Asia/Manila] Student check-in recorded with ID: 68
-[08-May-2025 09:04:00 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:04:03 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:05:25 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:05:40 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:05:43 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:05:43 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:05:43 Asia/Manila] Active professor found: Yes
-[08-May-2025 09:05:43 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 09:05:43 Asia/Manila] Student check-in recorded with ID: 71
-[08-May-2025 09:06:07 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:06:12 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:06:12 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:06:12 Asia/Manila] Active professor found: Yes
-[08-May-2025 09:06:12 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 09:06:12 Asia/Manila] Student check-in recorded with ID: 72
-[08-May-2025 09:06:16 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:06:18 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:06:18 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:06:18 Asia/Manila] Active professor found: No
-[08-May-2025 09:06:21 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:06:24 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:06:30 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:06:30 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:06:30 Asia/Manila] Active professor found: No
-[08-May-2025 09:06:31 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:06:31 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:06:31 Asia/Manila] Active professor found: No
-[08-May-2025 09:06:31 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:06:31 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:06:31 Asia/Manila] Active professor found: No
-[08-May-2025 09:06:34 Asia/Manila] Received RFID tag: 0004794867
-[08-May-2025 09:06:36 Asia/Manila] Received RFID tag: 0004806268
-[08-May-2025 09:06:36 Asia/Manila] Student check-in attempt for student ID: 8
-[08-May-2025 09:06:36 Asia/Manila] Active professor found: Yes
-[08-May-2025 09:06:36 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
-[08-May-2025 09:06:36 Asia/Manila] Student check-in recorded with ID: 75
+[08-May-2025 07:49:10 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:49:10 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:49:10 Asia/Manila] Active professor found: No
+[08-May-2025 07:49:15 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:49:19 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:49:19 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:49:19 Asia/Manila] Active professor found: Yes
+[08-May-2025 07:49:19 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 07:49:19 Asia/Manila] Student check-in recorded with ID: 9
+[08-May-2025 07:49:25 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:49:30 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:49:30 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:49:30 Asia/Manila] Active professor found: No
+[08-May-2025 07:49:34 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:49:48 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:49:55 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:49:57 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:49:58 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:50:01 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:50:01 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:50:01 Asia/Manila] Active professor found: Yes
+[08-May-2025 07:50:01 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 07:50:01 Asia/Manila] Student check-in recorded with ID: 13
+[08-May-2025 07:50:03 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:50:04 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:50:04 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:50:04 Asia/Manila] Active professor found: Yes
+[08-May-2025 07:50:04 Asia/Manila] Using schedule_id: 20 and subject_id: 7 for student check-in
+[08-May-2025 07:50:04 Asia/Manila] Student check-in recorded with ID: 14
+[08-May-2025 07:50:08 Asia/Manila] Received RFID tag: 0004794867
+[08-May-2025 07:50:46 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:50:46 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:50:46 Asia/Manila] Active professor found: No
+[08-May-2025 07:50:49 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:50:49 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:50:49 Asia/Manila] Active professor found: No
+[08-May-2025 07:50:52 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:50:52 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:50:52 Asia/Manila] Active professor found: No
+[08-May-2025 07:50:54 Asia/Manila] Received RFID tag: 0004806268
+[08-May-2025 07:50:54 Asia/Manila] Student check-in attempt for student ID: 8
+[08-May-2025 07:50:54 Asia/Manila] Active professor found: No
+[09-May-2025 02:39:00 Asia/Manila] Received RFID tag: 0004796559
+[09-May-2025 02:39:00 Asia/Manila] No schedule found for professor ID: 12 on Friday at 02:39:00
+[09-May-2025 02:39:00 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:39:00 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 15
+[09-May-2025 02:39:09 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:39:09 Asia/Manila] No schedule found for professor ID: 10 on Friday at 02:39:09
+[09-May-2025 02:39:09 Asia/Manila] Using subject ID: 7 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:39:09 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 16
+[09-May-2025 02:39:14 Asia/Manila] Received RFID tag: 0004742408
+[09-May-2025 02:39:14 Asia/Manila] No schedule found for professor ID: 7 on Friday at 02:39:14
+[09-May-2025 02:39:14 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:39:14 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 17
+[09-May-2025 02:39:18 Asia/Manila] Received RFID tag: 0004742408
+[09-May-2025 02:39:18 Asia/Manila] No schedule found for professor ID: 7 on Friday at 02:39:18
+[09-May-2025 02:39:18 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:39:18 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 18
+[09-May-2025 02:39:29 Asia/Manila] Received RFID tag: 0005686670
+[09-May-2025 02:39:32 Asia/Manila] Received RFID tag: 0004739598
+[09-May-2025 02:39:36 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:39:36 Asia/Manila] No schedule found for student ID: 21 on Friday at 02:39:36
+[09-May-2025 02:39:40 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:39:40 Asia/Manila] No schedule found for student ID: 8 on Friday at 02:39:40
+[09-May-2025 02:41:27 Asia/Manila] Received RFID tag: 0004796559
+[09-May-2025 02:41:27 Asia/Manila] No schedule found for professor ID: 12 on Friday at 02:41:27
+[09-May-2025 02:41:27 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:41:27 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 19
+[09-May-2025 02:41:33 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:41:33 Asia/Manila] Student check-in attempt for student ID: 8
+[09-May-2025 02:41:33 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:41:33 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:41:33 Asia/Manila] Student check-in recorded with ID: 20
+[09-May-2025 02:41:36 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:42:20 Asia/Manila] Received RFID tag: 0004742408
+[09-May-2025 02:42:20 Asia/Manila] No schedule found for professor ID: 7 on Friday at 02:42:20
+[09-May-2025 02:42:20 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:42:20 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 21
+[09-May-2025 02:42:26 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:42:31 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 02:42:31 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 02:42:31 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:42:31 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:42:31 Asia/Manila] Student check-in recorded with ID: 22
+[09-May-2025 02:42:34 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:42:38 Asia/Manila] Received RFID tag: 0004742408
+[09-May-2025 02:42:38 Asia/Manila] No schedule found for professor ID: 7 on Friday at 02:42:38
+[09-May-2025 02:42:38 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:42:38 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 23
+[09-May-2025 02:42:42 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:42:42 Asia/Manila] Student check-in attempt for student ID: 8
+[09-May-2025 02:42:42 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:42:42 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:42:42 Asia/Manila] Student check-in recorded with ID: 24
+[09-May-2025 02:42:47 Asia/Manila] Received RFID tag: 0004796559
+[09-May-2025 02:42:47 Asia/Manila] No schedule found for professor ID: 12 on Friday at 02:42:47
+[09-May-2025 02:42:47 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:42:47 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 25
+[09-May-2025 02:42:52 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:42:52 Asia/Manila] Student check-in attempt for student ID: 21
+[09-May-2025 02:42:52 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:42:52 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:42:52 Asia/Manila] Student check-in recorded with ID: 26
+[09-May-2025 02:42:55 Asia/Manila] Received RFID tag: 0004739598
+[09-May-2025 02:42:59 Asia/Manila] Received RFID tag: 0005686670
+[09-May-2025 02:43:00 Asia/Manila] Received RFID tag: 0005686670
+[09-May-2025 02:43:01 Asia/Manila] Received RFID tag: 0005686670
+[09-May-2025 02:43:04 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:43:07 Asia/Manila] Received RFID tag: 0004796559
+[09-May-2025 02:43:07 Asia/Manila] No schedule found for professor ID: 12 on Friday at 02:43:07
+[09-May-2025 02:43:07 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:43:07 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 27
+[09-May-2025 02:43:11 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:43:14 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:43:17 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:43:19 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:43:32 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:43:40 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 02:43:40 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 02:43:40 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:43:40 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:43:40 Asia/Manila] Student check-in recorded with ID: 2
+[09-May-2025 02:43:45 Asia/Manila] Received RFID tag: 0004742408
+[09-May-2025 02:43:45 Asia/Manila] No schedule found for professor ID: 7 on Friday at 02:43:45
+[09-May-2025 02:43:45 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:43:45 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 3
+[09-May-2025 02:43:54 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:43:54 Asia/Manila] Student check-in attempt for student ID: 8
+[09-May-2025 02:43:54 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:43:54 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:43:54 Asia/Manila] Student check-in recorded with ID: 4
+[09-May-2025 02:54:02 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 02:54:02 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 02:54:02 Asia/Manila] Active professor found for section 4: No
+[09-May-2025 02:54:07 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:54:10 Asia/Manila] Received RFID tag: 0004742408
+[09-May-2025 02:54:10 Asia/Manila] No schedule found for professor ID: 7 on Friday at 02:54:10
+[09-May-2025 02:54:10 Asia/Manila] Using subject ID: 5, schedule ID: 2, and section ID: 1 for No Schedule record
+[09-May-2025 02:54:10 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 2
+[09-May-2025 02:54:15 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:54:17 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:54:20 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:54:20 Asia/Manila] No schedule found for student ID: 8 with section_id: 1
+[09-May-2025 02:54:27 Asia/Manila] Received RFID tag: 0004796559
+[09-May-2025 02:54:27 Asia/Manila] No schedule found for professor ID: 12 on Friday at 02:54:27
+[09-May-2025 02:54:27 Asia/Manila] Using subject ID: 5, schedule ID: 2, and section ID: 1 for No Schedule record
+[09-May-2025 02:54:27 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 4
+[09-May-2025 02:54:32 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:54:38 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:54:41 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:54:41 Asia/Manila] No schedule found for student ID: 21 with section_id: 1
+[09-May-2025 02:55:01 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:55:07 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:55:10 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:55:10 Asia/Manila] Student check-in attempt for student ID: 21
+[09-May-2025 02:55:10 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:55:10 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:55:10 Asia/Manila] Student check-in recorded with ID: 7
+[09-May-2025 02:55:15 Asia/Manila] Received RFID tag: 0004796559
+[09-May-2025 02:55:15 Asia/Manila] No schedule found for professor ID: 12 on Friday at 02:55:15
+[09-May-2025 02:55:15 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:55:15 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 8
+[09-May-2025 02:55:20 Asia/Manila] Received RFID tag: 0004806268
+[09-May-2025 02:55:20 Asia/Manila] Student check-in attempt for student ID: 8
+[09-May-2025 02:55:20 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:55:20 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:55:20 Asia/Manila] Student check-in recorded with ID: 9
+[09-May-2025 02:55:30 Asia/Manila] Received RFID tag: 0004742408
+[09-May-2025 02:55:30 Asia/Manila] No schedule found for professor ID: 7 on Friday at 02:55:30
+[09-May-2025 02:55:30 Asia/Manila] Using subject ID: 5 and schedule ID: 2 for No Schedule record
+[09-May-2025 02:55:30 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 10
+[09-May-2025 02:55:34 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 02:55:34 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 02:55:34 Asia/Manila] Active professor found: Yes
+[09-May-2025 02:55:34 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:55:34 Asia/Manila] Student check-in recorded with ID: 11
+[09-May-2025 02:59:33 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:59:36 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:59:41 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 02:59:46 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:59:50 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 02:59:52 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 02:59:52 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 02:59:52 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 02:59:52 Asia/Manila] Student check-in recorded with ID: 15
+[09-May-2025 02:59:58 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:04:24 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:04:25 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:04:27 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:04:35 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 03:04:35 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 03:04:35 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 03:04:35 Asia/Manila] Student check-in recorded with ID: 19
+[09-May-2025 03:04:38 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:07:30 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:07:34 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:07:37 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:07:39 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 03:07:39 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 03:07:39 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 03:07:39 Asia/Manila] Student check-in recorded with ID: 23
+[09-May-2025 03:07:41 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:07:44 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:07:45 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:07:48 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:08:05 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:08:17 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:11:40 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 03:11:40 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 03:11:40 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 03:11:40 Asia/Manila] Student check-in recorded with ID: 3
+[09-May-2025 03:11:43 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:11:45 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:11:48 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:14:23 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:14:31 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:14:34 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:14:39 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:14:53 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 03:14:53 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 03:14:53 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 03:14:53 Asia/Manila] Student check-in recorded with ID: 9
+[09-May-2025 03:14:56 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:15:05 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:18:13 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:18:18 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:19:12 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:19:16 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:19:29 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:19:31 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:19:33 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 03:19:35 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:19:45 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:19:47 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:19:53 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:20:07 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:20:10 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:20:13 Asia/Manila] Received RFID tag: 0005611234
+[09-May-2025 03:20:13 Asia/Manila] Student check-in attempt for student ID: 9
+[09-May-2025 03:20:13 Asia/Manila] Using schedule_id: 21 and subject_id: 5 for student check-in
+[09-May-2025 03:20:13 Asia/Manila] Student check-in recorded with ID: 16
+[09-May-2025 03:20:19 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:20:21 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:20:24 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:20:27 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 03:22:14 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:22:18 Asia/Manila] Received RFID tag: 0005056696
+[09-May-2025 03:22:21 Asia/Manila] Received RFID tag: 0004824175
+[09-May-2025 18:34:41 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:34:41 Europe/Berlin] Found 3 login logs
+[09-May-2025 18:34:54 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:34:54 Europe/Berlin] Found 3 login logs
+[09-May-2025 18:34:56 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:34:56 Europe/Berlin] Found 3 login logs
+[09-May-2025 18:35:47 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:35:47 Europe/Berlin] Found 4 login logs
+[10-May-2025 00:39:15 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 00:39:15 Asia/Manila] User found, checking password
+[10-May-2025 00:39:15 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:39:15 Asia/Manila] Login successful, setting session
+[10-May-2025 00:39:15 Asia/Manila] Login logged successfully from index.php for user: 3
+[09-May-2025 18:39:17 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:39:17 Europe/Berlin] Found 1 login logs
+[10-May-2025 00:39:31 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 00:39:31 Asia/Manila] User found, checking password
+[10-May-2025 00:39:31 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:39:31 Asia/Manila] Login successful, setting session
+[10-May-2025 00:39:31 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 00:39:39 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 00:39:39 Asia/Manila] User found, checking password
+[10-May-2025 00:39:40 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:39:40 Asia/Manila] Login successful, setting session
+[10-May-2025 00:39:40 Asia/Manila] Login logged successfully from index.php for user: 3
+[09-May-2025 18:39:42 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:39:42 Europe/Berlin] Found 3 login logs
+[09-May-2025 18:40:25 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:40:25 Europe/Berlin] Found 3 login logs
+[10-May-2025 00:42:05 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 00:42:05 Asia/Manila] User found, checking password
+[10-May-2025 00:42:05 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:42:05 Asia/Manila] Login successful, setting session
+[10-May-2025 00:42:05 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 00:42:11 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 00:42:11 Asia/Manila] User found, checking password
+[10-May-2025 00:42:11 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:42:11 Asia/Manila] Login successful, setting session
+[10-May-2025 00:42:11 Asia/Manila] Login logged successfully from index.php for user: 3
+[09-May-2025 18:42:13 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[09-May-2025 18:42:13 Europe/Berlin] Found 5 login logs
+[10-May-2025 00:45:04 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 00:45:04 Asia/Manila] User found, checking password
+[10-May-2025 00:45:04 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:45:04 Asia/Manila] Login successful, setting session
+[10-May-2025 00:45:04 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 00:46:01 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 00:46:01 Asia/Manila] User found, checking password
+[10-May-2025 00:46:01 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:46:01 Asia/Manila] Login successful, setting session
+[10-May-2025 00:46:01 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 00:47:28 Asia/Manila] Login attempt from index.php: Email: sammujumuad@gmail.com, Role: professor
+[10-May-2025 00:47:28 Asia/Manila] User found, checking password
+[10-May-2025 00:47:28 Asia/Manila] Checking hashed password: match
+[10-May-2025 00:47:28 Asia/Manila] Login successful, setting session
+[10-May-2025 00:47:28 Asia/Manila] Login logged successfully from index.php for user: 10
+[10-May-2025 01:05:51 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 01:05:51 Asia/Manila] User found, checking password
+[10-May-2025 01:05:51 Asia/Manila] Checking hashed password: match
+[10-May-2025 01:05:51 Asia/Manila] Login successful, setting session
+[10-May-2025 01:05:51 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 01:06:11 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 01:06:11 Asia/Manila] User found, checking password
+[10-May-2025 01:06:11 Asia/Manila] Checking hashed password: match
+[10-May-2025 01:06:11 Asia/Manila] Login successful, setting session
+[10-May-2025 01:06:11 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 01:07:45 Asia/Manila] Login attempt from index.php: Email: sammujumuad@gmail.com, Role: professor
+[10-May-2025 01:07:45 Asia/Manila] User found, checking password
+[10-May-2025 01:07:45 Asia/Manila] Checking hashed password: match
+[10-May-2025 01:07:45 Asia/Manila] Login successful, setting session
+[10-May-2025 01:07:45 Asia/Manila] Login logged successfully from index.php for user: 10
+[10-May-2025 01:11:52 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:11:52 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 01:11:52
+[10-May-2025 01:11:52 Asia/Manila] Using subject ID: 7 and schedule ID: 2 for No Schedule record
+[10-May-2025 01:11:52 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 19
+[10-May-2025 01:12:04 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:12:04 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 01:12:04 Asia/Manila] Using schedule_id: 2 and subject_id: 7 for student check-in
+[10-May-2025 01:12:04 Asia/Manila] Student check-in recorded with ID: 20
+[10-May-2025 01:12:09 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:12:14 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:12:14 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 01:12:14 Asia/Manila] Using schedule_id: 2 and subject_id: 7 for student check-in
+[10-May-2025 01:12:14 Asia/Manila] Student check-in recorded with ID: 21
+[10-May-2025 01:12:58 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:12:58 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 01:12:58
+[10-May-2025 01:12:58 Asia/Manila] Using subject ID: 7 and schedule ID: 2 for No Schedule record
+[10-May-2025 01:12:58 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 1
+[10-May-2025 01:13:11 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 01:13:11 Asia/Manila] User found, checking password
+[10-May-2025 01:13:11 Asia/Manila] Checking hashed password: match
+[10-May-2025 01:13:11 Asia/Manila] Login successful, setting session
+[10-May-2025 01:13:11 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 01:13:48 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:13:48 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 01:13:48 Asia/Manila] Using schedule_id: 2 and subject_id: 7 for student check-in
+[10-May-2025 01:13:48 Asia/Manila] Student check-in recorded with ID: 2
+[10-May-2025 01:13:51 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:13:54 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:13:54 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 01:13:54 Asia/Manila] Using schedule_id: 2 and subject_id: 7 for student check-in
+[10-May-2025 01:13:54 Asia/Manila] Student check-in recorded with ID: 3
+[10-May-2025 01:14:02 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:14:12 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:14:14 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:14:31 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:14:33 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:14:35 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:14:38 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:14:38 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 01:14:38 Asia/Manila] Using schedule_id: 2 and subject_id: 7 for student check-in
+[10-May-2025 01:14:38 Asia/Manila] Student check-in recorded with ID: 4
+[10-May-2025 01:15:10 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:15:21 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:15:34 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:15:34 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 01:15:34 Asia/Manila] Using schedule_id: 22 and subject_id: 5 for student check-in
+[10-May-2025 01:15:34 Asia/Manila] Student check-in recorded with ID: 2
+[10-May-2025 01:15:41 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:15:48 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:19:48 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:19:52 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:22:31 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:25:51 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:25:59 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:26:00 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:28:56 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:28:58 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:29:07 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:32:12 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:37:55 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:37:59 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:53:38 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:53:38 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 01:53:38 Asia/Manila] Using schedule_id: 22 and subject_id: 5 for student check-in
+[10-May-2025 01:53:38 Asia/Manila] Student check-in recorded with ID: 9
+[10-May-2025 01:53:42 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:53:47 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:53:51 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 01:53:53 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 01:55:04 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 02:02:38 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 02:02:38 Asia/Manila] User found, checking password
+[10-May-2025 02:02:38 Asia/Manila] Checking hashed password: match
+[10-May-2025 02:02:38 Asia/Manila] Login successful, setting session
+[10-May-2025 02:02:38 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 02:40:01 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 02:40:03 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 02:40:06 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 02:40:09 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 02:41:18 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 02:41:18 Asia/Manila] User found, checking password
+[10-May-2025 02:41:18 Asia/Manila] Checking hashed password: match
+[10-May-2025 02:41:18 Asia/Manila] Login successful, setting session
+[10-May-2025 02:41:18 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 02:41:51 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 02:41:54 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:01:45 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:01:45 Asia/Manila] User found, checking password
+[10-May-2025 17:01:45 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:01:45 Asia/Manila] Login successful, setting session
+[10-May-2025 17:01:45 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:02:20 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:02:20 Asia/Manila] User found, checking password
+[10-May-2025 17:02:20 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:02:20 Asia/Manila] Login successful, setting session
+[10-May-2025 17:02:20 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:03:15 Asia/Manila] Received RFID tag: 0005686670
+[10-May-2025 17:03:21 Asia/Manila] Received RFID tag: 0004742408
+[10-May-2025 17:03:21 Asia/Manila] No schedule found for professor ID: 7 on Saturday at 17:03:21
+[10-May-2025 17:03:21 Asia/Manila] Using subject ID: 5 and schedule ID: 25 for No Schedule record
+[10-May-2025 17:03:21 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 15
+[10-May-2025 17:03:26 Asia/Manila] Received RFID tag: 0005611234
+[10-May-2025 17:03:32 Asia/Manila] Received RFID tag: 0004796559
+[10-May-2025 17:03:32 Asia/Manila] No schedule found for professor ID: 12 on Saturday at 17:03:32
+[10-May-2025 17:03:32 Asia/Manila] Using subject ID: 5 and schedule ID: 25 for No Schedule record
+[10-May-2025 17:03:32 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 17
+[10-May-2025 17:03:35 Asia/Manila] Received RFID tag: 0004739598
+[10-May-2025 17:03:48 Asia/Manila] Received RFID tag: 0004806268
+[10-May-2025 17:03:48 Asia/Manila] Student check-in attempt for student ID: 8
+[10-May-2025 17:03:48 Asia/Manila] Using schedule_id: 25 and subject_id: 5 for student check-in
+[10-May-2025 17:03:48 Asia/Manila] Student check-in recorded with ID: 18
+[10-May-2025 17:03:53 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:03:53 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:03:53
+[10-May-2025 17:03:53 Asia/Manila] Using subject ID: 7 and schedule ID: 25 for No Schedule record
+[10-May-2025 17:03:53 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 19
+[10-May-2025 17:04:05 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:04:10 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:04:12 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:04:14 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:04:16 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:04:29 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:04:44 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:04:44 Asia/Manila] User found, checking password
+[10-May-2025 17:04:44 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:04:44 Asia/Manila] Login successful, setting session
+[10-May-2025 17:04:44 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:05:14 Asia/Manila] Received RFID tag: 0004806268
+[10-May-2025 17:05:21 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:05:21 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:05:21
+[10-May-2025 17:05:21 Asia/Manila] Using subject ID: 7 and schedule ID: 26 for No Schedule record
+[10-May-2025 17:05:21 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 20
+[10-May-2025 17:06:14 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:06:20 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:06:23 Asia/Manila] Received RFID tag: 0004806268
+[10-May-2025 17:06:23 Asia/Manila] Student check-in attempt for student ID: 8
+[10-May-2025 17:06:23 Asia/Manila] Using schedule_id: 26 and subject_id: 7 for student check-in
+[10-May-2025 17:06:23 Asia/Manila] Student check-in recorded with ID: 21
+[10-May-2025 17:06:27 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:06:50 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:06:50 Asia/Manila] User found, checking password
+[10-May-2025 17:06:50 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:06:50 Asia/Manila] Login successful, setting session
+[10-May-2025 17:06:50 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:07:01 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:07:01 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:07:01
+[10-May-2025 17:07:01 Asia/Manila] No schedule found in the database for No Schedule record
+[10-May-2025 17:07:14 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:07:14 Asia/Manila] User found, checking password
+[10-May-2025 17:07:14 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:07:14 Asia/Manila] Login successful, setting session
+[10-May-2025 17:07:14 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:07:35 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:07:35 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:07:35
+[10-May-2025 17:07:35 Asia/Manila] Using subject ID: 7 and schedule ID: 27 for No Schedule record
+[10-May-2025 17:07:35 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 22
+[10-May-2025 17:11:36 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:11:36 Asia/Manila] User found, checking password
+[10-May-2025 17:11:36 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:11:36 Asia/Manila] Login successful, setting session
+[10-May-2025 17:11:36 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:12:10 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:12:18 Asia/Manila] Received RFID tag: 0004806268
+[10-May-2025 17:12:18 Asia/Manila] Student check-in attempt for student ID: 8
+[10-May-2025 17:12:18 Asia/Manila] Using schedule_id: 28 and subject_id: 5 for student check-in
+[10-May-2025 17:12:18 Asia/Manila] Student check-in recorded with ID: 24
+[10-May-2025 17:12:27 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:15:13 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:15:13 Asia/Manila] User found, checking password
+[10-May-2025 17:15:13 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:15:13 Asia/Manila] Login successful, setting session
+[10-May-2025 17:15:13 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:15:37 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:15:37 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:15:37
+[10-May-2025 17:15:37 Asia/Manila] Using subject ID: 7 and schedule ID: 29 for No Schedule record
+[10-May-2025 17:15:37 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 25
+[10-May-2025 17:15:41 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:15:41 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:15:41
+[10-May-2025 17:15:41 Asia/Manila] Using subject ID: 7 and schedule ID: 29 for No Schedule record
+[10-May-2025 17:15:41 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 26
+[10-May-2025 17:16:05 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:16:05 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:16:05
+[10-May-2025 17:16:05 Asia/Manila] Using subject ID: 7 and schedule ID: 29 for No Schedule record
+[10-May-2025 17:16:05 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 27
+[10-May-2025 17:16:07 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:16:07 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 17:16:07
+[10-May-2025 17:16:07 Asia/Manila] Using subject ID: 7 and schedule ID: 29 for No Schedule record
+[10-May-2025 17:16:07 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 28
+[10-May-2025 17:16:19 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:16:19 Asia/Manila] User found, checking password
+[10-May-2025 17:16:19 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:16:19 Asia/Manila] Login successful, setting session
+[10-May-2025 17:16:19 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:16:34 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:16:35 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:16:43 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:16:43 Asia/Manila] User found, checking password
+[10-May-2025 17:16:43 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:16:43 Asia/Manila] Login successful, setting session
+[10-May-2025 17:16:43 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:17:14 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:17:17 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:17:19 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:18:04 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:18:06 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:19:35 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:19:35 Asia/Manila] User found, checking password
+[10-May-2025 17:19:35 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:19:35 Asia/Manila] Login successful, setting session
+[10-May-2025 17:19:35 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:19:55 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:19:58 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:24:45 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:24:45 Asia/Manila] User found, checking password
+[10-May-2025 17:24:45 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:24:45 Asia/Manila] Login successful, setting session
+[10-May-2025 17:24:45 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:25:08 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:25:21 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:25:24 Asia/Manila] Received RFID tag: 0004806268
+[10-May-2025 17:25:28 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:25:56 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:25:56 Asia/Manila] User found, checking password
+[10-May-2025 17:25:56 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:25:56 Asia/Manila] Login successful, setting session
+[10-May-2025 17:25:56 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:26:26 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:33:03 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:33:03 Asia/Manila] User found, checking password
+[10-May-2025 17:33:03 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:33:03 Asia/Manila] Login successful, setting session
+[10-May-2025 17:33:03 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:33:30 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:33:34 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:36:15 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:36:15 Asia/Manila] User found, checking password
+[10-May-2025 17:36:15 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:36:15 Asia/Manila] Login successful, setting session
+[10-May-2025 17:36:15 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:36:40 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:36:50 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:37:06 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:37:11 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:39:31 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:39:31 Asia/Manila] User found, checking password
+[10-May-2025 17:39:31 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:39:31 Asia/Manila] Login successful, setting session
+[10-May-2025 17:39:31 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:39:53 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:39:58 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:40:02 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:40:14 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:40:51 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:40:58 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:41:02 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:41:03 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:43:35 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:43:38 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:43:48 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: professor
+[10-May-2025 17:43:48 Asia/Manila] No user found with email: test@gmail.com
+[10-May-2025 17:43:57 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:43:57 Asia/Manila] User found, checking password
+[10-May-2025 17:43:57 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:43:57 Asia/Manila] Login successful, setting session
+[10-May-2025 17:43:57 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:48:47 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:49:09 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:49:11 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:54:00 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:54:02 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:57:48 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:57:51 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:57:53 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:58:01 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 17:58:01 Asia/Manila] User found, checking password
+[10-May-2025 17:58:01 Asia/Manila] Checking hashed password: match
+[10-May-2025 17:58:01 Asia/Manila] Login successful, setting session
+[10-May-2025 17:58:01 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 17:58:31 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:58:34 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:58:36 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:58:37 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 17:58:52 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:11 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:13 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:16 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:17 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:18 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:19 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:20 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:21 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:21 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:22 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:00:59 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 18:00:59 Asia/Manila] User found, checking password
+[10-May-2025 18:00:59 Asia/Manila] Checking hashed password: match
+[10-May-2025 18:00:59 Asia/Manila] Login successful, setting session
+[10-May-2025 18:00:59 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 18:02:44 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:02:46 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:02:52 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 18:02:52 Asia/Manila] User found, checking password
+[10-May-2025 18:02:52 Asia/Manila] Checking hashed password: match
+[10-May-2025 18:02:52 Asia/Manila] Login successful, setting session
+[10-May-2025 18:02:52 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 18:03:23 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 18:04:29 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 18:04:29 Asia/Manila] User found, checking password
+[10-May-2025 18:04:29 Asia/Manila] Checking hashed password: match
+[10-May-2025 18:04:29 Asia/Manila] Login successful, setting session
+[10-May-2025 18:04:29 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 18:05:06 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 18:05:06 Asia/Manila] User found, checking password
+[10-May-2025 18:05:06 Asia/Manila] Checking hashed password: match
+[10-May-2025 18:05:06 Asia/Manila] Login successful, setting session
+[10-May-2025 18:05:06 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 18:08:21 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 18:08:21 Asia/Manila] User found, checking password
+[10-May-2025 18:08:21 Asia/Manila] Checking hashed password: match
+[10-May-2025 18:08:21 Asia/Manila] Login successful, setting session
+[10-May-2025 18:08:21 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 18:08:55 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 18:08:55 Asia/Manila] User found, checking password
+[10-May-2025 18:08:56 Asia/Manila] Checking hashed password: match
+[10-May-2025 18:08:56 Asia/Manila] Login successful, setting session
+[10-May-2025 18:08:56 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 20:41:50 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 20:41:50 Asia/Manila] User found, checking password
+[10-May-2025 20:41:50 Asia/Manila] Checking hashed password: match
+[10-May-2025 20:41:50 Asia/Manila] Login successful, setting session
+[10-May-2025 20:41:50 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 20:47:43 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 20:47:43 Asia/Manila] User found, checking password
+[10-May-2025 20:47:43 Asia/Manila] Checking hashed password: match
+[10-May-2025 20:47:43 Asia/Manila] Login successful, setting session
+[10-May-2025 20:47:43 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 20:57:27 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 20:57:27 Asia/Manila] User found, checking password
+[10-May-2025 20:57:27 Asia/Manila] Checking hashed password: match
+[10-May-2025 20:57:27 Asia/Manila] Login successful, setting session
+[10-May-2025 20:57:27 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 20:57:53 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 20:57:53 Asia/Manila] User found, checking password
+[10-May-2025 20:57:53 Asia/Manila] Checking hashed password: match
+[10-May-2025 20:57:53 Asia/Manila] Login successful, setting session
+[10-May-2025 20:57:53 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 21:01:27 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 21:01:27 Asia/Manila] User found, checking password
+[10-May-2025 21:01:27 Asia/Manila] Checking hashed password: match
+[10-May-2025 21:01:27 Asia/Manila] Login successful, setting session
+[10-May-2025 21:01:27 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 22:33:57 Asia/Manila] Received RFID tag: 0004796559
+[10-May-2025 22:33:57 Asia/Manila] No schedule found for professor ID: 12 on Saturday at 22:33:57
+[10-May-2025 22:33:57 Asia/Manila] Using subject ID: 5 and schedule ID: 38 for No Schedule record
+[10-May-2025 22:33:57 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 51
+[10-May-2025 22:34:01 Asia/Manila] Received RFID tag: 0005611234
+[10-May-2025 22:34:09 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:34:09 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 22:34:09 Asia/Manila] Using schedule_id: 38 and subject_id: 5 for student check-in
+[10-May-2025 22:34:09 Asia/Manila] Student check-in recorded with ID: 53
+[10-May-2025 22:34:14 Asia/Manila] Received RFID tag: 0005686670
+[10-May-2025 22:34:40 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 22:34:40 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 22:34:40
+[10-May-2025 22:34:40 Asia/Manila] Using subject ID: 7 and schedule ID: 38 for No Schedule record
+[10-May-2025 22:34:40 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 54
+[10-May-2025 22:34:45 Asia/Manila] Received RFID tag: 0005398103
+[10-May-2025 22:34:52 Asia/Manila] Received RFID tag: 0004806268
+[10-May-2025 22:34:52 Asia/Manila] Student check-in attempt for student ID: 8
+[10-May-2025 22:34:52 Asia/Manila] Using schedule_id: 38 and subject_id: 7 for student check-in
+[10-May-2025 22:34:52 Asia/Manila] Student check-in recorded with ID: 55
+[10-May-2025 22:34:56 Asia/Manila] Received RFID tag: 0004794867
+[10-May-2025 22:34:56 Asia/Manila] No schedule found for professor ID: 8 on Saturday at 22:34:56
+[10-May-2025 22:34:56 Asia/Manila] Using subject ID: 5 and schedule ID: 38 for No Schedule record
+[10-May-2025 22:34:56 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 56
+[10-May-2025 22:34:57 Asia/Manila] Received RFID tag: 0004794867
+[10-May-2025 22:34:57 Asia/Manila] No schedule found for professor ID: 8 on Saturday at 22:34:57
+[10-May-2025 22:34:57 Asia/Manila] Using subject ID: 5 and schedule ID: 38 for No Schedule record
+[10-May-2025 22:34:57 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 57
+[10-May-2025 22:35:01 Asia/Manila] Received RFID tag: 0005611234
+[10-May-2025 22:35:12 Asia/Manila] Received RFID tag: 0005398103
+[10-May-2025 22:35:16 Asia/Manila] Received RFID tag: 0004794867
+[10-May-2025 22:35:16 Asia/Manila] No schedule found for professor ID: 8 on Saturday at 22:35:16
+[10-May-2025 22:35:16 Asia/Manila] Using subject ID: 5 and schedule ID: 38 for No Schedule record
+[10-May-2025 22:35:16 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 59
+[10-May-2025 22:35:19 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:35:26 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 22:35:26 Asia/Manila] No schedule found for professor ID: 10 on Saturday at 22:35:26
+[10-May-2025 22:35:26 Asia/Manila] Using subject ID: 7 and schedule ID: 38 for No Schedule record
+[10-May-2025 22:35:26 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 60
+[10-May-2025 22:35:30 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:35:30 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 22:35:30 Asia/Manila] Using schedule_id: 38 and subject_id: 7 for student check-in
+[10-May-2025 22:35:30 Asia/Manila] Student check-in recorded with ID: 61
+[10-May-2025 22:35:31 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:35:33 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:35:33 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 22:35:33 Asia/Manila] Using schedule_id: 38 and subject_id: 7 for student check-in
+[10-May-2025 22:35:33 Asia/Manila] Student check-in recorded with ID: 62
+[10-May-2025 22:35:35 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:35:42 Asia/Manila] Received RFID tag: 24175
+[10-May-2025 22:35:47 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:35:47 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 22:35:47 Asia/Manila] Using schedule_id: 38 and subject_id: 7 for student check-in
+[10-May-2025 22:35:47 Asia/Manila] Student check-in recorded with ID: 63
+[10-May-2025 22:37:47 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 22:39:24 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 22:39:24 Asia/Manila] User found, checking password
+[10-May-2025 22:39:24 Asia/Manila] Checking hashed password: match
+[10-May-2025 22:39:24 Asia/Manila] Login successful, setting session
+[10-May-2025 22:39:24 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 16:39:27 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[10-May-2025 16:39:27 Europe/Berlin] Found 41 login logs
+[10-May-2025 16:55:20 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[10-May-2025 16:55:20 Europe/Berlin] Found 41 login logs
+[10-May-2025 16:55:35 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[10-May-2025 16:55:35 Europe/Berlin] Found 41 login logs
+[10-May-2025 22:56:23 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 22:56:23 Asia/Manila] User found, checking password
+[10-May-2025 22:56:23 Asia/Manila] Checking hashed password: match
+[10-May-2025 22:56:23 Asia/Manila] Login successful, setting session
+[10-May-2025 22:56:23 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 22:57:25 Asia/Manila] Login attempt from index.php: Email: sammujumuad@gmail.com, Role: professor
+[10-May-2025 22:57:25 Asia/Manila] User found, checking password
+[10-May-2025 22:57:25 Asia/Manila] Checking hashed password: match
+[10-May-2025 22:57:25 Asia/Manila] Login successful, setting session
+[10-May-2025 22:57:25 Asia/Manila] Login logged successfully from index.php for user: 10
+[10-May-2025 23:00:59 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 23:00:59 Asia/Manila] User found, checking password
+[10-May-2025 23:00:59 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:00:59 Asia/Manila] Login successful, setting session
+[10-May-2025 23:00:59 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 23:01:17 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 23:01:17 Asia/Manila] User found, checking password
+[10-May-2025 23:01:17 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:01:17 Asia/Manila] Login successful, setting session
+[10-May-2025 23:01:17 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 23:04:02 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 23:04:02 Asia/Manila] User found, checking password
+[10-May-2025 23:04:02 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:04:02 Asia/Manila] Login successful, setting session
+[10-May-2025 23:04:02 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 23:05:06 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 23:05:14 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 23:05:37 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 23:05:56 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 23:05:56 Asia/Manila] User found, checking password
+[10-May-2025 23:05:56 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:05:56 Asia/Manila] Login successful, setting session
+[10-May-2025 23:05:56 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 23:06:21 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 23:08:30 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 23:08:30 Asia/Manila] User found, checking password
+[10-May-2025 23:08:30 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:08:30 Asia/Manila] Login successful, setting session
+[10-May-2025 23:08:30 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 23:09:19 Asia/Manila] Login attempt from index.php: Email: test@gmail.com, Role: admin
+[10-May-2025 23:09:19 Asia/Manila] User found, checking password
+[10-May-2025 23:09:19 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:09:19 Asia/Manila] Login successful, setting session
+[10-May-2025 23:09:19 Asia/Manila] Login logged successfully from index.php for user: 3
+[10-May-2025 23:09:50 Asia/Manila] Received RFID tag: 0005056696
+[10-May-2025 23:09:59 Asia/Manila] Received RFID tag: 0004824175
+[10-May-2025 23:09:59 Asia/Manila] Student check-in attempt for student ID: 21
+[10-May-2025 23:09:59 Asia/Manila] Using schedule_id: 41 and subject_id: 5 for student check-in
+[10-May-2025 23:09:59 Asia/Manila] Student check-in recorded with ID: 4
+[10-May-2025 23:10:14 Asia/Manila] Login attempt from index.php: Email: fac@gmail.com, Role: faculty
+[10-May-2025 23:10:14 Asia/Manila] User found, checking password
+[10-May-2025 23:10:14 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:10:14 Asia/Manila] Login successful, setting session
+[10-May-2025 23:10:14 Asia/Manila] Login logged successfully from index.php for user: 7677676
+[10-May-2025 23:10:49 Asia/Manila] Login attempt from index.php: Email: sammujumuad@gmail.com, Role: professor
+[10-May-2025 23:10:49 Asia/Manila] User found, checking password
+[10-May-2025 23:10:49 Asia/Manila] Checking hashed password: match
+[10-May-2025 23:10:49 Asia/Manila] Login successful, setting session
+[10-May-2025 23:10:49 Asia/Manila] Login logged successfully from index.php for user: 10
+[11-May-2025 15:25:01 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[11-May-2025 15:25:02 Asia/Manila] User found, checking password
+[11-May-2025 15:25:02 Asia/Manila] Checking hashed password: match
+[11-May-2025 15:25:02 Asia/Manila] Login successful, setting session
+[11-May-2025 15:25:02 Asia/Manila] Login logged successfully from index.php for user: A001
+[11-May-2025 09:41:37 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 09:41:37 Europe/Berlin] Found 1 login logs
+[11-May-2025 09:53:08 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 09:53:08 Europe/Berlin] Found 40 login logs
+[11-May-2025 11:54:52 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 11:54:52 Europe/Berlin] Found 40 login logs
+[11-May-2025 12:40:34 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 12:40:34 Europe/Berlin] Found 40 login logs
+[11-May-2025 13:25:21 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 13:25:21 Europe/Berlin] Found 40 login logs
+[11-May-2025 13:32:13 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 13:32:13 Europe/Berlin] Found 40 login logs
+[11-May-2025 14:07:07 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:07:07 Europe/Berlin] Found 40 login logs
+[11-May-2025 14:08:47 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:08:47 Europe/Berlin] Found 40 login logs
+[11-May-2025 14:09:09 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:09:09 Europe/Berlin] Found 40 login logs
+[11-May-2025 20:09:19 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[11-May-2025 20:09:19 Asia/Manila] User found, checking password
+[11-May-2025 20:09:19 Asia/Manila] Checking hashed password: match
+[11-May-2025 20:09:19 Asia/Manila] Login successful, setting session
+[11-May-2025 20:09:19 Asia/Manila] Login logged successfully from index.php for user: A001
+[11-May-2025 14:09:24 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:09:24 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:10:26 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:10:26 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:12:37 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:12:37 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:13:32 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:13:32 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:25:04 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:25:04 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:25:07 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:25:07 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:25:23 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:25:23 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:26:10 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:26:10 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:26:54 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:26:54 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:28:32 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:28:32 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:31:31 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:31:31 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:31:41 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:31:41 Europe/Berlin] Found 41 login logs
+[11-May-2025 14:38:39 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 14:38:39 Europe/Berlin] Found 41 login logs
+[11-May-2025 21:03:24 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[11-May-2025 21:03:24 Asia/Manila] User found, checking password
+[11-May-2025 21:03:24 Asia/Manila] Checking hashed password: match
+[11-May-2025 21:03:24 Asia/Manila] Login successful, setting session
+[11-May-2025 21:03:24 Asia/Manila] Login logged successfully from index.php for user: A001
+[11-May-2025 15:11:46 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 15:11:46 Europe/Berlin] Found 42 login logs
+[11-May-2025 22:45:18 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[11-May-2025 22:45:18 Asia/Manila] User found, checking password
+[11-May-2025 22:45:18 Asia/Manila] Checking hashed password: match
+[11-May-2025 22:45:18 Asia/Manila] Login successful, setting session
+[11-May-2025 22:45:18 Asia/Manila] Login logged successfully from index.php for user: A001
+[11-May-2025 23:07:20 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[11-May-2025 23:07:20 Asia/Manila] User found, checking password
+[11-May-2025 23:07:20 Asia/Manila] Checking hashed password: match
+[11-May-2025 23:07:20 Asia/Manila] Login successful, setting session
+[11-May-2025 23:07:20 Asia/Manila] Login logged successfully from index.php for user: A001
+[11-May-2025 23:07:47 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[11-May-2025 23:07:47 Asia/Manila] User found, checking password
+[11-May-2025 23:07:48 Asia/Manila] Checking hashed password: match
+[11-May-2025 23:07:48 Asia/Manila] Login successful, setting session
+[11-May-2025 23:07:48 Asia/Manila] Login logged successfully from index.php for user: 111111
+[11-May-2025 23:56:41 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[11-May-2025 23:56:41 Asia/Manila] User found, checking password
+[11-May-2025 23:56:41 Asia/Manila] Checking hashed password: match
+[11-May-2025 23:56:41 Asia/Manila] Login successful, setting session
+[11-May-2025 23:56:42 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 00:21:10 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 00:21:10 Asia/Manila] User found, checking password
+[12-May-2025 00:21:10 Asia/Manila] Checking hashed password: match
+[12-May-2025 00:21:10 Asia/Manila] Login successful, setting session
+[12-May-2025 00:21:10 Asia/Manila] Login logged successfully from index.php for user: A001
+[11-May-2025 18:22:04 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 18:22:04 Europe/Berlin] Found 47 login logs
+[11-May-2025 18:22:11 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[11-May-2025 18:22:11 Europe/Berlin] Found 47 login logs
+[12-May-2025 00:22:39 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 00:22:39 Asia/Manila] User found, checking password
+[12-May-2025 00:22:39 Asia/Manila] Checking hashed password: match
+[12-May-2025 00:22:39 Asia/Manila] Login successful, setting session
+[12-May-2025 00:22:39 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 00:22:52 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: admin
+[12-May-2025 00:22:52 Asia/Manila] No user found with email: a@b.c
+[12-May-2025 00:22:59 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 00:22:59 Asia/Manila] User found, checking password
+[12-May-2025 00:22:59 Asia/Manila] Checking hashed password: match
+[12-May-2025 00:22:59 Asia/Manila] Login successful, setting session
+[12-May-2025 00:22:59 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 00:23:19 Asia/Manila] Login attempt from index.php: Email: adminsasa@example.com, Role: admin
+[12-May-2025 00:23:19 Asia/Manila] No user found with email: adminsasa@example.com
+[12-May-2025 00:28:51 Asia/Manila] Login attempt from index.php: Email: adminsasa@example.com, Role: admin
+[12-May-2025 00:28:51 Asia/Manila] No user found with email: adminsasa@example.com
+[12-May-2025 00:29:04 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: faculty
+[12-May-2025 00:29:04 Asia/Manila] No user found with email: admin@example.com
+[12-May-2025 00:29:16 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 00:29:16 Asia/Manila] User found, checking password
+[12-May-2025 00:29:16 Asia/Manila] Checking hashed password: match
+[12-May-2025 00:29:16 Asia/Manila] Login successful, setting session
+[12-May-2025 00:29:16 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 00:34:45 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 00:34:45 Asia/Manila] User found, checking password
+[12-May-2025 00:34:45 Asia/Manila] Checking hashed password: match
+[12-May-2025 00:34:45 Asia/Manila] Login successful, setting session
+[12-May-2025 00:34:45 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 00:36:35 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 00:36:35 Asia/Manila] User found, checking password
+[12-May-2025 00:36:35 Asia/Manila] Checking hashed password: match
+[12-May-2025 00:36:35 Asia/Manila] Login successful, setting session
+[12-May-2025 00:36:35 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 00:39:28 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 00:39:28 Asia/Manila] User found, checking password
+[12-May-2025 00:39:28 Asia/Manila] Checking hashed password: match
+[12-May-2025 00:39:28 Asia/Manila] Login successful, setting session
+[12-May-2025 00:39:28 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 06:38:01 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 06:38:01 Asia/Manila] User found, checking password
+[12-May-2025 06:38:01 Asia/Manila] Checking hashed password: match
+[12-May-2025 06:38:01 Asia/Manila] Login successful, setting session
+[12-May-2025 06:38:02 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 01:18:29 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 01:18:29 Europe/Berlin] Found 53 login logs
+[12-May-2025 07:19:29 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 07:19:29 Asia/Manila] User found, checking password
+[12-May-2025 07:19:29 Asia/Manila] Checking hashed password: match
+[12-May-2025 07:19:29 Asia/Manila] Login successful, setting session
+[12-May-2025 07:19:29 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 08:53:49 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 08:53:49 Asia/Manila] User found, checking password
+[12-May-2025 08:53:49 Asia/Manila] Checking hashed password: match
+[12-May-2025 08:53:49 Asia/Manila] Login successful, setting session
+[12-May-2025 08:53:49 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 02:53:56 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 02:53:56 Europe/Berlin] Found 55 login logs
+[12-May-2025 08:54:15 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 08:54:15 Asia/Manila] User found, checking password
+[12-May-2025 08:54:16 Asia/Manila] Checking hashed password: match
+[12-May-2025 08:54:16 Asia/Manila] Login successful, setting session
+[12-May-2025 08:54:16 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 08:59:46 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 08:59:46 Asia/Manila] User found, checking password
+[12-May-2025 08:59:46 Asia/Manila] Checking hashed password: match
+[12-May-2025 08:59:46 Asia/Manila] Login successful, setting session
+[12-May-2025 08:59:46 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 09:00:06 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:00:06 Asia/Manila] User found, checking password
+[12-May-2025 09:00:06 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:00:06 Asia/Manila] Login successful, setting session
+[12-May-2025 09:00:06 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:06:27 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 09:06:27 Asia/Manila] User found, checking password
+[12-May-2025 09:06:27 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:06:27 Asia/Manila] Login successful, setting session
+[12-May-2025 09:06:27 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 03:06:30 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 03:06:30 Europe/Berlin] Found 58 login logs
+[12-May-2025 09:06:45 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:06:45 Asia/Manila] User found, checking password
+[12-May-2025 09:06:45 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:06:45 Asia/Manila] Login successful, setting session
+[12-May-2025 09:06:45 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:10:28 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: faculty
+[12-May-2025 09:10:28 Asia/Manila] No user found with email: ad1@email.com
+[12-May-2025 09:10:38 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:10:38 Asia/Manila] User found, checking password
+[12-May-2025 09:10:38 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:10:38 Asia/Manila] Login successful, setting session
+[12-May-2025 09:10:38 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:16:30 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:16:30 Asia/Manila] User found, checking password
+[12-May-2025 09:16:30 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:16:30 Asia/Manila] Login successful, setting session
+[12-May-2025 09:16:30 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:16:47 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 09:16:47 Asia/Manila] User found, checking password
+[12-May-2025 09:16:47 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:16:47 Asia/Manila] Login successful, setting session
+[12-May-2025 09:16:47 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 03:16:57 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 03:16:57 Europe/Berlin] Found 60 login logs
+[12-May-2025 03:17:05 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 03:17:05 Europe/Berlin] Found 60 login logs
+[12-May-2025 09:18:15 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:18:15 Asia/Manila] User found, checking password
+[12-May-2025 09:18:15 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:18:15 Asia/Manila] Login successful, setting session
+[12-May-2025 09:18:15 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:18:33 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:18:33 Asia/Manila] User found, checking password
+[12-May-2025 09:18:33 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:18:33 Asia/Manila] Login successful, setting session
+[12-May-2025 09:18:33 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:19:12 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:19:12 Asia/Manila] User found, checking password
+[12-May-2025 09:19:12 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:19:12 Asia/Manila] Login successful, setting session
+[12-May-2025 09:19:12 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:19:22 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:19:22 Asia/Manila] User found, checking password
+[12-May-2025 09:19:22 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:19:22 Asia/Manila] Login successful, setting session
+[12-May-2025 09:19:22 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:19:44 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:19:44 Asia/Manila] User found, checking password
+[12-May-2025 09:19:44 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:19:44 Asia/Manila] Login successful, setting session
+[12-May-2025 09:19:44 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:20:27 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:20:27 Asia/Manila] User found, checking password
+[12-May-2025 09:20:27 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:20:27 Asia/Manila] Login successful, setting session
+[12-May-2025 09:20:27 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:21:58 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: admin
+[12-May-2025 09:21:58 Asia/Manila] No user found with email: a@b.c
+[12-May-2025 09:22:05 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: professor
+[12-May-2025 09:22:05 Asia/Manila] No user found with email: a@b.c
+[12-May-2025 09:22:11 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:22:11 Asia/Manila] User found, checking password
+[12-May-2025 09:22:11 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:22:11 Asia/Manila] Login successful, setting session
+[12-May-2025 09:22:11 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:22:54 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:22:54 Asia/Manila] User found, checking password
+[12-May-2025 09:22:54 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:22:54 Asia/Manila] Login successful, setting session
+[12-May-2025 09:22:54 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:23:26 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:23:26 Asia/Manila] User found, checking password
+[12-May-2025 09:23:26 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:23:26 Asia/Manila] Login successful, setting session
+[12-May-2025 09:23:27 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:23:46 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:23:46 Asia/Manila] User found, checking password
+[12-May-2025 09:23:46 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:23:46 Asia/Manila] Login successful, setting session
+[12-May-2025 09:23:46 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:25:11 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:25:11 Asia/Manila] User found, checking password
+[12-May-2025 09:25:11 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:25:11 Asia/Manila] Login successful, setting session
+[12-May-2025 09:25:11 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:26:39 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: faculty
+[12-May-2025 09:26:39 Asia/Manila] No user found with email: ad1@email.com
+[12-May-2025 09:26:46 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: faculty
+[12-May-2025 09:26:46 Asia/Manila] No user found with email: admin@example.com
+[12-May-2025 09:26:52 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: faculty
+[12-May-2025 09:26:52 Asia/Manila] No user found with email: ad1@email.com
+[12-May-2025 09:27:01 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:27:01 Asia/Manila] User found, checking password
+[12-May-2025 09:27:01 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:27:01 Asia/Manila] Login successful, setting session
+[12-May-2025 09:27:01 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:28:40 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: professor
+[12-May-2025 09:28:40 Asia/Manila] No user found with email: a@b.c
+[12-May-2025 09:28:55 Asia/Manila] Login attempt from index.php: Email: admin@email.com, Role: professor
+[12-May-2025 09:28:55 Asia/Manila] No user found with email: admin@email.com
+[12-May-2025 09:29:25 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:29:25 Asia/Manila] User found, checking password
+[12-May-2025 09:29:25 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:29:25 Asia/Manila] Login successful, setting session
+[12-May-2025 09:29:25 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:34:22 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: faculty
+[12-May-2025 09:34:22 Asia/Manila] No user found with email: ad1@email.com
+[12-May-2025 09:34:31 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: faculty
+[12-May-2025 09:34:31 Asia/Manila] No user found with email: ad1@email.com
+[12-May-2025 09:34:37 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: faculty
+[12-May-2025 09:34:37 Asia/Manila] No user found with email: ad1@email.com
+[12-May-2025 09:34:42 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:34:42 Asia/Manila] User found, checking password
+[12-May-2025 09:34:42 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:34:42 Asia/Manila] Login successful, setting session
+[12-May-2025 09:34:42 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:36:17 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:36:17 Asia/Manila] User found, checking password
+[12-May-2025 09:36:17 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:36:17 Asia/Manila] Login successful, setting session
+[12-May-2025 09:36:17 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:36:59 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:36:59 Asia/Manila] User found, checking password
+[12-May-2025 09:36:59 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:36:59 Asia/Manila] Login successful, setting session
+[12-May-2025 09:36:59 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:39:34 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:39:34 Asia/Manila] User found, checking password
+[12-May-2025 09:39:34 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:39:34 Asia/Manila] Login successful, setting session
+[12-May-2025 09:39:34 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:41:46 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:41:46 Asia/Manila] User found, checking password
+[12-May-2025 09:41:46 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:41:46 Asia/Manila] Login successful, setting session
+[12-May-2025 09:41:46 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:42:41 Asia/Manila] Login attempt from index.php: Email: a@b.c, Role: faculty
+[12-May-2025 09:42:41 Asia/Manila] User found, checking password
+[12-May-2025 09:42:41 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:42:41 Asia/Manila] Login successful, setting session
+[12-May-2025 09:42:41 Asia/Manila] Login logged successfully from index.php for user: 111111
+[12-May-2025 09:45:48 Asia/Manila] Login attempt from index.php: Email: ad1@email.com, Role: professor
+[12-May-2025 09:45:48 Asia/Manila] User found, checking password
+[12-May-2025 09:45:48 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:45:48 Asia/Manila] Login successful, setting session
+[12-May-2025 09:45:48 Asia/Manila] Login logged successfully from index.php for user: 13
+[12-May-2025 09:46:54 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 09:46:54 Asia/Manila] User found, checking password
+[12-May-2025 09:46:54 Asia/Manila] Checking hashed password: match
+[12-May-2025 09:46:54 Asia/Manila] Login successful, setting session
+[12-May-2025 09:46:54 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 18:13:08 Asia/Manila] Login attempt from index.php: Email: admin@example.com, Role: admin
+[12-May-2025 18:13:08 Asia/Manila] User found, checking password
+[12-May-2025 18:13:08 Asia/Manila] Checking hashed password: match
+[12-May-2025 18:13:08 Asia/Manila] Login successful, setting session
+[12-May-2025 18:13:08 Asia/Manila] Login logged successfully from index.php for user: A001
+[12-May-2025 12:17:03 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 12:17:03 Europe/Berlin] Found 1 login logs
+[12-May-2025 12:17:09 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 12:17:09 Europe/Berlin] Found 1 login logs
+[12-May-2025 12:17:55 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 12:17:55 Europe/Berlin] Found 1 login logs
+[12-May-2025 12:17:59 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 12:17:59 Europe/Berlin] Found 1 login logs
+[12-May-2025 18:19:10 Asia/Manila] Login attempt from index.php: Email: rivera.justin.santilla@gmail.com, Role: faculty
+[12-May-2025 18:19:10 Asia/Manila] User found, checking password
+[12-May-2025 18:19:10 Asia/Manila] Checking hashed password: no match
+[12-May-2025 18:19:10 Asia/Manila] Invalid password for email: rivera.justin.santilla@gmail.com
+[12-May-2025 18:25:01 Asia/Manila] Received RFID tag: 0005398103
+[12-May-2025 12:25:35 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 12:25:35 Europe/Berlin] Found 1 login logs
+[12-May-2025 18:30:35 Asia/Manila] Received RFID tag: 0005056696
+[12-May-2025 18:30:35 Asia/Manila] No schedule found for professor ID: 10 on Monday at 18:30:35
+[12-May-2025 18:30:35 Asia/Manila] Using subject ID: 7 and schedule ID: 43 for No Schedule record
+[12-May-2025 18:30:35 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 6
+[12-May-2025 18:34:46 Asia/Manila] Received RFID tag: 0004796559
+[12-May-2025 18:34:46 Asia/Manila] No schedule found for professor ID: 12 on Monday at 18:34:46
+[12-May-2025 18:34:46 Asia/Manila] Using subject ID: 5 and schedule ID: 43 for No Schedule record
+[12-May-2025 18:34:46 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 7
+[12-May-2025 18:34:49 Asia/Manila] Received RFID tag: 0004806268
+[12-May-2025 18:34:56 Asia/Manila] Received RFID tag: 0005056696
+[12-May-2025 18:35:01 Asia/Manila] Received RFID tag: 0005056696
+[12-May-2025 18:37:00 Asia/Manila] Received RFID tag: 0004796559
+[12-May-2025 18:37:00 Asia/Manila] No schedule found for professor ID: 12 on Monday at 18:37:00
+[12-May-2025 18:37:00 Asia/Manila] Using subject ID: 5 and schedule ID: 43 for No Schedule record
+[12-May-2025 18:37:00 Asia/Manila] Inserted 'No Schedule' record for professor. Insert ID: 9
+[12-May-2025 18:37:04 Asia/Manila] Received RFID tag: 0005056696
+[12-May-2025 18:40:03 Asia/Manila] Received RFID tag: 0005056696
+[12-May-2025 12:41:42 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 12:41:42 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:03:37 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:03:37 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:03:48 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:03:48 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:32:04 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:32:04 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:41:26 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:41:26 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:41:29 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:41:29 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:41:30 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:41:30 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:41:48 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:41:48 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:42:00 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:42:00 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:42:01 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:42:01 Europe/Berlin] Found 63 login logs
+[12-May-2025 13:42:01 Europe/Berlin] Executing query: SELECT user_name, user_role, login_time FROM login_logs 
+              WHERE user_role IN ('admin', 'faculty') 
+              ORDER BY login_time DESC 
+              LIMIT 100
+[12-May-2025 13:42:01 Europe/Berlin] Found 63 login logs

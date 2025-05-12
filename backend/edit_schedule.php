@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $schedule_time = $_POST['schedule_time'];
     $schedule_end_time = $_POST['schedule_end_time'];
     $schedule_day = $_POST['schedule_day'];
-    
+
     // Check for time conflicts (excluding the current schedule being edited)
     $conflict_query = "SELECT COUNT(*) FROM schedule_tbl 
                      WHERE room_id = ? 
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                          (schedule_time < ? AND schedule_end_time >= ?) OR
                          (schedule_time >= ? AND schedule_time < ?)
                      )";
-    
+
     $conflict_stmt = $conn->prepare($conflict_query);
     $conflict_stmt->execute([
         $room_id,
@@ -62,13 +62,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $schedule_time,
         $schedule_end_time
     ]);
-    
+
     if ($conflict_stmt->fetchColumn() > 0) {
         $_SESSION['error_message'] = "Schedule conflict detected! The room is already booked during this time period.";
         header("Location: edit_schedule.php?id=" . $schedule_id);
         exit();
     }
-    
+
     $updateQuery = "
         UPDATE schedule_tbl SET
             prof_user_id = :prof_user_id,
@@ -100,105 +100,119 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Schedule</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         .time-range {
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .time-range span {
             font-weight: bold;
         }
     </style>
 </head>
+
 <body>
     <div class="container mt-5">
-        <h2>Edit Schedule</h2>
-        
-        <?php if (isset($_SESSION['error_message'])): ?>
-            <div class="alert alert-danger">
-                <?= $_SESSION['error_message'] ?>
-                <?php unset($_SESSION['error_message']); ?>
-            </div>
-        <?php endif; ?>
-        
-        <form method="POST" onsubmit="return validateSchedule()">
-            <div class="mb-3">
-                <label>Professor:</label>
-                <select name="prof_user_id" class="form-control" required>
-                    <?php foreach ($professors as $prof): ?>
-                        <option value="<?= $prof['prof_user_id'] ?>" <?= $prof['prof_user_id'] == $schedule['prof_user_id'] ? 'selected' : '' ?>>
-                            <?= $prof['firstname'] . ' ' . $prof['lastname'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+        <div class="styles-kwan">
+            <h2>Edit Schedule</h2>
 
-            <div class="mb-3">
-                <label>Subject:</label>
-                <select name="subject_id" class="form-control" required>
-                    <?php foreach ($subjects as $subject): ?>
-                        <option value="<?= $subject['subject_id'] ?>" <?= $subject['subject_id'] == $schedule['subject_id'] ? 'selected' : '' ?>>
-                            <?= $subject['subject_name'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label>Section:</label>
-                <select name="section_id" class="form-control" required>
-                    <?php foreach ($sections as $section): ?>
-                        <option value="<?= $section['section_id'] ?>" <?= $section['section_id'] == $schedule['section_id'] ? 'selected' : '' ?>>
-                            <?= $section['section_name'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label>Room:</label>
-                <select name="room_id" class="form-control" required>
-                    <?php foreach ($rooms as $room): ?>
-                        <option value="<?= $room['room_id'] ?>" <?= $room['room_id'] == $schedule['room_id'] ? 'selected' : '' ?>>
-                            <?= $room['room_name'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label>Schedule Time:</label>
-                <div class="time-range">
-                    <input type="time" name="schedule_time" class="form-control" value="<?= $schedule['schedule_time'] ?>" required>
-                    <span>to</span>
-                    <input type="time" name="schedule_end_time" class="form-control" value="<?= $schedule['schedule_end_time'] ?>" required>
+            <?php if (isset($_SESSION['error_message'])): ?>
+                <div class="alert alert-danger">
+                    <?= $_SESSION['error_message'] ?>
+                    <?php unset($_SESSION['error_message']); ?>
                 </div>
-            </div>
+            <?php endif; ?>
 
-            <div class="mb-3">
-                <label>Schedule Day:</label>
-                <select name="schedule_day" class="form-control" required>
-                    <?php
-                    $days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                    foreach ($days as $day): ?>
-                        <option value="<?= $day ?>" <?= $day == $schedule['schedule_day'] ? 'selected' : '' ?>>
-                            <?= $day ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+            <form method="POST" onsubmit="return validateSchedule()">
+                <div class="mb-3">
+                    <label>Professor:</label>
+                    <select name="prof_user_id" class="form-control" required>
+                        <?php foreach ($professors as $prof): ?>
+                            <option value="<?= $prof['prof_user_id'] ?>" <?= $prof['prof_user_id'] == $schedule['prof_user_id'] ? 'selected' : '' ?>>
+                                <?= $prof['firstname'] . ' ' . $prof['lastname'] ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Update Schedule</button>
-            <a href="schedule.php" class="btn btn-secondary mt-3">Cancel</a>
-        </form>
+                <div class="mb-3">
+                    <label>Subject:</label>
+                    <select name="subject_id" class="form-control" required>
+                        <?php foreach ($subjects as $subject): ?>
+                            <option value="<?= $subject['subject_id'] ?>" <?= $subject['subject_id'] == $schedule['subject_id'] ? 'selected' : '' ?>>
+                                <?= $subject['subject_name'] ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Section:</label>
+                    <select name="section_id" class="form-control" required>
+                        <?php foreach ($sections as $section): ?>
+                            <option value="<?= $section['section_id'] ?>" <?= $section['section_id'] == $schedule['section_id'] ? 'selected' : '' ?>>
+                                <?= $section['section_name'] ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Room:</label>
+                    <select name="room_id" class="form-control" required>
+                        <?php foreach ($rooms as $room): ?>
+                            <option value="<?= $room['room_id'] ?>" <?= $room['room_id'] == $schedule['room_id'] ? 'selected' : '' ?>>
+                                <?= $room['room_name'] ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Schedule Time:</label>
+                    <div class="time-range">
+                        <input type="time" name="schedule_time" class="form-control"
+                            value="<?= $schedule['schedule_time'] ?>" required>
+                        <span>to</span>
+                        <input type="time" name="schedule_end_time" class="form-control"
+                            value="<?= $schedule['schedule_end_time'] ?>" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Schedule Day:</label>
+                    <select name="schedule_day" class="form-control" required>
+                        <?php
+                        $days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                        foreach ($days as $day): ?>
+                            <option value="<?= $day ?>" <?= $day == $schedule['schedule_day'] ? 'selected' : '' ?>>
+                                <?= $day ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Update Schedule</button>
+                <a href="schedule.php" class="btn btn-secondary mt-3"
+                    style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
+            </form>
+        </div>
     </div>
-    
+
     <script>
         function validateSchedule() {
             const startTime = document.querySelector('input[name="schedule_time"]').value;
@@ -213,4 +227,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </script>
 </body>
+
 </html>

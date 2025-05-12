@@ -11275,29 +11275,471 @@ Stack trace: #0 C:\xampp\htdocs\LabGuard1\backend\main_dashboard.php(278): PDOSt
 
 [07-May-2025 15:36:01 Asia/Manila] Inserting schedule with values: prof_user_id: 8, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 15:35, schedule_end_time: 16:35, schedule_day: Wednesday
 [07-May-2025 15:36:01 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.
-[08-May-2025 01:36:00 Asia/Manila] Schedule POST data: Array
+[08-May-2025 07:49:00 Asia/Manila] Schedule POST data: Array
 (
     [prof_user_id] => 8
     [subject_id] => 7
     [section_id] => 1
-    [room_id] => 1
-    [schedule_time] => 01:33
-    [schedule_end_time] => 07:00
+    [room_id] => 3
+    [schedule_time] => 07:45
+    [schedule_end_time] => 09:30
     [schedule_day] => Thursday
 )
 
-[08-May-2025 01:36:00 Asia/Manila] Inserting schedule with values: prof_user_id: 8, subject_id: 7, section_id: 1, room_id: 1, schedule_time: 01:33, schedule_end_time: 07:00, schedule_day: Thursday
-[08-May-2025 01:36:00 Asia/Manila] Schedule inserted successfully
-[08-May-2025 07:53:24 Asia/Manila] Schedule POST data: Array
+[08-May-2025 07:49:00 Asia/Manila] Inserting schedule with values: prof_user_id: 8, subject_id: 7, section_id: 1, room_id: 3, schedule_time: 07:45, schedule_end_time: 09:30, schedule_day: Thursday
+[08-May-2025 07:49:00 Asia/Manila] Schedule inserted successfully
+[09-May-2025 02:40:46 Asia/Manila] Schedule POST data: Array
 (
-    [prof_user_id] => 8
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 2
+    [schedule_time] => 02:40
+    [schedule_end_time] => 04:40
+    [schedule_day] => Friday
+)
+
+[09-May-2025 02:40:46 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 02:40, schedule_end_time: 04:40, schedule_day: Friday
+[09-May-2025 02:40:46 Asia/Manila] Schedule inserted successfully
+[10-May-2025 02:39:55 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
     [subject_id] => 5
     [section_id] => 1
-    [room_id] => 1
-    [schedule_time] => 07:45
-    [schedule_end_time] => 09:00
-    [schedule_day] => Thursday
+    [room_id] => 3
+    [schedule_time] => 02:40
+    [schedule_end_time] => 02:41
+    [schedule_day] => Saturday
 )
 
-[08-May-2025 07:53:24 Asia/Manila] Inserting schedule with values: prof_user_id: 8, subject_id: 5, section_id: 1, room_id: 1, schedule_time: 07:45, schedule_end_time: 09:00, schedule_day: Thursday
-[08-May-2025 07:53:24 Asia/Manila] Schedule inserted successfully
+[10-May-2025 02:39:55 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 3, schedule_time: 02:40, schedule_end_time: 02:41, schedule_day: Saturday
+[10-May-2025 02:39:55 Asia/Manila] Schedule inserted successfully
+[10-May-2025 02:41:48 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 3
+    [schedule_time] => 02:42
+    [schedule_end_time] => 02:43
+    [schedule_day] => Monday
+)
+
+[10-May-2025 02:41:48 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 3, schedule_time: 02:42, schedule_end_time: 02:43, schedule_day: Monday
+[10-May-2025 02:41:48 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:03:04 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:04
+    [schedule_end_time] => 17:05
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:03:04 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:04, schedule_end_time: 17:05, schedule_day: Saturday
+[10-May-2025 17:03:04 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:05:08 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:06
+    [schedule_end_time] => 17:07
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:05:08 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:06, schedule_end_time: 17:07, schedule_day: Saturday
+[10-May-2025 17:05:08 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:07:31 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:08
+    [schedule_end_time] => 17:09
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:07:31 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:08, schedule_end_time: 17:09, schedule_day: Saturday
+[10-May-2025 17:07:31 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:12:05 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:13
+    [schedule_end_time] => 17:14
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:12:05 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:13, schedule_end_time: 17:14, schedule_day: Saturday
+[10-May-2025 17:12:05 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:15:31 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:16
+    [schedule_end_time] => 17:17
+    [schedule_day] => Monday
+)
+
+[10-May-2025 17:15:31 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:16, schedule_end_time: 17:17, schedule_day: Monday
+[10-May-2025 17:15:31 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:17:08 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:18
+    [schedule_end_time] => 17:19
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:17:08 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:18, schedule_end_time: 17:19, schedule_day: Saturday
+[10-May-2025 17:17:08 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:19:51 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:20
+    [schedule_end_time] => 17:21
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:19:51 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:20, schedule_end_time: 17:21, schedule_day: Saturday
+[10-May-2025 17:19:51 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:25:02 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:25
+    [schedule_end_time] => 17:26
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:25:02 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:25, schedule_end_time: 17:26, schedule_day: Saturday
+[10-May-2025 17:25:02 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:26:16 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:27
+    [schedule_end_time] => 17:28
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:26:16 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:27, schedule_end_time: 17:28, schedule_day: Saturday
+[10-May-2025 17:26:16 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:33:18 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:34
+    [schedule_end_time] => 17:35
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:33:18 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:34, schedule_end_time: 17:35, schedule_day: Saturday
+[10-May-2025 17:33:18 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:36:34 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:37
+    [schedule_end_time] => 17:38
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:36:34 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:37, schedule_end_time: 17:38, schedule_day: Saturday
+[10-May-2025 17:36:34 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:39:49 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:40
+    [schedule_end_time] => 17:41
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:39:49 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:40, schedule_end_time: 17:41, schedule_day: Saturday
+[10-May-2025 17:39:49 Asia/Manila] Schedule inserted successfully
+[10-May-2025 17:58:23 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 17:59
+    [schedule_end_time] => 18:00
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 17:58:23 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 17:59, schedule_end_time: 18:00, schedule_day: Saturday
+[10-May-2025 17:58:23 Asia/Manila] Schedule inserted successfully
+[10-May-2025 18:03:18 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 18:03
+    [schedule_end_time] => 18:04
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 18:03:18 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 18:03, schedule_end_time: 18:04, schedule_day: Saturday
+[10-May-2025 18:03:18 Asia/Manila] Schedule inserted successfully
+[10-May-2025 23:04:22 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 23:05
+    [schedule_end_time] => 23:06
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 23:04:22 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 23:05, schedule_end_time: 23:06, schedule_day: Saturday
+[10-May-2025 23:04:22 Asia/Manila] Schedule inserted successfully
+[10-May-2025 23:06:17 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 23:07
+    [schedule_end_time] => 23:08
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 23:06:17 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 23:07, schedule_end_time: 23:08, schedule_day: Saturday
+[10-May-2025 23:06:17 Asia/Manila] Schedule inserted successfully
+[10-May-2025 23:09:43 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 23:09
+    [schedule_end_time] => 23:21
+    [schedule_day] => Saturday
+)
+
+[10-May-2025 23:09:43 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 23:09, schedule_end_time: 23:21, schedule_day: Saturday
+[10-May-2025 23:09:43 Asia/Manila] Schedule inserted successfully
+[11-May-2025 18:35:46 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 7
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 1
+    [schedule_time] => 18:35
+    [schedule_end_time] => 19:35
+    [schedule_day] => Saturday
+)
+
+[11-May-2025 18:35:47 Asia/Manila] Inserting schedule with values: prof_user_id: 7, subject_id: 5, section_id: 4, room_id: 1, schedule_time: 18:35, schedule_end_time: 19:35, schedule_day: Saturday
+[11-May-2025 18:35:47 Asia/Manila] Schedule inserted successfully
+[12-May-2025 06:43:19 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 4
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 8
+    [schedule_time] => 14:15
+    [schedule_end_time] => 15:06
+    [schedule_day] => Monday
+)
+
+[12-May-2025 06:43:19 Asia/Manila] Inserting schedule with values: prof_user_id: 4, subject_id: 5, section_id: 4, room_id: 8, schedule_time: 14:15, schedule_end_time: 15:06, schedule_day: Monday
+[12-May-2025 06:43:19 Asia/Manila] Schedule inserted successfully
+[12-May-2025 06:47:01 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 4
+    [subject_id] => 7
+    [section_id] => 4
+    [room_id] => 1
+    [schedule_time] => 06:46
+    [schedule_end_time] => 06:49
+    [schedule_day] => Monday
+)
+
+[12-May-2025 06:47:01 Asia/Manila] Inserting schedule with values: prof_user_id: 4, subject_id: 7, section_id: 4, room_id: 1, schedule_time: 06:46, schedule_end_time: 06:49, schedule_day: Monday
+[12-May-2025 06:47:01 Asia/Manila] Schedule inserted successfully
+[12-May-2025 06:48:43 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 7
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 02:42
+    [schedule_end_time] => 03:55
+    [schedule_day] => Tuesday
+)
+
+[12-May-2025 06:48:43 Asia/Manila] Inserting schedule with values: prof_user_id: 7, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 02:42, schedule_end_time: 03:55, schedule_day: Tuesday
+[12-May-2025 06:48:43 Asia/Manila] Schedule inserted successfully
+[12-May-2025 06:50:05 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 4
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 8
+    [schedule_time] => 14:00
+    [schedule_end_time] => 15:00
+    [schedule_day] => Monday
+)
+
+[12-May-2025 06:50:05 Asia/Manila] Inserting schedule with values: prof_user_id: 4, subject_id: 5, section_id: 4, room_id: 8, schedule_time: 14:00, schedule_end_time: 15:00, schedule_day: Monday
+[12-May-2025 06:50:05 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.
+[12-May-2025 06:53:19 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 7
+    [subject_id] => 7
+    [section_id] => 4
+    [room_id] => 8
+    [schedule_time] => 14:00
+    [schedule_end_time] => 15:00
+    [schedule_day] => Monday
+)
+
+[12-May-2025 06:53:19 Asia/Manila] Inserting schedule with values: prof_user_id: 7, subject_id: 7, section_id: 4, room_id: 8, schedule_time: 14:00, schedule_end_time: 15:00, schedule_day: Monday
+[12-May-2025 06:53:19 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.
+[12-May-2025 06:55:10 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 8
+    [schedule_time] => 14:00
+    [schedule_end_time] => 15:00
+    [schedule_day] => Monday
+)
+
+[12-May-2025 06:55:10 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 8, schedule_time: 14:00, schedule_end_time: 15:00, schedule_day: Monday
+[12-May-2025 06:55:10 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.
+[12-May-2025 06:55:35 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 4
+    [schedule_time] => 06:48
+    [schedule_end_time] => 16:37
+    [schedule_day] => Friday
+)
+
+[12-May-2025 06:55:35 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 4, schedule_time: 06:48, schedule_end_time: 16:37, schedule_day: Friday
+[12-May-2025 06:55:35 Asia/Manila] Schedule inserted successfully
+[12-May-2025 06:57:30 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 4
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 8
+    [schedule_time] => 14:24
+    [schedule_end_time] => 15:57
+    [schedule_day] => Monday
+)
+
+[12-May-2025 06:57:30 Asia/Manila] Inserting schedule with values: prof_user_id: 4, subject_id: 5, section_id: 1, room_id: 8, schedule_time: 14:24, schedule_end_time: 15:57, schedule_day: Monday
+[12-May-2025 06:57:30 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.
+[12-May-2025 06:58:04 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 13
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 3
+    [schedule_time] => 16:06
+    [schedule_end_time] => 19:54
+    [schedule_day] => Monday
+)
+
+[12-May-2025 06:58:04 Asia/Manila] Inserting schedule with values: prof_user_id: 13, subject_id: 5, section_id: 4, room_id: 3, schedule_time: 16:06, schedule_end_time: 19:54, schedule_day: Monday
+[12-May-2025 06:58:04 Asia/Manila] Schedule inserted successfully
+[12-May-2025 07:15:39 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 4
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 8
+    [schedule_time] => 14:00
+    [schedule_end_time] => 15:00
+    [schedule_day] => Monday
+)
+
+[12-May-2025 07:15:39 Asia/Manila] Inserting schedule with values: prof_user_id: 4, subject_id: 5, section_id: 1, room_id: 8, schedule_time: 14:00, schedule_end_time: 15:00, schedule_day: Monday
+[12-May-2025 07:15:39 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.
+[12-May-2025 18:34:20 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 4
+    [room_id] => 2
+    [schedule_time] => 18:30
+    [schedule_end_time] => 20:30
+    [schedule_day] => Tuesday
+)
+
+[12-May-2025 18:34:20 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 4, room_id: 2, schedule_time: 18:30, schedule_end_time: 20:30, schedule_day: Tuesday
+[12-May-2025 18:34:20 Asia/Manila] Schedule inserted successfully
+[12-May-2025 18:36:21 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 18:36
+    [schedule_end_time] => 18:38
+    [schedule_day] => Monday
+)
+
+[12-May-2025 18:36:21 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 18:36, schedule_end_time: 18:38, schedule_day: Monday
+[12-May-2025 18:36:21 Asia/Manila] Schedule conflict detected! The room is already booked during this time period.
+[12-May-2025 18:36:57 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 3
+    [schedule_time] => 18:36
+    [schedule_end_time] => 18:38
+    [schedule_day] => Monday
+)
+
+[12-May-2025 18:36:57 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 3, schedule_time: 18:36, schedule_end_time: 18:38, schedule_day: Monday
+[12-May-2025 18:36:57 Asia/Manila] Schedule inserted successfully
+[12-May-2025 18:39:03 Asia/Manila] Schedule POST data: Array
+(
+    [prof_user_id] => 10
+    [subject_id] => 5
+    [section_id] => 1
+    [room_id] => 2
+    [schedule_time] => 18:39
+    [schedule_end_time] => 18:40
+    [schedule_day] => Monday
+)
+
+[12-May-2025 18:39:03 Asia/Manila] Inserting schedule with values: prof_user_id: 10, subject_id: 5, section_id: 1, room_id: 2, schedule_time: 18:39, schedule_end_time: 18:40, schedule_day: Monday
+[12-May-2025 18:39:03 Asia/Manila] Schedule inserted successfully

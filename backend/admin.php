@@ -101,9 +101,8 @@ $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div id="main-container">
         <h2 class="mb-4">Admin Management</h2>
         <button class="toggle-btn" onclick="toggleForm()">ADD ADMIN</button>
-
         <div id="roomForm" class="hidden-form">
-            <div class="card p-3 mb-4">
+            <div class="card mb-4">
                 <h4>Add New Admin</h4>
                 <form method="POST" action="" enctype="multipart/form-data">
                     <div class="row">
@@ -163,7 +162,9 @@ $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <td><?= htmlspecialchars($admin['admin_id']); ?></td>
                         <td><?= htmlspecialchars($admin['fullname']); ?></td>
-                        <td><?= htmlspecialchars($admin['email']); ?></td>
+                        <td style="overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
+                            <span style="display: inline-block; width: 100%;"><?= htmlspecialchars($admin['email']); ?></span>
+                        </td>
                         <td><img src="uploads/<?= htmlspecialchars($admin['photo']); ?>" width="50" height="50"></td>
                         <td><?= htmlspecialchars($admin['created_at']); ?></td>
                         <td>

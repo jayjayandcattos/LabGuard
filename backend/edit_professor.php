@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container mt-4">
         <div class="styles-kwan">
 
-            <h2>EDIT PROFESSOR</h2>
+            <h2>Edit Professor</h2>
             <form method="POST" enctype="multipart/form-data">
                 <div class="mb-2">
                     <label>Last Name</label>
@@ -117,13 +117,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="file" name="photo" class="form-control">
                     <img src="uploads/<?= htmlspecialchars($professor['photo']) ?>" width="50" height="50" class="mt-2">
                 </div>
-                <div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="professors.php" class="btn btn-secondary" style="margin-left: 45%; margin-bottom: 20px;"
-                    >Cancel</a>
-                </div>
-
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a href="professors.php" class="btn btn-secondary" style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
             </form>
         </div>
     </div>

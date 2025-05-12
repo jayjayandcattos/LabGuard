@@ -2,14 +2,29 @@
 session_start();
 require_once "db.php"; // Ensure this file properly connects to the database
 
+// Default filter option - show all by default
+$filter_section = isset($_GET['section']) ? $_GET['section'] : 'all';
+
 // Fetch all subjects with assigned professors
 $query = "
     SELECT subj.subject_id, subj.subject_code, subj.subject_name, p.firstname, p.lastname
     FROM subject_tbl subj
-    LEFT JOIN prof_tbl p ON subj.prof_user_id = p.prof_user_id
-    ORDER BY subj.subject_name";
+    LEFT JOIN prof_tbl p ON subj.prof_user_id = p.prof_user_id";
+
+// Add filter condition if a specific section is selected
+if ($filter_section != 'all') {
+    $query .= " WHERE subj.subject_code LIKE :section";
+}
+
+$query .= " ORDER BY subj.subject_name";
 
 $stmt = $conn->prepare($query);
+
+// Bind the section parameter if filtering
+if ($filter_section != 'all') {
+    $stmt->bindValue(':section', "$filter_section%", PDO::PARAM_STR);
+}
+
 $stmt->execute();
 $subjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -20,6 +35,12 @@ if (isset($_SESSION['name'])) {
 } else {
     $admin_lastname = 'Unknown'; 
 }
+
+// Get distinct section codes for the dropdown
+$sectionQuery = "SELECT DISTINCT LEFT(subject_code, 6) as section_code FROM subject_tbl ORDER BY section_code";
+$sectionStmt = $conn->prepare($sectionQuery);
+$sectionStmt->execute();
+$sections = $sectionStmt->fetchAll(PDO::FETCH_COLUMN);
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +58,35 @@ if (isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/classroomManagement.js" defer></script>
+    <style>
+        /* .sort-section {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        } */
+        .sort-dropdown {
+            width: 200px;
+            display: inline-block;
+        }
+        .sort-dropdown .dropdown-toggle {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #ccc;
+            width: 100%;
+            text-align: left;
+        }
+        .sort-dropdown .dropdown-menu {
+            width: 100%;
+        }
+        .sort-dropdown .dropdown-item.active {
+            background-color: #4169E1;
+            color: white;
+        }
+        .dropdown-item {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
 <?php include '../sections/nav4.php' ?>
@@ -45,8 +95,30 @@ if (isset($_SESSION['name'])) {
 <div id="main-container">
             <h2>Subject Management</h2>
             
-            <!-- Add Subject Button -->
-            <button class="btn btn-success mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#addSubjectModal">Add Subject</button>
+            <div class="d-flex justify-content-between align-items-center mb-3 mt-2">
+                <!-- Add Subject Button -->
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addSubjectModal">Add Subject</button>
+                
+                <!-- Section Filtering Dropdown -->
+                <div class="sort-section">
+                    <div class="dropdown sort-dropdown">
+            <button type="button" id="sectionDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="width:200px; height:50px;">
+
+
+
+                            <?= $filter_section == 'all' ? 'COURSE CODE' : $filter_section ?>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="sectionDropdown">
+                            <li><a class="dropdown-item <?= $filter_section == 'all' ? 'active' : '' ?>" href="?section=all">ALL COURSES</a></li>
+                            <?php foreach ($sections as $section): ?>
+                                <?php if (!empty($section)): ?>
+                                <li><a class="dropdown-item <?= $filter_section == $section ? 'active' : '' ?>" href="?section=<?= $section ?>"><?= $section ?></a></li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <table class="table table-bordered">
                 <thead>
@@ -60,7 +132,7 @@ if (isset($_SESSION['name'])) {
                 <tbody>
                     <?php foreach ($subjects as $subject): ?>
                         <tr>
-                            <td> <?= htmlspecialchars($subject ['subject_code']) ?> </td>
+                            <td><?= htmlspecialchars($subject['subject_code']) ?></td>
                             <td><?= htmlspecialchars($subject['subject_name']) ?></td>
                             <td><?= $subject['firstname'] ? htmlspecialchars($subject['firstname'] . ' ' . $subject['lastname']) : 'Unassigned' ?></td>
                             <td>
@@ -91,7 +163,7 @@ if (isset($_SESSION['name'])) {
                         <input type="text" name="subject_name" class="form-control" required>
 
                         <label style="color: black;">Assign Professor:</label>
-                        <select name="prof_user_id" class="form-control" style="margin-left: 50px;">
+                        <select name="prof_user_id" class="form-control2" style="width: 45%">
                             <option value="" style="color: black;">-- Select a Professor --</option>
                             <?php
                             $profQuery = "SELECT prof_user_id, firstname, lastname FROM prof_tbl";

@@ -812,5 +812,8 @@ if (isset($_POST['rfid_tag'])) {
             rfidInput.focus();
         });
     </script>
+
+    <script src="js/tap.js"></script>
+
 </body>
 </html> 

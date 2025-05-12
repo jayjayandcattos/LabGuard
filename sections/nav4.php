@@ -16,7 +16,15 @@
         </div>
            <div class="faculty-header">
            <h1>ADMIN PANEL</h1>
-           <p>WELCOME ADMIN <?= htmlspecialchars($admin_lastname); ?>!</p>
+           <p>WELCOME ADMIN <?php 
+                // Get admin name from session
+                if (isset($_SESSION['name'])) {
+                    $name_parts = explode(' ', $_SESSION['name']);
+                    echo htmlspecialchars(end($name_parts));
+                } else {
+                    echo 'USER';
+                }
+            ?>!</p>
     </div>
         <div class="time-container">
             <div class="text-wrapper">

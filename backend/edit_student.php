@@ -23,6 +23,20 @@ if (!$student) {
     exit();
 }
 
+// Year levels array
+$year_levels = [
+    '1' => 'First Year',
+    '2' => 'Second Year',
+    '3' => 'Third Year',
+    '4' => 'Fourth Year'
+];
+
+// Student status options
+$student_statuses = [
+    'regular' => 'Regular',
+    'irregular' => 'Irregular'
+];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = trim($_POST['lastname']);
     $firstname = trim($_POST['firstname']);
@@ -30,6 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $rfid_tag = trim($_POST['rfid_tag']);
     $section_id = trim($_POST['section_id']);
+    $year_level = trim($_POST['year_level']);
+    $student_status = trim($_POST['student_status']);
 
     try {
         // Check if RFID tag exists for other students
@@ -57,18 +73,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $query = "UPDATE student_tbl SET 
                      lastname = ?, firstname = ?, mi = ?, 
                      email = ?, rfid_tag = ?, section_id = ?, 
-                     photo = ? 
+                     photo = ?, year_level = ?, student_status = ? 
                      WHERE student_user_id = ?";
             $stmt = $conn->prepare($query);
-            $stmt->execute([$lastname, $firstname, $mi, $email, $rfid_tag, $section_id, $photo, $id]);
+            $stmt->execute([$lastname, $firstname, $mi, $email, $rfid_tag, $section_id, $photo, $year_level, $student_status, $id]);
         } else {
             // Update query without photo
             $query = "UPDATE student_tbl SET 
                      lastname = ?, firstname = ?, mi = ?, 
-                     email = ?, rfid_tag = ?, section_id = ? 
+                     email = ?, rfid_tag = ?, section_id = ?,
+                     year_level = ?, student_status = ? 
                      WHERE student_user_id = ?";
             $stmt = $conn->prepare($query);
-            $stmt->execute([$lastname, $firstname, $mi, $email, $rfid_tag, $section_id, $id]);
+            $stmt->execute([$lastname, $firstname, $mi, $email, $rfid_tag, $section_id, $year_level, $student_status, $id]);
         }
 
         header("Location: students.php");
@@ -93,13 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/styles.css">
-
 </head>
 
 <body>
-    <div class="container mt-4">
+    <div class="container mt-5">
         <div class="styles-kwan">
-
             <h2>Edit Student</h2>
 
             <?php if (isset($_SESSION['error'])): ?>
@@ -160,19 +175,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="mb-3">
+                    <label>Year Level:</label>
+                    <select name="year_level" class="form-control" required>
+                        <?php foreach ($year_levels as $value => $label): ?>
+                            <option value="<?= $value ?>" <?= ($student['year_level'] == $value) ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($label) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Student Status:</label>
+                    <select name="student_status" class="form-control" required>
+                        <?php foreach ($student_statuses as $value => $label): ?>
+                            <option value="<?= $value ?>" <?= ($student['student_status'] == $value) ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($label) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label>Current Photo:</label><br>
                     <img src="uploads/<?= htmlspecialchars($student['photo']) ?>" width="100" class="mb-2"><br>
                     <label>Update Photo:</label>
                     <input type="file" name="photo" class="form-control">
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Update Student</button>
-                    <a href="students.php" class="btn btn-secondary"
-                        style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
-                </div>
 
+                <button type="submit" class="btn btn-primary">Update Student</button>
+                <a href="students.php" style="margin-left: 45%; margin-bottom: 20px;"
+                    class="btn btn-secondary">Cancel</a>
             </form>
-    </div>
+        </div>
     </div>
 </body>
 

@@ -49,27 +49,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <div class="styles-kwan">
-
             <h2>Edit Section</h2>
             <form action="edit_section.php" method="POST">
-                <input type="hidden" class="form-control" name="section_id"
+                <input class="form-control" type="hidden" name="section_id"
                     value="<?php echo htmlspecialchars($section['section_id']); ?>">
-
+                <br>
                 <label for="section_name">Course Name:</label>
-                <input type="text" class="form-control" name="section_name" id="section_name"
+                <input class="form-control" type="text" name="section_name" id="section_name"
                     value="<?php echo htmlspecialchars($section['section_name']); ?>" required>
+                <br>
 
                 <label for="section_level">Section Level:</label>
-                <input type="text" class="form-control" name="section_level" id="section_level"
+                <input class="form-control" type="text" name="section_level" id="section_level"
                     value="<?php echo htmlspecialchars($section['section_level']); ?>" required>
                 <br>
-                <button type="submit" class="btn btn-primary">Update section</button>
-                <a href="student_secs.php" style="margin-left: 45%; margin-bottom: 20px;"
-                    class="btn btn-secondary">Cancel</a>
+
+                <button class="btn btn-primary" type="submit">Update section</button>
+                <a class="btn btn-secondary mt-3" href="student_secs.php"
+                    style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
             </form>
         </div>
+    </div>
 </body>
 
 </html>

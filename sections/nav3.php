@@ -15,8 +15,8 @@
             <h1 class="brand-name">LABGUARD</h1>
         </div>
            <div class="faculty-header">
-           <h1>FACULTY PANEL</h1>
-           <p>WELCOME FACULTY MEMBER <?= htmlspecialchars($faculty['lastname']); ?>!</p>
+           <h1>LAB TECHNICIAN PANEL</h1>
+           <p>WELCOME LAB TECHNICIAN MEMBER <?= htmlspecialchars($faculty['lastname']); ?>!</p>
     </div>
         <div class="time-container">
             <div class="text-wrapper">

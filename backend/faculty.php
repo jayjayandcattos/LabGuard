@@ -24,7 +24,7 @@ if (isset($_SESSION['name'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Management</title>
+    <title>Lab Technician Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@ if (isset($_SESSION['name'])) {
 <?php include '../sections/admin_nav.php' ?>
         
 <div id="main-container">
-            <h2>Faculty Management</h2>
+            <h2>Lab Technician Management</h2>
             
             <!-- Display Messages -->
             <?php if (isset($_SESSION['success'])): ?>
@@ -58,9 +58,9 @@ if (isset($_SESSION['name'])) {
                 <?php unset($_SESSION['error']); ?>
             <?php endif; ?>
             
-            <button class="btn btn-success mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#addFacultyModal">Add Faculty</button>
+            <button class="btn btn-success mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#addFacultyModal">Add Lab Technician</button>
 
-            <table class="table table-bordered table-responsive">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Photo</th>
@@ -77,12 +77,9 @@ if (isset($_SESSION['name'])) {
                             <td><img src="uploads/<?= htmlspecialchars($f['photo']) ?>" width="50" height="50"></td>
                             <td><?= htmlspecialchars($f['employee_id']) ?></td>
                             <td><?= htmlspecialchars($f['lastname'] . ', ' . $f['firstname'] . ' ' . $f['mi']) ?></td>
-                            <td>
-  <div style="overflow-x: auto; white-space: nowrap; scrollbar-width: none; -ms-overflow-style: none;">
-    <?= htmlspecialchars($f['email']) ?>
-  </div>
-</td>
-
+                            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
+                                <?= htmlspecialchars($f['email']) ?>
+                            </td>
                             <td><?= htmlspecialchars($f['rfid_tag']) ?></td>
                             <td>
                                 <a href="edit_faculty.php?id=<?= $f['faculty_user_id'] ?>" class="btn btn-warning btn-sm">Edit</a>
@@ -100,7 +97,7 @@ if (isset($_SESSION['name'])) {
             <form action="add_faculty.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addFacultyLabel" style="color: black;">Add Faculty Member</h5>
+                        <h5 class="modal-title" id="addFacultyLabel" style="color: black;">Add Lab Technician</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">

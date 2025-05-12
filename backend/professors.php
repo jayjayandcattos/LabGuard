@@ -76,9 +76,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_professor"])) {
     exit();
 }
 
-// Fetch professors data    
-$query = "SELECT *, CONCAT(lastname, ', ', firstname, ' ', mi) AS fullname FROM prof_tbl";
-$stmt = $conn->prepare($query);
+// Get all subjects for the filter dropdown
+$subject_query = "SELECT subject_id, subject_code, subject_name FROM subject_tbl ORDER BY subject_name";
+$subject_stmt = $conn->prepare($subject_query);
+$subject_stmt->execute();
+$subjects = $subject_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Check if a subject filter is applied
+$subject_filter = isset($_GET['subject']) ? $_GET['subject'] : 'all';
+
+// Fetch professors data based on filter
+if ($subject_filter != 'all') {
+    $query = "SELECT p.*, CONCAT(p.lastname, ', ', p.firstname, ' ', p.mi) AS fullname, 
+             s.subject_code, s.subject_name 
+             FROM prof_tbl p
+             LEFT JOIN subject_tbl s ON p.prof_user_id = s.prof_user_id
+             WHERE s.subject_id = :subject_id
+             ORDER BY p.lastname, p.firstname";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':subject_id', $subject_filter, PDO::PARAM_INT);
+} else {
+    $query = "SELECT p.*, CONCAT(p.lastname, ', ', p.firstname, ' ', p.mi) AS fullname,
+             GROUP_CONCAT(DISTINCT s.subject_code SEPARATOR ', ') as subjects
+             FROM prof_tbl p
+             LEFT JOIN subject_tbl s ON p.prof_user_id = s.prof_user_id
+             GROUP BY p.prof_user_id
+             ORDER BY p.lastname, p.firstname";
+    $stmt = $conn->prepare($query);
+}
+
 $stmt->execute();
 $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -106,10 +132,11 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="main-container">
         <h2 class="mb-4">Professors Management</h2>
-        <button class="toggle-btn" onclick="toggleForm()">ADD PROFESSORS</button>
 
+
+        <button class="toggle-btn" onclick="toggleForm()">ADD PROFESSOR</button>
         <div id="roomForm" class="hidden-form">
-            <div class="card p-3 mb-4">
+            <div class="card mb-4">
                 <h4>Add New Professor</h4>
                 <form method="POST" action="" enctype="multipart/form-data">
                     <div class="row">
@@ -119,7 +146,7 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class="col-md-6 mb-2">
                             <label>Role</label>
-                            <select name="role_id" class="form-control" required style="left: 50px;">
+                            <select name="role_id" class="form-control2">
                                 <option value="3">Professor</option>
                             </select>
                         </div>
@@ -153,48 +180,88 @@ $professors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                     <br>
-
                     <button type="submit" name="add_professor" class="btn btn-primary">Add Professor</button>
                 </form>
             </div>
         </div>
-        <table class="table table-bordered table-responsive">   
+        <!-- Subject Filter -->
+        <div>
+            <form method="GET" action=""
+                style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+                <div>
+                    <label for="subject">Filter Subject:</label>
+                    <select name="subject" id="subject" class="form-control2" style="width: 300px;">
+                        <option value="all" <?php echo $subject_filter == 'all' ? 'selected' : ''; ?>>All Subjects
+                        </option>
+                        <?php foreach ($subjects as $subject): ?>
+                            <option value="<?php echo $subject['subject_id']; ?>" <?php echo $subject_filter == $subject['subject_id'] ? 'selected' : ''; ?>>
+                                <?php echo $subject['subject_code'] . ' - ' . $subject['subject_name']; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                    <?php if ($subject_filter != 'all'): ?>
+                        <a href="professors.php" class="btn btn-secondary">Clear Filter</a>
+                    <?php endif; ?>
+                </div>
+            </form>
+        </div>
+        <!-- table -->
+        <table class="table table-bordered table-responsive">
             <thead>
                 <tr>
                     <th>Employee ID</th>
                     <th>Name</th>
                     <th>RFID Tag</th>
                     <th>Email</th>
+                    <th>Subjects Taught</th>
                     <th>Photo</th>
                     <th>Created At</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($professors as $professor): ?>
+                <?php if (count($professors) > 0): ?>
+                    <?php foreach ($professors as $professor): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($professor['employee_id']); ?></td>
+                            <td><?= htmlspecialchars($professor['fullname']); ?></td>
+                            <td><?= htmlspecialchars($professor['rfid_tag']); ?></td>
+                            <td>
+                                <div class="table-responsive" style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
+                                    <style>
+                                        .table-responsive::-webkit-scrollbar {
+                                            display: none;
+                                        }
+                                    </style>
+                                    <?= htmlspecialchars($professor['email']); ?>
+                                </div>
+                            </td>
+                            <td>
+                                <?php if ($subject_filter != 'all'): ?>
+                                    <?= htmlspecialchars($professor['subject_code'] . ' - ' . $professor['subject_name']); ?>
+                                <?php else: ?>
+                                    <?= htmlspecialchars($professor['subjects'] ?? 'No subjects assigned'); ?>
+                                <?php endif; ?>
+                            </td>
+                            <td><img src="uploads/<?= htmlspecialchars($professor['photo']); ?>" width="50" height="50"></td>
+                            <td><?= htmlspecialchars($professor['created_at']); ?></td>
+                            <td>
+                                <a href="edit_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>"
+                                    class="btn btn-sm btn-warning">Edit</a>
+                                <a href="delete_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>"
+                                    class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Are you sure you want to delete this professor?');">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
                     <tr>
-                        <td><?= htmlspecialchars($professor['employee_id']); ?></td>
-                        <td><?= htmlspecialchars($professor['fullname']); ?></td>
-                        <td><?= htmlspecialchars($professor['rfid_tag']); ?></td>
-                        <td>
-                        <div class="table-responsive" style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
-                        <table class="table table-bordered w-100">
-                                <?= htmlspecialchars($professor['email']); ?>
-                            </div>
-                        </td>
-                </table>
-                        <td><img src="uploads/<?= htmlspecialchars($professor['photo']); ?>" width="50" height="50">
-                        </td>
-                        <td><?= htmlspecialchars($professor['created_at']); ?></td>
-                        <td>
-                            <a href="edit_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>"
-                                class="btn btn-sm btn-warning">Edit</a>
-                            <a href="delete_professor.php?id=<?= htmlspecialchars($professor['employee_id']) ?>"
-                                class="btn btn-sm btn-danger"
-                                onclick="return confirm('Are you sure you want to delete this professor?');">Delete</a>
-                        </td>
+                        <td colspan="8" class="text-center">No professors found for the selected subject</td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>

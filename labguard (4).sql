@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2025 at 06:31 PM
+-- Generation Time: May 07, 2025 at 07:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -63,36 +63,23 @@ CREATE TABLE `attendance_tbl` (
   `schedule_id` int(11) NOT NULL,
   `rfid_tag` varchar(50) NOT NULL,
   `time_in` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` enum('check_in','check_out','ended','no_schedule','wrong_class') NOT NULL DEFAULT 'ended',
+  `status` enum('check_in','check_out','ended','no_schedule') NOT NULL DEFAULT 'ended',
   `time_out` timestamp NULL DEFAULT NULL,
-  `a_status` enum('Present','Absent','Late','Ended','No Schedule','Wrong Class') NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
-  `section_id` int(11) DEFAULT NULL COMMENT 'The section ID for this attendance record'
+  `a_status` enum('Present','Absent','Late','Ended','No Schedule') NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `attendance_tbl`
 --
 
-INSERT INTO `attendance_tbl` (`attendance_id`, `student_id`, `prof_id`, `subject_id`, `schedule_id`, `rfid_tag`, `time_in`, `status`, `time_out`, `a_status`, `timestamp`, `section_id`) VALUES
-(1, NULL, 10, 5, 21, '0005056696', '2025-05-08 19:08:05', 'check_out', '2025-05-08 19:11:43', 'Ended', '2025-05-08 19:08:05', NULL),
-(2, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:08:17', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:08:17', NULL),
-(3, 9, NULL, 5, 21, '0005611234', '2025-05-08 19:11:40', 'check_out', '2025-05-08 19:11:43', 'Present', '2025-05-08 19:11:40', NULL),
-(4, NULL, 10, 5, 21, '0005056696', '2025-05-08 19:11:45', 'check_out', '2025-05-08 19:14:31', 'Ended', '2025-05-08 19:11:45', NULL),
-(5, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:11:48', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:11:48', NULL),
-(6, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:14:23', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:14:23', NULL),
-(7, NULL, 10, 5, 21, '0005056696', '2025-05-08 19:14:34', 'check_out', '2025-05-08 19:18:18', 'Ended', '2025-05-08 19:14:34', NULL),
-(8, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:14:39', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:14:39', NULL),
-(9, 9, NULL, 5, 21, '0005611234', '2025-05-08 19:14:53', 'check_out', '2025-05-08 19:18:18', 'Present', '2025-05-08 19:14:53', NULL),
-(10, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:14:56', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:14:56', NULL),
-(11, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:15:05', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:15:05', NULL),
-(12, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:18:13', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:18:13', NULL),
-(13, NULL, 10, 5, 21, '0005056696', '2025-05-08 19:19:12', 'check_out', '2025-05-08 19:19:16', 'Ended', '2025-05-08 19:19:12', NULL),
-(14, NULL, 10, 5, 21, '0005056696', '2025-05-08 19:20:07', 'check_out', '2025-05-08 19:20:19', 'Ended', '2025-05-08 19:20:07', NULL),
-(15, 21, NULL, 5, 21, '0004824175', '2025-05-08 19:20:10', 'wrong_class', NULL, 'Wrong Class', '2025-05-08 19:20:10', NULL),
-(16, 9, NULL, 5, 21, '0005611234', '2025-05-08 19:20:13', 'check_out', '2025-05-08 19:20:19', 'Present', '2025-05-08 19:20:13', NULL),
-(17, NULL, 10, 5, 21, '0005056696', '2025-05-08 19:20:21', 'check_out', '2025-05-08 19:20:24', 'Ended', '2025-05-08 19:20:21', NULL),
-(18, NULL, 10, 5, 21, '0005056696', '2025-05-08 19:22:14', 'check_out', '2025-05-08 19:22:18', 'Ended', '2025-05-08 19:22:14', NULL);
+INSERT INTO `attendance_tbl` (`attendance_id`, `student_id`, `prof_id`, `subject_id`, `schedule_id`, `rfid_tag`, `time_in`, `status`, `time_out`, `a_status`, `timestamp`) VALUES
+(1, NULL, 10, 5, 19, '0005056696', '2025-05-07 07:53:05', 'check_out', '2025-05-07 07:53:11', 'Ended', '2025-05-07 07:53:05'),
+(2, 21, NULL, 5, 19, '0004824175', '2025-05-07 07:53:08', 'check_out', '2025-05-07 07:53:11', 'Present', '2025-05-07 07:53:08'),
+(4, NULL, 10, 5, 19, '0005056696', '2025-05-07 07:53:39', 'check_out', '2025-05-07 07:53:43', 'Ended', '2025-05-07 07:53:39'),
+(5, 21, NULL, 5, 19, '0004824175', '2025-05-07 07:53:41', 'check_out', '2025-05-07 07:53:43', 'Ended', '2025-05-07 07:53:41'),
+(6, NULL, 10, 5, 19, '0005056696', '2025-05-07 07:56:21', 'check_out', '2025-05-07 07:56:25', 'Ended', '2025-05-07 07:56:21'),
+(7, 21, NULL, 5, 19, '0004824175', '2025-05-07 07:56:24', 'check_out', '2025-05-07 07:56:25', 'Present', '2025-05-07 07:56:24');
 
 -- --------------------------------------------------------
 
@@ -122,30 +109,6 @@ INSERT INTO `faculty_tbl` (`faculty_user_id`, `employee_id`, `role_id`, `lastnam
 (3, 'E004', 2, 'Loreno', 'Jhon Ray', 'M', 'jr@gmail.com', '$2y$10$UTof.FDsW4ttbQMxHfCnsusIDOcQMl8iwPvxAHKV7UpdvQWbd3E/m', '12345', NULL, '2025-03-02 13:54:51'),
 (4, '343', 2, 'test', 'test', 't', 'djetalla@gmail.com', '$2y$10$jBMH3aJ96zh9PI9lYeM0xu2adAdh3ysta9cstCeIZ1eNJ6Xn1/eE2', '3434343', 'cropped-1440-900-678024.png', '2025-05-07 00:10:23'),
 (5, '7677676', 2, 'fac', 'fac', 'f', 'fac@gmail.com', '$2y$10$Obny4xEt5lTWDSvrpr/5cOAlIXgalllLQLh91JFehD4ZT6/k.pccG', '4545', '0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png', '2025-05-07 05:13:18');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login_logs`
---
-
-CREATE TABLE `login_logs` (
-  `log_id` int(11) NOT NULL,
-  `user_id` varchar(50) NOT NULL,
-  `user_role` varchar(20) NOT NULL,
-  `user_name` varchar(100) NOT NULL,
-  `login_time` datetime NOT NULL DEFAULT current_timestamp(),
-  `ip_address` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `login_logs`
---
-
-INSERT INTO `login_logs` (`log_id`, `user_id`, `user_role`, `user_name`, `login_time`, `ip_address`) VALUES
-(1, 'admin1', 'admin', 'Admin User', '2025-05-10 00:20:38', '127.0.0.1'),
-(2, 'faculty1', 'faculty', 'Faculty User', '2025-05-10 00:20:38', '127.0.0.1'),
-(3, 'test_user_1746808176', 'admin', 'Test User', '2025-05-10 00:29:44', '::1');
 
 -- --------------------------------------------------------
 
@@ -247,12 +210,10 @@ INSERT INTO `schedule_tbl` (`schedule_id`, `prof_user_id`, `subject_id`, `sectio
 (2, 4, 5, 1, 1, '13:00:00', '00:00:00', 'Saturday'),
 (4, 4, 5, 1, 1, '13:00:00', '00:00:00', 'Monday'),
 (13, 8, 5, 4, 1, '13:09:00', '00:00:00', 'Friday'),
-(14, 7, 5, 1, 1, '07:33:00', '00:00:00', 'Thursday'),
+(14, 7, 5, 1, 1, '21:33:00', '00:00:00', 'Thursday'),
 (17, 10, 7, 1, 4, '20:15:00', '00:00:00', 'Tuesday'),
 (18, 10, 5, 1, 1, '13:13:00', '00:00:00', 'Wednesday'),
-(19, 10, 5, 1, 2, '15:35:00', '17:35:00', 'Wednesday'),
-(20, 8, 7, 1, 1, '07:45:00', '09:30:00', 'Thursday'),
-(21, 10, 5, 4, 2, '02:40:00', '04:40:00', 'Friday');
+(19, 10, 5, 1, 2, '15:35:00', '17:35:00', 'Wednesday');
 
 -- --------------------------------------------------------
 
@@ -305,23 +266,21 @@ CREATE TABLE `student_tbl` (
   `rfid_tag` varchar(50) NOT NULL,
   `section_id` int(11) DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `year_level` enum('1','2','3','4') DEFAULT NULL COMMENT 'Student year level',
-  `student_status` enum('regular','irregular') DEFAULT 'regular' COMMENT 'Student regularity status'
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `student_tbl`
 --
 
-INSERT INTO `student_tbl` (`student_user_id`, `student_id`, `role_id`, `lastname`, `firstname`, `mi`, `email`, `rfid_tag`, `section_id`, `photo`, `created_at`, `year_level`, `student_status`) VALUES
-(6, '23-1940', 4, 'Loreno', 'Jhon Ray', 'M', 'jr@gmail.com', '12345', 1, '457510754_1971541849947481_8741327121448384375_n.jpg', '2025-03-02 14:48:16', '1', 'regular'),
-(7, '23-1923', 4, 'Jumuad', 'Sam', 'J', 'sam@gmail.com', '123456', 1, '410587651_408008551551370_2003064156466002817_n.jpg', '2025-03-02 14:51:04', '1', 'regular'),
-(8, '232323', 4, 'Detalla', 'Krish', 'D', 'krish@gmail.com', '0004806268', 1, '358038281_662271262426045_4841641984669283118_n.jpg', '2025-03-02 14:51:44', '1', 'regular'),
-(9, '3434343', 4, 'Gutaba', 'JM', 'M', 'jm@gmail.com', '0005611234', 4, 'The_Reason_For_His_Words_T.jpg', '2025-03-02 14:53:04', '1', 'regular'),
-(10, '12122', 4, 'De Vera', 'Vaughn', 'M', 'von@gmail.com', '3232332', 4, '0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png', '2025-03-02 14:55:17', '1', 'regular'),
-(20, '2323', 4, 'test', 'test', 't', 'admin1@gmail.com', '3434', 1, '367505845_326918929676243_3258514212974443694_n.jpg', '2025-05-06 03:50:59', '1', 'regular'),
-(21, '23-1996', 4, 'Jumuad', 'Sam', 'C', 'jumuad@gmail.com', '0004824175', 1, '364147777_2556534734502108_424220739274862162_n.jpg', '2025-05-06 11:05:12', '1', 'regular');
+INSERT INTO `student_tbl` (`student_user_id`, `student_id`, `role_id`, `lastname`, `firstname`, `mi`, `email`, `rfid_tag`, `section_id`, `photo`, `created_at`) VALUES
+(6, '23-1940', 4, 'Loreno', 'Jhon Ray', 'M', 'jr@gmail.com', '12345', 1, '457510754_1971541849947481_8741327121448384375_n.jpg', '2025-03-02 14:48:16'),
+(7, '23-1923', 4, 'Jumuad', 'Sam', 'J', 'sam@gmail.com', '123456', 1, '410587651_408008551551370_2003064156466002817_n.jpg', '2025-03-02 14:51:04'),
+(8, '232323', 4, 'Detalla', 'Krish', 'D', 'krish@gmail.com', '0004806268', 1, '358038281_662271262426045_4841641984669283118_n.jpg', '2025-03-02 14:51:44'),
+(9, '3434343', 4, 'Gutaba', 'JM', 'M', 'jm@gmail.com', '3434343', 4, 'The_Reason_For_His_Words_T.jpg', '2025-03-02 14:53:04'),
+(10, '12122', 4, 'De Vera', 'Vaughn', 'M', 'von@gmail.com', '3232332', 4, '0b93331cdd60dee1b109734e9435088aa83ad3899ec2701f2e3d0c3142c034cc.png', '2025-03-02 14:55:17'),
+(20, '2323', 4, 'test', 'test', 't', 'admin1@gmail.com', '3434', 1, '367505845_326918929676243_3258514212974443694_n.jpg', '2025-05-06 03:50:59'),
+(21, '23-1996', 4, 'Jumuad', 'Sam', 'C', 'jumuad@gmail.com', '0004824175', 1, '364147777_2556534734502108_424220739274862162_n.jpg', '2025-05-06 11:05:12');
 
 -- --------------------------------------------------------
 
@@ -376,12 +335,6 @@ ALTER TABLE `faculty_tbl`
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `rfid_tag` (`rfid_tag`),
   ADD KEY `role_id` (`role_id`);
-
---
--- Indexes for table `login_logs`
---
-ALTER TABLE `login_logs`
-  ADD PRIMARY KEY (`log_id`);
 
 --
 -- Indexes for table `prof_tbl`
@@ -464,19 +417,13 @@ ALTER TABLE `admin_tbl`
 -- AUTO_INCREMENT for table `attendance_tbl`
 --
 ALTER TABLE `attendance_tbl`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `faculty_tbl`
 --
 ALTER TABLE `faculty_tbl`
   MODIFY `faculty_user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `login_logs`
---
-ALTER TABLE `login_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `prof_tbl`
@@ -500,7 +447,7 @@ ALTER TABLE `room_tbl`
 -- AUTO_INCREMENT for table `schedule_tbl`
 --
 ALTER TABLE `schedule_tbl`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `section_tbl`

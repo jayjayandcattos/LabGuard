@@ -7,9 +7,11 @@
   <ul class="nav flex-column" style="width:100%;">
     <li class="nav-item"><a href="faculty_overview.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'faculty_overview.php' ? 'active' : '' ?>">Overview</a></li>
     <li class="nav-item"><a href="faculty_dashboard.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'faculty_dashboard.php' ? 'active' : '' ?>">Classrooms</a></li>
+    <li class="nav-item"><a href="room_logs.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'room_logs.php' ? 'active' : '' ?>">Room Logs</a></li>
     <li class="nav-item"><a href="view_students.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'view_students.php' ? 'active' : '' ?>">Student Profiles</a></li>
     <li class="nav-item"><a href="view_professors.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'view_professors.php' ? 'active' : '' ?>">Professor Profiles</a></li>
     <li class="nav-item"><a href="faculty_schedule.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'faculty_schedule.php' ? 'active' : '' ?>">Schedule Management</a></li>
+    <li class="nav-item"><a href="faculty_profile.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'faculty_profile.php' ? 'active' : '' ?>">My Profile</a></li>
     <li class="nav-item"><a href="logout.php" class="nav-link text-white" style="margin-top: calc(175px + 6rem); overflow-y: auto;">Logout</a></li>
 
   </ul>

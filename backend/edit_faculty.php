@@ -84,73 +84,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <div class="container mt-5">
+        <div class="styles-kwan">
 
-    <div class="styles-kwan">
-        <h2>Edit Faculty</h2>
+            <h2>Edit Faculty</h2>
 
-        <?php if (isset($_SESSION['error'])): ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <?= $_SESSION['error']; ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <?php unset($_SESSION['error']); ?>
-        <?php endif; ?>
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?= $_SESSION['error']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php unset($_SESSION['error']); ?>
+            <?php endif; ?>
 
-        <div>
-            <div>
-                <form method="POST" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label class="form-label">Last Name:</label>
-                        <input type="text" name="lastname" class="form-control"
-                            value="<?= htmlspecialchars($faculty['lastname']) ?>" required>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Last Name:</label>
+                    <input type="text" name="lastname" class="form-control"
+                        value="<?= htmlspecialchars($faculty['lastname']) ?>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">First Name:</label>
+                    <input type="text" name="firstname" class="form-control"
+                        value="<?= htmlspecialchars($faculty['firstname']) ?>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Middle Initial:</label>
+                    <input type="text" name="mi" class="form-control" value="<?= htmlspecialchars($faculty['mi']) ?>">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <input type="email" name="email" class="form-control"
+                        value="<?= htmlspecialchars($faculty['email']) ?>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">RFID Tag:</label>
+                    <input type="text" name="rfid_tag" class="form-control"
+                        value="<?= htmlspecialchars($faculty['rfid_tag']) ?>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Current Photo:</label><br>
+                    <?php if (!empty($faculty['photo'])): ?>
+                        <img src="uploads/<?= htmlspecialchars($faculty['photo']) ?>" width="100" class="rounded mb-2">
+                    <?php else: ?>
+                        <p>No photo available</p>
+                    <?php endif; ?>
+
+                    <div class="mt-2">
+                        <label class="form-label">Upload New Photo:</label>
+                        <input type="file" name="photo" class="form-control">
+                        <small class="text-muted">Leave empty to keep current photo</small>
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">First Name:</label>
-                        <input type="text" name="firstname" class="form-control"
-                            value="<?= htmlspecialchars($faculty['firstname']) ?>" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Middle Initial:</label>
-                        <input type="text" name="mi" class="form-control"
-                            value="<?= htmlspecialchars($faculty['mi']) ?>">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Email:</label>
-                        <input type="email" name="email" class="form-control"
-                            value="<?= htmlspecialchars($faculty['email']) ?>" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">RFID Tag:</label>
-                        <input type="text" name="rfid_tag" class="form-control"
-                            value="<?= htmlspecialchars($faculty['rfid_tag']) ?>" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Current Photo:</label><br>
-                        <?php if (!empty($faculty['photo'])): ?>
-                            <img src="uploads/<?= htmlspecialchars($faculty['photo']) ?>" width="100" class="rounded mb-2">
-                        <?php else: ?>
-                            <p>No photo available</p>
-                        <?php endif; ?>
-
-                        <div class="mt-2">
-                            <label class="form-label">Upload New Photo:</label>
-                            <input type="file" name="photo" class="form-control">
-                            <small class="text-muted">Leave empty to keep current photo</small>
-                        </div>
-                    </div>
-
-                    <div>
-                        <button type="submit" class="btn btn-primary">Update Faculty</button>
-                        <a href="faculty.php" class="btn btn-secondary"
-                            style="margin-left: 55%; margin-bottom: 20px;">Cancel</a>
-                    </div>
-                </form>
-            </div>
+                <button type="submit" class="btn btn-primary">Update Faculty</button>
+                <a href="faculty.php" class="btn btn-secondary mt-3"
+                    style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
+            </form>
         </div>
     </div>
 

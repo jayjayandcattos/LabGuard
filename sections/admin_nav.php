@@ -16,7 +16,7 @@
         <a href="professors.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'professors.php' ? 'active' : '' ?>">Professors</a>
     </li>
     <li class="nav-item">
-        <a href="faculty.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'faculty.php' ? 'active' : '' ?>">Faculty</a>
+        <a href="faculty.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'faculty.php' ? 'active' : '' ?>">Lab Technician</a>
     </li>
     <li class="nav-item">
         <a href="students.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'students.php' ? 'active' : '' ?>">Students</a>
@@ -29,6 +29,12 @@
     </li>
     <li class="nav-item">
         <a href="admin.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'admin.php' ? 'active' : '' ?>">Admin</a>
+    </li>
+    <li class="nav-item">
+        <a href="admin_profile.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'admin_profile.php' ? 'active' : '' ?>">My Profile</a>
+    </li>
+    <li class="nav-item">
+        <a href="login_logs.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'login_logs.php' ? 'active' : '' ?>">Login Logs</a>
     </li>
     <li class="nav-item">
         <a href="logout.php" class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'logout.php' ? 'active' : '' ?>">Logout</a>

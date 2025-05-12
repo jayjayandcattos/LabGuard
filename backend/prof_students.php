@@ -15,6 +15,8 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "professor") {
 // Get filters
 $section_filter = isset($_GET['section']) ? $_GET['section'] : 'all';
 $subject_filter = isset($_GET['subject']) ? $_GET['subject'] : 'all';
+$year_filter = isset($_GET['year']) ? $_GET['year'] : 'all';
+$status_filter = isset($_GET['status']) ? $_GET['status'] : 'all';
 
 // Get professor's ID
 $prof_user_id = $_SESSION["user_id"];
@@ -32,6 +34,8 @@ $query = "
         s.mi, 
         s.email, 
         s.photo,
+        s.year_level,
+        s.student_status,
         sec.section_name,
         sub.subject_name
     FROM schedule_tbl sch
@@ -47,6 +51,12 @@ if ($section_filter !== 'all') {
 if ($subject_filter !== 'all') {
     $query .= " AND sub.subject_id = :subject_id";
 }
+if ($year_filter !== 'all') {
+    $query .= " AND s.year_level = :year_level";
+}
+if ($status_filter !== 'all') {
+    $query .= " AND s.student_status = :student_status";
+}
 
 $query .= " ORDER BY sec.section_name, s.lastname";
 
@@ -57,6 +67,12 @@ if ($section_filter !== 'all') {
 }
 if ($subject_filter !== 'all') {
     $params['subject_id'] = $subject_filter;
+}
+if ($year_filter !== 'all') {
+    $params['year_level'] = $year_filter;
+}
+if ($status_filter !== 'all') {
+    $params['student_status'] = $status_filter;
 }
 
 $stmt = $conn->prepare($query);
@@ -76,6 +92,31 @@ $sections_query = "
 $sections_stmt = $conn->prepare($sections_query);
 $sections_stmt->execute(['prof_user_id' => $prof_user_id]);
 $sections = $sections_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Fetch subjects for the filter dropdown
+$subjects_query = "
+    SELECT DISTINCT sub.subject_id, sub.subject_name
+    FROM subject_tbl sub
+    JOIN schedule_tbl sch ON sub.subject_id = sch.subject_id
+    WHERE sch.prof_user_id = :prof_user_id
+    ORDER BY sub.subject_name";
+$subjects_stmt = $conn->prepare($subjects_query);
+$subjects_stmt->execute(['prof_user_id' => $prof_user_id]);
+$subjects = $subjects_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Year levels array
+$year_levels = [
+    '1' => 'First Year',
+    '2' => 'Second Year',
+    '3' => 'Third Year',
+    '4' => 'Fourth Year'
+];
+
+// Student status options
+$student_statuses = [
+    'regular' => 'Regular',
+    'irregular' => 'Irregular'
+];
 
 // Fetch Professor's Last Name
 $prof_query = "SELECT lastname FROM prof_tbl WHERE prof_user_id = :prof_user_id";
@@ -128,7 +169,7 @@ if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
             <div class="dropdowns">
                 <div class="col-md-6">
                     <form action="" method="GET" class="d-flex">
-                        <select name="section" class="  me-2 " onchange="this.form.submit()">
+                        <select name="section" class="me-2" onchange="this.form.submit()">
                             <option value="all" <?= $section_filter === 'all' ? 'selected' : '' ?>>All Sections</option>
                             <?php foreach ($sections as $section): ?>
                                 <option value="<?= $section['section_id'] ?>"
@@ -137,12 +178,30 @@ if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <select name="subject" class="  me-2" onchange="this.form.submit()">
+                        <select name="subject" class="me-2" onchange="this.form.submit()">
                             <option value="all" <?= $subject_filter === 'all' ? 'selected' : '' ?>>All Subjects</option>
                             <?php foreach ($subjects as $subject): ?>
                                 <option value="<?= $subject['subject_id'] ?>"
                                     <?= $subject_filter == $subject['subject_id'] ? 'selected' : '' ?>>
                                     <?= htmlspecialchars($subject['subject_name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <select name="year" class="me-2" onchange="this.form.submit()">
+                            <option value="all" <?= $year_filter === 'all' ? 'selected' : '' ?>>All Years</option>
+                            <?php foreach ($year_levels as $value => $label): ?>
+                                <option value="<?= $value ?>"
+                                    <?= $year_filter == $value ? 'selected' : '' ?>>
+                                    <?= htmlspecialchars($label) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <select name="status" class="me-2" onchange="this.form.submit()">
+                            <option value="all" <?= $status_filter === 'all' ? 'selected' : '' ?>>All Status</option>
+                            <?php foreach ($student_statuses as $value => $label): ?>
+                                <option value="<?= $value ?>"
+                                    <?= $status_filter == $value ? 'selected' : '' ?>>
+                                    <?= htmlspecialchars($label) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -160,7 +219,8 @@ if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Section</th>
-
+                        <th>Year Level</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -176,8 +236,8 @@ if ($prof_stmt->execute(['prof_user_id' => $prof_user_id])) {
                             <td><?= htmlspecialchars($student['lastname'] . ', ' . $student['firstname'] . ' ' . $student['mi']); ?></td>
                             <td><?= htmlspecialchars($student['email']); ?></td>
                             <td><?= htmlspecialchars($student['section_name']); ?></td>
-
-
+                            <td><?= htmlspecialchars($student['year_level'] ? $year_levels[$student['year_level']] ?? $student['year_level'] : 'Not Set'); ?></td>
+                            <td><?= htmlspecialchars($student['student_status'] ? $student_statuses[$student['student_status']] ?? $student['student_status'] : 'Not Set'); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

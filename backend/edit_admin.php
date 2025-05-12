@@ -69,7 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/styles.css">
- 
 </head>
 <body>
     <div class="container mt-4">
@@ -104,9 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="file" name="photo" class="form-control">
                 <img src="uploads/<?= htmlspecialchars($admin['photo']) ?>" width="50" height="50" class="mt-2">
             </div>
-            
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="admin.php" class="btn btn-secondary" style="margin-left: 45%; margin-bottom: 20px;">Cancel</a>
+            <a href="admin.php" style="margin-left: 45%; margin-bottom: 20px;" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
     </div>

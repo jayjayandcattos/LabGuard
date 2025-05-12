@@ -165,6 +165,7 @@ if (isset($_SESSION['name'])) {
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -179,7 +180,10 @@ if (isset($_SESSION['name'])) {
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/IDtap.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/prof.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/classroomManagement.js" defer></script>
+
     <style>
         #scheduleFormContainer {
             display: none;
@@ -188,16 +192,10 @@ if (isset($_SESSION['name'])) {
             border-radius: 5px;
             margin-bottom: 20px;
             border: 1px solid #dee2e6;
-            height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: all 0.32s ease-in-out;
         }
 
         #scheduleFormContainer.show {
             display: block;
-            height: auto;
-            opacity: 1;
         }
 
         .time-range {
@@ -209,23 +207,6 @@ if (isset($_SESSION['name'])) {
         .time-range span {
             font-weight: bold;
         }
-
-        .toggle-btn {
-            background-color: #0d6efd;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 20px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .toggle-btn:hover {
-            transform: rotate(90deg);
-        }
     </style>
 </head>
 
@@ -236,82 +217,82 @@ if (isset($_SESSION['name'])) {
     <div id="main-container">
         <h2>Professor Schedules</h2>
 
-        <button id="toggleFormBtn" class="toggle-btn">ADD SCHEDULE</button>
+        <button class="toggle-btn" onclick="toggleForm()">ADD SCHEDULE</button>
+        <div id="roomForm" class="hidden-form">
+            <div class="card mb-4">
 
-        <div id="scheduleFormContainer">
-            <h1 style="color: black;">Add New Schedule</h1>
-            <form action="schedule.php" method="POST" onsubmit="return validateSchedule()">
-                <!-- Your existing form content remains the same -->
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label style="color: black;">Professor:</label>
-                        <select name="prof_user_id" class="form-control2" required>
-                            <option value="">Select Professor</option>
-                            <?php foreach ($professors as $prof): ?>
-                                <option value="<?= $prof['prof_user_id'] ?>">
-                                    <?= $prof['firstname'] . ' ' . $prof['lastname'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                    <label style="color: black;">Subject:</label>
-                        <select name="subject_id" class="form-control" required>
-                            <option value="">Select Subject</option>
-                            <?php foreach ($subjects as $subject): ?>
-                                <option value="<?= $subject['subject_id'] ?>"><?= $subject['subject_name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                    <label style="color: black;">Section:</label>
-                        <select name="section_id" class="form-control2" required>
-                            <option value="">Select Section</option>
-                            <?php foreach ($sections as $section): ?>
-                                <option value="<?= $section['section_id'] ?>"><?= $section['section_name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                    <label style="color: black;">Room:</label>
-                        <select name="room_id" class="form-control" required>
-                            <option value="">Select Room</option>
-                            <?php foreach ($rooms as $room): ?>
-                                <option value="<?= $room['room_id'] ?>"><?= $room['room_name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                    <label style="color: black;">Schedule Time:</label>
-                        <div class="time-range">
-                            <input type="time" name="schedule_time" class="form-control" required>
-                            <span>to</span>
-                            <input type="time" name="schedule_end_time" class="form-control" required>
+                <h5>Add New Schedule</h5>
+                <form action="schedule.php" method="POST" onsubmit="return validateSchedule()">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Professor:</label>
+                            <select name="prof_user_id" class="form-control2" required>
+                                <option value="">Select Professor</option>
+                                <?php foreach ($professors as $prof): ?>
+                                    <option value="<?= $prof['prof_user_id'] ?>">
+                                        <?= $prof['firstname'] . ' ' . $prof['lastname'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Subject:</label>
+                            <select name="subject_id" class="form-control2" required>
+                                <option value="">Select Subject</option>
+                                <?php foreach ($subjects as $subject): ?>
+                                    <option value="<?= $subject['subject_id'] ?>"><?= $subject['subject_name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                    <label style="color: black;">Schedule Day:</label>
-                        <select name="schedule_day" class="form-control" required>
-                            <option value="Monday">Monday</option>
-                            <option value="Tuesday">Tuesday</option>
-                            <option value="Wednesday">Wednesday</option>
-                            <option value="Thursday">Thursday</option>
-                            <option value="Friday">Friday</option>
-                            <option value="Saturday">Saturday</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div class="text-end">
-                    <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
-                    <button type="submit" class="btn btn-success">Save Schedule</button>
-                </div>
-            </form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Section:</label>
+                            <select name="section_id" class="form-control2" required>
+                                <option value="">Select Section</option>
+                                <?php foreach ($sections as $section): ?>
+                                    <option value="<?= $section['section_id'] ?>"><?= $section['section_name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Room:</label>
+                            <select name="room_id" class="form-control2" required>
+                                <option value="">Select Room</option>
+                                <?php foreach ($rooms as $room): ?>
+                                    <option value="<?= $room['room_id'] ?>"><?= $room['room_name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Schedule Time:</label>
+                            <div class="time-range">
+                                <input type="time" name="schedule_time" class="form-control" required>
+                                <span>to</span>
+                                <input type="time" name="schedule_end_time" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Schedule Day:</label>
+                            <select name="schedule_day" class="form-control2" required>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success">Save Schedule</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <table class="table table-bordered">
@@ -347,79 +328,40 @@ if (isset($_SESSION['name'])) {
             </tbody>
         </table>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggleFormBtn = document.getElementById('toggleFormBtn');
-            const scheduleFormContainer = document.getElementById('scheduleFormContainer');
-            const cancelBtn = document.getElementById('cancelBtn');
-
-            toggleFormBtn.addEventListener('click', function () {
-                const isHidden = scheduleFormContainer.style.height === '0px' ||
-                    scheduleFormContainer.style.height === '';
-
-                if (isHidden) {
-                    // Show form with animation
-                    scheduleFormContainer.style.display = "block";
-                    scheduleFormContainer.style.height = "0";
-                    scheduleFormContainer.style.opacity = "0";
-
-                    // Trigger reflow to enable animation
-                    void scheduleFormContainer.offsetHeight;
-
-                    scheduleFormContainer.style.height = scheduleFormContainer.scrollHeight + "px";
-                    scheduleFormContainer.style.opacity = "1";
-                    // toggleFormBtn.textContent = '-';
-                } else {
-                    // Hide form with animation
-                    scheduleFormContainer.style.height = scheduleFormContainer.scrollHeight + "px";
-                    scheduleFormContainer.style.opacity = "1";
-
-                    // Trigger reflow to enable animation
-                    void scheduleFormContainer.offsetHeight;
-
-                    scheduleFormContainer.style.height = "0";
-                    scheduleFormContainer.style.opacity = "0";
-
-                    // After animation completes, hide completely
-                    setTimeout(() => {
-                        scheduleFormContainer.style.display = "none";
-                        // toggleFormBtn.textContent = '+';
-                    }, 300); // Match this with transition duration
-                }
-            });
-
-            cancelBtn.addEventListener('click', function () {
-                // Hide form with animation
-                scheduleFormContainer.style.height = scheduleFormContainer.scrollHeight + "px";
-                scheduleFormContainer.style.opacity = "1";
-
-                // Trigger reflow to enable animation
-                void scheduleFormContainer.offsetHeight;
-
-                scheduleFormContainer.style.height = "0";
-                scheduleFormContainer.style.opacity = "0";
-
-                // After animation completes, hide completely
-                setTimeout(() => {
-                    scheduleFormContainer.style.display = "none";
-                    // toggleFormBtn.textContent = '+';
-                }, 300);
-            });
-        });
-
-        function validateSchedule() {
-            const startTime = document.querySelector('input[name="schedule_time"]').value;
-            const endTime = document.querySelector('input[name="schedule_end_time"]').value;
-
-            if (startTime >= endTime) {
-                alert('End time must be later than start time');
-                return false;
+    <!-- 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleFormBtn = document.getElementById('toggleFormBtn');
+        const scheduleFormContainer = document.getElementById('scheduleFormContainer');
+        const cancelBtn = document.getElementById('cancelBtn');
+        
+        toggleFormBtn.addEventListener('click', function() {
+            scheduleFormContainer.classList.toggle('show');
+            if (scheduleFormContainer.classList.contains('show')) {
+                toggleFormBtn.textContent = 'Hide Form';
+            } else {
+                toggleFormBtn.textContent = 'Add Schedule';
             }
+        });
+        
+        cancelBtn.addEventListener('click', function() {
+            scheduleFormContainer.classList.remove('show');
+            toggleFormBtn.textContent = 'Add Schedule';
+        });
+    });
 
-            return true;
+    function validateSchedule() {
+        const startTime = document.querySelector('input[name="schedule_time"]').value;
+        const endTime = document.querySelector('input[name="schedule_end_time"]').value;
+
+        if (startTime >= endTime) {
+            alert('End time must be later than start time');
+            return false;
         }
-    </script>
+
+        return true;
+    }
+</script> -->
 
 </body>
 

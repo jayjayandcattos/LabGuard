@@ -94,7 +94,6 @@ $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <button class="toggle-btn" onclick="toggleForm()">ADD CLASSROOM</button>
         <div id="roomForm" class="hidden-form">
-
             <div class="card mb-4">
                 <h4>Add New Room</h4>
                 <form method="POST" action="">
@@ -138,8 +137,10 @@ $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?= htmlspecialchars($room['status']); ?>
                         </td>
                         <td>
-                            <a href="edit_classroom.php?id=<?= htmlspecialchars($room['room_id']); ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="delete_classroom.php?id=<?= $room['room_id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this room?');">Delete</a>
+                            <a href="edit_classroom.php?id=<?= htmlspecialchars($room['room_id']); ?>"
+                                class="btn btn-warning btn-sm">Edit</a>
+                            <a href="delete_classroom.php?id=<?= $room['room_id']; ?>" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Are you sure you want to delete this room?');">Delete</a>
                         </td>
 
                     </tr>

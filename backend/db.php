@@ -1,6 +1,6 @@
 <?php
 $host = "localhost"; 
-$dbname = "labguard2"; 
+$dbname = "labguard"; 
 $username = "root"; 
 $password = "";
 

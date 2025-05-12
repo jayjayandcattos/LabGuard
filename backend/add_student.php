@@ -14,6 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"] ?? '');
     $section_id = trim($_POST["section_id"] ?? '');
     $rfid_tag = trim($_POST["rfid_tag"] ?? ''); // Make sure to include RFID tag
+    $year_level = trim($_POST["year_level"] ?? '1'); // Default to first year if not provided
+    $student_status = trim($_POST["student_status"] ?? 'regular'); // Default to regular if not provided
 
     // Validate required fields
     if (empty($student_id) || empty($lastname) || empty($firstname) || empty($email) || empty($section_id)) {
@@ -58,8 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
         // Insert new student with role_id = 4 (Student)
-        $query = "INSERT INTO student_tbl (student_id, role_id, lastname, firstname, mi, email, rfid_tag, section_id, photo) 
-                  VALUES (:student_id, :role_id, :lastname, :firstname, :mi, :email, :rfid_tag, :section_id, :photo)";
+        $query = "INSERT INTO student_tbl (student_id, role_id, lastname, firstname, mi, email, rfid_tag, section_id, photo, year_level, student_status) 
+                  VALUES (:student_id, :role_id, :lastname, :firstname, :mi, :email, :rfid_tag, :section_id, :photo, :year_level, :student_status)";
         
         $stmt = $conn->prepare($query);
         $result = $stmt->execute([
@@ -71,7 +73,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "email" => $email,
             "rfid_tag" => $rfid_tag,
             "section_id" => $section_id,
-            "photo" => $photo
+            "photo" => $photo,
+            "year_level" => $year_level,
+            "student_status" => $student_status
         ]);
 
         if ($result) {
