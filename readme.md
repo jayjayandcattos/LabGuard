@@ -347,4 +347,4 @@ LabGuard includes an automated absent reporting mechanism (`mail_functions.php`)
 This project is developed for institutional and academic computer laboratory management. All rights reserved.
 
 ---
-<p center align="center">Made with ❤️ for smart, secure, and automated laboratory management.</p>
+
