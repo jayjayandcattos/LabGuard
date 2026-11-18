@@ -39,3 +39,39 @@ body {
 .active-class-info p { margin: 6px 0; font-size: 14px; }
 .label { opacity: 0.7; margin-right: 6px; }
 .table-row img { border-radius: 50%; }
+
+/* Portal pages */
+.portal { min-height: 100vh; background: #f4f6fb; color: #1c2440; font-family: system-ui, sans-serif; }
+.portal-header {
+  display: flex; align-items: center; gap: 16px; padding: 12px 24px;
+  background: #2b3566; color: #fff;
+}
+.portal-brand { color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 2px; font-family: Orbitron, sans-serif; }
+.portal-role { font-size: 11px; text-transform: uppercase; opacity: 0.7; }
+.portal-user { margin-left: auto; font-size: 13px; }
+.portal-logout {
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 6px; padding: 6px 12px; cursor: pointer;
+}
+.portal-body { display: flex; align-items: flex-start; }
+.portal-nav {
+  width: 200px; min-height: calc(100vh - 53px); background: #1c2440;
+  display: flex; flex-direction: column; gap: 4px; padding: 16px 12px;
+}
+.portal-nav a { color: #dbe2ff; text-decoration: none; padding: 10px 12px; border-radius: 6px; font-size: 13px; }
+.portal-nav a:hover { background: rgba(255,255,255,0.1); }
+.portal-content { flex: 1; padding: 24px 32px; }
+.portal-content > h1 { margin-top: 0; font-size: 24px; }
+.portal-intro { color: #5d6785; font-size: 14px; }
+.resource-panel { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(20,30,70,0.07); }
+.resource-panel h2 { margin: 0 0 12px; font-size: 17px; }
+.resource-error { color: #b42318; font-size: 13px; }
+.resource-form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.resource-form input { padding: 8px 10px; border: 1px solid #cbd2e6; border-radius: 6px; font-size: 13px; }
+.resource-form button, .resource-scroll button {
+  padding: 8px 12px; border: 0; border-radius: 6px; background: #3f4b7f; color: #fff; cursor: pointer; font-size: 12px;
+}
+.resource-scroll { overflow-x: auto; }
+.resource-scroll table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.resource-scroll th, .resource-scroll td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e6e9f2; white-space: nowrap; }
+.resource-scroll th { color: #5d6785; font-weight: 600; }
