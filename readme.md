@@ -19,6 +19,7 @@
 - [System Architecture](#-system-architecture)
 - [Role-Based Access Matrix](#-role-based-access-matrix)
 - [Technology Stack](#-technology-stack)
+- [API Endpoints](#-api-endpoints)
 - [Database Schema & Data Model](#-database-schema--data-model)
 - [Directory Structure](#-directory-structure)
 - [Installation & Setup Guide](#-installation--setup-guide)
@@ -33,14 +34,15 @@
 
 **LabGuard** is an enterprise-grade, real-time Computer Laboratory Access & Attendance Tracking System powered by RFID hardware integration. Designed specifically for academic institutions and computer laboratory administrators, LabGuard automates student and professor attendance check-ins, monitors room occupancy, validates class schedules dynamically, and generates automated absent student reports via email.
 
-Instead of manual sign-in sheets or delayed roll calls, LabGuard allows students and faculty members to scan their RFID cards at a terminal kiosk (`index.php`). The system automatically validates schedules, detects unauthorized class entries ("Wrong Class"), logs attendance statuses (Present, Late, Absent, Ended, No Schedule), updates laboratory room occupancy, and notifies instructors of absenteeism upon class completion.
+Instead of manual sign-in sheets or delayed roll calls, LabGuard lets students and faculty scan their RFID cards at a web kiosk (`/`). The system automatically validates schedules, detects unauthorized class entries ("Wrong Class"), logs attendance statuses (Present, Late, Absent, Ended, No Schedule), updates laboratory room occupancy, and notifies instructors of absenteeism upon class completion.
 
 ---
 
 ## ✨ Key Features
 
-### 🎛️ 1. Interactive RFID Attendance Kiosk (`index.php`)
-* **Instant RFID Card Processing**: Real-time card scanning support via keyboard wedge or HTTP POST requests.
+### 🎛️ 1. Interactive RFID Attendance Kiosk (`/`)
+* **Instant RFID Card Processing**: Real-time card scanning via keyboard wedge; the tag is submitted to `/api/tap`.
+* **Temporary click-to-tap fallback**: with `DEMO_TAP_ENABLED=true`, the ID circle becomes clickable and a picker of registered people simulates a tap (physical scanner currently unavailable).
 * **Smart Tap Identification**: Auto-detects whether the scanned RFID card belongs to a **Student** or a **Professor**.
 * **Dynamic Schedule & Room Matching**: Cross-references the current day and time against scheduled lab sessions to ensure users are in the correct room.
 * **Automatic Attendance Status Classification**:
@@ -49,34 +51,35 @@ Instead of manual sign-in sheets or delayed roll calls, LabGuard allows students
   * `Wrong Class`: Tap-in by a student not enrolled in the current section or subject schedule.
   * `No Schedule`: RFID tap when no valid class is scheduled in the room.
   * `Ended`: Class check-out timestamp triggered when the professor ends the session.
-* **Audio-Visual Feedback & Live Clock**: Interactive UI notifications with custom sound alerts (`js/tap.js`).
+* **Live Clock & Active-Class Polling**: Asia/Manila clock and 30-second polling of `/api/active-classes`.
 
 ### 👑 2. Multi-Role Administration & Portals
 
-#### 🛡️ Administrator Portal (`backend/admin_dashboard.php`)
+#### 🛡️ Administrator Portal (`/admin`)
 * **User Management**: Complete CRUD operations for Admins, Faculty members, Professors, and Students.
 * **Schedule Management**: Create, edit, and assign subjects, professors, sections, rooms, and weekly time slots.
 * **Classroom & Facility Maintenance**: Monitor room statuses (`Vacant`, `Occupied`, `Maintenance`) and adjust room capacity.
-* **System & Audit Logs**: Track user login activity (`login_logs.php`), IP addresses, and room entry/exit histories (`room_logs.php`).
+* **System & Audit Logs**: Track user login activity and IP addresses (read-only via `/api/logs`).
 
-#### 🏫 Faculty Portal (`backend/faculty_overview.php`)
+#### 🏫 Faculty Portal (`/faculty`)
 * **Laboratory Overview**: Real-time monitoring of all laboratory rooms, ongoing classes, and room availability.
-* **Schedule Directory**: Master timetable of all professor schedules and assigned sections.
+* **Schedule Directory**: Master timetable of all professor schedules and assigned sections (faculty can create/edit).
 * **Student & Professor Directories**: View rosters, section assignments, and user records.
 
-#### 👨‍🏫 Professor Portal (`backend/prof_dashboard.php`)
+#### 👨‍🏫 Professor Portal (`/professor`)
 * **Active Class Control**: View currently active classes, start/end lab sessions, and track real-time student check-ins.
 * **Class Attendance Roster**: View section student lists with instant attendance indicators (Present, Absent, Late, Wrong Class).
-* **Schedule Viewer**: Personalized weekly class schedules detailing room assignments and time slots.
-* **Automated Summary Dispatch**: Trigger or receive automated absent student digests via email upon class completion.
+* **Schedule Viewer**: Personalized weekly class schedules — server-scoped to the signed-in professor only.
+* **Automated Summary Dispatch**: Trigger absent student digests via email (`/api/attendance/summary`).
 
 #### 🎓 Student Management
 * **Roster Integration**: Linked by Student ID, Section (`section_tbl`), Subject Enrollment (`student_enrollment_tbl`), Year Level, and Status (`Regular` / `Irregular`).
 * **RFID Card Association**: Unique RFID tag mapping for every enrolled student.
 
-### 📧 3. Automated Email Reporting System (`mail_functions.php`)
-* **PHPMailer Integration**: Sends HTML-formatted attendance summary reports directly to professors upon class completion.
-* **Absent Student Digest**: Automatically identifies enrolled students who failed to tap into the laboratory session and compiles a detailed table delivered via SMTP.
+### 📧 3. Automated Email Reporting System
+* **Nodemailer + SMTP**: `/api/attendance/summary` sends HTML-formatted attendance summary reports to professors.
+* **Absent Student Digest**: Identifies enrolled students who failed to tap into the laboratory session and compiles a detailed table delivered via SMTP.
+* **Configuration**: all SMTP settings come from `MAIL_*` environment variables — no credentials in source.
 
 ---
 
@@ -85,33 +88,36 @@ Instead of manual sign-in sheets or delayed roll calls, LabGuard allows students
 ```
                                  ┌─────────────────────────┐
                                  │   RFID Card Reader      │
+                                 │  (or click-to-tap demo) │
                                  └────────────┬────────────┘
                                               │ (Card ID)
                                               v
  ┌────────────────────────────────────────────────────────────────────────────────────────┐
- │                                   LabGuard Kiosk                                      │
- │                                    (index.php)                                         │
+ │                            Next.js Kiosk  (/)                                        │
+ │                    React client → POST /api/tap                                      │
  └─────────────┬──────────────────────────────┬─────────────────────────────┬─────────────┘
                │                              │                             │
                v                              v                             v
  ┌──────────────────────────┐   ┌──────────────────────────┐   ┌──────────────────────────┐
  │     Admin Portal         │   │      Faculty Portal      │   │     Professor Portal     │
- │ (admin_dashboard.php)    │   │  (faculty_overview.php)  │   │   (prof_dashboard.php)   │
+ │        (/admin)          │   │        (/faculty)        │   │      (/professor)        │
  └─────────────┬────────────┘   └─────────────┬────────────┘   └─────────────┬────────────┘
                │                              │                             │
                └──────────────────────────────┼─────────────────────────────┘
-                                              │
                                               v
-                                ┌──────────────────────────┐
-                                │     MySQL Database       │
-                                │       (labguard)         │
-                                └─────────────┬────────────┘
-                                              │
-                                              v
-                                ┌──────────────────────────┐
-                                │   PHPMailer Mail Engine  │
-                                │ (sendAbsentStudentsEmail)│
-                                └──────────────────────────┘
+                              ┌──────────────────────────────┐
+                              │  Next.js Route Handlers      │
+                              │  /api/*  (auth, tap, CRUD…)   │
+                              └────────────┬─────────────────┘
+                                           v
+                              ┌──────────────────────────────┐
+                              │   Prisma ORM → MariaDB       │
+                              │       (labguard)             │
+                              └────────────┬─────────────────┘
+                                           v
+                              ┌──────────────────────────────┐
+                              │  Nodemailer (SMTP) for mail  │
+                              └──────────────────────────────┘
 ```
 
 ---
@@ -123,7 +129,7 @@ Instead of manual sign-in sheets or delayed roll calls, LabGuard allows students
 | RFID Attendance Kiosk Tap     |  ✅   |   ✅    |    ✅     |   ✅    |
 | Manage Users (CRUD)           |  ✅   |   ❌    |    ❌     |   ❌    |
 | Manage Rooms & Facilities     |  ✅   |   👁️    |    👁️     |   ❌    |
-| Create & Edit Schedules       |  ✅   |   ❌    |    ❌     |   ❌    |
+| Create & Edit Schedules       |  ✅   |   ✅    |    ❌     |   ❌    |
 | View Real-time Active Classes |  ✅   |   ✅    |    ✅     |   ❌    |
 | Manage Class Attendance       |  ✅   |   👁️    |    ✅     |   ❌    |
 | View Audit & Login Logs       |  ✅   |   👁️    |    ❌     |   ❌    |
@@ -135,17 +141,42 @@ Instead of manual sign-in sheets or delayed roll calls, LabGuard allows students
 
 ## 🛠️ Technology Stack
 
-* **Frontend**: PHP 8.x, HTML5, JavaScript (ES6+ AJAX, Fetch API), CSS3 / Tailwind CSS v4.0.
-* **Backend**: PHP 8.x (PDO Object-Oriented Database Layer, Password Hashing API, Native Session Management).
-* **Database**: MySQL / MariaDB (InnoDB engine, foreign keys, transaction handling, optimized ENUMs and indexes).
-* **Email Service**: PHPMailer v6.10 via Composer SMTP.
-* **Assets & UI Components**: Tailwind CSS, Google Fonts, Custom JavaScript event listeners (`js/tap.js`, `js/activeClass.js`).
+* **Frontend**: Next.js 15 (App Router), React 19, TypeScript 5, plain CSS (reused legacy stylesheets).
+* **Backend**: Next.js Route Handlers (`app/api/*`), server-side role guards in `lib/auth.ts`, HMAC-signed httpOnly cookie sessions.
+* **Database access**: Prisma ORM with an introspected schema (`prisma/schema.prisma`) — the existing MariaDB tables were not redefined or altered.
+* **Authentication**: bcryptjs verifying the original PHP `$2y$` password hashes — no password resets required.
+* **Database**: MariaDB / MySQL via XAMPP (InnoDB, foreign keys, ENUMs).
+* **Email**: Nodemailer over SMTP, configured entirely via `MAIL_*` environment variables.
+* **Tooling**: ESLint, TypeScript compiler, Prisma CLI.
+
+---
+
+## 🔌 API Endpoints
+
+All route handlers live under `app/api/`. Writes are role-guarded; sessions are HMAC-signed httpOnly cookies.
+
+| Method | Path | Purpose | Access |
+|:-------|:-----|:--------|:-------|
+| `POST` | `/api/auth/login` | Email/password sign-in; writes a login audit row | Public |
+| `POST` | `/api/auth/logout` | Clear session cookie | Authenticated |
+| `GET` | `/api/auth/me` | Current session user | Authenticated |
+| `POST` | `/api/tap` | RFID tag → attendance state machine (form field `rfid_tag`) | Public (kiosk) |
+| `GET` | `/api/active-classes` | Currently active class/room info | Authenticated |
+| `GET` | `/api/update-ended-classes` | Expire ended classes after a tap | Authenticated |
+| `POST` | `/api/attendance/summary` | Email an absent-student digest | Professor |
+| `GET/POST` | `/api/[resource]` | List / create resource | Role-dependent |
+| `GET/PATCH/DELETE` | `/api/[resource]/[id]` | Read / update / delete one record | Role-dependent |
+| `GET` | `/api/uploads/[name]` | Serve a stored photo | Authenticated |
+| `POST` | `/api/uploads` | Upload a photo (multipart `photo` + `resource` + `id`) | Admin / Faculty |
+| `GET` | `/api/demo/people` | TEMPORARY scanner fallback — list tappable people | Only with `DEMO_TAP_ENABLED=true` |
+
+Resources: `admins`, `faculty`, `professors`, `students`, `sections`, `subjects`, `rooms`, `schedules`, `attendance`, `enrollments` (read/write) and `logs`, `roles` (read-only). Professors are server-scoped to their own schedules and cannot write any resource.
 
 ---
 
 ## 🗄️ Database Schema & Data Model
 
-The database (`labguard.sql`) consists of 10 primary relational tables:
+The database (canonical dump at `legacy/labguard.sql`) consists of **12 tables**. The schema was introspected into `prisma/schema.prisma` — do not redefine tables by hand.
 
 ```
                           ┌──────────────┐
@@ -167,7 +198,12 @@ The database (`labguard.sql`) consists of 10 primary relational tables:
          v                       v
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │   student_tbl   │     │    room_tbl     │     │ attendance_tbl  │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
+└────────┬────────┘     └─────────────────┘     └─────────────────┘
+         │
+         v
+┌───────────────────────┐   ┌─────────────────┐
+│ student_enrollment_tbl│   │   login_logs    │
+└───────────────────────┘   └─────────────────┘
 ```
 
 ### Table Breakdown
@@ -183,6 +219,7 @@ The database (`labguard.sql`) consists of 10 primary relational tables:
 9. **`schedule_tbl`**: Weekly class timetable linking Professor, Subject, Section, Room, Schedule Day, Start Time, and End Time.
 10. **`attendance_tbl`**: Core log table recording timestamps (`time_in`, `time_out`), status (`check_in`, `check_out`, `ended`, `no_schedule`, `wrong_class`), and attendance state (`Present`, `Absent`, `Late`, `Ended`, `No Schedule`, `Wrong Class`).
 11. **`login_logs`**: Security audit table recording user logins, roles, timestamps, and IP addresses.
+12. **`student_enrollment_tbl`**: Links students to subjects, with enrollment status and date.
 
 ---
 
@@ -252,7 +289,12 @@ Copy `.env.example` to `.env` and fill in:
 npx prisma generate
 npm run dev
 ```
+Other scripts: `npm run build`, `npm start`, `npm run lint`, `npm run typecheck`,
+`npm run db:pull` (re-introspect after a schema change), `npm run db:generate`.
 Open `http://localhost:3000` for the kiosk, `/login` for staff sign-in.
+
+> If Prisma cannot download its query engine (blocked CDN), use the mirror:
+> `PRISMA_ENGINES_MIRROR=https://registry.npmmirror.com/-/binary/prisma npx prisma generate`
 
 #### Temporary click-to-tap demo
 The physical RFID scanner is currently unavailable. With `DEMO_TAP_ENABLED=true`,
