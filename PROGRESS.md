@@ -143,3 +143,63 @@ Prisma's `db pull` introspects an existing MariaDB schema directly, which is exa
 `761aab1` README → `50d7351` Phase 1 security → `ad51421` Phase 2 cleanup → `58a2487` Next.js scaffold + Prisma → `9f22dc4` auth → `97664dd` tap API → `b2c4d0f` active/ended/summary APIs → `2eca25e` CRUD → `e71eed8` kiosk page → `aabb2d1` portals → `150c521` portal subpages.
 
 Final PROGRESS write-up and any follow-up decisions can be added here.
+
+---
+
+## Follow-up — decisions resolved + scanner fallback (2026-11-19)
+
+### Decisions you gave
+1. **Broken DB → fresh restore from dump.** Done (details below).
+2. **Photo uploads → port them.** Done.
+3. **Portal scope → generic CRUD panels are enough.** No change; the reusable panels stay.
+4. **Legacy PHP app → move to a gitignored `legacy/` folder, keep on disk.** Done.
+
+### What I did
+- **Restored `labguard`:** the broken database's 25 raw `.frm`/`.ibd` files were copied
+  to `C:\xampp\mysql\broken_db_backups\labguard_broken_20261119\` first (MariaDB can't
+  rename databases, and the orphaned `.ibd` files blocked a plain DROP). Then dropped
+  the broken DB, created a fresh `labguard` (`utf8mb4_general_ci`) and imported
+  `legacy/labguard.sql`. Verified: **12 tables, all readable**
+  (7 students, 18 attendance rows, 3 login logs). Nothing was repaired in place —
+  the original tablespace files are preserved in case you want to recover them later.
+  The scratch `labguard_schema_introspect` DB still exists and can now be dropped at
+  your discretion; I left it alone.
+- **Photo uploads:** added `POST /api/uploads` (admin/faculty only) — accepts PNG/JPEG/
+  WebP/GIF up to 5 MB, writes a UUID filename into the gitignored top-level `uploads/`,
+  and updates the record's `photo` column. Wired a file input into the resource panels
+  for admins/faculty/professors/students. Verified unauthenticated uploads → 401 and
+  photo serving → 200 `image/jpeg`.
+- **Legacy move:** all PHP source, `vendor/`, `_to_review/`, SQL dumps, logs and assets
+  now live under `legacy/` (gitignored, on disk, **never served by Next.js**). The
+  canonical dump is `legacy/labguard.sql`. Branding assets were copied to `public/assets/`;
+  the five CSS files + DigitalNumbers font were copied to `app/styles/` and `app/fonts/`
+  so the Next.js build does not depend on `legacy/`. Uploaded photos moved to `uploads/`,
+  also gitignored. `README.md` now documents the Next.js app.
+- **Fixed a bug from my earlier work:** the unanchored `logs/` ignore rule had silently
+  prevented `app/admin/logs/page.tsx` from ever being committed. Anchored it to `/logs/`
+  and the page is now tracked (verified 200).
+- **Temporary click-to-tap fallback** (you said the RFID scanner broke):
+  - `DEMO_TAP_ENABLED=true` in `.env` (and `.env.example`). Set to `false`/remove to disable.
+  - `GET /api/demo/people` returns the registered students/professors (tag + label)
+    only when demo mode is on; otherwise 404.
+  - The kiosk shows a person picker and the ID circle becomes a button — choose a
+    person, click the circle, and it submits their tag through the real `/api/tap`
+    state machine. It is labelled "DEMO MODE" in the UI. Smoke test: demo endpoint
+    returned 12 people, a real tag tap produced the expected attendance JSON.
+  - **Remove `/api/demo/people`, the picker, and the env flag once the scanner works.**
+
+### Verification after this round
+`tsc --noEmit`, `next build`, `next lint` all pass (same 5 non-blocking warnings:
+custom font + `<img>` tags). Production smoke test against the restored `labguard`:
+kiosk 200, `/assets/IDtap.svg` 200, `/api/demo/people` 200 (12 people),
+`/api/tap` with a real tag → expected JSON, `/api/uploads` unauthenticated → 401,
+photo serve → 200, `/admin/logs` → 200. No 500s.
+
+### Still outstanding (your action / optional)
+- **ROTATE THE CREDENTIALS** listed in Phase 1 — unchanged and urgent.
+- New commits this round: `ccb8bfe` (legacy move) and `abdc46e` (uploads) — plus this
+  PROGRESS update. Merged into `main` locally at the end of this session as you asked;
+  **nothing was pushed**.
+- Professor "My Schedule" still lists all schedules (unfiltered) — small fix if wanted.
+- SMTP still needs real `MAIL_*` values to actually deliver email.
+- The generic portal pages remain collapsed rather than one-for-one PHP layouts, per your call.
