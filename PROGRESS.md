@@ -216,3 +216,24 @@ photo serve → 200, `/admin/logs` → 200. No 500s.
 - **Kept as requested:** the broken-DB raw backup under `C:\xampp\mysql\broken_db_backups\`
   and the demo tap fallback (physical scanner still broken).
 - Typecheck/build/lint still pass. Merged into `main` locally; nothing pushed.
+
+### Follow-up 3 — GitHub push + history reconciliation (2026-11-19)
+- **Why merging on GitHub failed:** this local repo was initialised from a ZIP
+  download (root commit `28283f8 "huh"`), while the GitHub repo has the real full
+  history (root `79aacf5 "hello world"`). The two histories shared **no common
+  ancestor**, so GitHub refused any PR/merge between them.
+- **Fix:** merged `refs/remotes/main/main` into local `main` with
+  `--allow-unrelated-histories`, resolved conflicts by keeping our final tree
+  byte-identical while retaining **both** histories as parents. Merge commit
+  `f393133` (parents `48482e7` + upstream `8e074a8`). No force-push and no
+  history rewrite — the push was a clean fast-forward.
+- **Pushed** to GitHub: `refs/heads/main` and `refs/heads/cleanup/nextjs-migration`
+  both now point at `f393133`. Local backup tag `backup-before-upstream-merge`
+  points at `48482e7` (local only, not pushed).
+- **Caveat:** upstream had small edits to six legacy PHP files
+  (`admin_dashboard.php`, `delete_admin.php`, `delete_classroom.php`,
+  `edit_admin.php`, `edit_classroom.php`, `logout.php`). The final tree keeps
+  them out of git (they live in the gitignored `legacy/` folder, from the local
+  copy). Those upstream versions remain recoverable from commit `8e074a8` if
+  you ever need them — they are not lost, just not on the current branch.
+- Build verified after the push: `next build` compiled successfully.
