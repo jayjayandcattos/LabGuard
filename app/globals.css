@@ -1,0 +1,92 @@
+/* Self-contained copies of the legacy stylesheets, so the Next.js app does
+   not depend on the gitignored legacy/ folder. */
+@import "./styles/styles.css";
+@import "./styles/admin.css";
+@import "./styles/prof.css";
+@import "./styles/colorum.css";
+@import "./styles/error.css";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Kiosk additions — the legacy stylesheet provides the rest. */
+.kiosk-page { min-height: 100vh; font-family: Orbitron, sans-serif; }
+.kiosk-header {
+  display: flex; align-items: center; gap: 16px; padding: 14px 28px;
+  background: rgba(0, 0, 0, 0.25); color: #fff;
+}
+.kiosk-header h1 { margin: 0; font-size: 22px; letter-spacing: 3px; }
+.kiosk-header p { margin: 2px 0 0; font-size: 11px; opacity: 0.7; }
+.kiosk-clock { margin-left: auto; font-family: "DigitalNumbers", monospace; font-size: 30px; }
+.kiosk-login {
+  color: #fff; text-decoration: none; font-size: 12px; letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 6px; padding: 8px 12px;
+}
+.scan-submit {
+  margin-top: 16px; padding: 12px 22px; border: 0; border-radius: 8px;
+  background: #7287e5; color: #fff; font-family: inherit; font-weight: 700; cursor: pointer;
+}
+.tap-ok { color: #b6f2c1; font-size: 14px; }
+.tap-error { color: #ffb4b4; font-size: 14px; }
+.active-class-container { display: none; }
+.active-class-container.visible { display: block; }
+.active-class-info p { margin: 6px 0; font-size: 14px; }
+.label { opacity: 0.7; margin-right: 6px; }
+.table-row img { border-radius: 50%; }
+
+/* Temporary demo tap controls (scanner unavailable). */
+.scan-id-button {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  border-radius: 50%; transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.scan-id-button:hover:not(:disabled) { transform: scale(1.06); box-shadow: 0 0 0 4px rgba(114, 135, 229, 0.45); }
+.scan-id-button:disabled { opacity: 0.6; cursor: wait; }
+.demo-tap { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 8px 0 4px; }
+.demo-note { color: #ffd479; font-size: 12px; margin: 0; max-width: 340px; text-align: center; line-height: 1.4; }
+.demo-tap select {
+  padding: 8px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.4);
+  background: #1c2440; color: #fff; font-size: 13px; max-width: 320px;
+}
+
+/* Portal pages */
+.portal { min-height: 100vh; background: #f4f6fb; color: #1c2440; font-family: system-ui, sans-serif; }
+.portal-header {
+  display: flex; align-items: center; gap: 16px; padding: 12px 24px;
+  background: #2b3566; color: #fff;
+}
+.portal-brand { color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 2px; font-family: Orbitron, sans-serif; }
+.portal-role { font-size: 11px; text-transform: uppercase; opacity: 0.7; }
+.portal-user { margin-left: auto; font-size: 13px; }
+.portal-logout {
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 6px; padding: 6px 12px; cursor: pointer;
+}
+.portal-body { display: flex; align-items: flex-start; }
+.portal-nav {
+  width: 200px; min-height: calc(100vh - 53px); background: #1c2440;
+  display: flex; flex-direction: column; gap: 4px; padding: 16px 12px;
+}
+.portal-nav a { color: #dbe2ff; text-decoration: none; padding: 10px 12px; border-radius: 6px; font-size: 13px; }
+.portal-nav a:hover { background: rgba(255,255,255,0.1); }
+.portal-content { flex: 1; padding: 24px 32px; }
+.portal-content > h1 { margin-top: 0; font-size: 24px; }
+.portal-intro { color: #5d6785; font-size: 14px; }
+.resource-panel { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(20,30,70,0.07); }
+.resource-panel h2 { margin: 0 0 12px; font-size: 17px; }
+.resource-error { color: #b42318; font-size: 13px; }
+.resource-form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.resource-form input { padding: 8px 10px; border: 1px solid #cbd2e6; border-radius: 6px; font-size: 13px; }
+.resource-form button, .resource-scroll button {
+  padding: 8px 12px; border: 0; border-radius: 6px; background: #3f4b7f; color: #fff; cursor: pointer; font-size: 12px;
+}
+.resource-scroll { overflow-x: auto; }
+.resource-scroll table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.resource-scroll th, .resource-scroll td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e6e9f2; white-space: nowrap; }
+.resource-scroll th { color: #5d6785; font-weight: 600; }
