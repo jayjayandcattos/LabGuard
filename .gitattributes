@@ -16,3 +16,25 @@
 *.jpeg binary
 *.gif binary
 *.ttf binary
+
+# ── GitHub Linguist: language stats ────────────────────────────
+# The app is TypeScript. Make that explicit so Linguist never
+# misclassifies the port (and so a push of this file forces a recalc).
+*.ts  linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.prisma linguist-language=TypeScript
+
+# Generated / machine-owned files should not count as handwritten code.
+next-env.d.ts          linguist-generated=true
+package-lock.json      linguist-generated=true
+
+# Reference data and docs are not application source.
+*.md   linguist-documentation=true
+*.sql  linguist-documentation=true
+*.svg  linguist-documentation=true
+*.ttf  linguist-documentation=true
+
+# Nothing in the repo is vendored any more (node_modules/vendor are gitignored),
+# but be explicit in case a dependency folder is ever force-added.
+node_modules/** linguist-vendored=true
+vendor/**       linguist-vendored=true
