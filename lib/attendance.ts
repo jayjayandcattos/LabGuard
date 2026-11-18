@@ -29,7 +29,7 @@ type Schedule = {
 };
 
 /** All times are computed in Asia/Manila, matching the legacy PHP kiosk. */
-function manilaNow() {
+export function manilaNow() {
   const now = new Date();
   const parts = Object.fromEntries(
     new Intl.DateTimeFormat("en-US", {
