@@ -21,6 +21,9 @@ export default function ResourcePanel({
   const [error, setError] = useState("");
   const [draft, setDraft] = useState<Record<string, string>>({});
   const [editing, setEditing] = useState<string | null>(null);
+  const [photoFile, setPhotoFile] = useState<File | null>(null);
+
+  const supportsPhoto = ["admins", "faculty", "professors", "students"].includes(resource);
 
   const load = useCallback(async () => {
     setError("");
@@ -50,7 +53,16 @@ export default function ResourcePanel({
         body: JSON.stringify(payload),
       });
       if (!response.ok) throw new Error("Request failed");
+      if (photoFile && editing) {
+        const body = new FormData();
+        body.set("resource", resource);
+        body.set("id", editing);
+        body.set("photo", photoFile);
+        const photoResponse = await fetch("/api/uploads", { method: "POST", body });
+        if (!photoResponse.ok) throw new Error("Photo upload failed");
+      }
       setDraft({});
+      setPhotoFile(null);
       setEditing(null);
       load();
     } catch {
@@ -85,8 +97,16 @@ export default function ResourcePanel({
               onChange={(event) => setDraft((current) => ({ ...current, [field]: event.target.value }))}
             />
           ))}
+          {supportsPhoto && editing && (
+            <input
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/gif"
+              aria-label="Photo"
+              onChange={(event) => setPhotoFile(event.target.files?.[0] ?? null)}
+            />
+          )}
           <button type="submit">{editing ? "Update" : "Add"}</button>
-          {editing && <button type="button" onClick={() => { setEditing(null); setDraft({}); }}>Cancel</button>}
+          {editing && <button type="button" onClick={() => { setEditing(null); setDraft({}); setPhotoFile(null); }}>Cancel</button>}
         </form>
       )}
 
