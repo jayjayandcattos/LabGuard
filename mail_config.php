@@ -1,17 +1,12 @@
 <?php
-// backend/mail_config.php
-// Mail configuration settings
+// Mail configuration — all values come from .env (see .env.example).
+require_once __DIR__ . '/env_loader.php';
 
-// PHPMailer SMTP settings
-define('MAIL_HOST', 'smtp.gmail.com');       // SMTP server
-define('MAIL_PORT', 587);                    // SMTP port (587 for TLS, 465 for SSL)
-define('MAIL_USERNAME', 'jhonrey.loreno77@gmail.com'); // Your email address
-define('MAIL_PASSWORD', 'vfuqkzcjjvwvrpzl');    // Email password or app password
-define('MAIL_FROM', 'jhonrey.loreno77@gmail.com');     // Sender email address
-define('MAIL_FROM_NAME', 'LabGuard Attendance System'); // Sender name
-define('MAIL_ENCRYPTION', 'tls');            // Encryption type (tls or ssl)
-
-// Debug level (0-4)
-// 0 = off, 1 = client messages, 2 = client and server messages
-define('MAIL_DEBUG', 0);
-?>
+define('MAIL_HOST', getenv('MAIL_HOST') ?: 'smtp.gmail.com');
+define('MAIL_PORT', (int) (getenv('MAIL_PORT') ?: 587));
+define('MAIL_USERNAME', getenv('MAIL_USER') ?: '');
+define('MAIL_PASSWORD', getenv('MAIL_PASSWORD') !== false ? getenv('MAIL_PASSWORD') : '');
+define('MAIL_FROM', getenv('MAIL_FROM') ?: MAIL_USERNAME);
+define('MAIL_FROM_NAME', getenv('MAIL_FROM_NAME') ?: 'LabGuard Attendance System');
+define('MAIL_ENCRYPTION', getenv('MAIL_ENCRYPTION') ?: 'tls');
+define('MAIL_DEBUG', (int) (getenv('MAIL_DEBUG') ?: 0));

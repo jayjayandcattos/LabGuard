@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "db.php";
+require_once "../mail_config.php";
 require '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -96,14 +97,15 @@ try {
     // Configure PHPMailer
     $mail = new PHPMailer(true);
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
+    $mail->Host = MAIL_HOST;
     $mail->SMTPAuth = true;
-    $mail->Username = 'jhonrey.loreno77@gmail.com';
-    $mail->Password = 'rxlk ojvq mxxa ybgf';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+    $mail->Username = MAIL_USERNAME;
+    $mail->Password = MAIL_PASSWORD;
+    $mail->SMTPSecure = MAIL_ENCRYPTION === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = MAIL_PORT;
+    $mail->SMTPDebug = MAIL_DEBUG;
 
-    $mail->setFrom('jhonrey.loreno77@gmail.com', 'LabGuard System');
+    $mail->setFrom(MAIL_FROM, MAIL_FROM_NAME);
     $mail->addAddress($email);
     $mail->isHTML(true);
     $mail->Subject = "Attendance Summary - " . $section_name . " - " . $date;

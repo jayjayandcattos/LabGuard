@@ -3,17 +3,19 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Database connection parameters
-$host = "localhost"; 
-$dbname = "labguard"; 
-$username = "root"; 
-$password = "";
+// Database connection parameters — from .env (see .env.example)
+require_once __DIR__ . '/../env_loader.php';
+$host = getenv('DB_HOST') ?: 'localhost';
+$dbname = getenv('DB_NAME') ?: 'labguard';
+$username = getenv('DB_USER') !== false ? getenv('DB_USER') : 'root';
+$password = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : '';
+$port = getenv('DB_PORT') ?: '3306';
 
 echo "<h1>LabGuard Database Diagnostic</h1>";
 
 try {
     // Test connection without specifying database
-    $conn_test = new PDO("mysql:host=$host", $username, $password);
+    $conn_test = new PDO("mysql:host=$host;port=$port", $username, $password);
     $conn_test->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "<p>✅ Successfully connected to MySQL server.</p>";
     
@@ -23,7 +25,7 @@ try {
         echo "<p>✅ Database '$dbname' exists.</p>";
         
         // Connect to the specific database
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+        $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         // Check if login_logs table exists
