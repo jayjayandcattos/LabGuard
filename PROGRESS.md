@@ -42,6 +42,52 @@ Copy `.env.example` → `.env`, fill in values. PHP reads it through `env_loader
 
 ---
 
-## Phase 2 — Cleanup (pending)
+## Phase 2 — Cleanup (done)
+
+### Codebase map (inventory before changes)
+
+**Stack:** server-rendered PHP 8.x + PDO against MariaDB (`labguard`); Tailwind CSS v4 built via Node; PHPMailer v6 (Composer) for SMTP; Apache/XAMPP locally. Frontend is vanilla JS using `fetch()` against PHP endpoints that return JSON.
+
+**Entry points**
+- `index.php` — the RFID kiosk. Dual purpose: PHP block handles `POST rfid_tag` → JSON (lines 22–518), HTML page below (520–627). Includes `sections/nav.php` (header + a second copy of the login handler + modal). No auth guard (it is a public terminal).
+- `backend/login.php` — role-based login (POST processor + modal form). Session keys: `user_id`, `name`, `role`. Role strings: `admin`, `faculty`, `professor` (students do not log in). Uses `password_verify` against `admin_tbl` / `faculty_tbl` / `prof_tbl`.
+- Admin portal: `admin_dashboard.php`, `admin.php`, `admin_profile.php`, `professors.php`, `faculty.php`, `students.php`, `student_subs.php`, `student_secs.php`, `schedule.php`, `login_logs.php`.
+- Faculty portal: `faculty_overview.php`, `faculty_dashboard.php`, `faculty_schedule.php`, `faculty_profile.php`, `view_students.php`, `view_professors.php`, `room_logs.php` (multi-role).
+- Professor portal: `prof_dashboard.php`, `prof_schedule.php`, `prof_students.php`, `prof_attendance.php`, `prof_profile.php`.
+- Controllers (redirect/JSON only): `add_faculty.php`, `add_schedule.php`, `add_section.php`, `add_student.php`, `add_subject.php`, all `delete_*.php`, `edit_students.php`, `logout.php`, `get_active_class.php`, `update_ended_classes.php`, `send_attendance_summary.php`. Several `edit_*.php` render a form and post to themselves.
+
+**Shared includes:** `sections/nav.php` (kiosk header + login), `nav2.php` (professor), `nav3.php` (faculty), `nav4.php` (admin); `prof_nav.php` / `fac_nav.php` / `admin_nav.php` are the respective sidebars. Every portal page includes one header + one sidebar.
+
+**DB access:** `backend/db.php:8` is the single PDO connection (now env-driven); almost every backend file requires it. `index.php` also requires it. No ORM.
+
+**JSON API endpoints to port**
+1. `POST /index.php` — form field `rfid_tag` → attendance JSON (called by `js/tap.js`).
+2. `GET /backend/get_active_class.php` — no params, polled every 30s by `js/activeClass.js`.
+3. `GET /backend/update_ended_classes.php` — no params, called after a tap.
+4. `POST /backend/send_attendance_summary.php` — JSON body `{email, section, date}`, professor-only, sends PHPMailer summary.
+5. `POST /backend/main_dashboard.php` — older duplicate kiosk endpoint (parked in `_to_review/`; not linked by the app).
+
+**Auth/authorization:** 14 files guard on `user_id` + `role` per-file; there is no central middleware. Many admin pages and **all** `add_/edit_/delete_` controllers have no guard at all. The migration should centralize this rather than reproduce the gap.
+
+**Schema:** canonical dump is `labguard.sql` (12 tables incl. `login_logs`, 2025-05-09). `labguard (2).sql` / `(4).sql` are older 11-table copies; `backend/school_attendance.sql` is an older 11-table dump from a different database name. All are untracked now but remain on disk for reference.
+
+### What I did
+- Deleted `js/tap_old.js` — explicitly an old copy, zero references anywhere.
+- Moved 10 unreferenced files to `_to_review/` (with a `README.md` explaining each): `main_dashboard.php`, `check_attendance.php`, `db_check.php`, `db_update.php`, `update_db.php`, `debug_log.php`, `debug_login_logs.php`, `fix_status.php`, `testing.php`, `nav_new.php`. All were verified to have **no code references** (only README mentions for four of them). Several of them mutate the DB on load, so parking them also removes an accidental-data-change hazard.
+- Verified every other JS/CSS/section file has at least one real code reference; no exact-content duplicate files were found by hash.
+- Added `.gitattributes` to normalise line endings across PHP/JS/CSS/TS/JSON/MD/SQL/SVG.
+- Updated the README directory map to mark the parked files.
+
+### What I skipped
+- No broad reformatting of the remaining PHP files: they are about to be replaced by the Next.js port, and churning them now would add noise without benefit.
+- Did not delete any parked file — you get the final call.
+- No database changes of any kind.
+
+### NEEDS MY DECISION
+- **Runtime schema mutation in live pages:** `index.php:13–19` runs `ALTER TABLE attendance_tbl` on every kiosk load; `backend/schedule.php:16–17` and `backend/faculty_schedule.php:31` run `ALTER TABLE schedule_tbl`; `backend/login_logs.php:19` runs `CREATE TABLE IF NOT EXISTS login_logs`. I will **not** port these side effects to Next.js. If you rely on them to keep the schema in sync, tell me — otherwise the new app will assume the existing schema is already correct.
+- Missing authorization on admin pages/controllers in the legacy app: I plan to enforce role checks centrally in the Next.js port. Say if any endpoint should remain public.
+- Keep or delete `_to_review/` and the untracked SQL dumps/uploads once migration is verified.
+
+---
 
 ## Phase 3 — Next.js migration (pending)

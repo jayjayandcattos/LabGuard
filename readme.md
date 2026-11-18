@@ -196,10 +196,10 @@ LabGuard/
 │   ├── add_subject.php         # Create course subject controller
 │   ├── admin_dashboard.php     # System Administrator main dashboard
 │   ├── admin_profile.php       # Admin account settings
-│   ├── check_attendance.php    # Live attendance validation engine
-│   ├── db.php                  # PDO database connection configuration
-│   ├── db_check.php            # Database status & structure validator
-│   ├── db_update.php           # Schema update script
+│   ├── check_attendance.php    # (moved to _to_review/) Debug attendance viewer
+│   ├── db.php                  # PDO database connection configuration (env-based)
+│   ├── db_check.php            # (moved to _to_review/) DB diagnostics
+│   ├── db_update.php           # (moved to _to_review/) Schema update script
 │   ├── edit_*.php              # Modification controllers for all entities
 │   ├── faculty_dashboard.php   # Faculty overview interface
 │   ├── faculty_schedule.php    # Faculty master schedule viewer
@@ -207,7 +207,7 @@ LabGuard/
 │   ├── login.php               # Unified multi-role authentication handler
 │   ├── login_logs.php          # Login audit history viewer
 │   ├── logout.php              # Session termination controller
-│   ├── main_dashboard.php      # Main analytics and navigation dashboard
+│   ├── main_dashboard.php      # (moved to _to_review/) Older duplicate kiosk
 │   ├── prof_attendance.php     # Professor class attendance manager
 │   ├── prof_dashboard.php      # Professor dashboard view
 │   ├── prof_students.php       # Professor student roster view
@@ -228,7 +228,7 @@ LabGuard/
 │   ├── admin_nav.php           # Admin sidebar navigation
 │   ├── fac_nav.php             # Faculty navigation bar
 │   ├── prof_nav.php            # Professor navigation bar
-│   └── nav_new.php             # Main application header
+│   └── nav_new.php             # (moved to _to_review/) Unused nav duplicate
 ├── labguard.sql                # Complete database import dump
 ├── mail_config.php             # PHPMailer SMTP credentials configuration
 ├── mail_functions.php          # Email dispatch helper functions
