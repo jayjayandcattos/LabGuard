@@ -203,3 +203,16 @@ photo serve → 200, `/admin/logs` → 200. No 500s.
 - Professor "My Schedule" still lists all schedules (unfiltered) — small fix if wanted.
 - SMTP still needs real `MAIL_*` values to actually deliver email.
 - The generic portal pages remain collapsed rather than one-for-one PHP layouts, per your call.
+
+### Follow-up 2 — schedule filter + scratch DB (2026-11-19)
+- **Professor schedule filtering:** enforced server-side in `listResource` — any
+  professor requesting `/api/schedules` is scoped to their own `prof_user_id`,
+  regardless of query string. This covers both the Overview and My Schedule pages
+  and cannot be bypassed by editing the URL. Verified with signed sessions:
+  professor (id 7) got only their 1 schedule even with `?prof_user_id=4`; an admin
+  still got all 9. Commit `70781c4`.
+- **Scratch DB dropped:** `labguard_schema_introspect` was removed (it was only for
+  Prisma introspection). `labguard` remains intact and readable (7 students).
+- **Kept as requested:** the broken-DB raw backup under `C:\xampp\mysql\broken_db_backups\`
+  and the demo tap fallback (physical scanner still broken).
+- Typecheck/build/lint still pass. Merged into `main` locally; nothing pushed.

@@ -113,6 +113,11 @@ export async function listResource(resource: string, url: URL) {
     const value = url.searchParams.get(param);
     if (value && config.fields.includes(param)) where[param] = Number(value);
   }
+  // Professors may only see their own schedules. Enforce this server-side so it
+  // cannot be bypassed by editing the query string on either professor page.
+  if (resource === "schedules" && guard.user.role === "professor") {
+    where.prof_user_id = Number(guard.user.userId);
+  }
   const rows = await delegate(config).findMany({
     where: Object.keys(where).length ? where : undefined,
     take: limit,
