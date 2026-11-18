@@ -1,11 +1,15 @@
 # LabGuard 🛡️
 ### Smart Computer Laboratory Access & RFID Attendance Management System
 
-[![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
-[![MySQL](https://img.shields.io/badge/MySQL-MariaDB-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![PHPMailer](https://img.shields.io/badge/PHPMailer-v6.10-006699?style=for-the-badge&logo=php&logoColor=white)](https://github.com/PHPMailer/PHPMailer)
+[![Next.js](https://img.shields.io/badge/Next.js-15_App_Router-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-5C3EE8?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![MariaDB](https://img.shields.io/badge/MySQL-MariaDB-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+
+> **Current application:** the Next.js app in `app/`, `components/`, `lib/`, and `prisma/`.
+> The original PHP implementation is preserved for reference in the gitignored `legacy/` folder.
+> See `PROGRESS.md` for migration status and outstanding decisions.
 
 ---
 
@@ -186,126 +190,76 @@ The database (`labguard.sql`) consists of 10 primary relational tables:
 
 ```
 LabGuard/
-├── assets/                     # Application branding, background media, and images
-│   ├── uploads/                # User profile photos and avatars
-├── backend/                    # Core PHP backend processing & API endpoints
-│   ├── add_faculty.php         # Create faculty account controller
-│   ├── add_schedule.php        # Create schedule entry controller
-│   ├── add_section.php         # Create section controller
-│   ├── add_student.php         # Create student profile controller
-│   ├── add_subject.php         # Create course subject controller
-│   ├── admin_dashboard.php     # System Administrator main dashboard
-│   ├── admin_profile.php       # Admin account settings
-│   ├── check_attendance.php    # (moved to _to_review/) Debug attendance viewer
-│   ├── db.php                  # PDO database connection configuration (env-based)
-│   ├── db_check.php            # (moved to _to_review/) DB diagnostics
-│   ├── db_update.php           # (moved to _to_review/) Schema update script
-│   ├── edit_*.php              # Modification controllers for all entities
-│   ├── faculty_dashboard.php   # Faculty overview interface
-│   ├── faculty_schedule.php    # Faculty master schedule viewer
-│   ├── get_active_class.php    # API endpoint returning real-time active classes
-│   ├── login.php               # Unified multi-role authentication handler
-│   ├── login_logs.php          # Login audit history viewer
-│   ├── logout.php              # Session termination controller
-│   ├── main_dashboard.php      # (moved to _to_review/) Older duplicate kiosk
-│   ├── prof_attendance.php     # Professor class attendance manager
-│   ├── prof_dashboard.php      # Professor dashboard view
-│   ├── prof_students.php       # Professor student roster view
-│   ├── room_logs.php           # Laboratory room occupancy history
-│   ├── schedule.php            # System-wide schedule manager
-│   ├── send_attendance_summary.php # Manual/Auto trigger for email report dispatch
-│   └── student_secs.php        # Section management view
-├── css/                        # Custom stylesheets & Tailwind outputs
-├── js/                         # Client-side JavaScript logic
-│   ├── activeClass.js          # Dynamic active class polling script
-│   ├── classroomManagement.js # Room state toggle logic
-│   ├── loadingtransition.js   # UI state transitions
-│   ├── login.js                # Login modal & form validation
-│   ├── studentValidation.js    # Student form validation logic
-│   ├── tap.js                  # Primary RFID tap kiosk event handler
-│   └── time.js                 # Real-time digital clock component
-├── sections/                   # Reusable UI navigation templates
-│   ├── admin_nav.php           # Admin sidebar navigation
-│   ├── fac_nav.php             # Faculty navigation bar
-│   ├── prof_nav.php            # Professor navigation bar
-│   └── nav_new.php             # (moved to _to_review/) Unused nav duplicate
-├── labguard.sql                # Complete database import dump
-├── mail_config.php             # PHPMailer SMTP credentials configuration
-├── mail_functions.php          # Email dispatch helper functions
-├── composer.json               # PHP dependency specification
-├── package.json                # Node.js build configuration (Tailwind CSS)
-├── index.php                   # Main Kiosk Interface (RFID Tap Access Terminal)
-└── readme.md                   # System documentation
+├── app/                        # Next.js App Router — pages and route handlers
+│   ├── api/                    # Ported API: auth, tap, active-classes, CRUD, uploads, demo
+│   ├── admin/                  # Administrator portal + subpages
+│   ├── faculty/                # Faculty portal + subpages
+│   ├── professor/              # Professor portal + subpages
+│   ├── login/                  # Staff sign-in page
+│   ├── styles/                 # Self-contained copy of the legacy CSS
+│   ├── globals.css             # Global styles + kiosk/portal additions
+│   ├── layout.tsx              # Root layout
+│   └── page.tsx                # RFID kiosk (with temporary click-to-tap demo)
+├── components/                 # Shared portal shell and resource panel
+├── lib/                        # Prisma client, auth/session, attendance, CRUD, mail helpers
+├── prisma/schema.prisma        # Introspected MariaDB schema (do not redefine tables)
+├── public/assets/              # Branding images served by Next.js
+├── app/fonts/                  # DigitalNumbers font used by the kiosk clock
+├── uploads/                    # User photos (gitignored, personal data)
+├── .env.example                # Environment variable template (placeholders only)
+├── PROGRESS.md                 # Migration status, run instructions, rotation list
+└── readme.md                   # This document
 ```
+
+The original PHP application, its assets, SQL dumps, logs and Composer vendor
+directory are preserved on disk under `legacy/` (gitignored, not versioned).
+They are a reference implementation only and are not served by Next.js.
 
 ---
 
 ## ⚡ Installation & Setup Guide
 
 ### Prerequisites
-Before setting up LabGuard, ensure your local environment contains:
-* **Web Server**: Apache or Nginx (e.g., [XAMPP](https://www.apachefriends.org/), WAMP, or LAMP stack).
-* **PHP**: Version `8.0` or higher with `pdo_mysql` enabled.
-* **Database**: MySQL `5.7+` or MariaDB `10.4+`.
-* **Dependency Manager**: [Composer](https://getcomposer.org/) (for PHPMailer).
-* **Node.js**: `v18+` (optional, required only if rebuilding Tailwind CSS).
+* **Node.js**: `v18+` and npm.
+* **Database**: MariaDB via XAMPP (or MySQL `5.7+`). Start MySQL in XAMPP before running the app.
+* No PHP, Apache routing, or Composer needed — the PHP app is reference-only under `legacy/`.
 
 ---
 
 ### Step-by-Step Installation
 
-#### 1. Clone or Download Repository
-Place the repository inside your web server root (e.g., `C:\xampp\htdocs\LabGuard-main`):
+#### 1. Install dependencies
 ```bash
-git clone https://github.com/jayjayandcattos/LabGuard.git C:/xampp/htdocs/LabGuard-main
+cd path/to/LabGuard-main
+npm install
 ```
 
-#### 2. Install PHP Dependencies
-Navigate to the root directory and run Composer:
+#### 2. Prepare the database
+Create a `labguard` database in XAMPP (`utf8mb4_general_ci`) and import the
+canonical dump. It lives at `legacy/labguard.sql` (gitignored, kept on disk).
+If you need a clean schema, that dump is the source of truth — do not redefine
+tables by hand; `prisma/schema.prisma` was introspected from it.
+
+#### 3. Configure the environment
+Copy `.env.example` to `.env` and fill in:
+* `DATABASE_URL` — e.g. `mysql://root:@127.0.0.1:3306/labguard` (URL-encode a password if you set one).
+* `AUTH_SECRET` — generate with `openssl rand -base64 32`.
+* `MAIL_*` — a real SMTP account/app password for attendance-summary email.
+* `DEMO_TAP_ENABLED=true` — temporary click-to-tap kiosk fallback (see below).
+
+#### 4. Generate the Prisma client and run
 ```bash
-cd C:/xampp/htdocs/LabGuard-main
-composer install
+npx prisma generate
+npm run dev
 ```
+Open `http://localhost:3000` for the kiosk, `/login` for staff sign-in.
 
-#### 3. Import Database
-1. Open **phpMyAdmin** (`http://localhost/phpmyadmin`) or your preferred MySQL client.
-2. Create a new database named **`labguard`** with collation `utf8mb4_general_ci`.
-3. Import the file **`labguard.sql`** located in the root directory.
-
-#### 4. Configure Database Credentials
-Edit `backend/db.php` if your MySQL username or password differs from default XAMPP settings:
-```php
-<?php
-$host = "localhost"; 
-$dbname = "labguard"; 
-$username = "root"; 
-$password = ""; // Add password if configured
-
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
-}
-?>
-```
-
-#### 5. Configure Email Service (SMTP)
-Edit `mail_config.php` to set up absent student email reporting:
-```php
-define('MAIL_HOST', 'smtp.gmail.com');          // SMTP Server
-define('MAIL_PORT', 587);                       // TLS Port (587) or SSL (465)
-define('MAIL_USERNAME', 'your-email@gmail.com');// Sender Email
-define('MAIL_PASSWORD', 'your-app-password');   // App Password (Google/Outlook)
-define('MAIL_FROM', 'your-email@gmail.com');
-define('MAIL_FROM_NAME', 'LabGuard System');
-define('MAIL_ENCRYPTION', 'tls');
-```
-
-#### 6. Launch Application
-Start Apache & MySQL from the XAMPP Control Panel, then access:
-* **Kiosk Terminal**: `http://localhost/LabGuard-main/index.php`
-* **Admin Login**: `http://localhost/LabGuard-main/backend/login.php`
+#### Temporary click-to-tap demo
+The physical RFID scanner is currently unavailable. With `DEMO_TAP_ENABLED=true`,
+the kiosk shows a picker of registered students/professors and the ID circle
+becomes clickable — choose a person and click the circle to simulate a tap
+through the real `/api/tap` state machine. Disable/remove this once the scanner
+works. See `PROGRESS.md`.
 
 ---
 
@@ -314,19 +268,20 @@ Start Apache & MySQL from the XAMPP Control Panel, then access:
 LabGuard is compatible with standard USB RFID Card Readers operating in **Keyboard Wedge Mode** (125kHz EM4100 / 13.56MHz Mifare).
 
 1. Connect the USB RFID scanner to the kiosk terminal PC.
-2. Open `index.php` in full-screen mode on the terminal display.
-3. Ensure cursor focus remains on the RFID input box (handled automatically by `js/tap.js`).
-4. When a user taps their card, the RFID scanner submits the numerical tag ID directly into `index.php` for instant attendance processing.
+2. Open the kiosk at `http://localhost:3000` in full-screen mode.
+3. Ensure cursor focus remains on the RFID input box (handled automatically).
+4. When a user taps their card, the scanner submits the tag ID to `/api/tap`.
+   If the scanner is broken, use the temporary click-to-tap demo above.
 
 ---
 
 ## ✉️ Email Notification Configuration
 
-LabGuard includes an automated absent reporting mechanism (`mail_functions.php`).
+LabGuard sends attendance summaries via SMTP through `/api/attendance/summary`.
 
-* **Triggering Reports**: When a professor finishes a class session in `backend/prof_dashboard.php`, the system queries all enrolled section students who did not check in during that scheduled slot.
-* **Email Template**: Formatted HTML table highlighting student ID, student name, and class schedule time.
-* **Debug Mode**: Toggle `MAIL_DEBUG` in `mail_config.php` (`0` for silent production, `2` for detailed verbose logs during setup).
+* **Triggering Reports**: A professor ends a class session; the endpoint queries enrolled students who did not check in and emails the summary.
+* **Email Template**: Formatted HTML table of student ID, name, and class schedule time.
+* **Configuration**: Set the `MAIL_*` variables in `.env` (see `.env.example`). `MAIL_DEBUG` controls verbosity.
 
 ---
 
@@ -336,9 +291,10 @@ LabGuard includes an automated absent reporting mechanism (`mail_functions.php`)
 |:---|:---|:---|
 | **"Scanned tag not registered"** | Scanned RFID card ID is not in `student_tbl`, `prof_tbl`, or `faculty_tbl`. | Register the RFID Tag under the respective user profile in Admin Dashboard. |
 | **"No Schedule Found" on tap** | No active schedule exists in `schedule_tbl` for the current day and time. | Verify room number, current day/time, and schedule settings in Admin Portal. |
-| **Database Connection Failure** | MySQL service stopped or incorrect credentials in `backend/db.php`. | Ensure MySQL is running in XAMPP and credentials match in `backend/db.php`. |
-| **Emails Not Sending** | Incorrect SMTP credentials or missing Google App Password. | Check `mail_config.php`. If using Gmail, generate an App Password via Google Security Settings. |
-| **Logs & Error Debugging** | Runtime errors are captured in local log files. | Inspect `debug.log` in the root directory or `backend/debug.log`. |
+| **Database Connection Failure** | MySQL service stopped or incorrect `DATABASE_URL` in `.env`. | Start MySQL in XAMPP and check `DATABASE_URL`. |
+| **Emails Not Sending** | Incorrect SMTP values in `.env`. | Set a real app password in `MAIL_PASSWORD`; see `.env.example`. |
+| **Kiosk ID circle does nothing / no demo picker** | `DEMO_TAP_ENABLED` is not `true` in `.env`. | Set `DEMO_TAP_ENABLED=true`, restart `npm run dev`. |
+| **Photos not showing** | Photos live in `uploads/` (gitignored). | Copy any saved photos into the top-level `uploads/` folder. |
 
 ---
 

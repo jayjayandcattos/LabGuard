@@ -1,3 +1,6 @@
+# ── Legacy PHP app (kept on disk, not versioned) ───────────────
+legacy/
+
 # ── Dependencies ───────────────────────────────────────────────
 node_modules/
 vendor/
@@ -14,15 +17,15 @@ build/
 dist/
 *.tsbuildinfo
 
-# ── Logs ───────────────────────────────────────────────────────
+# ── Logs (root only; app/admin/logs is a real page) ────────────
 *.log
-logs/
+/logs/
 
 # ── Database dumps (contain personal data + password hashes) ──
 *.sql
 
 # ── User uploads (personal photos / PII) ───────────────────────
-backend/uploads/
+/uploads/
 public/uploads/
 
 # ── XAMPP / local server artifacts ─────────────────────────────

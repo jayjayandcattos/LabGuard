@@ -19,6 +19,8 @@ type ActiveClass = {
   data?: { subject_name: string; subject_code: string; professor: string; room: string; time: string };
 };
 
+type DemoPerson = { tag: string; label: string };
+
 export default function KioskPage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [tag, setTag] = useState("");
@@ -27,6 +29,8 @@ export default function KioskPage() {
   const [clock, setClock] = useState("");
   const [active, setActive] = useState<ActiveClass | null>(null);
   const [busy, setBusy] = useState(false);
+  const [demoPeople, setDemoPeople] = useState<DemoPerson[]>([]);
+  const [demoTag, setDemoTag] = useState("");
 
   useEffect(() => {
     const tick = () =>
@@ -57,6 +61,19 @@ export default function KioskPage() {
   }, [loadActive]);
 
   useEffect(() => {
+    let cancelled = false;
+    fetch("/api/demo/people", { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: { people?: DemoPerson[] } | null) => {
+        if (cancelled || !data?.people?.length) return;
+        setDemoPeople(data.people);
+        setDemoTag(data.people[0].tag);
+      })
+      .catch(() => { /* demo mode unavailable — kiosk works normally */ });
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
     inputRef.current?.focus();
     const refocus = (event: MouseEvent) => {
       if (!(event.target as HTMLElement).closest("a,button,input,select")) inputRef.current?.focus();
@@ -65,16 +82,15 @@ export default function KioskPage() {
     return () => document.removeEventListener("click", refocus);
   }, []);
 
-  async function submit(event: React.FormEvent) {
-    event.preventDefault();
-    const value = tag.trim();
-    if (!value || busy) return;
+  async function sendTap(value: string) {
+    const trimmed = value.trim();
+    if (!trimmed || busy) return;
     setBusy(true);
     try {
       const response = await fetch("/api/tap", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ rfid_tag: value }),
+        body: new URLSearchParams({ rfid_tag: trimmed }),
       });
       const data: TapResult = await response.json();
       setResult(data);
@@ -87,6 +103,11 @@ export default function KioskPage() {
       setBusy(false);
       inputRef.current?.focus();
     }
+  }
+
+  async function submit(event: React.FormEvent) {
+    event.preventDefault();
+    await sendTap(tag);
   }
 
   return (
@@ -112,8 +133,35 @@ export default function KioskPage() {
 
       <div className="wrapper">
         <div className="scan-container">
-          <img src="/assets/IDtap.svg" alt="Scan ID" className="scan-image" />
+          {demoPeople.length > 0 ? (
+            <button
+              type="button"
+              className="scan-id-button"
+              aria-label="Simulate an ID tap"
+              title="Demo: simulate a tap (physical scanner unavailable)"
+              disabled={busy}
+              onClick={() => sendTap(demoTag)}
+            >
+              <img src="/assets/IDtap.svg" alt="Tap ID to simulate attendance" className="scan-image" />
+            </button>
+          ) : (
+            <img src="/assets/IDtap.svg" alt="Scan ID" className="scan-image" />
+          )}
           <h2>PLEASE SCAN YOUR ID.</h2>
+          {demoPeople.length > 0 && (
+            <div className="demo-tap">
+              <p className="demo-note">DEMO MODE — scanner unavailable. Choose a person, then click the ID above.</p>
+              <select
+                aria-label="Demo person to tap"
+                value={demoTag}
+                onChange={(event) => setDemoTag(event.target.value)}
+              >
+                {demoPeople.map((person) => (
+                  <option key={person.tag} value={person.tag}>{person.label}</option>
+                ))}
+              </select>
+            </div>
+          )}
           <form onSubmit={submit}>
             <input
               ref={inputRef}

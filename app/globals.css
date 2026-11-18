@@ -1,9 +1,10 @@
-/* The legacy app's real styling lives in these plain CSS files. */
-@import "../css/styles.css";
-@import "../css/admin.css";
-@import "../css/prof.css";
-@import "../css/colorum.css";
-@import "../css/error.css";
+/* Self-contained copies of the legacy stylesheets, so the Next.js app does
+   not depend on the gitignored legacy/ folder. */
+@import "./styles/styles.css";
+@import "./styles/admin.css";
+@import "./styles/prof.css";
+@import "./styles/colorum.css";
+@import "./styles/error.css";
 
 :root {
   color-scheme: dark;
@@ -39,6 +40,20 @@ body {
 .active-class-info p { margin: 6px 0; font-size: 14px; }
 .label { opacity: 0.7; margin-right: 6px; }
 .table-row img { border-radius: 50%; }
+
+/* Temporary demo tap controls (scanner unavailable). */
+.scan-id-button {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  border-radius: 50%; transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.scan-id-button:hover:not(:disabled) { transform: scale(1.06); box-shadow: 0 0 0 4px rgba(114, 135, 229, 0.45); }
+.scan-id-button:disabled { opacity: 0.6; cursor: wait; }
+.demo-tap { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 8px 0 4px; }
+.demo-note { color: #ffd479; font-size: 12px; margin: 0; max-width: 340px; text-align: center; line-height: 1.4; }
+.demo-tap select {
+  padding: 8px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.4);
+  background: #1c2440; color: #fff; font-size: 13px; max-width: 320px;
+}
 
 /* Portal pages */
 .portal { min-height: 100vh; background: #f4f6fb; color: #1c2440; font-family: system-ui, sans-serif; }
