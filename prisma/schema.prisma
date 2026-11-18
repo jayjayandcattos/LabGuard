@@ -1,0 +1,248 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model admin_tbl {
+  admin_user_id Int       @id @default(autoincrement())
+  admin_id      String    @unique(map: "admin_id") @db.VarChar(20)
+  role_id       Int
+  lastname      String    @db.VarChar(50)
+  firstname     String    @db.VarChar(50)
+  mi            String?   @db.Char(1)
+  email         String    @unique(map: "email") @db.VarChar(100)
+  password      String    @db.VarChar(255)
+  photo         String?   @db.VarChar(255)
+  created_at    DateTime  @default(now()) @db.Timestamp(0)
+  roles_tbl     roles_tbl @relation(fields: [role_id], references: [role_id], onDelete: Cascade, onUpdate: Restrict, map: "admin_tbl_ibfk_1")
+
+  @@index([role_id], map: "role_id")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model attendance_tbl {
+  attendance_id Int                     @id @default(autoincrement())
+  student_id    Int?
+  prof_id       Int?
+  subject_id    Int
+  schedule_id   Int
+  rfid_tag      String                  @db.VarChar(50)
+  time_in       DateTime                @default(now()) @db.Timestamp(0)
+  status        attendance_tbl_status   @default(ended)
+  time_out      DateTime?               @db.Timestamp(0)
+  a_status      attendance_tbl_a_status
+  timestamp     DateTime                @default(now()) @db.Timestamp(0)
+  section_id    Int?
+  student_tbl   student_tbl?            @relation(fields: [student_id], references: [student_user_id], onDelete: Cascade, onUpdate: Restrict, map: "attendance_tbl_ibfk_1")
+  subject_tbl   subject_tbl             @relation(fields: [subject_id], references: [subject_id], onDelete: Cascade, onUpdate: Restrict, map: "attendance_tbl_ibfk_2")
+  schedule_tbl  schedule_tbl            @relation(fields: [schedule_id], references: [schedule_id], onDelete: Cascade, onUpdate: Restrict, map: "attendance_tbl_ibfk_3")
+  prof_tbl      prof_tbl?               @relation(fields: [prof_id], references: [prof_user_id], onDelete: Cascade, onUpdate: Restrict, map: "attendance_tbl_ibfk_4")
+
+  @@index([prof_id], map: "prof_id")
+  @@index([schedule_id], map: "schedule_id")
+  @@index([student_id], map: "student_id")
+  @@index([subject_id], map: "subject_id")
+}
+
+model faculty_tbl {
+  faculty_user_id Int       @id @default(autoincrement())
+  employee_id     String    @unique(map: "employee_id") @db.VarChar(20)
+  role_id         Int
+  lastname        String    @db.VarChar(50)
+  firstname       String    @db.VarChar(50)
+  mi              String?   @db.Char(1)
+  email           String    @unique(map: "email") @db.VarChar(100)
+  password        String    @db.VarChar(255)
+  rfid_tag        String    @unique(map: "rfid_tag") @db.VarChar(50)
+  photo           String?   @db.VarChar(255)
+  created_at      DateTime  @default(now()) @db.Timestamp(0)
+  roles_tbl       roles_tbl @relation(fields: [role_id], references: [role_id], onDelete: Cascade, onUpdate: Restrict, map: "faculty_tbl_ibfk_1")
+
+  @@index([role_id], map: "role_id")
+}
+
+model login_logs {
+  log_id     Int      @id @default(autoincrement())
+  user_id    String   @db.VarChar(50)
+  user_role  String   @db.VarChar(20)
+  user_name  String   @db.VarChar(100)
+  login_time DateTime @default(now()) @db.DateTime(0)
+  ip_address String   @db.VarChar(50)
+}
+
+model prof_tbl {
+  prof_user_id   Int              @id @default(autoincrement())
+  employee_id    String           @unique(map: "employee_id") @db.VarChar(20)
+  role_id        Int
+  lastname       String           @db.VarChar(50)
+  firstname      String           @db.VarChar(50)
+  mi             String?          @db.Char(1)
+  email          String           @unique(map: "email") @db.VarChar(100)
+  password       String           @db.VarChar(255)
+  rfid_tag       String           @unique(map: "rfid_tag") @db.VarChar(50)
+  photo          String?          @db.VarChar(255)
+  created_at     DateTime         @default(now()) @db.Timestamp(0)
+  attendance_tbl attendance_tbl[]
+  roles_tbl      roles_tbl        @relation(fields: [role_id], references: [role_id], onDelete: Cascade, onUpdate: Restrict, map: "prof_tbl_ibfk_1")
+  schedule_tbl   schedule_tbl[]
+  subject_tbl    subject_tbl[]
+
+  @@index([role_id], map: "role_id")
+}
+
+model roles_tbl {
+  role_id     Int                 @id @default(autoincrement())
+  role_name   roles_tbl_role_name @unique(map: "role_name")
+  admin_tbl   admin_tbl[]
+  faculty_tbl faculty_tbl[]
+  prof_tbl    prof_tbl[]
+  student_tbl student_tbl[]
+}
+
+model room_tbl {
+  room_id      Int             @id @default(autoincrement())
+  room_number  Int
+  room_name    String          @unique(map: "room_name") @db.VarChar(50)
+  status       room_tbl_status @default(Vacant)
+  schedule_tbl schedule_tbl[]
+}
+
+model schedule_tbl {
+  schedule_id       Int                       @id @default(autoincrement())
+  prof_user_id      Int
+  subject_id        Int
+  section_id        Int
+  room_id           Int
+  schedule_time     DateTime                  @db.Time(0)
+  schedule_end_time DateTime                  @db.Time(0)
+  schedule_day      schedule_tbl_schedule_day
+  attendance_tbl    attendance_tbl[]
+  prof_tbl          prof_tbl                  @relation(fields: [prof_user_id], references: [prof_user_id], onDelete: Cascade, onUpdate: Restrict, map: "schedule_tbl_ibfk_1")
+  subject_tbl       subject_tbl               @relation(fields: [subject_id], references: [subject_id], onDelete: Cascade, onUpdate: Restrict, map: "schedule_tbl_ibfk_2")
+  section_tbl       section_tbl               @relation(fields: [section_id], references: [section_id], onDelete: Cascade, onUpdate: Restrict, map: "schedule_tbl_ibfk_3")
+  room_tbl          room_tbl                  @relation(fields: [room_id], references: [room_id], onDelete: Cascade, onUpdate: Restrict, map: "schedule_tbl_ibfk_4")
+
+  @@index([prof_user_id], map: "prof_user_id")
+  @@index([room_id], map: "room_id")
+  @@index([section_id], map: "section_id")
+  @@index([subject_id], map: "subject_id")
+}
+
+model section_tbl {
+  section_id    Int            @id @default(autoincrement())
+  section_name  String         @unique(map: "section_name") @db.VarChar(50)
+  section_level String         @db.VarChar(20)
+  schedule_tbl  schedule_tbl[]
+  student_tbl   student_tbl[]
+}
+
+model student_enrollment_tbl {
+  enrollment_id Int                           @id @default(autoincrement())
+  student_id    Int
+  subject_id    Int
+  status        student_enrollment_tbl_status @default(Officially_Enrolled)
+  date_enrolled DateTime?                     @default(dbgenerated("(curdate())")) @db.Date
+  student_tbl   student_tbl                   @relation(fields: [student_id], references: [student_user_id], onDelete: Cascade, onUpdate: Restrict, map: "student_enrollment_tbl_ibfk_1")
+  subject_tbl   subject_tbl                   @relation(fields: [subject_id], references: [subject_id], onDelete: Cascade, onUpdate: Restrict, map: "student_enrollment_tbl_ibfk_2")
+
+  @@index([student_id], map: "student_id")
+  @@index([subject_id], map: "subject_id")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model student_tbl {
+  student_user_id        Int                         @id @default(autoincrement())
+  student_id             String                      @unique(map: "student_id") @db.VarChar(20)
+  role_id                Int
+  lastname               String                      @db.VarChar(50)
+  firstname              String                      @db.VarChar(50)
+  mi                     String?                     @db.Char(1)
+  email                  String                      @unique(map: "email") @db.VarChar(100)
+  rfid_tag               String                      @unique(map: "rfid_tag") @db.VarChar(50)
+  section_id             Int?
+  photo                  String?                     @db.VarChar(255)
+  created_at             DateTime                    @default(now()) @db.Timestamp(0)
+  year_level             student_tbl_year_level?
+  student_status         student_tbl_student_status? @default(regular)
+  attendance_tbl         attendance_tbl[]
+  student_enrollment_tbl student_enrollment_tbl[]
+  roles_tbl              roles_tbl                   @relation(fields: [role_id], references: [role_id], onDelete: Cascade, onUpdate: Restrict, map: "student_tbl_ibfk_1")
+  section_tbl            section_tbl?                @relation(fields: [section_id], references: [section_id], onUpdate: Restrict, map: "student_tbl_ibfk_2")
+
+  @@index([role_id], map: "role_id")
+  @@index([section_id], map: "section_id")
+}
+
+model subject_tbl {
+  subject_id             Int                      @id @default(autoincrement())
+  subject_code           String                   @db.VarChar(20)
+  subject_name           String                   @db.VarChar(255)
+  prof_user_id           Int?
+  attendance_tbl         attendance_tbl[]
+  schedule_tbl           schedule_tbl[]
+  student_enrollment_tbl student_enrollment_tbl[]
+  prof_tbl               prof_tbl?                @relation(fields: [prof_user_id], references: [prof_user_id], onDelete: Cascade, onUpdate: Restrict, map: "subject_tbl_ibfk_1")
+
+  @@index([prof_user_id], map: "prof_user_id")
+}
+
+enum roles_tbl_role_name {
+  Admin
+  Faculty
+  Professor
+  Student
+}
+
+enum room_tbl_status {
+  Vacant
+  Occupied
+  Maintenance
+}
+
+enum student_enrollment_tbl_status {
+  Officially_Enrolled  @map("Officially Enrolled")
+  Unofficially_Dropped @map("Unofficially Dropped")
+  Dropped
+}
+
+enum attendance_tbl_status {
+  check_in
+  check_out
+  ended
+  no_schedule
+  wrong_class
+}
+
+enum schedule_tbl_schedule_day {
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+  Saturday
+}
+
+enum attendance_tbl_a_status {
+  Present
+  Absent
+  Late
+  Ended
+  No_Schedule @map("No Schedule")
+  Wrong_Class @map("Wrong Class")
+}
+
+enum student_tbl_year_level {
+  YEAR_1 @map("1")
+  YEAR_2 @map("2")
+  YEAR_3 @map("3")
+  YEAR_4 @map("4")
+}
+
+enum student_tbl_student_status {
+  regular
+  irregular
+}

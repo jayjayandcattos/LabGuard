@@ -1,8 +1,34 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^4.0.7"
+  "name": "labguard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:pull": "prisma db pull",
+    "db:generate": "prisma generate"
   },
   "dependencies": {
-    "serve": "^14.2.4"
+    "@prisma/client": "^6.16.0",
+    "next": "^15.5.0",
+    "nodemailer": "^7.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.0.0",
+    "@tailwindcss/postcss": "^4.0.7",
+    "@types/node": "^22.0.0",
+    "@types/nodemailer": "^7.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.5.0",
+    "prisma": "^6.16.0",
+    "tailwindcss": "^4.0.7",
+    "typescript": "^5.9.0"
   }
 }

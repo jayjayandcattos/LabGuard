@@ -1,0 +1,16 @@
+/* The legacy app's real styling lives in these plain CSS files. */
+@import "../css/styles.css";
+@import "../css/admin.css";
+@import "../css/prof.css";
+@import "../css/colorum.css";
+@import "../css/error.css";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
