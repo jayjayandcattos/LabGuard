@@ -14,3 +14,28 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Kiosk additions — the legacy stylesheet provides the rest. */
+.kiosk-page { min-height: 100vh; font-family: Orbitron, sans-serif; }
+.kiosk-header {
+  display: flex; align-items: center; gap: 16px; padding: 14px 28px;
+  background: rgba(0, 0, 0, 0.25); color: #fff;
+}
+.kiosk-header h1 { margin: 0; font-size: 22px; letter-spacing: 3px; }
+.kiosk-header p { margin: 2px 0 0; font-size: 11px; opacity: 0.7; }
+.kiosk-clock { margin-left: auto; font-family: "DigitalNumbers", monospace; font-size: 30px; }
+.kiosk-login {
+  color: #fff; text-decoration: none; font-size: 12px; letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 6px; padding: 8px 12px;
+}
+.scan-submit {
+  margin-top: 16px; padding: 12px 22px; border: 0; border-radius: 8px;
+  background: #7287e5; color: #fff; font-family: inherit; font-weight: 700; cursor: pointer;
+}
+.tap-ok { color: #b6f2c1; font-size: 14px; }
+.tap-error { color: #ffb4b4; font-size: 14px; }
+.active-class-container { display: none; }
+.active-class-container.visible { display: block; }
+.active-class-info p { margin: 6px 0; font-size: 14px; }
+.label { opacity: 0.7; margin-right: 6px; }
+.table-row img { border-radius: 50%; }
