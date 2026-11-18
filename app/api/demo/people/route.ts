@@ -12,27 +12,32 @@ export async function GET() {
     return NextResponse.json({ error: "Demo mode is disabled" }, { status: 404 });
   }
 
-  const [students, professors] = await Promise.all([
-    prisma.student_tbl.findMany({
-      select: { student_id: true, lastname: true, firstname: true, rfid_tag: true },
-      orderBy: { lastname: "asc" },
-    }),
-    prisma.prof_tbl.findMany({
-      select: { employee_id: true, lastname: true, firstname: true, rfid_tag: true },
-      orderBy: { lastname: "asc" },
-    }),
-  ]);
+  try {
+    const [students, professors] = await Promise.all([
+      prisma.student_tbl.findMany({
+        select: { student_id: true, lastname: true, firstname: true, rfid_tag: true },
+        orderBy: { lastname: "asc" },
+      }),
+      prisma.prof_tbl.findMany({
+        select: { employee_id: true, lastname: true, firstname: true, rfid_tag: true },
+        orderBy: { lastname: "asc" },
+      }),
+    ]);
 
-  const people = [
-    ...students.map((s) => ({
-      tag: s.rfid_tag,
-      label: `${s.lastname}, ${s.firstname} (student)`,
-    })),
-    ...professors.map((p) => ({
-      tag: p.rfid_tag,
-      label: `${p.lastname}, ${p.firstname} (professor)`,
-    })),
-  ].filter((person) => person.tag);
+    const people = [
+      ...students.map((s) => ({
+        tag: s.rfid_tag,
+        label: `${s.lastname}, ${s.firstname} (student)`,
+      })),
+      ...professors.map((p) => ({
+        tag: p.rfid_tag,
+        label: `${p.lastname}, ${p.firstname} (professor)`,
+      })),
+    ].filter((person) => person.tag);
 
-  return NextResponse.json({ enabled: true, people });
+    return NextResponse.json({ enabled: true, people });
+  } catch (error) {
+    console.error("Could not load demo people:", error);
+    return NextResponse.json({ error: "Could not load people" }, { status: 500 });
+  }
 }
